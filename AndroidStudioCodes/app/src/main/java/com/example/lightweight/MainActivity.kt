@@ -26,7 +26,31 @@ class MainActivity : AppCompatActivity() {
         }
 
         val logIn: Button = findViewById (R.id.logIn)
+        val eMail: EditText  = findViewById(R.id.editTextTextEmailAddress)
+        val pass: EditText  = findViewById(R.id.editTextTextPassword)
 
+        eMail.addTextChangedListener(object: TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                if(eMail.text.toString() == "admin"){
+                    pass.addTextChangedListener(object: TextWatcher{
+                        override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                        }
+                        override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                            if(pass.text.toString() == "admin"){
+                                logIn.isEnabled = true
+                            }
+                        }
+                        override fun afterTextChanged(p0: Editable?) {
+                        }
+                    })
+                }
+            }
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+        })
         logIn.setOnClickListener() {
             val intent = Intent(this, LogIn::class.java)
             startActivity(intent)
