@@ -33,21 +33,24 @@ class MainActivity : AppCompatActivity() {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
             }
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                if(eMail.text.toString() == "admin"){
+
+            }
+            override fun afterTextChanged(p0: Editable?) {
                     pass.addTextChangedListener(object: TextWatcher{
                         override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                         }
                         override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                            if(pass.text.toString() == "admin"){
-                                logIn.isEnabled = true
-                            }
                         }
                         override fun afterTextChanged(p0: Editable?) {
+                            if(pass.text.toString() == "admin" && eMail.text.toString() == "admin"){
+                                logIn.isEnabled = true
+                                logIn.setError(null)
+                            }else{
+                                logIn.isEnabled = false
+                                logIn.error = "Incorrect password or e-mail"
+                            }
                         }
                     })
-                }
-            }
-            override fun afterTextChanged(p0: Editable?) {
             }
 
         })
