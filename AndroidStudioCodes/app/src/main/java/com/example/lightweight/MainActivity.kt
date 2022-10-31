@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         val signIn: Button = findViewById (R.id.signIn)
 
         signIn.setOnClickListener() {
-            val intent = Intent(this, SignIn::class.java)
+            val intent = Intent(this, Shop::class.java) //TODO
             startActivity(intent)
         }
 

@@ -2,8 +2,151 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Shop">
+    android:background="@color/AntiqueWhite"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/acme"
+        android:text="SHOP"
+        android:textColor="@color/Coral"
+        android:textSize="48sp"
+        android:textStyle=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="44dp"
+        android:background="@color/Coral"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/whey" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/protein"
+                android:layout_width="237dp"
+                android:layout_height="58dp"
+                android:layout_marginTop="20dp"
+                android:background="#00F44336"
+                android:clickable="true"
+                android:fontFamily="@font/acme"
+                android:text="Proteın"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold">
+
+            </Button>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginVertical="150dp"
+        android:layout_marginTop="200dp"
+        android:background="@color/Tomato"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout2">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/creatin" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/creatine"
+                android:layout_width="240dp"
+                android:layout_height="58dp"
+                android:layout_marginTop="20dp"
+                android:background="#00D3C6C6"
+                android:clickable="true"
+                android:fontFamily="@font/acme"
+                android:text="creatıne"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold">
+
+            </Button>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="52dp"
+        android:background="@color/Coral"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/eq" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/gymEquipments"
+                android:layout_width="237dp"
+                android:layout_height="58dp"
+                android:layout_marginTop="20dp"
+                android:background="#00F44336"
+                android:clickable="true"
+                android:fontFamily="@font/acme"
+                android:text="gym Equıpments"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold">
+
+            </Button>
+        </LinearLayout>
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
