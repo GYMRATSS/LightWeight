@@ -19,14 +19,14 @@ class Shop : AppCompatActivity() {
         val protein: Button = findViewById (R.id.protein)
 
         protein.setOnClickListener() {
-            val intent = Intent(this, ProteinsShop::class.java)
+            val intent = Intent(this, proteinShop::class.java)
             startActivity(intent)
         }
 
         val creatine: Button = findViewById (R.id.creatine)
 
         creatine.setOnClickListener() {
-            val intent = Intent(this, CreatineShop::class.java)
+            val intent = Intent(this, creatineShop::class.java)
             startActivity(intent)
         }
 

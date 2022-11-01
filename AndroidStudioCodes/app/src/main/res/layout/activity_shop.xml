@@ -5,7 +5,7 @@
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/AntiqueWhite"
+    android:background="@color/white"
     android:orientation="vertical"
     android:padding="20dp">
 
@@ -17,7 +17,7 @@
         android:fontFamily="@font/acme"
         android:text="SHOP"
         android:textColor="@color/Coral"
-        android:textSize="48sp"
+        android:textSize="60sp"
         android:textStyle=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

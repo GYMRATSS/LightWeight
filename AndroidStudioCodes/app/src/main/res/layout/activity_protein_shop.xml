@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".creatineShop">
+    tools:context=".proteinShop">
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/acme"
-        android:text="CREATINE"
+        android:text="PROTEINS"
         android:textColor="@color/Coral"
         android:textColorHighlight="@color/Black"
         android:textColorHint="@color/Black"
@@ -20,9 +20,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.563" />
+        app:layout_constraintVertical_bias="0.581" />
 
     <LinearLayout
         android:id="@+id/linearLayout4"
@@ -45,7 +46,7 @@
             android:background="#00F44336"
             android:clickable="true"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/creatin"
+            android:src="@drawable/whey"
             tools:ignore="DuplicateSpeakableTextCheck">
 
         </ImageButton>
@@ -59,7 +60,8 @@
             android:background="#00F44336"
             android:clickable="true"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/creatin">
+            android:src="@drawable/whey"
+            android:textStyle="bold">
 
         </ImageButton>
 
@@ -86,7 +88,8 @@
             android:background="#00F44336"
             android:clickable="true"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/creatin">
+            android:src="@drawable/whey"
+            android:textStyle="bold">
 
         </ImageButton>
 
@@ -99,7 +102,8 @@
             android:background="#00F44336"
             android:clickable="true"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/creatin">
+            android:src="@drawable/whey"
+            android:textStyle="bold">
 
         </ImageButton>
 
@@ -126,7 +130,8 @@
             android:background="#00F44336"
             android:clickable="true"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/creatin">
+            android:src="@drawable/whey"
+            android:textStyle="bold">
 
         </ImageButton>
 
@@ -139,7 +144,8 @@
             android:background="#00F44336"
             android:clickable="true"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/creatin">
+            android:src="@drawable/whey"
+            android:textStyle="bold">
 
         </ImageButton>
 

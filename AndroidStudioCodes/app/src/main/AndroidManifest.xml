@@ -13,6 +13,20 @@
         android:theme="@style/Theme.LightWeight"
         tools:targetApi="31">
         <activity
+            android:name=".creatineShop"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".proteinShop"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Equipments"
             android:exported="false">
             <meta-data
