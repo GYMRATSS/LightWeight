@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ListView
 
 class Shop : AppCompatActivity() {
@@ -37,6 +38,20 @@ class Shop : AppCompatActivity() {
             startActivity(intent)
         }
 
+        /**********************************************/
+        val shp:  ImageButton = findViewById(R.id.shopage)
+
+        shp.setOnClickListener() {
+            val intent = Intent(this, Shop::class.java)
+            startActivity(intent)
+        }
+
+        val food:  ImageButton = findViewById(R.id.foodpage)
+
+        food.setOnClickListener() {
+            val intent = Intent(this, CalorieCount::class.java)
+            startActivity(intent)
+        }
 
     }
 }
