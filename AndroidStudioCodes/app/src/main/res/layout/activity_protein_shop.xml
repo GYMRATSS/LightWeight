@@ -4,23 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/wallp"
     tools:context=".proteinShop">
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/acme"
+        android:fontFamily="@font/jura"
         android:text="PROTEINS"
-        android:textColor="@color/Coral"
-        android:textColorHighlight="@color/Black"
-        android:textColorHint="@color/Black"
-        android:textColorLink="@color/Black"
+        android:textColor="@color/white"
         android:textSize="48sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.581" />
@@ -30,37 +27,34 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginTop="116dp"
-        android:background="@color/white"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
 
         <ImageButton
-            android:layout_width="190dp"
-            android:layout_height="144dp"
+            android:layout_width="184dp"
+            android:layout_height="183dp"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
-            android:background="#00F44336"
+            android:layout_marginTop="10dp"
+            android:background="@mipmap/protein"
             android:clickable="true"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/whey"
             tools:ignore="DuplicateSpeakableTextCheck">
 
         </ImageButton>
 
 
         <ImageButton
-            android:layout_width="190dp"
-            android:layout_height="144dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="195dp"
+            android:layout_height="183dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
-            android:background="#00F44336"
+            android:background="@mipmap/protein"
             android:clickable="true"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/whey"
             android:textStyle="bold">
 
         </ImageButton>
@@ -72,37 +66,34 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginTop="516dp"
-        android:background="@color/white"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
 
         <ImageButton
-            android:layout_width="190dp"
-            android:layout_height="158dp"
+            android:layout_width="194dp"
+            android:layout_height="181dp"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
-            android:background="#00F44336"
+            android:layout_marginTop="10dp"
+            android:background="@mipmap/protein"
             android:clickable="true"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/whey"
             android:textStyle="bold">
 
         </ImageButton>
 
 
         <ImageButton
-            android:layout_width="190dp"
-            android:layout_height="158dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="189dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
-            android:background="#00F44336"
+            android:background="@mipmap/protein"
             android:clickable="true"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/whey"
             android:textStyle="bold">
 
         </ImageButton>
@@ -114,37 +105,34 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginTop="316dp"
-        android:background="@color/white"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
 
         <ImageButton
-            android:layout_width="190dp"
-            android:layout_height="150dp"
+            android:layout_width="188dp"
+            android:layout_height="176dp"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
-            android:background="#00F44336"
+            android:layout_marginTop="10dp"
+            android:background="@mipmap/protein"
             android:clickable="true"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/whey"
             android:textStyle="bold">
 
         </ImageButton>
 
 
         <ImageButton
-            android:layout_width="190dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="196dp"
+            android:layout_height="176dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
-            android:background="#00F44336"
+            android:background="@mipmap/protein"
             android:clickable="true"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/whey"
             android:textStyle="bold">
 
         </ImageButton>

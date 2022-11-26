@@ -2,5 +2,9 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/acme</item>
+        <item>@font/jura</item>
+        <item>@font/jura_bold</item>
+        <item>@font/jura_medium</item>
+        <item>@font/jura_semibold</item>
     </array>
 </resources>
