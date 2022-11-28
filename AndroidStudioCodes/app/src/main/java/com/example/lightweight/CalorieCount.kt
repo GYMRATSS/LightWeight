@@ -13,6 +13,8 @@ class CalorieCount : AppCompatActivity() {
         val actionBar = supportActionBar
         actionBar!!.hide()
 
+
+        /***********************************************************/
         val shp:  ImageButton = findViewById(R.id.shopage)
 
         shp.setOnClickListener() {
