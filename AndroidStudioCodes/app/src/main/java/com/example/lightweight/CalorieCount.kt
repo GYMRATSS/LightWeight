@@ -73,6 +73,13 @@ class CalorieCount : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val profilePageButton:  ImageButton = findViewById(R.id.userpage)
+
+        profilePageButton.setOnClickListener() {
+            val intent = Intent(this, Profile::class.java)
+            startActivity(intent)
+        }
+
         val food:  ImageButton = findViewById(R.id.foodpage)
 
         food.setOnClickListener() {
