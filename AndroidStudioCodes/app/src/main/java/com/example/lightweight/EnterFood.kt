@@ -37,5 +37,27 @@ class EnterFood : AppCompatActivity() {
             val intent = Intent(this, CalorieCount::class.java)
             startActivity(intent)
         }
+
+        val homeButton = findViewById<ImageButton>(R.id.homepage)
+        val gymButton = findViewById<ImageButton>(R.id.gympage)
+        val profileButton = findViewById<ImageButton>(R.id.userpage)
+
+        profileButton.setOnClickListener {
+            val intent = Intent(this, Profile::class.java)
+            startActivity(intent)
+        }
+
+        gymButton.setOnClickListener {
+            /*
+            wait for ilayda
+            val intent = Intent (this, ::class.java)
+            startActivity(intent)
+            */
+        }
+
+        homeButton.setOnClickListener {
+            val intent = Intent(this, homePage::class.java)
+            startActivity(intent)
+        }
     }
 }
