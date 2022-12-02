@@ -76,7 +76,6 @@ class Profile : AppCompatActivity() {
 
         foodButton.setOnClickListener {
 
-            // make sure food page ==? calorie count
             val intent = Intent(this, CalorieCount::class.java)
             startActivity(intent)
 
