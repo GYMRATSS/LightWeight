@@ -142,7 +142,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/day"
         app:layout_constraintVertical_bias="0.0"
-        tools:progress="10" />
+        android:progress="10" />
 
     <TextView
         android:id="@+id/c_persent"
