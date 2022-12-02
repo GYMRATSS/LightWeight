@@ -38,7 +38,8 @@ class SignUpSecond : AppCompatActivity() {
             var uyeBel = binding.waistInput.text.toString()
             var uyeBoyun = binding.neckInput.text.toString()
             var uyeHedef = binding.goalInput.text.toString()
-            var uyeBMI = (uyeKilo.toDouble()/(uyeBoy.toDouble()*uyeBoy.toDouble())).toString()
+            var number = ((uyeKilo.toDouble()/(uyeBoy.toDouble()*uyeBoy.toDouble()))*10000.0)
+            var uyeBMI = String.format("%.2f", number)
 
             //Doldurmayı zorunlu hale getiren kod satırları
             /*
