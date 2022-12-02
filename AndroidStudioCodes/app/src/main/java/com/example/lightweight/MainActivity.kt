@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         val signIn: Button = findViewById (R.id.signIn)
 
         signIn.setOnClickListener() {
-            val intent = Intent(this, Shop::class.java) //TODO
+            val intent = Intent(this, CalorieCount::class.java) //TODO
             startActivity(intent)
         }
 
