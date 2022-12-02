@@ -77,46 +77,33 @@
         android:id="@+id/ageBox"
         android:layout_width="115dp"
         android:layout_height="31dp"
-        android:layout_marginStart="60dp"
         android:text="Hesabın yok mu?"
         android:textColor="@color/Black"
         android:textColorHint="?attr/actionMenuTextColor"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.341"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.887" />
+        app:layout_constraintVertical_bias="0.861" />
 
     <Button
         android:id="@+id/signIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="72dp"
         android:backgroundTint="#00000000"
         android:clickable="true"
         android:text="Kayıt Ol"
-        android:textColor="@color/Black"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/Black"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
-        app:layout_constraintStart_toEndOf="@+id/ageBox"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.884"
-        tools:visibility="visible" />
-
-    <Button
-        android:id="@+id/tempSignUp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#141414"
-        android:text="sıgn Up"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.589"
+        app:layout_constraintHorizontal_bias="0.705"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.803" />
+        app:layout_constraintVertical_bias="0.857"
+        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

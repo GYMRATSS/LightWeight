@@ -1,5 +1,6 @@
 package com.example.lightweight
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -22,6 +23,11 @@ class SignUpSecond : AppCompatActivity() {
         skipButtonOnPage2.setOnClickListener {
 
             // direct to home page
+            val enteredName = userName
+            val intent = Intent(this, homePage::class.java)
+            intent.putExtra("USER",enteredName)
+            startActivity(intent)
+
         }
 
     }

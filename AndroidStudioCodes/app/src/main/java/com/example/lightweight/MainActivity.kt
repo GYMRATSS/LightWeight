@@ -18,17 +18,16 @@ class MainActivity : AppCompatActivity() {
         val actionBar = supportActionBar
         actionBar!!.hide()
 
-        val signIn: Button = findViewById (R.id.signIn)
+        val signIn: Button = findViewById<Button>(R.id.signIn)
 
-        signIn.setOnClickListener() {
-            val intent = Intent(this, CalorieCount::class.java) //TODO
+        signIn.setOnClickListener {
+            val intent = Intent(this, SignUpFirst::class.java)
             startActivity(intent)
         }
 
         val logIn: Button = findViewById (R.id.logIn)
         val eMail: EditText  = findViewById(R.id.editTextTextEmailAddress)
         val pass: EditText  = findViewById(R.id.editTextTextPassword)
-
 
         eMail.addTextChangedListener(object: TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -56,16 +55,11 @@ class MainActivity : AppCompatActivity() {
 
         })
         logIn.setOnClickListener() {
-            val intent = Intent(this, LogIn::class.java)
+            val intent = Intent(this, homePage::class.java)
             startActivity(intent)
         }
 
-        val tempSignUpButton = findViewById<Button>(R.id.tempSignUp)
 
-        tempSignUpButton.setOnClickListener {
-            val intent = Intent(this, SignUpFirst::class.java)
-            startActivity(intent)
-        }
 
     }
 }

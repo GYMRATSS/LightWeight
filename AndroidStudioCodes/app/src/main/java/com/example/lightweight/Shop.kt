@@ -44,10 +44,12 @@ class Shop : AppCompatActivity() {
         /**********************************************/
         val shp:  ImageButton = findViewById(R.id.shopage)
 
-        shp.setOnClickListener() {
+        /* shp.setOnClickListener() {
             val intent = Intent(this, Shop::class.java)
             startActivity(intent)
-        }
+        } */
+
+        shp.isClickable = false
 
         val food:  ImageButton = findViewById(R.id.foodpage)
 
@@ -63,5 +65,13 @@ class Shop : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val homeButton = findViewById<ImageButton>(R.id.homepage)
+
+        homeButton.setOnClickListener {
+
+            val intent = Intent(this, homePage::class.java)
+            startActivity(intent)
+
+        }
     }
 }

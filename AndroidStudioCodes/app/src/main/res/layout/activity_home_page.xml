@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/wallp"
+    tools:context=".homePage">
+
+    <LinearLayout
+        android:id="@+id/menulayout"
+        android:layout_width="wrap_content"
+        android:layout_height="83dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/homepage"
+            android:layout_width="78dp"
+            android:layout_height="match_parent"
+            android:background="#00F44336"
+            android:clickable="true"
+            android:contentDescription="@string/app_name"
+            android:src="@mipmap/home_icon" />
+
+        <ImageButton
+            android:id="@+id/gympage"
+            android:layout_width="77dp"
+            android:layout_height="match_parent"
+            android:background="#00F44336"
+            android:clickable="true"
+            android:contentDescription="@string/app_name"
+            android:src="@mipmap/gym_icon"
+            tools:ignore="DuplicateSpeakableTextCheck">
+
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/foodpage"
+            android:layout_width="78dp"
+            android:layout_height="match_parent"
+            android:background="#00F44336"
+            android:clickable="true"
+            android:contentDescription="@string/app_name"
+            android:src="@mipmap/food_icon"></ImageButton>
+
+        <ImageButton
+            android:id="@+id/shopage"
+            android:layout_width="78dp"
+            android:layout_height="match_parent"
+            android:background="#00F44336"
+            android:clickable="true"
+            android:contentDescription="@string/app_name"
+            android:src="@mipmap/shop_icon" />
+
+        <ImageButton
+            android:id="@+id/userpage"
+            android:layout_width="89dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="1dp"
+            android:background="#00F44336"
+            android:clickable="true"
+            android:contentDescription="@string/app_name"
+            android:src="@mipmap/user_icon"
+            tools:ignore="DuplicateSpeakableTextCheck"></ImageButton>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/hiName"
+        android:layout_width="151dp"
+        android:layout_height="53dp"
+        android:fontFamily="@font/jura"
+        android:text="Hi"
+        android:gravity="right"
+        android:textColor="#A9B0BB"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.938"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.047" />
+</androidx.constraintlayout.widget.ConstraintLayout>

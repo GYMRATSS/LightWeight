@@ -15,11 +15,6 @@ class Profile : AppCompatActivity() {
         val actionBar = supportActionBar
         actionBar!!.hide()
 
-        // 22.56
-        //23.00
-        //goddamn lann
-        // yeter amqq
-
         val editProfileButton = findViewById<Button>(R.id.editProfile)
         val dietTrackerButton = findViewById<Button>(R.id.dietTracker)
         val workoutActivitiesButton = findViewById<Button>(R.id.workoutActivities)
@@ -66,7 +61,8 @@ class Profile : AppCompatActivity() {
 
         homeButton.setOnClickListener {
 
-            // main page must be implemented
+            val intent = Intent(this, homePage::class.java)
+            startActivity(intent)
 
         }
 
