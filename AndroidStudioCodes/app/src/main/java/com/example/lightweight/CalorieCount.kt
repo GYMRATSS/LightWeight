@@ -15,7 +15,6 @@ class CalorieCount : AppCompatActivity() {
 
         val actionBar = supportActionBar
         actionBar!!.hide()
-
         /******** water entry **********/
         var remainW = 2000
 
