@@ -4,61 +4,67 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
+import android.text.TextUtils
 import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
+import com.example.lightweight.databinding.ActivityMainBinding
+import com.google.firebase.auth.FirebaseAuth
 import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
+    lateinit var auth: FirebaseAuth
+    lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        auth = FirebaseAuth.getInstance()
+
+        //Kullanıcının oturumu açık mı değil mi kontrol edelim
+        var currentUser = auth.currentUser
+
 
         val actionBar = supportActionBar
         actionBar!!.hide()
 
-        val signIn: Button = findViewById<Button>(R.id.signIn)
+        //Giriş yap butonuna tıklandığında
+        binding.logIn.setOnClickListener{
+            var girisEmail = binding.editTextTextEmailAddress.text.toString()
+            var girisParola = binding.editTextTextPassword.text.toString()
 
-        signIn.setOnClickListener {
-            val intent = Intent(this, SignUpFirst::class.java)
-            startActivity(intent)
+            //Kontrol
+            if(TextUtils.isEmpty(girisEmail)){
+                binding.editTextTextEmailAddress.error = "Lütfen email adresinizi yazın."
+                return@setOnClickListener
+            } else if(TextUtils.isEmpty(girisParola)){
+                binding.editTextTextPassword.error = "Lütfen parolanızı yazın."
+                return@setOnClickListener
+            }
+
+            //Giriş bilgilerini doğrulama
+            auth.signInWithEmailAndPassword(girisEmail,girisParola)
+                .addOnCompleteListener(this){ //it adında task resultu oluşturdu
+                    if(it.isSuccessful){
+                        intent = Intent(applicationContext,Profile::class.java)
+                        startActivity(intent)
+                        finish()
+                    } else {
+                        Toast.makeText(applicationContext,"Giriş hatalı, lütfen tekrar deneyiniz.",
+                            Toast.LENGTH_LONG).show()
+                    }
+                }
         }
 
-        val logIn: Button = findViewById (R.id.logIn)
-        val eMail: EditText  = findViewById(R.id.editTextTextEmailAddress)
-        val pass: EditText  = findViewById(R.id.editTextTextPassword)
-
-        eMail.addTextChangedListener(object: TextWatcher{
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-            }
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
-            }
-            override fun afterTextChanged(p0: Editable?) {
-                    pass.addTextChangedListener(object: TextWatcher{
-                        override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                        }
-                        override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                        }
-                        override fun afterTextChanged(p0: Editable?) {
-                            if(pass.text.toString() == "admin" && eMail.text.toString() == "admin"){
-                                logIn.isEnabled = true
-                                logIn.setError(null)
-                            }else{
-                                logIn.isEnabled = false
-                                logIn.error = "Incorrect password or e-mail"
-                            }
-                        }
-                    })
-            }
-
-        })
-        logIn.setOnClickListener() {
-            val intent = Intent(this, homePage::class.java)
+        //yeni üyelik sayfasıma gitmek için
+        binding.signIn.setOnClickListener{
+            intent = Intent(applicationContext,SignUpFirst::class.java)
             startActivity(intent)
+            finish()
         }
-
 
 
     }
