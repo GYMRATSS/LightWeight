@@ -15,6 +15,11 @@ class Profile : AppCompatActivity() {
         val actionBar = supportActionBar
         actionBar!!.hide()
 
+        // 22.56
+        //23.00
+        //goddamn lann
+        // yeter amqq
+
         val editProfileButton = findViewById<Button>(R.id.editProfile)
         val dietTrackerButton = findViewById<Button>(R.id.dietTracker)
         val workoutActivitiesButton = findViewById<Button>(R.id.workoutActivities)
@@ -38,7 +43,7 @@ class Profile : AppCompatActivity() {
             ).show() */
         }
         dietTrackerButton.setOnClickListener {
-            // ask if is it gonna be seperate or will be directed to the food page ???
+            // food history
         }
 
         workoutActivitiesButton.setOnClickListener {

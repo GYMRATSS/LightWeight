@@ -18,6 +18,8 @@ class SignUpFirst : AppCompatActivity() {
         val nameofUser = findViewById<EditText>(R.id.nameInfoFromUser)
         var enteredName = ""
 
+        //im hereeeeeeee
+
         nextButtonOnPage1.setOnClickListener {
 
             enteredName = nameofUser.text.toString()

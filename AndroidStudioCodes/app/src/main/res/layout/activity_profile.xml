@@ -83,13 +83,15 @@ tools:context=".Profile">
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.692" />
 
-    <EditText
+    <TextView
         android:id="@+id/goal"
         android:layout_width="55dp"
         android:layout_height="46dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:text=""
+        android:fontFamily="@font/jura"
+        android:gravity="center"
+        android:textColor="#E6D9D9"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.988"
@@ -205,14 +207,14 @@ tools:context=".Profile">
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.188" />
 
-    <EditText
+    <TextView
     android:id="@+id/userName"
     android:layout_width="154dp"
     android:layout_height="42dp"
     android:ems="10"
     android:gravity="center"
-    android:inputType="textPersonName"
-    android:hint="NOEL DEYZEL"
+        android:fontFamily="@font/jura"
+        android:textColor="#E6D9D9"
     android:textStyle="bold"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
@@ -221,13 +223,15 @@ tools:context=".Profile">
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="0.429" />
 
-    <EditText
+    <TextView
         android:id="@+id/bmi"
         android:layout_width="89dp"
         android:layout_height="34dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:text=""
+        android:fontFamily="@font/jura"
+        android:gravity="center"
+        android:textColor="#E6D9D9"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
@@ -235,13 +239,15 @@ tools:context=".Profile">
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.436" />
 
-    <EditText
+    <TextView
         android:id="@+id/neck"
         android:layout_width="89dp"
         android:layout_height="34dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:text=""
+        android:fontFamily="@font/jura"
+        android:gravity="center"
+        android:textColor="#E6D9D9"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
@@ -249,27 +255,31 @@ tools:context=".Profile">
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.387" />
 
-    <EditText
+    <TextView
         android:id="@+id/waist"
         android:layout_width="89dp"
         android:layout_height="34dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:text=""
+        android:fontFamily="@font/jura"
+        android:gravity="center"
+        android:textColor="#E6D9D9"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.337" />
+        app:layout_constraintVertical_bias="0.335" />
 
-    <EditText
+    <TextView
         android:id="@+id/height"
         android:layout_width="89dp"
         android:layout_height="34dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:text=""
+        android:fontFamily="@font/jura"
+        android:gravity="center"
+        android:textColor="#E6D9D9"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
@@ -277,13 +287,15 @@ tools:context=".Profile">
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.286" />
 
-    <EditText
+    <TextView
         android:id="@+id/weight"
         android:layout_width="89dp"
         android:layout_height="34dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:text=""
+        android:fontFamily="@font/jura"
+        android:gravity="center"
+        android:textColor="#E6D9D9"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
@@ -291,13 +303,15 @@ tools:context=".Profile">
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.238" />
 
-    <EditText
+    <TextView
         android:id="@+id/gender"
         android:layout_width="89dp"
         android:layout_height="34dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:text=""
+        android:fontFamily="@font/jura"
+        android:gravity="center"
+        android:textColor="#E6D9D9"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
@@ -305,13 +319,15 @@ tools:context=".Profile">
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.189" />
 
-    <EditText
+    <TextView
         android:id="@+id/age"
         android:layout_width="89dp"
         android:layout_height="34dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:text=""
+        android:fontFamily="@font/jura"
+        android:gravity="center"
+        android:textColor="#E6D9D9"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
@@ -437,13 +453,15 @@ tools:context=".Profile">
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.532" />
 
-    <EditText
+    <TextView
         android:id="@+id/start"
         android:layout_width="55dp"
         android:layout_height="46dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:text=""
+        android:fontFamily="@font/jura"
+        android:gravity="center"
+        android:textColor="#E6D9D9"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.244"
