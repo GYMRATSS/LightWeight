@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/wallp"
+
+    tools:context=".SignUpFirst">
+
+
+    <RadioGroup
+        android:id="@+id/radioGender"
+        android:layout_width="216dp"
+        android:layout_height="86dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.595">
+
+        <RadioButton
+            android:id="@+id/cinsiyet1"
+            android:layout_width="68dp"
+            android:layout_height="58dp"
+            android:text="Kadın"
+            android:textColor="#FFFF" />
+
+        <RadioButton
+            android:id="@+id/cinsiyet2"
+            android:layout_width="68dp"
+            android:layout_height="58dp"
+            android:text="Erkek"
+            android:textColor="#FFFF" />
+
+        <RadioButton
+            android:id="@+id/cinsiyet3"
+            android:layout_width="72dp"
+            android:layout_height="62dp"
+            android:text="Non Binary"
+            android:textColor="#FFFF"
+            android:textSize="12sp" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/getAge"
+        android:layout_width="152dp"
+        android:layout_height="58dp"
+        android:fontFamily="@font/jura"
+        android:gravity="center_vertical"
+        android:text="Yaş :"
+        android:textColor="#FFFF"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.154"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.487" />
+
+    <TextView
+        android:id="@+id/getGender"
+        android:layout_width="152dp"
+        android:layout_height="58dp"
+        android:fontFamily="@font/jura"
+        android:gravity="center_vertical"
+        android:text="Cinsiyet :"
+        android:textColor="#F9FAFB"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.154"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.573" />
+
+    <TextView
+        android:id="@+id/getPassword"
+        android:layout_width="152dp"
+        android:layout_height="58dp"
+        android:fontFamily="@font/jura"
+        android:gravity="center_vertical"
+        android:text="Şifre : "
+        android:textColor="#FFFF"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.154"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.745" />
+
+    <TextView
+        android:id="@+id/getEmail"
+        android:layout_width="152dp"
+        android:layout_height="58dp"
+        android:fontFamily="@font/jura"
+        android:gravity="center_vertical"
+        android:text="E-mail : "
+        android:textColor="#FFFF"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.154"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.659" />
+
+
+    <TextView
+        android:id="@+id/createAccount"
+        android:layout_width="226dp"
+        android:layout_height="88dp"
+        android:fontFamily="@font/jura_bold"
+        android:gravity="center_horizontal"
+        android:text="Hesap\nOluştur"
+        android:textColor="#ABB3BE"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.105" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="86dp"
+        android:layout_height="76dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.248"
+        app:srcCompat="@mipmap/create" />
+
+    <TextView
+        android:id="@+id/getName"
+        android:layout_width="152dp"
+        android:layout_height="58dp"
+        android:fontFamily="@font/jura"
+        android:gravity="center_vertical"
+        android:text="Ad Soyad :"
+        android:textColor="#FFFF"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.154"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.401" />
+
+    <EditText
+        android:id="@+id/nameInfoFromUser"
+        android:layout_width="206dp"
+        android:layout_height="58dp"
+        android:ems="10"
+        android:fontFamily="@font/jura"
+        android:gravity="center"
+        android:hint="Chris Bumstead"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.936"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.401" />
+
+    <EditText
+        android:id="@+id/ageInfoFromUser"
+        android:layout_width="206dp"
+        android:layout_height="56dp"
+        android:ems="10"
+        android:hint = "27"
+        android:gravity="center"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.936"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.485" />
+
+    <EditText
+        android:id="@+id/eMailInfo"
+        android:layout_width="210dp"
+        android:layout_height="58dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="cbum@gmail.com"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.659" />
+
+    <EditText
+        android:id="@+id/passwordInfo"
+        android:layout_width="209dp"
+        android:layout_height="56dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="*****"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.746" />
+
+    <Button
+        android:id="@+id/nextSignIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#514C54"
+        android:fontFamily="@font/jura_bold"
+        android:text="Next"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.913"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.89" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

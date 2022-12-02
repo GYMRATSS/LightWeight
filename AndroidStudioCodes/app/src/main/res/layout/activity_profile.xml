@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@mipmap/wallp"
+tools:context=".Profile">
+
+    <Button
+        android:id="@+id/editProfile"
+        android:layout_width="417dp"
+        android:layout_height="45dp"
+        android:backgroundTint="#21161D"
+        android:fontFamily="@font/jura"
+        android:foregroundTint="#3E363E"
+        android:text="Profili düzenle"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.638" />
+
+    <Button
+        android:id="@+id/logOut"
+        android:layout_width="417dp"
+        android:layout_height="45dp"
+        android:backgroundTint="#858791"
+        android:fontFamily="@font/jura"
+        android:text="Çıkış Yap"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.855" />
+
+    <Button
+        android:id="@+id/QandA"
+        android:layout_width="417dp"
+        android:layout_height="45dp"
+        android:backgroundTint="#5F5C65"
+        android:fontFamily="@font/jura"
+        android:text="Soru / Cevap"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8" />
+
+    <Button
+        android:id="@+id/workoutActivities"
+        android:layout_width="417dp"
+        android:layout_height="45dp"
+        android:backgroundTint="#433C44"
+        android:fontFamily="@font/jura"
+        android:text="Egzersiz Geçmişi"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.746" />
+
+    <Button
+        android:id="@+id/dietTracker"
+        android:layout_width="417dp"
+        android:layout_height="45dp"
+        android:backgroundTint="#2D232B"
+        android:fontFamily="@font/jura"
+        android:foregroundTint="#3E363E"
+        android:text="Besin Takibi"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.692" />
+
+    <EditText
+        android:id="@+id/goal"
+        android:layout_width="55dp"
+        android:layout_height="46dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.988"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.532" />
+
+    <TextView
+        android:id="@+id/goalBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hedef : "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.842"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.532" />
+
+    <TextView
+        android:id="@+id/bmiBox"
+        android:layout_width="76dp"
+        android:layout_height="34dp"
+        android:fontFamily="@font/jura"
+        android:gravity="center_vertical"
+        android:text="BMI"
+        android:textColor="#E6D9D9"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.686"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.436" />
+
+    <TextView
+        android:id="@+id/neckBox"
+        android:layout_width="77dp"
+        android:layout_height="35dp"
+        android:fontFamily="@font/jura"
+        android:gravity="center_vertical"
+        android:text="Boyun (cm)"
+        android:textColor="#E6D9D9"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.686"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.385" />
+
+    <TextView
+        android:id="@+id/waistBox"
+        android:layout_width="76dp"
+        android:layout_height="33dp"
+        android:fontFamily="@font/jura"
+        android:gravity="center_vertical"
+        android:text="Bel (cm)"
+        android:textColor="#E6D9D9"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.686"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.336" />
+
+    <TextView
+        android:id="@+id/heightBox"
+        android:layout_width="76dp"
+        android:layout_height="35dp"
+        android:fontFamily="@font/jura"
+        android:gravity="center_vertical"
+        android:text="Boy (m)"
+        android:textColor="#E6D9D9"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.688"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.287" />
+
+    <TextView
+        android:id="@+id/weightBox"
+        android:layout_width="76dp"
+        android:layout_height="33dp"
+        android:fontFamily="@font/jura"
+        android:gravity="center_vertical"
+        android:text="Kilo (kg)"
+        android:textColor="#E6D9D9"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.686"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.239" />
+
+    <TextView
+        android:id="@+id/genderBox"
+        android:layout_width="76dp"
+        android:layout_height="35dp"
+        android:fontFamily="@font/jura"
+        android:gravity="center_vertical"
+        android:text="Cinsiyet"
+        android:textColor="#E6D9D9"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.686"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.188" />
+
+    <EditText
+    android:id="@+id/userName"
+    android:layout_width="154dp"
+    android:layout_height="42dp"
+    android:ems="10"
+    android:gravity="center"
+    android:inputType="textPersonName"
+    android:hint="NOEL DEYZEL"
+    android:textStyle="bold"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.186"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.429" />
+
+    <EditText
+        android:id="@+id/bmi"
+        android:layout_width="89dp"
+        android:layout_height="34dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.436" />
+
+    <EditText
+        android:id="@+id/neck"
+        android:layout_width="89dp"
+        android:layout_height="34dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.387" />
+
+    <EditText
+        android:id="@+id/waist"
+        android:layout_width="89dp"
+        android:layout_height="34dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.337" />
+
+    <EditText
+        android:id="@+id/height"
+        android:layout_width="89dp"
+        android:layout_height="34dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.286" />
+
+    <EditText
+        android:id="@+id/weight"
+        android:layout_width="89dp"
+        android:layout_height="34dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.238" />
+
+    <EditText
+        android:id="@+id/gender"
+        android:layout_width="89dp"
+        android:layout_height="34dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.189" />
+
+    <EditText
+        android:id="@+id/age"
+        android:layout_width="89dp"
+        android:layout_height="34dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.14" />
+
+    <LinearLayout
+    android:id="@+id/menulayout"
+    android:layout_width="wrap_content"
+    android:layout_height="83dp"
+    android:orientation="horizontal"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.49"
+    app:layout_constraintStart_toStartOf="parent">
+
+    <ImageButton
+        android:id="@+id/homepage"
+        android:layout_width="78dp"
+        android:layout_height="match_parent"
+        android:background="#00F44336"
+        android:clickable="true"
+        android:contentDescription="@string/app_name"
+        android:src="@mipmap/home_icon" />
+
+    <ImageButton
+        android:id="@+id/gympage"
+        android:layout_width="77dp"
+        android:layout_height="match_parent"
+        android:background="#00F44336"
+        android:clickable="true"
+        android:contentDescription="@string/app_name"
+        android:src="@mipmap/gym_icon"
+        tools:ignore="DuplicateSpeakableTextCheck">
+
+    </ImageButton>
+
+    <ImageButton
+        android:id="@+id/foodpage"
+        android:layout_width="78dp"
+        android:layout_height="match_parent"
+        android:background="#00F44336"
+        android:clickable="true"
+        android:contentDescription="@string/app_name"
+        android:src="@mipmap/food_icon"></ImageButton>
+
+    <ImageButton
+        android:id="@+id/shopage"
+        android:layout_width="78dp"
+        android:layout_height="match_parent"
+        android:background="#00F44336"
+        android:clickable="true"
+        android:contentDescription="@string/app_name"
+        android:src="@mipmap/shop_icon" />
+
+    <ImageButton
+        android:id="@+id/userpage"
+        android:layout_width="89dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="1dp"
+        android:background="#00F44336"
+        android:clickable="true"
+        android:contentDescription="@string/app_name"
+        android:src="@mipmap/user_icon"
+        tools:ignore="DuplicateSpeakableTextCheck"></ImageButton>
+
+</LinearLayout>
+
+<ImageView
+    android:id="@+id/imageView"
+    android:layout_width="214dp"
+    android:layout_height="197dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.081"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.157"
+    app:srcCompat="@mipmap/noel" />
+
+    <TextView
+        android:id="@+id/ageBox"
+        android:layout_width="76dp"
+        android:layout_height="33dp"
+        android:fontFamily="@font/jura"
+        android:gravity="center_vertical"
+        android:text="Yaş"
+        android:textColor="#E6D9D9"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.688"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.141" />
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="356dp"
+        android:layout_height="49dp"
+        android:indeterminate="false"
+        android:progress="45"
+        android:progressBackgroundTint="#FFFFFF"
+        android:progressTint="#413850"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.495" />
+
+    <TextView
+        android:id="@+id/startBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Başlangıç : "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.532" />
+
+    <EditText
+        android:id="@+id/start"
+        android:layout_width="55dp"
+        android:layout_height="46dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.244"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.532" />
+
+    <TextView
+        android:id="@+id/profileInfo"
+        android:layout_width="149dp"
+        android:layout_height="49dp"
+        android:fontFamily="@font/jura"
+        android:gravity="center"
+        android:text="Profil Bilgileri"
+        android:textColor="#BFCAD5"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.908"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.051" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

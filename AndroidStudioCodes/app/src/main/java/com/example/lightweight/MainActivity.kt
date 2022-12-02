@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         val eMail: EditText  = findViewById(R.id.editTextTextEmailAddress)
         val pass: EditText  = findViewById(R.id.editTextTextPassword)
 
+
         eMail.addTextChangedListener(object: TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
             }
@@ -58,5 +59,13 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, LogIn::class.java)
             startActivity(intent)
         }
+
+        val tempSignUpButton = findViewById<Button>(R.id.tempSignUp)
+
+        tempSignUpButton.setOnClickListener {
+            val intent = Intent(this, SignUpFirst::class.java)
+            startActivity(intent)
+        }
+
     }
 }
