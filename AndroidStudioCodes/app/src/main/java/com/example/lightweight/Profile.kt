@@ -64,7 +64,68 @@ class Profile : AppCompatActivity() {
             startActivity(Intent(this@Profile,CalorieCount::class.java))
             finish()
         }
+        val editProfileButton = findViewById<Button>(R.id.editProfile)
+        val dietTrackerButton = findViewById<Button>(R.id.dietTracker)
+        val workoutActivitiesButton = findViewById<Button>(R.id.workoutActivities)
+        val qaButton = findViewById<Button>(R.id.QandA)
+        val logOutButton = findViewById<Button>(R.id.logOut)
 
+        val homeButton = findViewById<ImageButton>(R.id.homepage)
+        val gymButton = findViewById<ImageButton>(R.id.gympage)
+        val foodButton = findViewById<ImageButton>(R.id.foodpage)
+        val shopButton = findViewById<ImageButton>(R.id.shopage)
+        val profileButton = findViewById<ImageButton>(R.id.userpage)
+
+        profileButton.isClickable = false
+
+        dietTrackerButton.setOnClickListener {
+            // ask if is it gonna be seperate or will be directed to the food page ???
+        }
+
+        workoutActivitiesButton.setOnClickListener {
+            // history page must be implemented
+        }
+
+        qaButton.setOnClickListener {
+            /*
+            wait for ilayda
+            val intent = Intent (this, ::class.java)
+            startActivity(intent)
+            */
+        }
+        logOutButton.setOnClickListener {
+
+            // firebase stuff
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        homeButton.setOnClickListener {
+
+            // main page must be implemented
+
+        }
+
+        gymButton.setOnClickListener {
+            /*
+            wait for ilayda
+            val intent = Intent (this, ::class.java)
+            startActivity(intent)
+            */
+        }
+
+        foodButton.setOnClickListener {
+
+            // make sure food page ==? calorie count
+            val intent = Intent(this, CalorieCount::class.java)
+            startActivity(intent)
+
+        }
+
+        shopButton.setOnClickListener {
+            val intent = Intent(this, Shop::class.java)
+            startActivity(intent)
+        }
 
     }
 }
