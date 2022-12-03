@@ -329,7 +329,7 @@
         android:layout_height="149dp"
         android:indeterminateOnly="false"
         android:indeterminateTint="@color/Maroon"
-        android:progressBackgroundTint="#9A525B"
+        android:progressBackgroundTint="#7E7F89"
         android:progressDrawable="@drawable/workout"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
