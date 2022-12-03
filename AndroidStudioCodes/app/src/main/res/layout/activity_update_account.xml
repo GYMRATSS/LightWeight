@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/wallp"
+    tools:context=".updateAccount">
+
+    <EditText
+        android:id="@+id/updatePasswordInfoAgain"
+        android:layout_width="170dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="*****"
+        android:inputType="textPassword"
+        android:textColor="#FFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.892"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.629" />
+
+    <EditText
+        android:id="@+id/updatePasswordInfo"
+        android:layout_width="170dp"
+        android:layout_height="51dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="*****"
+        android:inputType="textPassword"
+        android:textColor="#FFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.892"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.544" />
+
+    <TextView
+        android:id="@+id/editProfileHeader12"
+        android:layout_width="163dp"
+        android:layout_height="69dp"
+        android:fontFamily="@font/jura_bold"
+        android:gravity="right"
+        android:text="Yeni Parola Tekrar : "
+        android:textColor="#FBFBFB"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.652" />
+
+    <EditText
+        android:id="@+id/updateEMailInfo"
+        android:layout_width="175dp"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="cbum@gmail.com"
+        android:inputType="textEmailAddress"
+        android:textColor="#FFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.885"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45" />
+
+    <TextView
+        android:id="@+id/editProfileHeader11"
+        android:layout_width="169dp"
+        android:layout_height="48dp"
+        android:fontFamily="@font/jura_bold"
+        android:gravity="right"
+        android:text="Yeni Parola : "
+        android:textColor="#FBFBFB"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.546" />
+
+    <TextView
+        android:id="@+id/editProfileHeader10"
+        android:layout_width="149dp"
+        android:layout_height="52dp"
+        android:fontFamily="@font/jura_bold"
+        android:gravity="right"
+        android:text="E-mail : "
+        android:textColor="#FBFBFB"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.148"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45" />
+
+    <TextView
+        android:id="@+id/editProfileHeader9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/jura_bold"
+        android:gravity="center"
+        android:text="Hesap Bilgilerini\nDeğiştir"
+        android:textColor="#CAD6E1"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.249" />
+
+    <ImageButton
+        android:id="@+id/closeUpdateAccount"
+        android:layout_width="67dp"
+        android:layout_height="60dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023"
+        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

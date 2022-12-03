@@ -65,11 +65,12 @@ class Profile : AppCompatActivity() {
             finish()
         }
 
-        val editProfileButton = findViewById<Button>(R.id.editProfile)
         val dietTrackerButton = findViewById<Button>(R.id.dietTracker)
         val workoutActivitiesButton = findViewById<Button>(R.id.workoutActivities)
         val qaButton = findViewById<Button>(R.id.qa)
         val logOutButton = findViewById<Button>(R.id.logOut)
+        val editAccountButton = findViewById<Button>(R.id.editUser)
+        val editProfileButton = findViewById<Button>(R.id.editProfile)
 
         val homeButton = findViewById<ImageButton>(R.id.homepage)
         val gymButton = findViewById<ImageButton>(R.id.gympage)
@@ -80,11 +81,17 @@ class Profile : AppCompatActivity() {
         profileButton.isClickable = false
 
         editProfileButton.setOnClickListener {
-            //editProfile.error("Currently not available!")
+            val intent = Intent (this, updateAccount::class.java)
+            startActivity(intent)
+        }
+
+        editAccountButton.setOnClickListener {
+            val intent = Intent (this, updateInfo::class.java)
+            startActivity(intent)
         }
 
         dietTrackerButton.setOnClickListener {
-            // ask if is it gonna be seperate or will be directed to the food page ???
+            // will be directed to the calendar page on food page
         }
 
         workoutActivitiesButton.setOnClickListener {

@@ -8,20 +8,35 @@ android:background="@mipmap/wallp"
 tools:context=".Profile">
 
     <Button
+        android:id="@+id/editUser"
+        android:layout_width="417dp"
+        android:layout_height="45dp"
+        android:backgroundTint="#2B2129"
+        android:fontFamily="@font/jura"
+        android:foregroundTint="#3E363E"
+        android:text="Hesap bilgilerini değiştir"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.661" />
+
+    <Button
         android:id="@+id/editProfile"
         android:layout_width="417dp"
         android:layout_height="45dp"
         android:backgroundTint="#21161D"
         android:fontFamily="@font/jura"
         android:foregroundTint="#3E363E"
-        android:text="Profili düzenle"
+        android:text="Bilgilerini Güncelle"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.638" />
+        app:layout_constraintVertical_bias="0.609" />
 
     <Button
         android:id="@+id/logOut"
@@ -33,16 +48,16 @@ tools:context=".Profile">
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.855" />
+        app:layout_constraintVertical_bias="0.879" />
 
     <Button
         android:id="@+id/qa"
         android:layout_width="417dp"
         android:layout_height="45dp"
-        android:backgroundTint="#5F5C65"
+        android:backgroundTint="#67666F"
         android:fontFamily="@font/jura"
         android:text="Soru / Cevap"
         android:textSize="20sp"
@@ -51,13 +66,13 @@ tools:context=".Profile">
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.8" />
+        app:layout_constraintVertical_bias="0.825" />
 
     <Button
         android:id="@+id/workoutActivities"
         android:layout_width="417dp"
         android:layout_height="45dp"
-        android:backgroundTint="#433C44"
+        android:backgroundTint="#514C55"
         android:fontFamily="@font/jura"
         android:text="Egzersiz Geçmişi"
         android:textSize="20sp"
@@ -65,13 +80,13 @@ tools:context=".Profile">
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.746" />
+        app:layout_constraintVertical_bias="0.769" />
 
     <Button
         android:id="@+id/dietTracker"
         android:layout_width="417dp"
         android:layout_height="45dp"
-        android:backgroundTint="#2D232B"
+        android:backgroundTint="#3A323A"
         android:fontFamily="@font/jura"
         android:foregroundTint="#3E363E"
         android:text="Besin Takibi"
@@ -81,7 +96,7 @@ tools:context=".Profile">
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.692" />
+        app:layout_constraintVertical_bias="0.714" />
 
     <TextView
         android:id="@+id/goal"
@@ -382,7 +397,9 @@ tools:context=".Profile">
         android:background="#00F44336"
         android:clickable="true"
         android:contentDescription="@string/app_name"
-        android:src="@mipmap/food_icon"></ImageButton>
+        android:src="@mipmap/food_icon">
+
+    </ImageButton>
 
     <ImageButton
         android:id="@+id/shopage"
@@ -402,7 +419,9 @@ tools:context=".Profile">
         android:clickable="true"
         android:contentDescription="@string/app_name"
         android:src="@mipmap/user_icon"
-        tools:ignore="DuplicateSpeakableTextCheck"></ImageButton>
+        tools:ignore="DuplicateSpeakableTextCheck">
+
+    </ImageButton>
 
 </LinearLayout>
 
