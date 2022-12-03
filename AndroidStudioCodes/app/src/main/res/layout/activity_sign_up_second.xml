@@ -7,6 +7,59 @@
     android:background="@mipmap/wallp"
     tools:context=".SignUpSecond">
 
+    <TextView
+        android:id="@+id/weightQuestionHeader"
+        android:layout_width="284dp"
+        android:layout_height="32dp"
+        android:fontFamily="@font/jura_bold"
+        android:gravity="center_horizontal"
+        android:text="Hangisini Tercih Edersin ?"
+        android:textColor="#FFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.672" />
+
+    <RadioGroup
+        android:id="@+id/activityLevelRadioGroup"
+        android:layout_width="364dp"
+        android:layout_height="55dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.723"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.597">
+
+        <RadioButton
+            android:id="@+id/lightActivityRadioButton"
+            android:layout_width="118dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jura"
+            android:text="Hafif"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/mediumActivityRadioButton"
+            android:layout_width="112dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jura"
+            android:text="Orta"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/heavyActivityRadioButton"
+            android:layout_width="113dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jura"
+            android:text="Ağır"
+            android:textSize="16sp" />
+    </RadioGroup>
+
     <EditText
         android:id="@+id/goalInput"
         android:layout_width="206dp"
@@ -22,7 +75,7 @@
         app:layout_constraintHorizontal_bias="0.921"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.786" />
+        app:layout_constraintVertical_bias="0.825" />
 
     <TextView
         android:id="@+id/getGoal"
@@ -35,26 +88,26 @@
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.131"
+        app:layout_constraintHorizontal_bias="0.142"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.786" />
+        app:layout_constraintVertical_bias="0.827" />
 
     <TextView
-        android:id="@+id/questionHeader"
-        android:layout_width="284dp"
-        android:layout_height="32dp"
+        android:id="@+id/activityQuestionHeader"
+        android:layout_width="355dp"
+        android:layout_height="31dp"
         android:fontFamily="@font/jura_bold"
         android:gravity="center_horizontal"
-        android:text="Hangisini Tercih Edersin ?"
+        android:text="Tercih ettiğiniz hareket temposu :"
         android:textColor="#FFFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.66"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.619" />
+        app:layout_constraintVertical_bias="0.544" />
 
     <EditText
         android:id="@+id/neckInput"
@@ -62,16 +115,16 @@
         android:layout_height="56dp"
         android:ems="10"
         android:gravity="center"
+        android:hint="39cm"
+        android:inputType="numberDecimal"
         android:textColor="#FFFF"
         android:textSize="20sp"
-        android:inputType="numberDecimal"
-        android:hint="39cm"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.936"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.536" />
+        app:layout_constraintVertical_bias="0.462" />
 
     <EditText
         android:id="@+id/waistInput"
@@ -79,16 +132,16 @@
         android:layout_height="56dp"
         android:ems="10"
         android:gravity="center"
+        android:hint="83cm"
+        android:inputType="numberDecimal"
         android:textColor="#FFFF"
         android:textSize="20sp"
-        android:inputType="numberDecimal"
-        android:hint="83cm"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.936"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.453" />
+        app:layout_constraintVertical_bias="0.373" />
 
     <TextView
         android:id="@+id/getNeck"
@@ -104,7 +157,7 @@
         app:layout_constraintHorizontal_bias="0.154"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.537" />
+        app:layout_constraintVertical_bias="0.46" />
 
     <TextView
         android:id="@+id/getWaist"
@@ -120,7 +173,7 @@
         app:layout_constraintHorizontal_bias="0.154"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.454" />
+        app:layout_constraintVertical_bias="0.374" />
 
     <TextView
         android:id="@+id/getHeight"
@@ -136,7 +189,7 @@
         app:layout_constraintHorizontal_bias="0.154"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.368" />
+        app:layout_constraintVertical_bias="0.288" />
 
     <TextView
         android:id="@+id/getWeight"
@@ -152,24 +205,24 @@
         app:layout_constraintHorizontal_bias="0.154"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.283" />
+        app:layout_constraintVertical_bias="0.202" />
 
     <EditText
-        android:id="@+id/weghtInput"
+        android:id="@+id/weightInput"
         android:layout_width="206dp"
         android:layout_height="56dp"
         android:ems="10"
         android:gravity="center"
+        android:hint="72kg"
+        android:inputType="numberDecimal"
         android:textColor="#FFFF"
         android:textSize="20sp"
-        android:inputType="numberDecimal"
-        android:hint="72kg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.936"
+        app:layout_constraintHorizontal_bias="0.921"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.282" />
+        app:layout_constraintVertical_bias="0.201" />
 
     <EditText
         android:id="@+id/heightInput"
@@ -177,21 +230,21 @@
         android:layout_height="56dp"
         android:ems="10"
         android:gravity="center"
+        android:hint="170cm"
+        android:inputType="numberDecimal"
         android:textColor="#FFFF"
         android:textSize="20sp"
-        android:inputType="numberDecimal"
-        android:hint="170cm"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.936"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.364" />
+        app:layout_constraintVertical_bias="0.287" />
 
     <TextView
         android:id="@+id/startHeader"
-        android:layout_width="226dp"
-        android:layout_height="88dp"
+        android:layout_width="259dp"
+        android:layout_height="74dp"
         android:fontFamily="@font/jura_bold"
         android:gravity="center_horizontal"
         android:text="Başlayalım"
@@ -199,10 +252,10 @@
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.578"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.16" />
+        app:layout_constraintVertical_bias="0.07" />
 
     <RadioGroup
         android:id="@+id/radioPrefer"
@@ -229,10 +282,10 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.879"
+        app:layout_constraintHorizontal_bias="0.878"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.919" />
+        app:layout_constraintVertical_bias="0.963" />
 
     <RadioGroup
         android:layout_width="364dp"
@@ -240,13 +293,13 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.723"
+        app:layout_constraintHorizontal_bias="0.787"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.687">
+        app:layout_constraintVertical_bias="0.742">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/gainWeightRadioButton"
             android:layout_width="118dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/jura"
@@ -254,7 +307,7 @@
             android:textSize="16sp" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/looseWeightRadioButton"
             android:layout_width="112dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/jura"
@@ -262,7 +315,7 @@
             android:textSize="16sp" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/maintainRadioButton"
             android:layout_width="113dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/jura"
