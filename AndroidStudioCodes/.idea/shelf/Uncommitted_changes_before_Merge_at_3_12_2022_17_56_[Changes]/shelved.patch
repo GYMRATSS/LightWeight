@@ -1,0 +1,1584 @@
+Index: app/src/main/java/com/example/lightweight/Shop.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.lightweight\r\n\r\nimport android.content.Intent\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport android.os.Bundle\r\nimport android.widget.AdapterView\r\nimport android.widget.ArrayAdapter\r\nimport android.widget.Button\r\nimport android.widget.ImageButton\r\nimport android.widget.ListView\r\n\r\nclass Shop : AppCompatActivity() {\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContentView(R.layout.activity_shop)\r\n\r\n        val actionBar = supportActionBar\r\n        actionBar!!.hide()\r\n\r\n        val protein: Button = findViewById (R.id.protein)\r\n\r\n        protein.setOnClickListener() {\r\n\r\n        }\r\n\r\n        val creatine: Button = findViewById (R.id.creatine)\r\n\r\n        creatine.setOnClickListener() {\r\n\r\n        }\r\n\r\n        val bcaa: Button = findViewById (R.id.bcaa)\r\n\r\n        bcaa.setOnClickListener() {\r\n\r\n        }\r\n\r\n        val eq: Button = findViewById (R.id.gymEquipments)\r\n\r\n        eq.setOnClickListener() {\r\n\r\n        }\r\n\r\n        /**********************************************/\r\n        val shp:  ImageButton = findViewById(R.id.shopage)\r\n\r\n        shp.setOnClickListener() {\r\n            val intent = Intent(this, Shop::class.java)\r\n            startActivity(intent)\r\n        }\r\n\r\n        val food:  ImageButton = findViewById(R.id.foodpage)\r\n\r\n        food.setOnClickListener() {\r\n            val intent = Intent(this, CalorieCount::class.java)\r\n            startActivity(intent)\r\n        }\r\n\r\n        val profilePageButton:  ImageButton = findViewById(R.id.userpage)\r\n\r\n        profilePageButton.setOnClickListener() {\r\n            val intent = Intent(this, Profile::class.java)\r\n            startActivity(intent)\r\n        }\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/lightweight/Shop.kt b/app/src/main/java/com/example/lightweight/Shop.kt
+--- a/app/src/main/java/com/example/lightweight/Shop.kt	(revision 052fd6c2e435abee693d2746a6d453d4706a31a0)
++++ b/app/src/main/java/com/example/lightweight/Shop.kt	(date 1670078815235)
+@@ -1,6 +1,7 @@
+ package com.example.lightweight
+ 
+ import android.content.Intent
++import android.net.Uri
+ import androidx.appcompat.app.AppCompatActivity
+ import android.os.Bundle
+ import android.widget.AdapterView
+@@ -20,25 +21,29 @@
+         val protein: Button = findViewById (R.id.protein)
+ 
+         protein.setOnClickListener() {
+-
++            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.supplementler.com/c/protein-tozu-11"))
++            startActivity(i)
+         }
+ 
+         val creatine: Button = findViewById (R.id.creatine)
+ 
+         creatine.setOnClickListener() {
+-
++            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.supplementler.com/c/kreatin-14"))
++            startActivity(i)
+         }
+ 
+         val bcaa: Button = findViewById (R.id.bcaa)
+ 
+         bcaa.setOnClickListener() {
+-
++            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.supplementler.com/c/bcaa-22"))
++            startActivity(i)
+         }
+ 
+         val eq: Button = findViewById (R.id.gymEquipments)
+ 
+         eq.setOnClickListener() {
+-
++            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.supplementler.com/c/fitness-aksesuarlari-8"))
++            startActivity(i)
+         }
+ 
+         /**********************************************/
+@@ -48,6 +53,13 @@
+             val intent = Intent(this, Shop::class.java)
+             startActivity(intent)
+         }
++
++        val gympag:  ImageButton = findViewById(R.id.gympage)
++
++        gympag.setOnClickListener() {
++            val intent = Intent(this, Workout::class.java)
++            startActivity(intent)
++        }
+ 
+         val food:  ImageButton = findViewById(R.id.foodpage)
+ 
+Index: .idea/deploymentTargetDropDown.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"deploymentTargetDropDown\">\r\n    <targetSelectedWithDropDown>\r\n      <Target>\r\n        <type value=\"QUICK_BOOT_TARGET\" />\r\n        <deviceKey>\r\n          <Key>\r\n            <type value=\"VIRTUAL_DEVICE_PATH\" />\r\n            <value value=\"C:\\Users\\Tugce\\.android\\avd\\Pixel_3a_API_28.avd\" />\r\n          </Key>\r\n        </deviceKey>\r\n      </Target>\r\n    </targetSelectedWithDropDown>\r\n    <timeTargetWasSelectedWithDropDown value=\"2022-12-02T09:24:51.988674700Z\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/deploymentTargetDropDown.xml b/.idea/deploymentTargetDropDown.xml
+--- a/.idea/deploymentTargetDropDown.xml	(revision 052fd6c2e435abee693d2746a6d453d4706a31a0)
++++ b/.idea/deploymentTargetDropDown.xml	(date 1670074684264)
+@@ -7,11 +7,11 @@
+         <deviceKey>
+           <Key>
+             <type value="VIRTUAL_DEVICE_PATH" />
+-            <value value="C:\Users\Tugce\.android\avd\Pixel_3a_API_28.avd" />
++            <value value="C:\Users\Ilayda Arar\.android\avd\Pixel_3a_API_28_2_1.avd" />
+           </Key>
+         </deviceKey>
+       </Target>
+     </targetSelectedWithDropDown>
+-    <timeTargetWasSelectedWithDropDown value="2022-12-02T09:24:51.988674700Z" />
++    <timeTargetWasSelectedWithDropDown value="2022-12-03T13:33:57.210029700Z" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AndroidLayouts\">\r\n    <shared>\r\n      <config>\r\n        <option name=\"nonWearDeviceLastStateName\" value=\"Portrait\" />\r\n      </config>\r\n    </shared>\r\n  </component>\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"NONE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"b6328b85-eb1c-4520-8476-6429d3790431\" name=\"Changes\" comment=\"shop page general draft\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/src/main/AndroidManifest.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/src/main/AndroidManifest.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/src/main/java/com/example/lightweight/SignIn.kt\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/app/src/main/res/layout/activity_sign_in.xml\" beforeDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ExecutionTargetManager\" SELECTED_TARGET=\"device_and_snapshot_combo_box_target[C:\\Users\\Tugce\\.android\\avd\\Pixel_3a_API_28.avd]\" />\r\n  <component name=\"ExternalProjectsData\">\r\n    <projectState path=\"$PROJECT_DIR$\">\r\n      <ProjectState />\r\n    </projectState>\r\n  </component>\r\n  <component name=\"ExternalProjectsManager\">\r\n    <system id=\"GRADLE\">\r\n      <state>\r\n        <projects_view>\r\n          <tree_state>\r\n            <expand>\r\n              <path>\r\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\r\n                <item name=\"LightWeight\" type=\"f1a62948:ProjectNode\" />\r\n              </path>\r\n            </expand>\r\n            <select />\r\n          </tree_state>\r\n        </projects_view>\r\n      </state>\r\n    </system>\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"layoutResourceFile_vertical\" />\r\n        <option value=\"resourceFile\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$/..\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/..\" />\r\n    <option name=\"UPDATE_TYPE\" value=\"REBASE\" />\r\n  </component>\r\n  <component name=\"GitSEFilterConfiguration\">\r\n    <file-type-list>\r\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\r\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\r\n      <filtered-out-file-type name=\"TAG\" />\r\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\r\n    </file-type-list>\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2GXtTK0scvGDAl7C0gNoZwRFhqt\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.cidr.known.project.marker\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"TODO_SCOPE\" value=\"All Places\" />\r\n    <property name=\"cidr.known.project.marker\" value=\"true\" />\r\n    <property name=\"com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File\" value=\"Properties\" />\r\n    <property name=\"last_directory_selection\" value=\"$PROJECT_DIR$/app/src/main/res/drawable\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/app/src/main/res/drawable\" />\r\n    <property name=\"project.structure.last.edited\" value=\"Modules\" />\r\n    <property name=\"project.structure.proportion\" value=\"0.17\" />\r\n    <property name=\"project.structure.side.proportion\" value=\"0.2\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"advanced.settings\" />\r\n  </component>\r\n  <component name=\"PsdUISettings\">\r\n    <option name=\"MODULE_TAB\" value=\"Default Config\" />\r\n    <option name=\"BUILD_VARIANTS_TAB\" value=\"Build Types\" />\r\n    <option name=\"LAST_EDITED_SIGNING_CONFIG\" value=\"debug\" />\r\n    <option name=\"LAST_EDITED_BUILD_TYPE\" value=\"release\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"android.template.-780141091\">\r\n      <recent name=\"com.example.lightweight\" />\r\n    </key>\r\n    <key name=\"android.template.-1031140880\">\r\n      <recent name=\"com.example.lightweight\" />\r\n    </key>\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\Tugce\\Documents\\GitHub\\LightWeight\\AndroidStudioCodes\\app\\src\\main\\res\\drawable\" />\r\n      <recent name=\"C:\\Users\\Tugce\\Documents\\GitHub\\LightWeight\\AndroidStudioCodes\\app\\src\\main\\res\\mipmap-xxxhdpi\" />\r\n      <recent name=\"C:\\Users\\Tugce\\Documents\\GitHub\\LightWeight\\AndroidStudioCodes\\app\\src\\main\\res\\mipmap-xxhdpi\" />\r\n      <recent name=\"C:\\Users\\Tugce\\Desktop\\android studio wp\\LightWeight\\app\\src\\main\\res\\drawable\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\Tugce\\Documents\\GitHub\\LightWeight\\AndroidStudioCodes\\app\\src\\main\\res\\drawable\" />\r\n      <recent name=\"C:\\Users\\Tugce\\Documents\\GitHub\\LightWeight\\AndroidStudioCodes\\app\\src\\main\\res\\mipmap-xxxhdpi\" />\r\n      <recent name=\"C:\\Users\\Tugce\\Documents\\GitHub\\LightWeight\\AndroidStudioCodes\\app\\src\\main\\res\\mipmap-xxhdpi\" />\r\n      <recent name=\"C:\\Users\\Tugce\\Documents\\GitHub\\LightWeight\\AndroidStudioCodes\\app\\src\\main\\res\\drawable-v24\" />\r\n      <recent name=\"C:\\Users\\Tugce\\Documents\\GitHub\\LightWeight\\AndroidStudioCodes\\app\\src\\main\\res\\layout\" />\r\n    </key>\r\n    <key name=\"android.template.1396985492\">\r\n      <recent name=\"com.example.lightweight\" />\r\n    </key>\r\n    <key name=\"android.template.1354274413\">\r\n      <recent name=\"com.example.lightweight\" />\r\n    </key>\r\n    <key name=\"android.template.-1046661317\">\r\n      <recent name=\"com.example.lightweight\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"app\" type=\"AndroidRunConfigurationType\" factoryName=\"Android App\" activateToolWindowBeforeRun=\"false\">\r\n      <module name=\"LightWeight.app.main\" />\r\n      <option name=\"DEPLOY\" value=\"true\" />\r\n      <option name=\"DEPLOY_APK_FROM_BUNDLE\" value=\"false\" />\r\n      <option name=\"DEPLOY_AS_INSTANT\" value=\"false\" />\r\n      <option name=\"ARTIFACT_NAME\" value=\"\" />\r\n      <option name=\"PM_INSTALL_OPTIONS\" value=\"\" />\r\n      <option name=\"ALL_USERS\" value=\"false\" />\r\n      <option name=\"ALWAYS_INSTALL_WITH_PM\" value=\"false\" />\r\n      <option name=\"CLEAR_APP_STORAGE\" value=\"false\" />\r\n      <option name=\"DYNAMIC_FEATURES_DISABLED_LIST\" value=\"\" />\r\n      <option name=\"ACTIVITY_EXTRA_FLAGS\" value=\"\" />\r\n      <option name=\"MODE\" value=\"default_activity\" />\r\n      <option name=\"CLEAR_LOGCAT\" value=\"false\" />\r\n      <option name=\"SHOW_LOGCAT_AUTOMATICALLY\" value=\"false\" />\r\n      <option name=\"INSPECTION_WITHOUT_ACTIVITY_RESTART\" value=\"false\" />\r\n      <option name=\"TARGET_SELECTION_MODE\" value=\"DEVICE_AND_SNAPSHOT_COMBO_BOX\" />\r\n      <option name=\"SELECTED_CLOUD_MATRIX_CONFIGURATION_ID\" value=\"-1\" />\r\n      <option name=\"SELECTED_CLOUD_MATRIX_PROJECT_ID\" value=\"\" />\r\n      <option name=\"DEBUGGER_TYPE\" value=\"Auto\" />\r\n      <Auto>\r\n        <option name=\"USE_JAVA_AWARE_DEBUGGER\" value=\"false\" />\r\n        <option name=\"SHOW_STATIC_VARS\" value=\"true\" />\r\n        <option name=\"WORKING_DIR\" value=\"\" />\r\n        <option name=\"TARGET_LOGGING_CHANNELS\" value=\"lldb process:gdb-remote packets\" />\r\n        <option name=\"SHOW_OPTIMIZED_WARNING\" value=\"true\" />\r\n      </Auto>\r\n      <Hybrid>\r\n        <option name=\"USE_JAVA_AWARE_DEBUGGER\" value=\"false\" />\r\n        <option name=\"SHOW_STATIC_VARS\" value=\"true\" />\r\n        <option name=\"WORKING_DIR\" value=\"\" />\r\n        <option name=\"TARGET_LOGGING_CHANNELS\" value=\"lldb process:gdb-remote packets\" />\r\n        <option name=\"SHOW_OPTIMIZED_WARNING\" value=\"true\" />\r\n      </Hybrid>\r\n      <Java />\r\n      <Native>\r\n        <option name=\"USE_JAVA_AWARE_DEBUGGER\" value=\"false\" />\r\n        <option name=\"SHOW_STATIC_VARS\" value=\"true\" />\r\n        <option name=\"WORKING_DIR\" value=\"\" />\r\n        <option name=\"TARGET_LOGGING_CHANNELS\" value=\"lldb process:gdb-remote packets\" />\r\n        <option name=\"SHOW_OPTIMIZED_WARNING\" value=\"true\" />\r\n      </Native>\r\n      <Profilers>\r\n        <option name=\"ADVANCED_PROFILING_ENABLED\" value=\"false\" />\r\n        <option name=\"STARTUP_PROFILING_ENABLED\" value=\"false\" />\r\n        <option name=\"STARTUP_CPU_PROFILING_ENABLED\" value=\"false\" />\r\n        <option name=\"STARTUP_CPU_PROFILING_CONFIGURATION_NAME\" value=\"Java/Kotlin Method Sample (legacy)\" />\r\n        <option name=\"STARTUP_NATIVE_MEMORY_PROFILING_ENABLED\" value=\"false\" />\r\n        <option name=\"NATIVE_MEMORY_SAMPLE_RATE_BYTES\" value=\"2048\" />\r\n        <option name=\"PROFILING_MODE\" value=\"NOT_SET\" />\r\n      </Profilers>\r\n      <option name=\"DEEP_LINK\" value=\"\" />\r\n      <option name=\"ACTIVITY_CLASS\" value=\"\" />\r\n      <option name=\"SEARCH_ACTIVITY_IN_GLOBAL_SCOPE\" value=\"false\" />\r\n      <option name=\"SKIP_ACTIVITY_VALIDATION\" value=\"false\" />\r\n      <method v=\"2\">\r\n        <option name=\"Android.Gradle.BeforeRunTask\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"JetRunConfigurationType\">\r\n      <module name=\"LightWeight_AndroidStudio\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"KotlinStandaloneScriptRunConfigurationType\">\r\n      <module name=\"LightWeight_AndroidStudio\" />\r\n      <option name=\"filePath\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"b6328b85-eb1c-4520-8476-6429d3790431\" name=\"Changes\" comment=\"\" />\r\n      <created>1666546763163</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1666546763163</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"button position changed\">\r\n      <created>1666553567456</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666553567456</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"button position changed\">\r\n      <created>1666553653708</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666553653708</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"new action page added\">\r\n      <created>1666726275289</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666726275289</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"login aciton page added\">\r\n      <created>1666728121039</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1666728121039</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"shop page general draft\">\r\n      <created>1667244856238</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1667244856238</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"6\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"v1\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"button position changed\" />\r\n    <MESSAGE value=\"new action page added\" />\r\n    <MESSAGE value=\"login aciton page added\" />\r\n    <MESSAGE value=\"shop page general draft\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"shop page general draft\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 052fd6c2e435abee693d2746a6d453d4706a31a0)
++++ b/.idea/workspace.xml	(date 1670077664984)
+@@ -11,18 +11,41 @@
+     <option name="autoReloadType" value="NONE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="b6328b85-eb1c-4520-8476-6429d3790431" name="Changes" comment="shop page general draft">
++    <list default="true" id="b6328b85-eb1c-4520-8476-6429d3790431" name="Changes" comment="login aciton page added">
++      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/CurrentWorkout.kt" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/QandA.kt" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/Workout.kt" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/rounded_button.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_current_workout.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_qa.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_workout.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/workout_startb.jpg" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/barbell_squat.jpg" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/bodymuscles.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/calendar_gym.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/change_progb.jpeg" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/SignIn.kt" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_in.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/Profile.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/Profile.kt" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/Shop.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/Shop.kt" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+   </component>
+-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\Tugce\.android\avd\Pixel_3a_API_28.avd]" />
++  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\Ilayda Arar\.android\avd\Pixel_3a_API_28_4.avd]" />
+   <component name="ExternalProjectsData">
+     <projectState path="$PROJECT_DIR$">
+       <ProjectState />
+@@ -50,6 +73,8 @@
+       <list>
+         <option value="layoutResourceFile_vertical" />
+         <option value="resourceFile" />
++        <option value="layoutResourceFile" />
++        <option value="Kotlin Class" />
+       </list>
+     </option>
+   </component>
+@@ -69,6 +94,9 @@
+       <filtered-out-file-type name="TAG" />
+       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+     </file-type-list>
++  </component>
++  <component name="HighlightingSettingsPerFile">
++    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.fragment/fragment/1.3.6/25ece06338d39da1fdc9d8488aa57b5014866918/fragment-1.3.6-sources.jar!/androidx/fragment/app/FragmentActivity.java" root0="FORCE_HIGHLIGHTING" />
+   </component>
+   <component name="MarkdownSettingsMigration">
+     <option name="stateVersion" value="1" />
+@@ -88,11 +116,11 @@
+     <property name="cidr.known.project.marker" value="true" />
+     <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="Properties" />
+     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi" />
+     <property name="project.structure.last.edited" value="Modules" />
+     <property name="project.structure.proportion" value="0.17" />
+     <property name="project.structure.side.proportion" value="0.2" />
+-    <property name="settings.editor.selected.configurable" value="advanced.settings" />
++    <property name="settings.editor.selected.configurable" value="emulator" />
+   </component>
+   <component name="PsdUISettings">
+     <option name="MODULE_TAB" value="Default Config" />
+@@ -100,6 +128,9 @@
+     <option name="LAST_EDITED_SIGNING_CONFIG" value="debug" />
+     <option name="LAST_EDITED_BUILD_TYPE" value="release" />
+   </component>
++  <component name="ReaderModeSettings">
++    <option name="enabled" value="false" />
++  </component>
+   <component name="RecentsManager">
+     <key name="android.template.-780141091">
+       <recent name="com.example.lightweight" />
+@@ -108,10 +139,11 @@
+       <recent name="com.example.lightweight" />
+     </key>
+     <key name="CopyFile.RECENT_KEYS">
++      <recent name="C:\Users\Ilayda Arar\OneDrive\Documents\GitHub\LightWeight\AndroidStudioCodes\app\src\main\res\mipmap-xxxhdpi" />
++      <recent name="C:\Users\Ilayda Arar\OneDrive\Documents\GitHub\LightWeight\AndroidStudioCodes\app\src\main\res\mipmap-xhdpi" />
++      <recent name="C:\Users\Ilayda Arar\OneDrive\Documents\GitHub\LightWeight\AndroidStudioCodes\app\src\main\java\com\example\lightweight" />
++      <recent name="C:\Users\Ilayda Arar\OneDrive\Documents\GitHub\LightWeight\AndroidStudioCodes\app\src\main\res\layout" />
+       <recent name="C:\Users\Tugce\Documents\GitHub\LightWeight\AndroidStudioCodes\app\src\main\res\drawable" />
+-      <recent name="C:\Users\Tugce\Documents\GitHub\LightWeight\AndroidStudioCodes\app\src\main\res\mipmap-xxxhdpi" />
+-      <recent name="C:\Users\Tugce\Documents\GitHub\LightWeight\AndroidStudioCodes\app\src\main\res\mipmap-xxhdpi" />
+-      <recent name="C:\Users\Tugce\Desktop\android studio wp\LightWeight\app\src\main\res\drawable" />
+     </key>
+     <key name="MoveFile.RECENT_KEYS">
+       <recent name="C:\Users\Tugce\Documents\GitHub\LightWeight\AndroidStudioCodes\app\src\main\res\drawable" />
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\" >\r\n\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:dataExtractionRules=\"@xml/data_extraction_rules\"\r\n        android:fullBackupContent=\"@xml/backup_rules\"\r\n        android:icon=\"@mipmap/ic_launcher\"\r\n        android:label=\"@string/app_name\"\r\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/Theme.LightWeight\"\r\n        tools:targetApi=\"31\" >\r\n        <activity\r\n            android:name=\".EnterFood\"\r\n            android:exported=\"false\" >\r\n            <meta-data\r\n                android:name=\"android.app.lib_name\"\r\n                android:value=\"\" />\r\n        </activity>\r\n        <activity\r\n            android:name=\".SignUpSecond\"\r\n            android:exported=\"false\">\r\n            <meta-data\r\n                android:name=\"android.app.lib_name\"\r\n                android:value=\"\" />\r\n        </activity>\r\n        <activity\r\n            android:name=\".SignUpFirst\"\r\n            android:exported=\"false\">\r\n            <meta-data\r\n                android:name=\"android.app.lib_name\"\r\n                android:value=\"\" />\r\n        </activity>\r\n        <activity\r\n            android:name=\".Profile\"\r\n            android:exported=\"false\">\r\n            <meta-data\r\n                android:name=\"android.app.lib_name\"\r\n                android:value=\"\" />\r\n        </activity>\r\n        <activity\r\n            android:name=\".CalorieCount\"\r\n            android:exported=\"false\" >\r\n            <meta-data\r\n                android:name=\"android.app.lib_name\"\r\n                android:value=\"\" />\r\n        </activity>\r\n        <activity\r\n            android:name=\".Shop\"\r\n            android:exported=\"false\" >\r\n            <meta-data\r\n                android:name=\"android.app.lib_name\"\r\n                android:value=\"\" />\r\n        </activity>\r\n        <activity\r\n            android:name=\".LogIn\"\r\n            android:exported=\"false\" >\r\n            <meta-data\r\n                android:name=\"android.app.lib_name\"\r\n                android:value=\"\" />\r\n        </activity>\r\n        <activity\r\n            android:name=\".MainActivity\"\r\n            android:exported=\"true\" >\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n\r\n            <meta-data\r\n                android:name=\"android.app.lib_name\"\r\n                android:value=\"\" />\r\n        </activity>\r\n\r\n        <meta-data\r\n            android:name=\"preloaded_fonts\"\r\n            android:resource=\"@array/preloaded_fonts\" />\r\n    </application>\r\n\r\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	(revision 052fd6c2e435abee693d2746a6d453d4706a31a0)
++++ b/app/src/main/AndroidManifest.xml	(date 1670072982820)
+@@ -40,6 +40,15 @@
+                 android:name="android.app.lib_name"
+                 android:value="" />
+         </activity>
++
++        <activity
++            android:name=".QandA"
++            android:exported="false">
++            <meta-data
++                android:name="android.app.lib_name"
++                android:value="" />
++        </activity>
++
+         <activity
+             android:name=".CalorieCount"
+             android:exported="false" >
+@@ -54,6 +63,25 @@
+                 android:name="android.app.lib_name"
+                 android:value="" />
+         </activity>
++
++        <activity
++            android:name=".Workout"
++            android:exported="false" >
++            <meta-data
++                android:name="android.app.lib_name"
++                android:value="" />
++        </activity>
++
++        <activity
++            android:name=".CurrentWorkout"
++            android:exported="false" >
++            <meta-data
++                android:name="android.app.lib_name"
++                android:value="" />
++        </activity>
++
++
++
+         <activity
+             android:name=".LogIn"
+             android:exported="false" >
+Index: app/src/main/java/com/example/lightweight/Profile.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.lightweight\r\n\r\nimport android.content.Intent\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport android.os.Bundle\r\nimport android.widget.Button\r\nimport android.widget.ImageButton\r\nimport android.widget.Toast\r\n\r\nclass Profile : AppCompatActivity() {\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContentView(R.layout.activity_profile)\r\n\r\n        val actionBar = supportActionBar\r\n        actionBar!!.hide()\r\n\r\n        val editProfileButton = findViewById<Button>(R.id.editProfile)\r\n        val dietTrackerButton = findViewById<Button>(R.id.dietTracker)\r\n        val workoutActivitiesButton = findViewById<Button>(R.id.workoutActivities)\r\n        val qaButton = findViewById<Button>(R.id.QandA)\r\n        val logOutButton = findViewById<Button>(R.id.logOut)\r\n\r\n        val homeButton = findViewById<ImageButton>(R.id.homepage)\r\n        val gymButton = findViewById<ImageButton>(R.id.gympage)\r\n        val foodButton = findViewById<ImageButton>(R.id.foodpage)\r\n        val shopButton = findViewById<ImageButton>(R.id.shopage)\r\n        val profileButton = findViewById<ImageButton>(R.id.userpage)\r\n\r\n        profileButton.isClickable = false\r\n\r\n        editProfileButton.setOnClickListener {\r\n            editProfileButton.error = \"Edit is not available yet!\"\r\n            /* Toast.makeText(\r\n                this@Profile,\r\n                \"Edit is not available yet!\"\r\n                Toast.LENGTH_SHORT\r\n            ).show() */\r\n        }\r\n        dietTrackerButton.setOnClickListener {\r\n            // ask if is it gonna be seperate or will be directed to the food page ???\r\n        }\r\n\r\n        workoutActivitiesButton.setOnClickListener {\r\n            // history page must be implemented\r\n        }\r\n\r\n        qaButton.setOnClickListener {\r\n            /*\r\n            wait for ilayda\r\n            val intent = Intent (this, ::class.java)\r\n            startActivity(intent)\r\n            */\r\n        }\r\n        logOutButton.setOnClickListener {\r\n\r\n            // firebase stuff\r\n            val intent = Intent(this, MainActivity::class.java)\r\n            startActivity(intent)\r\n        }\r\n\r\n        homeButton.setOnClickListener {\r\n\r\n            // main page must be implemented\r\n\r\n        }\r\n\r\n        gymButton.setOnClickListener {\r\n            /*\r\n            wait for ilayda\r\n            val intent = Intent (this, ::class.java)\r\n            startActivity(intent)\r\n            */\r\n        }\r\n\r\n        foodButton.setOnClickListener {\r\n\r\n            // make sure food page ==? calorie count\r\n            val intent = Intent(this, CalorieCount::class.java)\r\n            startActivity(intent)\r\n\r\n        }\r\n\r\n        shopButton.setOnClickListener {\r\n            val intent = Intent(this, Shop::class.java)\r\n            startActivity(intent)\r\n        }\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/lightweight/Profile.kt b/app/src/main/java/com/example/lightweight/Profile.kt
+--- a/app/src/main/java/com/example/lightweight/Profile.kt	(revision 052fd6c2e435abee693d2746a6d453d4706a31a0)
++++ b/app/src/main/java/com/example/lightweight/Profile.kt	(date 1670063201255)
+@@ -18,7 +18,7 @@
+         val editProfileButton = findViewById<Button>(R.id.editProfile)
+         val dietTrackerButton = findViewById<Button>(R.id.dietTracker)
+         val workoutActivitiesButton = findViewById<Button>(R.id.workoutActivities)
+-        val qaButton = findViewById<Button>(R.id.QandA)
++        val qaButton = findViewById<Button>(R.id.qa)
+         val logOutButton = findViewById<Button>(R.id.logOut)
+ 
+         val homeButton = findViewById<ImageButton>(R.id.homepage)
+@@ -46,11 +46,10 @@
+         }
+ 
+         qaButton.setOnClickListener {
+-            /*
+-            wait for ilayda
+-            val intent = Intent (this, ::class.java)
++
++            val intent = Intent (this, QandA::class.java)
+             startActivity(intent)
+-            */
++
+         }
+         logOutButton.setOnClickListener {
+ 
+@@ -66,11 +65,11 @@
+         }
+ 
+         gymButton.setOnClickListener {
+-            /*
+-            wait for ilayda
+-            val intent = Intent (this, ::class.java)
++
++
++            val intent = Intent(this, Workout::class.java)
+             startActivity(intent)
+-            */
++
+         }
+ 
+         foodButton.setOnClickListener {
+Index: app/src/main/res/layout/activity_profile.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\nxmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\nxmlns:tools=\"http://schemas.android.com/tools\"\r\nandroid:layout_width=\"match_parent\"\r\nandroid:layout_height=\"match_parent\"\r\nandroid:background=\"@mipmap/wallp\"\r\ntools:context=\".Profile\">\r\n\r\n    <Button\r\n        android:id=\"@+id/editProfile\"\r\n        android:layout_width=\"417dp\"\r\n        android:layout_height=\"45dp\"\r\n        android:backgroundTint=\"#21161D\"\r\n        android:fontFamily=\"@font/jura\"\r\n        android:foregroundTint=\"#3E363E\"\r\n        android:text=\"Profili düzenle\"\r\n        android:textSize=\"20sp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.0\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.638\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/logOut\"\r\n        android:layout_width=\"417dp\"\r\n        android:layout_height=\"45dp\"\r\n        android:backgroundTint=\"#858791\"\r\n        android:fontFamily=\"@font/jura\"\r\n        android:text=\"Çıkış Yap\"\r\n        android:textSize=\"20sp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.0\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.855\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/QandA\"\r\n        android:layout_width=\"417dp\"\r\n        android:layout_height=\"45dp\"\r\n        android:backgroundTint=\"#5F5C65\"\r\n        android:fontFamily=\"@font/jura\"\r\n        android:text=\"Soru / Cevap\"\r\n        android:textSize=\"20sp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.0\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.8\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/workoutActivities\"\r\n        android:layout_width=\"417dp\"\r\n        android:layout_height=\"45dp\"\r\n        android:backgroundTint=\"#433C44\"\r\n        android:fontFamily=\"@font/jura\"\r\n        android:text=\"Egzersiz Geçmişi\"\r\n        android:textSize=\"20sp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.746\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/dietTracker\"\r\n        android:layout_width=\"417dp\"\r\n        android:layout_height=\"45dp\"\r\n        android:backgroundTint=\"#2D232B\"\r\n        android:fontFamily=\"@font/jura\"\r\n        android:foregroundTint=\"#3E363E\"\r\n        android:text=\"Besin Takibi\"\r\n        android:textSize=\"20sp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.0\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.692\" />\r\n\r\n    <EditText\r\n        android:id=\"@+id/goal\"\r\n        android:layout_width=\"55dp\"\r\n        android:layout_height=\"46dp\"\r\n        android:ems=\"10\"\r\n        android:inputType=\"textPersonName\"\r\n        android:text=\"\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.988\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.532\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/goalBox\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"Hedef : \"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.842\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.532\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/bmiBox\"\r\n        android:layout_width=\"76dp\"\r\n        android:layout_height=\"34dp\"\r\n        android:fontFamily=\"@font/jura\"\r\n        android:gravity=\"center_vertical\"\r\n        android:text=\"BMI\"\r\n        android:textColor=\"#E6D9D9\"\r\n        android:textSize=\"18sp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.686\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.436\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/neckBox\"\r\n        android:layout_width=\"77dp\"\r\n        android:layout_height=\"35dp\"\r\n        android:fontFamily=\"@font/jura\"\r\n        android:gravity=\"center_vertical\"\r\n        android:text=\"Boyun (cm)\"\r\n        android:textColor=\"#E6D9D9\"\r\n        android:textSize=\"15sp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.686\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.385\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/waistBox\"\r\n        android:layout_width=\"76dp\"\r\n        android:layout_height=\"33dp\"\r\n        android:fontFamily=\"@font/jura\"\r\n        android:gravity=\"center_vertical\"\r\n        android:text=\"Bel (cm)\"\r\n        android:textColor=\"#E6D9D9\"\r\n        android:textSize=\"18sp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.686\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.336\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/heightBox\"\r\n        android:layout_width=\"76dp\"\r\n        android:layout_height=\"35dp\"\r\n        android:fontFamily=\"@font/jura\"\r\n        android:gravity=\"center_vertical\"\r\n        android:text=\"Boy (m)\"\r\n        android:textColor=\"#E6D9D9\"\r\n        android:textSize=\"18sp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.688\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.287\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/weightBox\"\r\n        android:layout_width=\"76dp\"\r\n        android:layout_height=\"33dp\"\r\n        android:fontFamily=\"@font/jura\"\r\n        android:gravity=\"center_vertical\"\r\n        android:text=\"Kilo (kg)\"\r\n        android:textColor=\"#E6D9D9\"\r\n        android:textSize=\"18sp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.686\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.239\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/genderBox\"\r\n        android:layout_width=\"76dp\"\r\n        android:layout_height=\"35dp\"\r\n        android:fontFamily=\"@font/jura\"\r\n        android:gravity=\"center_vertical\"\r\n        android:text=\"Cinsiyet\"\r\n        android:textColor=\"#E6D9D9\"\r\n        android:textSize=\"18sp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.686\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.188\" />\r\n\r\n    <EditText\r\n    android:id=\"@+id/userName\"\r\n    android:layout_width=\"154dp\"\r\n    android:layout_height=\"42dp\"\r\n    android:ems=\"10\"\r\n    android:gravity=\"center\"\r\n    android:inputType=\"textPersonName\"\r\n    android:hint=\"NOEL DEYZEL\"\r\n    android:textStyle=\"bold\"\r\n    app:layout_constraintBottom_toBottomOf=\"parent\"\r\n    app:layout_constraintEnd_toEndOf=\"parent\"\r\n    app:layout_constraintHorizontal_bias=\"0.186\"\r\n    app:layout_constraintStart_toStartOf=\"parent\"\r\n    app:layout_constraintTop_toTopOf=\"parent\"\r\n    app:layout_constraintVertical_bias=\"0.429\" />\r\n\r\n    <EditText\r\n        android:id=\"@+id/bmi\"\r\n        android:layout_width=\"89dp\"\r\n        android:layout_height=\"34dp\"\r\n        android:ems=\"10\"\r\n        android:inputType=\"textPersonName\"\r\n        android:text=\"\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.95\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.436\" />\r\n\r\n    <EditText\r\n        android:id=\"@+id/neck\"\r\n        android:layout_width=\"89dp\"\r\n        android:layout_height=\"34dp\"\r\n        android:ems=\"10\"\r\n        android:inputType=\"textPersonName\"\r\n        android:text=\"\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.95\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.387\" />\r\n\r\n    <EditText\r\n        android:id=\"@+id/waist\"\r\n        android:layout_width=\"89dp\"\r\n        android:layout_height=\"34dp\"\r\n        android:ems=\"10\"\r\n        android:inputType=\"textPersonName\"\r\n        android:text=\"\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.95\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.337\" />\r\n\r\n    <EditText\r\n        android:id=\"@+id/height\"\r\n        android:layout_width=\"89dp\"\r\n        android:layout_height=\"34dp\"\r\n        android:ems=\"10\"\r\n        android:inputType=\"textPersonName\"\r\n        android:text=\"\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.95\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.286\" />\r\n\r\n    <EditText\r\n        android:id=\"@+id/weight\"\r\n        android:layout_width=\"89dp\"\r\n        android:layout_height=\"34dp\"\r\n        android:ems=\"10\"\r\n        android:inputType=\"textPersonName\"\r\n        android:text=\"\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.95\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.238\" />\r\n\r\n    <EditText\r\n        android:id=\"@+id/gender\"\r\n        android:layout_width=\"89dp\"\r\n        android:layout_height=\"34dp\"\r\n        android:ems=\"10\"\r\n        android:inputType=\"textPersonName\"\r\n        android:text=\"\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.95\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.189\" />\r\n\r\n    <EditText\r\n        android:id=\"@+id/age\"\r\n        android:layout_width=\"89dp\"\r\n        android:layout_height=\"34dp\"\r\n        android:ems=\"10\"\r\n        android:inputType=\"textPersonName\"\r\n        android:text=\"\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.95\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.14\" />\r\n\r\n    <LinearLayout\r\n    android:id=\"@+id/menulayout\"\r\n    android:layout_width=\"wrap_content\"\r\n    android:layout_height=\"83dp\"\r\n    android:orientation=\"horizontal\"\r\n    app:layout_constraintBottom_toBottomOf=\"parent\"\r\n    app:layout_constraintEnd_toEndOf=\"parent\"\r\n    app:layout_constraintHorizontal_bias=\"0.49\"\r\n    app:layout_constraintStart_toStartOf=\"parent\">\r\n\r\n    <ImageButton\r\n        android:id=\"@+id/homepage\"\r\n        android:layout_width=\"78dp\"\r\n        android:layout_height=\"match_parent\"\r\n        android:background=\"#00F44336\"\r\n        android:clickable=\"true\"\r\n        android:contentDescription=\"@string/app_name\"\r\n        android:src=\"@mipmap/home_icon\" />\r\n\r\n    <ImageButton\r\n        android:id=\"@+id/gympage\"\r\n        android:layout_width=\"77dp\"\r\n        android:layout_height=\"match_parent\"\r\n        android:background=\"#00F44336\"\r\n        android:clickable=\"true\"\r\n        android:contentDescription=\"@string/app_name\"\r\n        android:src=\"@mipmap/gym_icon\"\r\n        tools:ignore=\"DuplicateSpeakableTextCheck\">\r\n\r\n    </ImageButton>\r\n\r\n    <ImageButton\r\n        android:id=\"@+id/foodpage\"\r\n        android:layout_width=\"78dp\"\r\n        android:layout_height=\"match_parent\"\r\n        android:background=\"#00F44336\"\r\n        android:clickable=\"true\"\r\n        android:contentDescription=\"@string/app_name\"\r\n        android:src=\"@mipmap/food_icon\"></ImageButton>\r\n\r\n    <ImageButton\r\n        android:id=\"@+id/shopage\"\r\n        android:layout_width=\"78dp\"\r\n        android:layout_height=\"match_parent\"\r\n        android:background=\"#00F44336\"\r\n        android:clickable=\"true\"\r\n        android:contentDescription=\"@string/app_name\"\r\n        android:src=\"@mipmap/shop_icon\" />\r\n\r\n    <ImageButton\r\n        android:id=\"@+id/userpage\"\r\n        android:layout_width=\"89dp\"\r\n        android:layout_height=\"match_parent\"\r\n        android:layout_marginStart=\"1dp\"\r\n        android:background=\"#00F44336\"\r\n        android:clickable=\"true\"\r\n        android:contentDescription=\"@string/app_name\"\r\n        android:src=\"@mipmap/user_icon\"\r\n        tools:ignore=\"DuplicateSpeakableTextCheck\"></ImageButton>\r\n\r\n</LinearLayout>\r\n\r\n<ImageView\r\n    android:id=\"@+id/imageView\"\r\n    android:layout_width=\"214dp\"\r\n    android:layout_height=\"197dp\"\r\n    app:layout_constraintBottom_toBottomOf=\"parent\"\r\n    app:layout_constraintEnd_toEndOf=\"parent\"\r\n    app:layout_constraintHorizontal_bias=\"0.081\"\r\n    app:layout_constraintStart_toStartOf=\"parent\"\r\n    app:layout_constraintTop_toTopOf=\"parent\"\r\n    app:layout_constraintVertical_bias=\"0.157\"\r\n    app:srcCompat=\"@mipmap/noel\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/ageBox\"\r\n        android:layout_width=\"76dp\"\r\n        android:layout_height=\"33dp\"\r\n        android:fontFamily=\"@font/jura\"\r\n        android:gravity=\"center_vertical\"\r\n        android:text=\"Yaş\"\r\n        android:textColor=\"#E6D9D9\"\r\n        android:textSize=\"18sp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.688\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.141\" />\r\n\r\n    <ProgressBar\r\n        android:id=\"@+id/progressBar2\"\r\n        style=\"?android:attr/progressBarStyleHorizontal\"\r\n        android:layout_width=\"356dp\"\r\n        android:layout_height=\"49dp\"\r\n        android:indeterminate=\"false\"\r\n        android:progress=\"45\"\r\n        android:progressBackgroundTint=\"#FFFFFF\"\r\n        android:progressTint=\"#413850\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.49\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.495\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/startBox\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"Başlangıç : \"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.047\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.532\" />\r\n\r\n    <EditText\r\n        android:id=\"@+id/start\"\r\n        android:layout_width=\"55dp\"\r\n        android:layout_height=\"46dp\"\r\n        android:ems=\"10\"\r\n        android:inputType=\"textPersonName\"\r\n        android:text=\"\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.244\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.532\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/profileInfo\"\r\n        android:layout_width=\"149dp\"\r\n        android:layout_height=\"49dp\"\r\n        android:fontFamily=\"@font/jura\"\r\n        android:gravity=\"center\"\r\n        android:text=\"Profil Bilgileri\"\r\n        android:textColor=\"#BFCAD5\"\r\n        android:textSize=\"24sp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.908\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.051\" />\r\n\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_profile.xml b/app/src/main/res/layout/activity_profile.xml
+--- a/app/src/main/res/layout/activity_profile.xml	(revision 052fd6c2e435abee693d2746a6d453d4706a31a0)
++++ b/app/src/main/res/layout/activity_profile.xml	(date 1670009234368)
+@@ -39,7 +39,7 @@
+         app:layout_constraintVertical_bias="0.855" />
+ 
+     <Button
+-        android:id="@+id/QandA"
++        android:id="@+id/qa"
+         android:layout_width="417dp"
+         android:layout_height="45dp"
+         android:backgroundTint="#5F5C65"
+Index: app/src/main/res/layout/activity_qa.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_qa.xml b/app/src/main/res/layout/activity_qa.xml
+new file mode 100644
+--- /dev/null	(date 1670024828243)
++++ b/app/src/main/res/layout/activity_qa.xml	(date 1670024828243)
+@@ -0,0 +1,279 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:background="@mipmap/wallp"
++    tools:context=".QandA">
++
++
++    <androidx.appcompat.widget.AppCompatButton
++        android:id="@+id/question3"
++        android:layout_width="417dp"
++        android:layout_height="50dp"
++        android:background="#403939"
++        android:fontFamily="@font/jura_bold"
++        android:foregroundTint="#3E363E"
++        android:gravity="center"
++        android:text="Macrolar ve microlar beslenmede ne anlama gelir? "
++        android:textAllCaps="false"
++        android:textColor="#FFFFFF"
++        android:textSize="16sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="1.0"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.368" />
++
++    <androidx.appcompat.widget.AppCompatButton
++        android:id="@+id/question4"
++        android:layout_width="417dp"
++        android:layout_height="50dp"
++        android:background="#2E2929"
++        android:fontFamily="@font/jura_bold"
++        android:foregroundTint="#3E363E"
++        android:gravity="center"
++        android:text="Dinlenme günümde ne yapmalıyım?"
++        android:textAllCaps="false"
++        android:textColor="#FFFFFF"
++        android:textSize="16sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="1.0"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.201" />
++
++    <androidx.appcompat.widget.AppCompatButton
++        android:id="@+id/question5"
++        android:layout_width="417dp"
++        android:layout_height="50dp"
++        android:background="#272323"
++        android:fontFamily="@font/jura_bold"
++        android:foregroundTint="#872787"
++        android:gravity="center"
++        android:text="Neden kas ağrısı çekmiyorum?"
++        android:textAllCaps="false"
++        android:textColor="#FFFFFF"
++        android:textSize="16sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.114" />
++
++    <androidx.appcompat.widget.AppCompatButton
++        android:id="@+id/question1"
++        android:layout_width="417dp"
++        android:layout_height="50dp"
++        android:background="#4C4646"
++        android:fontFamily="@font/jura_bold"
++        android:foregroundTint="#3E363E"
++        android:gravity="center"
++        android:text="Setlerimin arasında ne kadar dinlenmeliyim?"
++        android:textAllCaps="false"
++        android:textColor="#FFFFFF"
++        android:textSize="16sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="1.0"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.538" />
++
++    <androidx.appcompat.widget.AppCompatButton
++        android:id="@+id/question2"
++        android:layout_width="417dp"
++        android:layout_height="50dp"
++        android:background="#393434"
++        android:fontFamily="@font/jura_bold"
++        android:foregroundTint="#3C3A3A"
++        android:gravity="center"
++        android:text="Bir programı bitirdikten sonra ne yapmalıyım?"
++        android:textAllCaps="false"
++        android:textColor="#FFFFFF"
++        android:textSize="16sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="1.0"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.284" />
++
++    <androidx.appcompat.widget.AppCompatButton
++        android:id="@+id/question6"
++        android:layout_width="417dp"
++        android:layout_height="50dp"
++        android:background="#474242"
++        android:fontFamily="@font/jura_bold"
++        android:foregroundTint="#3C3A3A"
++        android:gravity="center"
++        android:text="Antrenman için günün en iyi saati hangisidir?"
++        android:textAllCaps="false"
++        android:textColor="#FFFFFF"
++        android:textSize="16sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="1.0"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.453" />
++
++    <androidx.appcompat.widget.AppCompatButton
++        android:id="@+id/question10"
++        android:layout_width="417dp"
++        android:layout_height="50dp"
++        android:background="#595454"
++        android:fontFamily="@font/jura_bold"
++        android:foregroundTint="#3E363E"
++        android:gravity="center"
++        android:text="Esneme hareketi yapmak zorunda mıyım?"
++        android:textAllCaps="false"
++        android:textColor="#FFFFFF"
++        android:textSize="16sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="1.0"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.624" />
++
++    <androidx.appcompat.widget.AppCompatButton
++        android:id="@+id/question9"
++        android:layout_width="417dp"
++        android:layout_height="50dp"
++        android:background="#A5A0A0"
++        android:fontFamily="@font/jura_bold"
++        android:foregroundTint="#3E363E"
++        android:gravity="center"
++        android:text="Gelişimimi nasıl takip edebilirim?"
++        android:textAllCaps="false"
++        android:textColor="#FFFFFF"
++        android:textSize="16sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="1.0"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.878" />
++
++    <androidx.appcompat.widget.AppCompatButton
++        android:id="@+id/question7"
++        android:layout_width="417dp"
++        android:layout_height="50dp"
++        android:background="#736F6F"
++        android:fontFamily="@font/jura_bold"
++        android:foregroundTint="#3E363E"
++        android:gravity="center"
++        android:text="Kas ağrısı nasıl geçer?"
++        android:textAllCaps="false"
++        android:textColor="#FFFFFF"
++        android:textSize="16sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="1.0"
++
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.709" />
++
++    <androidx.appcompat.widget.AppCompatButton
++        android:id="@+id/question8"
++        android:layout_width="417dp"
++        android:layout_height="50dp"
++        android:background="#989393"
++        android:fontFamily="@font/jura_bold"
++        android:foregroundTint="#3E363E"
++        android:gravity="center"
++        android:text="Antrenmanımdan kaç saat önce yemek yemeliyim?"
++        android:textAllCaps="false"
++        android:textColor="#FFFFFF"
++        android:textSize="16sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="1.0"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.792" />
++
++    <LinearLayout
++        android:id="@+id/menulayout"
++        android:layout_width="wrap_content"
++        android:layout_height="83dp"
++        android:orientation="horizontal"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.49"
++        app:layout_constraintStart_toStartOf="parent">
++
++        <ImageButton
++            android:id="@+id/homepage"
++            android:layout_width="78dp"
++            android:layout_height="match_parent"
++            android:background="#00F44336"
++            android:clickable="true"
++            android:contentDescription="@string/app_name"
++            android:src="@mipmap/home_icon" />
++
++        <ImageButton
++            android:id="@+id/gympage"
++            android:layout_width="77dp"
++            android:layout_height="match_parent"
++            android:background="#00F44336"
++            android:clickable="true"
++            android:contentDescription="@string/app_name"
++            android:src="@mipmap/gym_icon"
++            tools:ignore="DuplicateSpeakableTextCheck">
++
++        </ImageButton>
++
++        <ImageButton
++            android:id="@+id/foodpage"
++            android:layout_width="78dp"
++            android:layout_height="match_parent"
++            android:background="#00F44336"
++            android:clickable="true"
++            android:contentDescription="@string/app_name"
++            android:src="@mipmap/food_icon"></ImageButton>
++
++        <ImageButton
++            android:id="@+id/shopage"
++            android:layout_width="78dp"
++            android:layout_height="match_parent"
++            android:background="#00F44336"
++            android:clickable="true"
++            android:contentDescription="@string/app_name"
++            android:src="@mipmap/shop_icon" />
++
++        <ImageButton
++            android:id="@+id/userpage"
++            android:layout_width="89dp"
++            android:layout_height="match_parent"
++            android:layout_marginStart="1dp"
++            android:background="#00F44336"
++            android:clickable="true"
++            android:contentDescription="@string/app_name"
++            android:src="@mipmap/user_icon"
++            tools:ignore="DuplicateSpeakableTextCheck"></ImageButton>
++
++    </LinearLayout>
++
++
++    <TextView
++        android:id="@+id/qa"
++        android:layout_width="162dp"
++        android:layout_height="75dp"
++        android:fontFamily="@font/jura"
++        android:gravity="center"
++        android:text="Q &amp; A"
++        android:textColor="#BFCAD5"
++        android:textSize="50sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.0" />
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/lightweight/QandA.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/lightweight/QandA.kt b/app/src/main/java/com/example/lightweight/QandA.kt
+new file mode 100644
+--- /dev/null	(date 1670025039917)
++++ b/app/src/main/java/com/example/lightweight/QandA.kt	(date 1670025039917)
+@@ -0,0 +1,125 @@
++package com.example.lightweight
++
++import android.content.Intent
++import androidx.appcompat.app.AppCompatActivity
++import android.os.Bundle
++import android.widget.Button
++import android.widget.ImageButton
++import android.widget.Toast
++import android.net.Uri;
++
++class QandA : AppCompatActivity() {
++
++    override fun onCreate(savedInstanceState: Bundle?) {
++        super.onCreate(savedInstanceState)
++        setContentView(R.layout.activity_qa)
++
++        val actionBar = supportActionBar
++        actionBar!!.hide()
++
++        val homeButton = findViewById<ImageButton>(R.id.homepage)
++        val gymButton = findViewById<ImageButton>(R.id.gympage)
++        val foodButton = findViewById<ImageButton>(R.id.foodpage)
++        val shopButton = findViewById<ImageButton>(R.id.shopage)
++        val profileButton = findViewById<ImageButton>(R.id.userpage)
++
++        profileButton.isClickable = false
++        val question5: Button = findViewById (R.id.question5)
++
++        question5.setOnClickListener() {
++                val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://fitbod.me/blog/not-sore-after-workout/"))
++                startActivity(i)
++        }
++
++        val question1: Button = findViewById (R.id.question1)
++
++        question1.setOnClickListener() {
++            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.healthline.com/health/fitness/rest-between-sets#muscle-fuel"))
++            startActivity(i)
++        }
++
++        val question2: Button = findViewById (R.id.question2)
++
++        question2.setOnClickListener() {
++            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.healthline.com/health/exercise-fitness/what-to-do-after-working-out"))
++            startActivity(i)
++        }
++
++        val question3: Button = findViewById (R.id.question3)
++
++        question3.setOnClickListener() {
++            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://health.osu.edu/wellness/exercise-and-nutrition/micronutrients-vs-macronutrients"))
++            startActivity(i)
++        }
++
++        val question4: Button = findViewById (R.id.question4)
++
++        question4.setOnClickListener() {
++            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.healthline.com/health/exercise-fitness/rest-day"))
++            startActivity(i)
++        }
++
++        val question6: Button = findViewById (R.id.question6)
++
++        question6.setOnClickListener() {
++            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.healthline.com/health/fitness-exercise/best-time-to-workout"))
++            startActivity(i)
++        }
++
++        val question7: Button = findViewById (R.id.question7)
++
++        question7.setOnClickListener() {
++            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.webmd.com/fitness-exercise/features/sore-muscles-after-workout"))
++            startActivity(i)
++        }
++
++        val question8: Button = findViewById (R.id.question8)
++
++        question8.setOnClickListener() {
++            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.healthline.com/nutrition/how-much-time-between-eating-and-working-out#1"))
++            startActivity(i)
++        }
++
++        val question9: Button = findViewById (R.id.question9)
++
++        question9.setOnClickListener() {
++            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://fitbod.me/blog/best-way-to-track-workouts/"))
++            startActivity(i)
++        }
++
++        val question10: Button = findViewById (R.id.question10)
++
++        question10.setOnClickListener() {
++            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.webmd.com/fitness-exercise/features/how-to-stretch"))
++            startActivity(i)
++        }
++
++
++
++
++
++
++        val shp:  ImageButton = findViewById(R.id.shopage)
++
++        shp.setOnClickListener() {
++            val intent = Intent(this, Shop::class.java)
++            startActivity(intent)
++        }
++
++        val food:  ImageButton = findViewById(R.id.foodpage)
++
++        food.setOnClickListener() {
++            val intent = Intent(this, CalorieCount::class.java)
++            startActivity(intent)
++        }
++
++        val profilePageButton:  ImageButton = findViewById(R.id.userpage)
++
++        profilePageButton.setOnClickListener() {
++            val intent = Intent(this, Profile::class.java)
++            startActivity(intent)
++        }
++
++    }
++
++}
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_workout.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_workout.xml b/app/src/main/res/layout/activity_workout.xml
+new file mode 100644
+--- /dev/null	(date 1670074324169)
++++ b/app/src/main/res/layout/activity_workout.xml	(date 1670074324169)
+@@ -0,0 +1,383 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:background="@mipmap/wallp"
++    tools:context=".Workout"
++    tools:layout_editor_absoluteX="0dp"
++    tools:layout_editor_absoluteY="12dp">
++
++
++    <TextView
++        android:id="@+id/textworkouttype2"
++        android:layout_width="171dp"
++        android:layout_height="48dp"
++        android:fontFamily="@font/jura_bold"
++        android:gravity="center"
++        android:text="Analytics   "
++        android:textColor="#000000"
++        android:textSize="28sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.022"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.654" />
++
++    <TextView
++        android:id="@+id/wo9"
++        android:layout_width="187dp"
++        android:layout_height="24dp"
++        android:fontFamily="@font/jura_bold"
++        android:gravity="center|left"
++        android:text="%10 Hips"
++        android:textColor="#000000"
++        android:textSize="19sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.092"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.765" />
++
++    <TextView
++        android:id="@+id/wo10"
++        android:layout_width="187dp"
++        android:layout_height="24dp"
++        android:fontFamily="@font/jura_bold"
++        android:gravity="center|left"
++        android:text="%5 Back"
++        android:textColor="#000000"
++        android:textSize="19sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.092"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.796" />
++
++    <TextView
++        android:id="@+id/wo7"
++        android:layout_width="187dp"
++        android:layout_height="24dp"
++        android:fontFamily="@font/jura_bold"
++        android:gravity="center|left"
++        android:text="%10 Arms"
++        android:textColor="#000000"
++        android:textSize="19sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.092"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.702" />
++
++    <TextView
++        android:id="@+id/wo8"
++        android:layout_width="187dp"
++        android:layout_height="24dp"
++        android:fontFamily="@font/jura_bold"
++        android:gravity="center|left"
++        android:text="%75 Legs"
++        android:textColor="#000000"
++        android:textSize="19sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.092"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.733" />
++
++    <ProgressBar
++        android:id="@+id/workoutProgressBar"
++        style="?android:attr/progressBarStyle"
++        android:layout_width="204dp"
++        android:layout_height="179dp"
++        android:layout_marginBottom="332dp"
++        android:indeterminateOnly="false"
++        android:progressDrawable="@drawable/circle"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.01"
++        app:layout_constraintStart_toStartOf="parent" />
++
++    <TextView
++        android:id="@+id/workout_persent"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="68dp"
++        android:fontFamily="@font/jura_bold"
++        android:text="%0"
++        android:textColor="@color/white"
++        android:textSize="35sp"
++        app:layout_constraintBottom_toBottomOf="@+id/workoutProgressBar"
++        app:layout_constraintEnd_toEndOf="@+id/workoutProgressBar"
++        app:layout_constraintHorizontal_bias="0.503"
++        app:layout_constraintStart_toStartOf="@+id/workoutProgressBar"
++        app:layout_constraintTop_toTopOf="@+id/workoutProgressBar"
++        app:layout_constraintVertical_bias="0.04" />
++
++    <androidx.appcompat.widget.AppCompatButton
++        android:id="@+id/startbutton"
++        android:layout_width="166dp"
++        android:layout_height="105dp"
++        android:background="@mipmap/workout_startb"
++        android:ellipsize="none"
++        android:fontFamily="@font/jura_bold"
++        android:foregroundTint="#3E363E"
++        android:gravity="center"
++        android:radius="10dp"
++        android:text="Start"
++        android:textAllCaps="false"
++        android:textColor="#FFFFFF"
++        android:textSize="39sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.065"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.186" />
++
++    <androidx.appcompat.widget.AppCompatButton
++        android:id="@+id/changeprogrambutton"
++        android:layout_width="171dp"
++        android:layout_height="105dp"
++        android:background="@mipmap/change_progb"
++        android:ellipsize="none"
++        android:fontFamily="@font/jura_bold"
++        android:foregroundTint="#3E363E"
++        android:gravity="center"
++        android:radius="10dp"
++        android:text="Change Program"
++        android:textAllCaps="false"
++        android:textColor="#FFFFFF"
++        android:textSize="39sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.875"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.186" />
++
++    <TextView
++        android:id="@+id/qa"
++        android:layout_width="176dp"
++        android:layout_height="99dp"
++        android:fontFamily="@font/jura"
++        android:gravity="center"
++        android:text="Today's Program"
++        android:textColor="#BFCAD5"
++        android:textSize="35sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.021"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.025" />
++
++
++    <TextView
++        android:id="@+id/textworkouttype"
++        android:layout_width="171dp"
++        android:layout_height="48dp"
++        android:fontFamily="@font/jura_bold"
++        android:gravity="center"
++        android:text="Leg Day "
++        android:textColor="#000000"
++        android:textSize="28sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="1.0"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.353" />
++
++    <TextView
++        android:id="@+id/wo2"
++        android:layout_width="187dp"
++        android:layout_height="24dp"
++        android:fontFamily="@font/jura_bold"
++        android:gravity="center"
++        android:text="3x12 Leg Extensions"
++        android:textColor="#000000"
++        android:textSize="17sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="1.0"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.463" />
++
++    <TextView
++        android:id="@+id/wo1"
++        android:layout_width="190dp"
++        android:layout_height="18dp"
++        android:fontFamily="@font/jura_bold"
++        android:gravity="center"
++        android:text="3x12 Leg Curls"
++        android:textColor="#000000"
++        android:textSize="17sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="1.0"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.55" />
++
++    <TextView
++        android:id="@+id/wo6"
++        android:layout_width="187dp"
++        android:layout_height="24dp"
++        android:fontFamily="@font/jura_bold"
++        android:gravity="center"
++        android:text="3x10 Barbell Squat"
++        android:textColor="#000000"
++        android:textSize="17sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="1.0"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.494" />
++
++    <TextView
++        android:id="@+id/wo5"
++        android:layout_width="187dp"
++        android:layout_height="24dp"
++        android:fontFamily="@font/jura_bold"
++        android:gravity="center"
++        android:text="4x12 Dumbell Lunges"
++        android:textColor="#000000"
++        android:textSize="17sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="1.0"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.431" />
++
++    <TextView
++        android:id="@+id/wo4"
++        android:layout_width="187dp"
++        android:layout_height="24dp"
++        android:fontFamily="@font/jura_bold"
++        android:gravity="center"
++        android:text="4x12 Barbell Curls"
++        android:textColor="#000000"
++        android:textSize="17sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="1.0"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.402" />
++
++    <TextView
++        android:id="@+id/wo3"
++        android:layout_width="187dp"
++        android:layout_height="24dp"
++        android:fontFamily="@font/jura_bold"
++        android:gravity="center"
++        android:text="4x10 Leg Press"
++        android:textColor="#000000"
++        android:textSize="17sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="1.0"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.524" />
++
++    <LinearLayout
++        android:id="@+id/menulayout"
++        android:layout_width="wrap_content"
++        android:layout_height="83dp"
++        android:orientation="horizontal"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.49"
++        app:layout_constraintStart_toStartOf="parent">
++
++        <ImageButton
++            android:id="@+id/homepage"
++            android:layout_width="78dp"
++            android:layout_height="match_parent"
++            android:background="#00F44336"
++            android:clickable="true"
++            android:contentDescription="@string/app_name"
++            android:src="@mipmap/home_icon" />
++
++        <ImageButton
++            android:id="@+id/gympage"
++            android:layout_width="77dp"
++            android:layout_height="match_parent"
++            android:background="#00F44336"
++            android:clickable="true"
++            android:contentDescription="@string/app_name"
++            android:src="@mipmap/gym_icon"
++            tools:ignore="DuplicateSpeakableTextCheck">
++
++        </ImageButton>
++
++        <ImageButton
++            android:id="@+id/foodpage"
++            android:layout_width="78dp"
++            android:layout_height="match_parent"
++            android:background="#00F44336"
++            android:clickable="true"
++            android:contentDescription="@string/app_name"
++            android:src="@mipmap/food_icon"></ImageButton>
++
++        <ImageButton
++            android:id="@+id/shopage"
++            android:layout_width="78dp"
++            android:layout_height="match_parent"
++            android:background="#00F44336"
++            android:clickable="true"
++            android:contentDescription="@string/app_name"
++            android:src="@mipmap/shop_icon" />
++
++        <ImageButton
++            android:id="@+id/userpage"
++            android:layout_width="89dp"
++            android:layout_height="match_parent"
++            android:layout_marginStart="1dp"
++            android:background="#00F44336"
++            android:clickable="true"
++            android:contentDescription="@string/app_name"
++            android:src="@mipmap/user_icon"
++            tools:ignore="DuplicateSpeakableTextCheck"></ImageButton>
++
++    </LinearLayout>
++
++    <ImageView
++        android:id="@+id/imageView4"
++        android:layout_width="110dp"
++        android:layout_height="200dp"
++        android:layout_marginStart="47dp"
++        android:layout_marginTop="45dp"
++        android:layout_marginEnd="30dp"
++        android:layout_marginBottom="27dp"
++        app:layout_constraintBottom_toTopOf="@+id/menulayout"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toEndOf="@+id/wo9"
++        app:layout_constraintTop_toBottomOf="@+id/wo1"
++        app:srcCompat="@mipmap/bodymuscles" />
++
++    <ImageView
++        android:id="@+id/imageView6"
++        android:layout_width="65dp"
++        android:layout_height="74dp"
++        android:layout_marginStart="116dp"
++        android:layout_marginTop="25dp"
++        android:layout_marginEnd="30dp"
++        android:layout_marginBottom="31dp"
++        app:layout_constraintBottom_toTopOf="@+id/changeprogrambutton"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toEndOf="@+id/qa"
++        app:layout_constraintTop_toTopOf="parent"
++        app:srcCompat="@mipmap/calendar_gym" />
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/lightweight/Workout.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/lightweight/Workout.kt b/app/src/main/java/com/example/lightweight/Workout.kt
+new file mode 100644
+--- /dev/null	(date 1670072677360)
++++ b/app/src/main/java/com/example/lightweight/Workout.kt	(date 1670072677360)
+@@ -0,0 +1,54 @@
++package com.example.lightweight
++
++import android.content.Intent
++import androidx.appcompat.app.AppCompatActivity
++import android.os.Bundle
++import android.widget.Button
++import android.widget.ImageButton
++import android.widget.Toast
++
++
++class Workout : AppCompatActivity() {
++    override fun onCreate(savedInstanceState: Bundle?) {
++        super.onCreate(savedInstanceState)
++        setContentView(R.layout.activity_workout)
++
++        val actionBar = supportActionBar
++        actionBar!!.hide()
++
++        val homeButton = findViewById<ImageButton>(R.id.homepage)
++        val gymButton = findViewById<ImageButton>(R.id.gympage)
++        val foodButton = findViewById<ImageButton>(R.id.foodpage)
++        val shopButton = findViewById<ImageButton>(R.id.shopage)
++        val profileButton = findViewById<ImageButton>(R.id.userpage)
++        /*gymButton.isClickable = false*/
++        val shp:  ImageButton = findViewById(R.id.shopage)
++
++        shp.setOnClickListener() {
++            val intent = Intent(this, Shop::class.java)
++            startActivity(intent)
++        }
++
++        val startwo:  Button = findViewById(R.id.startbutton)
++
++        startwo.setOnClickListener() {
++            val intent = Intent(this, CurrentWorkout::class.java)
++            startActivity(intent)
++        }
++
++        val food:  ImageButton = findViewById(R.id.foodpage)
++
++        food.setOnClickListener() {
++            val intent = Intent(this, CalorieCount::class.java)
++            startActivity(intent)
++        }
++
++        val prfl:  ImageButton = findViewById(R.id.userpage)
++
++        prfl.setOnClickListener() {
++            val intent = Intent(this, Profile::class.java)
++            startActivity(intent)
++        }
++    }
++
++}
+\ No newline at end of file
+Index: app/src/main/res/drawable/rounded_button.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/rounded_button.xml b/app/src/main/res/drawable/rounded_button.xml
+new file mode 100644
+--- /dev/null	(date 1670059740132)
++++ b/app/src/main/res/drawable/rounded_button.xml	(date 1670059740132)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="utf-8"?>
++<shape xmlns:android="http://schemas.android.com/apk/res/android">
++    <corners  android:radius="10dp"/>
++    /*<solid android:color="@color/DimGray"></solid>*/
++
++</shape>
+\ No newline at end of file
+Index: local.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>## This file is automatically generated by Android Studio.\r\n# Do not modify this file -- YOUR CHANGES WILL BE ERASED!\r\n#\r\n# This file should *NOT* be checked into Version Control Systems,\r\n# as it contains information specific to your local configuration.\r\n#\r\n# Location of the SDK. This is only used by Gradle.\r\n# For customization when using a Version Control System, please read the\r\n# header note.\r\nsdk.dir=C\\:\\\\Users\\\\Eda\\\\AppData\\\\Local\\\\Android\\\\Sdk
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/local.properties b/local.properties
+--- a/local.properties	(revision 052fd6c2e435abee693d2746a6d453d4706a31a0)
++++ b/local.properties	(date 1670008152717)
+@@ -7,4 +7,4 @@
+ # Location of the SDK. This is only used by Gradle.
+ # For customization when using a Version Control System, please read the
+ # header note.
+-sdk.dir=C\:\\Users\\Eda\\AppData\\Local\\Android\\Sdk
+\ No newline at end of file
++sdk.dir=C\:\\Users\\Ilayda Arar\\AppData\\Local\\Android\\Sdk
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_current_workout.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_current_workout.xml b/app/src/main/res/layout/activity_current_workout.xml
+new file mode 100644
+--- /dev/null	(date 1670074914173)
++++ b/app/src/main/res/layout/activity_current_workout.xml	(date 1670074914173)
+@@ -0,0 +1,262 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:background="@mipmap/wallp"
++    tools:context=".CurrentWorkout">
++
++
++    <TextView
++        android:id="@+id/barbell"
++        android:layout_width="387dp"
++        android:layout_height="46dp"
++        android:fontFamily="@font/jura"
++        android:gravity="left|center"
++        android:text=" Barbell Squat"
++        android:textColor="#E9EEF3"
++        android:textSize="35sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.0"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.553" />
++
++    <TextView
++        android:id="@+id/wo"
++        android:layout_width="182dp"
++        android:layout_height="96dp"
++        android:fontFamily="@font/jura"
++        android:gravity="left|center"
++        android:text="Current Workout"
++        android:textColor="#BFCAD5"
++        android:textSize="35sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.075"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.022" />
++
++    <TextView
++        android:id="@+id/recommendedw"
++        android:layout_width="286dp"
++        android:layout_height="31dp"
++        android:layout_marginTop="24dp"
++        android:fontFamily="@font/jura_bold"
++        android:text="  Recommended Weight: 40 kg"
++        android:textColor="#E9EEF3"
++        android:textSize="18sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.0"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.593" />
++
++    <androidx.appcompat.widget.AppCompatButton
++        android:id="@+id/workoutkg"
++        android:layout_width="139dp"
++        android:layout_height="35dp"
++        android:background="@drawable/rounded_button"
++        android:ellipsize="none"
++        android:fontFamily="@font/jura_bold"
++        android:foregroundTint="#3E363E"
++        android:gravity="center"
++        android:radius="7dp"
++        android:text="Kilograms"
++        android:textAllCaps="false"
++        android:textColor="#FFFFFF"
++        android:textSize="24sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.058"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.673" />
++
++    <androidx.appcompat.widget.AppCompatButton
++        android:id="@+id/workoutrep"
++        android:layout_width="137dp"
++        android:layout_height="34dp"
++        android:background="@drawable/rounded_button"
++        android:ellipsize="none"
++        android:fontFamily="@font/jura_bold"
++        android:foregroundTint="#3E363E"
++        android:gravity="center"
++        android:radius="7dp"
++        android:text="Repeats"
++        android:textAllCaps="false"
++        android:textColor="#FFFFFF"
++        android:textSize="24sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.645"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.672" />
++
++    <androidx.appcompat.widget.AppCompatButton
++        android:id="@+id/addrep"
++        android:layout_width="61dp"
++        android:layout_height="35dp"
++        android:background="@drawable/rounded_button"
++        android:ellipsize="none"
++        android:fontFamily="@font/jura_bold"
++        android:foregroundTint="#3E363E"
++        android:gravity="bottom|center"
++        android:radius="7dp"
++        android:text="+"
++        android:textAllCaps="false"
++        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
++        android:textColor="#FFFFFF"
++        android:textSize="40sp"
++        app:guidelineUseRtl="false"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.954"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.672" />
++
++    <LinearLayout
++        android:id="@+id/menulayout"
++        android:layout_width="wrap_content"
++        android:layout_height="83dp"
++        android:orientation="horizontal"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.49"
++        app:layout_constraintStart_toStartOf="parent">
++
++        <ImageButton
++            android:id="@+id/homepage"
++            android:layout_width="78dp"
++            android:layout_height="match_parent"
++            android:background="#00F44336"
++            android:clickable="true"
++            android:contentDescription="@string/app_name"
++            android:src="@mipmap/home_icon" />
++
++        <ImageButton
++            android:id="@+id/gympage"
++            android:layout_width="77dp"
++            android:layout_height="match_parent"
++            android:background="#00F44336"
++            android:clickable="true"
++            android:contentDescription="@string/app_name"
++            android:src="@mipmap/gym_icon"
++            tools:ignore="DuplicateSpeakableTextCheck">
++
++        </ImageButton>
++
++        <ImageButton
++            android:id="@+id/foodpage"
++            android:layout_width="78dp"
++            android:layout_height="match_parent"
++            android:background="#00F44336"
++            android:clickable="true"
++            android:contentDescription="@string/app_name"
++            android:src="@mipmap/food_icon"></ImageButton>
++
++        <ImageButton
++            android:id="@+id/shopage"
++            android:layout_width="78dp"
++            android:layout_height="match_parent"
++            android:background="#00F44336"
++            android:clickable="true"
++            android:contentDescription="@string/app_name"
++            android:src="@mipmap/shop_icon" />
++
++        <ImageButton
++            android:id="@+id/userpage"
++            android:layout_width="89dp"
++            android:layout_height="match_parent"
++            android:layout_marginStart="1dp"
++            android:background="#00F44336"
++            android:clickable="true"
++            android:contentDescription="@string/app_name"
++            android:src="@mipmap/user_icon"
++            tools:ignore="DuplicateSpeakableTextCheck"></ImageButton>
++
++    </LinearLayout>
++
++
++    <ImageView
++        android:id="@+id/imageView2"
++        android:layout_width="417dp"
++        android:layout_height="255dp"
++        app:layout_constraintBottom_toTopOf="@+id/barbell"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.0"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/wo"
++        app:layout_constraintVertical_bias="0.0"
++        app:srcCompat="@mipmap/barbell_squat" />
++
++    <TextView
++        android:id="@+id/textresistance"
++        android:layout_width="286dp"
++        android:layout_height="31dp"
++        android:layout_marginTop="10dp"
++        android:fontFamily="@font/jura_bold"
++        android:text="Resistance: Barbell + Weight"
++        android:textColor="#43332E"
++        android:textSize="18sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.065"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/barbell"
++        app:layout_constraintVertical_bias="0.376" />
++
++    <TextView
++        android:id="@+id/textmechanicswo"
++        android:layout_width="286dp"
++        android:layout_height="31dp"
++        android:layout_marginTop="10dp"
++        android:fontFamily="@font/jura_bold"
++        android:text="Mechanics: Type Compound"
++        android:textColor="#43332E"
++        android:textSize="18sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.065"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/barbell"
++        app:layout_constraintVertical_bias="0.462" />
++
++    <TextView
++        android:id="@+id/textforcetype"
++        android:layout_width="286dp"
++        android:layout_height="31dp"
++        android:layout_marginTop="10dp"
++        android:fontFamily="@font/jura_bold"
++        android:text="Force Type: Push"
++        android:textColor="#43332E"
++        android:textSize="18sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.065"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/barbell"
++        app:layout_constraintVertical_bias="0.548" />
++
++    <TextView
++        android:id="@+id/texttargetedmuscle"
++        android:layout_width="286dp"
++        android:layout_height="31dp"
++        android:layout_marginTop="10dp"
++        android:fontFamily="@font/jura_bold"
++        android:text="Targeted Muscles: Quadriceps"
++        android:textColor="#43332E"
++        android:textSize="18sp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.065"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/barbell"
++        app:layout_constraintVertical_bias="0.634" />
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/lightweight/CurrentWorkout.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/lightweight/CurrentWorkout.kt b/app/src/main/java/com/example/lightweight/CurrentWorkout.kt
+new file mode 100644
+--- /dev/null	(date 1670074324185)
++++ b/app/src/main/java/com/example/lightweight/CurrentWorkout.kt	(date 1670074324185)
+@@ -0,0 +1,54 @@
++package com.example.lightweight
++
++import android.content.Intent
++import androidx.appcompat.app.AppCompatActivity
++import android.os.Bundle
++import android.widget.Button
++import android.widget.ImageButton
++import android.widget.Toast
++
++class CurrentWorkout : AppCompatActivity() {
++
++    override fun onCreate(savedInstanceState: Bundle?) {
++        super.onCreate(savedInstanceState)
++        setContentView(R.layout.activity_current_workout)
++
++        val actionBar = supportActionBar
++        actionBar!!.hide()
++        val homeButton = findViewById<ImageButton>(R.id.homepage)
++        val gymButton = findViewById<ImageButton>(R.id.gympage)
++        val foodButton = findViewById<ImageButton>(R.id.foodpage)
++        val shopButton = findViewById<ImageButton>(R.id.shopage)
++        val profileButton = findViewById<ImageButton>(R.id.userpage)
++
++
++        val shp:  ImageButton = findViewById(R.id.shopage)
++
++        shp.setOnClickListener() {
++            val intent = Intent(this, Shop::class.java)
++            startActivity(intent)
++        }
++
++        val food:  ImageButton = findViewById(R.id.foodpage)
++
++        food.setOnClickListener() {
++            val intent = Intent(this, CalorieCount::class.java)
++            startActivity(intent)
++        }
++
++        val prfl:  ImageButton = findViewById(R.id.userpage)
++
++        prfl.setOnClickListener() {
++            val intent = Intent(this, Profile::class.java)
++            startActivity(intent)
++        }
++
++        val gympg:  ImageButton = findViewById(R.id.gympage)
++
++        gympg.setOnClickListener() {
++            val intent = Intent(this, Workout::class.java)
++            startActivity(intent)
++        }
++    }
++
++}
+\ No newline at end of file
