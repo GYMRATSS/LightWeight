@@ -3,12 +3,15 @@ package com.example.lightweight
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.ProgressBar
-import android.widget.TextView
+import android.widget.*
+import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.database.*
 
-class CalorieCount : AppCompatActivity() {
+class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
+    var ref: DatabaseReference? = null /**/
+    var list: ArrayList<meal>? = ArrayList<meal>()
+    var recView : RecyclerView? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calorie_count)
@@ -89,6 +92,15 @@ class CalorieCount : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val gymButton = findViewById<ImageButton>(R.id.gympage)
+
+        gymButton.setOnClickListener {
+
+            val intent = Intent (this, Workout::class.java)
+            startActivity(intent)
+
+        }
+
         ref = FirebaseDatabase.getInstance().reference.child("yemekler") //TODO will changed with user meal list
         recView = findViewById(R.id.foods)
     }
@@ -123,6 +135,7 @@ class CalorieCount : AppCompatActivity() {
 
     override fun ClickedItem(meal: meal) {
 
+=========
         val gymButton = findViewById<ImageButton>(R.id.gympage)
 
         gymButton.setOnClickListener {
@@ -135,5 +148,6 @@ class CalorieCount : AppCompatActivity() {
             val intent = Intent(this, CalorieCount::class.java)
             startActivity(intent)
         } */
+>>>>>>>>> Temporary merge branch 2
     }
 }

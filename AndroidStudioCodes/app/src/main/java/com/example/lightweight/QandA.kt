@@ -19,8 +19,6 @@ class QandA : AppCompatActivity() {
 
         val homeButton = findViewById<ImageButton>(R.id.homepage)
         val gymButton = findViewById<ImageButton>(R.id.gympage)
-        val foodButton = findViewById<ImageButton>(R.id.foodpage)
-        val shopButton = findViewById<ImageButton>(R.id.shopage)
         val profileButton = findViewById<ImageButton>(R.id.userpage)
 
         profileButton.isClickable = false
@@ -95,7 +93,20 @@ class QandA : AppCompatActivity() {
         }
 
 
+        homeButton.setOnClickListener {
 
+            val intent = Intent(this, homePage::class.java)
+            startActivity(intent)
+
+        }
+
+        gymButton.setOnClickListener {
+
+
+            val intent = Intent(this, Workout::class.java)
+            startActivity(intent)
+
+        }
 
 
 
