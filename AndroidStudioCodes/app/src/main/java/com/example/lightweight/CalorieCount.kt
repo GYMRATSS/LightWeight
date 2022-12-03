@@ -92,6 +92,15 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
             startActivity(intent)
         }
 
+        val gymButton = findViewById<ImageButton>(R.id.gympage)
+
+        gymButton.setOnClickListener {
+
+            val intent = Intent (this, Workout::class.java)
+            startActivity(intent)
+
+        }
+
         ref = FirebaseDatabase.getInstance().reference.child("yemekler") //TODO will changed with user meal list
         recView = findViewById(R.id.foods)
     }
