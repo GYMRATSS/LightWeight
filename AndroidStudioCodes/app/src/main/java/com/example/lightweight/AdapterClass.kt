@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.TextView
 
-class AdapterClass(var list: MutableList<meal>) : RecyclerView.Adapter<MyViewHolder>() {
+class AdapterClass(var list: ArrayList<meal>) : RecyclerView.Adapter<MyViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.holder, parent, false)
         return MyViewHolder(view)
@@ -15,7 +15,8 @@ class AdapterClass(var list: MutableList<meal>) : RecyclerView.Adapter<MyViewHol
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.id.text = list[position].id
-        holder.desc.text = list[position].kalori
+        holder.desc.text = "Kalori: " +list[position].kalori + "\n" +  "Karbonhidrat: " + list[position].karbonhidrat +"\n"+
+                            "Yağ: " +list[position].yağ + "\n" + "Protein: " +list[position].protein + "\n"
     }
 
     override fun getItemCount(): Int {
