@@ -74,6 +74,15 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
             val intent = Intent(this, homePage::class.java)
             startActivity(intent)
         }
+        val gymButton = findViewById<ImageButton>(R.id.gympage)
+        gymButton.setOnClickListener {
+
+            val intent = Intent (this, Workout::class.java)
+            startActivity(intent)
+
+        }
+
+        /**************************************************/
         //FirebaseAuth.getInstance().currentUser?.uid.toString()
         ref = FirebaseDatabase.getInstance().reference.child("Users").child("id1")
             .child("besin").child("besin kayıtları").child("2022-12-02")
