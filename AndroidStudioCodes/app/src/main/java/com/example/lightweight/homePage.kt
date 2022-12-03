@@ -17,7 +17,7 @@ class homePage : AppCompatActivity() {
 
         val userName = intent.getStringExtra("USER")
         val textView = findViewById<TextView>(R.id.hiName)
-        val message = "Hi, $userName"          // name database'den gelsin suan sadece sign uptan geleni yazıyor
+        val message = "Merhaba, $userName"          // name database'den gelsin suan sadece sign uptan geleni yazıyor
         textView.text = message
 
         val homeButton = findViewById<ImageButton>(R.id.homepage)
@@ -38,6 +38,11 @@ class homePage : AppCompatActivity() {
         c_bar.progress = (takenCal*100)/totalCal
         val percent = (takenCal*100)/totalCal
         cPercent.text = "%$percent"
+
+        val activityBar = findViewById<ProgressBar>(R.id.workoutProgressBar)
+        activityBar.progress = 30                                               // hardcoded progress change it!!!
+        val workoutPercent = findViewById<TextView>(R.id.workout_percent)
+        workoutPercent.text = "%30"
 
 
         /***********************Menu*******************/
