@@ -64,6 +64,7 @@ class Profile : AppCompatActivity() {
             startActivity(Intent(this@Profile,CalorieCount::class.java))
             finish()
         }
+
         val editProfileButton = findViewById<Button>(R.id.editProfile)
         val dietTrackerButton = findViewById<Button>(R.id.dietTracker)
         val workoutActivitiesButton = findViewById<Button>(R.id.workoutActivities)
@@ -77,6 +78,10 @@ class Profile : AppCompatActivity() {
         val profileButton = findViewById<ImageButton>(R.id.userpage)
 
         profileButton.isClickable = false
+
+        editProfileButton.setOnClickListener {
+            editProfileButton.error("Currently not available!")
+        }
 
         dietTrackerButton.setOnClickListener {
             // ask if is it gonna be seperate or will be directed to the food page ???
@@ -102,7 +107,8 @@ class Profile : AppCompatActivity() {
 
         homeButton.setOnClickListener {
 
-            // main page must be implemented
+            val intent = Intent(this, homePage::class.java)
+            startActivity(intent)
 
         }
 
