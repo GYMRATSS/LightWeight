@@ -12,6 +12,9 @@ import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import com.example.lightweight.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
 import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
@@ -61,7 +64,7 @@ class MainActivity : AppCompatActivity() {
 
         //yeni üyelik sayfasıma gitmek için
         binding.signIn.setOnClickListener{
-            intent = Intent(applicationContext,CalorieCount::class.java)
+            intent = Intent(applicationContext,SignUpFirst::class.java)
             startActivity(intent)
             finish()
         }
