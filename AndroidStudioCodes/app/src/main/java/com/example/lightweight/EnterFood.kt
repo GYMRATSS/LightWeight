@@ -35,8 +35,6 @@ class EnterFood : AppCompatActivity(), AdapterClass.ClickListener{
         recView = findViewById(R.id.foodList)
         sView = findViewById(R.id.foodSearch)
 
-
-
     }
 
     override fun onStart(){
