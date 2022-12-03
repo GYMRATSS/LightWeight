@@ -4,29 +4,34 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="5dp"
-    app:cardElevation="5dp">
+    app:cardElevation="5dp"
+    android:id="@+id/chooseFood"
+    android:clickable="true">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="150dp"
+        android:background="@mipmap/green"
         android:orientation="vertical">
+
         <TextView
             android:id="@+id/foodId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:text="input"
             android:fontFamily="@font/jura"
+            android:padding="10dp"
+            android:text="input"
             android:textColor="@color/black"
-            android:padding="10dp"/>
+            android:textSize="25sp" />
+
         <TextView
             android:id="@+id/descrb"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="inputDesc"
             android:fontFamily="@font/jura"
-            android:textColor="@color/black"
-            android:padding="10dp"/>
+            android:padding="10dp"
+            android:text="inputDesc"
+            android:textColor="@color/black" />
 
     </LinearLayout>
     <View

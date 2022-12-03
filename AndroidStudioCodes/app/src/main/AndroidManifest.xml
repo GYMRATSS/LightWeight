@@ -13,6 +13,13 @@
         android:theme="@style/Theme.LightWeight"
         tools:targetApi="31">
         <activity
+            android:name=".AddFoodToUser"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".homePage"
             android:exported="false">
             <meta-data
@@ -89,7 +96,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".MainActivity"
             android:exported="true">
