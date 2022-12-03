@@ -4,9 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
-import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import com.example.lightweight.databinding.ActivitySignUpSecondBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -28,12 +26,23 @@ class SignUpSecond : AppCompatActivity() {
         val actionBar = supportActionBar
         actionBar!!.hide()
 
+        //radio buton okuma
+        val rdGroup = findViewById<RadioGroup>(R.id.radioChoose)
+        val rdGroup2 = findViewById<RadioGroup>(R.id.activityLevelRadioGroup)
+
         //kaydet butonu ile kaydetme adımları
         binding.skipButton.setOnClickListener{
+            val slcBtn:Int = rdGroup!!.checkedRadioButtonId
+            val uyeTercih = findViewById<RadioButton>(slcBtn).text.toString()
+            //Toast.makeText(this@SignUpSecond,uyeTercih, Toast.LENGTH_LONG).show()
 
-            var uyeTercih = ""
+            val slcBtn2:Int = rdGroup2!!.checkedRadioButtonId
+            val uyeTercih2 = findViewById<RadioButton>(slcBtn2).text.toString()
+            //Toast.makeText(this@SignUpSecond,uyeTercih2, Toast.LENGTH_LONG).show()
 
-            var uyeKilo = binding.weghtInput.text.toString()
+
+
+            var uyeKilo = binding.weightInput.text.toString()
             var uyeBoy = binding.heightInput.text.toString()
             var uyeBel = binding.waistInput.text.toString()
             var uyeBoyun = binding.neckInput.text.toString()
@@ -70,6 +79,7 @@ class SignUpSecond : AppCompatActivity() {
             currentUserDb?.child("Tercih")?.setValue(uyeTercih)
             currentUserDb?.child("Hedef")?.setValue(uyeHedef)
             currentUserDb?.child("BMI")?.setValue(uyeBMI)
+            currentUserDb?.child("Hareket seviyesi")?.setValue(uyeTercih2)
 
 
             //Profil sayfasına gitmek için

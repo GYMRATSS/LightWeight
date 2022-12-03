@@ -6,7 +6,10 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.Toast
+import android.widget.Toast.LENGTH_LONG
 import com.example.lightweight.databinding.ActivitySignUpFirstBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -18,6 +21,7 @@ class SignUpFirst : AppCompatActivity() {
     var databaseReference: DatabaseReference? = null /**/
     var database: FirebaseDatabase? = null /**/
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivitySignUpFirstBinding.inflate(layoutInflater) /**/
@@ -26,12 +30,20 @@ class SignUpFirst : AppCompatActivity() {
         database = FirebaseDatabase.getInstance() /**/
         databaseReference = database?.reference!!.child("Kullanıcılar")
 
+
         val actionBar = supportActionBar
         actionBar!!.hide()
 
+        //radio buton okuma
+        val rdGroup = findViewById<RadioGroup>(R.id.radioGender)
+
         //kaydet butonu ile kaydetme adımları
         binding.nextSignIn.setOnClickListener{
-            var uyeCinsiyet=""
+            //radio buton okuma
+            val slcBtn:Int = rdGroup!!.checkedRadioButtonId
+            val uyeCinsiyet = findViewById<RadioButton>(slcBtn).text.toString()
+            //Toast.makeText(this@SignUpFirst,uyeCinsiyet, LENGTH_LONG).show()
+
             var uyeAdSoyad = binding.nameInfoFromUser.text.toString()
             var uyeYas = binding.ageInfoFromUser.text.toString()
             var uyeEmail = binding.eMailInfo.text.toString()
@@ -67,7 +79,7 @@ class SignUpFirst : AppCompatActivity() {
                         currentUserDb?.child("Parola")?.setValue(uyeParola)
 
                         //Eğer başarılıysa kullanıcıya mesaj veriyoruz.
-                        Toast.makeText(this@SignUpFirst,"Kayıt başarılı.", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@SignUpFirst,"Kayıt başarılı.", LENGTH_LONG).show()
 
                         intent = Intent(applicationContext, SignUpSecond::class.java)
                         startActivity(intent) //İkinci sayfasını açıyor
@@ -76,7 +88,7 @@ class SignUpFirst : AppCompatActivity() {
         //im hereeeeeeee
 
                     } else {
-                        Toast.makeText(this@SignUpFirst,"Kayıt hatalı.", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@SignUpFirst,"Kayıt hatalı.", LENGTH_LONG).show()
                     }
                 }
 

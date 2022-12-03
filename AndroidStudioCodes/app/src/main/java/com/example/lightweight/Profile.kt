@@ -80,7 +80,7 @@ class Profile : AppCompatActivity() {
         profileButton.isClickable = false
 
         editProfileButton.setOnClickListener {
-            editProfileButton.error("Currently not available!")
+            //editProfile.error("Currently not available!")
         }
 
         dietTrackerButton.setOnClickListener {
