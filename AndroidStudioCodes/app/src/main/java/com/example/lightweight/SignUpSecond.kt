@@ -23,8 +23,23 @@ class SignUpSecond : AppCompatActivity() {
         database = FirebaseDatabase.getInstance() /**/
         databaseReference = database?.reference!!.child("Kullanıcılar")
 
+
         val actionBar = supportActionBar
         actionBar!!.hide()
+
+        var currentUser = auth.currentUser
+        var userReference = databaseReference?.child(currentUser?.uid!!)
+
+        userReference?.addValueEventListener(object: ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                binding.startHeader.text = "Başlayalım " + snapshot.child("İsim-soyisim").value.toString()
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
 
         //radio buton okuma
         val rdGroup = findViewById<RadioGroup>(R.id.radioChoose)
@@ -33,35 +48,49 @@ class SignUpSecond : AppCompatActivity() {
         //kaydet butonu ile kaydetme adımları
         binding.skipButton.setOnClickListener{
             val slcBtn:Int = rdGroup!!.checkedRadioButtonId
-            val uyeTercih = findViewById<RadioButton>(slcBtn).text.toString()
-            //Toast.makeText(this@SignUpSecond,uyeTercih, Toast.LENGTH_LONG).show()
+            var uyeTercih = ""
 
             val slcBtn2:Int = rdGroup2!!.checkedRadioButtonId
-            val uyeTercih2 = findViewById<RadioButton>(slcBtn2).text.toString()
-            //Toast.makeText(this@SignUpSecond,uyeTercih2, Toast.LENGTH_LONG).show()
+            var uyeTercih2 = ""
 
+            if(findViewById<RadioButton>(slcBtn)!=null && findViewById<RadioButton>(slcBtn2)!=null ){
+                uyeTercih = findViewById<RadioButton>(slcBtn).text.toString()
+                uyeTercih2 = findViewById<RadioButton>(slcBtn2).text.toString()
 
+            } else {
+                Toast.makeText(this@SignUpSecond,"Lütfen birini işaretleyin.", Toast.LENGTH_LONG).show()
+                return@setOnClickListener
+            }
 
             var uyeKilo = binding.weightInput.text.toString()
             var uyeBoy = binding.heightInput.text.toString()
             var uyeBel = binding.waistInput.text.toString()
             var uyeBoyun = binding.neckInput.text.toString()
             var uyeHedef = binding.goalInput.text.toString()
-            var number = ((uyeKilo.toDouble()/(uyeBoy.toDouble()*uyeBoy.toDouble()))*10000.0)
-            var uyeBMI = String.format("%.2f", number)
+            var number = 3.14
+            var uyeBMI = ""
 
-            //Doldurmayı zorunlu hale getiren kod satırları
-            /*
-            if(TextUtils.isEmpty(uyeAdSoyad)){
-                binding.uyeAdSoyad.error = "Lütfen adınızı soyadınızı giriniz."
+
+            if(TextUtils.isEmpty(uyeKilo) || uyeKilo.toInt()<1){
+                binding.weightInput.error = "Lütfen kilonuzu doğru giriniz."
                 return@setOnClickListener
-            }else if(TextUtils.isEmpty(uyeEmail)){
-                binding.uyeEmail.error = "Lütfen e mailinizi giriniz."
+            }else if(TextUtils.isEmpty(uyeBoy) || uyeBoy.toInt()<1){
+                binding.heightInput.error = "Lütfen boyunuzu doğru giriniz."
                 return@setOnClickListener
-            }else if(TextUtils.isEmpty(uyeParola)){
-                binding.uyeParola.error = "Lütfen parolanızı giriniz."
+            }else if(TextUtils.isEmpty(uyeBel) || uyeBel.toInt()<1){
+                binding.waistInput.error = "Lütfen bel ölçünüzü doğru giriniz."
                 return@setOnClickListener
-            }*/
+            }else if(TextUtils.isEmpty(uyeBoyun) || uyeBoyun.toInt()<1){
+                binding.neckInput.error = "Lütfen boyun çevrenizi doğru giriniz."
+                return@setOnClickListener
+            }else if(TextUtils.isEmpty(uyeHedef) || uyeHedef.toInt()<1){
+                binding.goalInput.error = "Lütfen uygun bir hedef giriniz."
+                return@setOnClickListener
+            } else {
+                number = ((uyeKilo.toDouble()/(uyeBoy.toDouble()*uyeBoy.toDouble()))*10000.0)
+                uyeBMI = String.format("%.2f", number)
+            }
+
 
             //Kullanıcı bilgilerini veri tabanına ekleme
             //Şu anki kullanıcı bilgilerini alalım
