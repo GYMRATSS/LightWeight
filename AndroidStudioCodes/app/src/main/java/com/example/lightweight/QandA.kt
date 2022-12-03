@@ -17,8 +17,6 @@ class QandA : AppCompatActivity() {
         val actionBar = supportActionBar
         actionBar!!.hide()
 
-        val homeButton = findViewById<ImageButton>(R.id.homepage)
-        val gymButton = findViewById<ImageButton>(R.id.gympage)
         val profileButton = findViewById<ImageButton>(R.id.userpage)
 
         profileButton.isClickable = false
@@ -92,23 +90,20 @@ class QandA : AppCompatActivity() {
             startActivity(i)
         }
 
-
+        val homeButton = findViewById<ImageButton>(R.id.homepage)
         homeButton.setOnClickListener {
-
             val intent = Intent(this, homePage::class.java)
             startActivity(intent)
-
         }
+
+        val gymButton = findViewById<ImageButton>(R.id.gympage)
 
         gymButton.setOnClickListener {
 
-
-            val intent = Intent(this, Workout::class.java)
+            val intent = Intent (this, Workout::class.java)
             startActivity(intent)
 
         }
-
-
 
         val shp:  ImageButton = findViewById(R.id.shopage)
 
