@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
 
         //yeni üyelik sayfasıma gitmek için
         binding.signIn.setOnClickListener{
-            intent = Intent(applicationContext,SignUpFirst::class.java)
+            intent = Intent(applicationContext,CalorieCount::class.java)
             startActivity(intent)
             finish()
         }
