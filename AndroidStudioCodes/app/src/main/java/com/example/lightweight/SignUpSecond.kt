@@ -33,7 +33,7 @@ class SignUpSecond : AppCompatActivity() {
 
             var uyeTercih = ""
 
-            var uyeKilo = binding.weghtInput.text.toString()
+            var uyeKilo = binding.weightInput.text.toString()
             var uyeBoy = binding.heightInput.text.toString()
             var uyeBel = binding.waistInput.text.toString()
             var uyeBoyun = binding.neckInput.text.toString()

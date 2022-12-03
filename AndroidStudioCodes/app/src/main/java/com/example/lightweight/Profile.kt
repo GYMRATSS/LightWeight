@@ -79,9 +79,9 @@ class Profile : AppCompatActivity() {
 
         profileButton.isClickable = false
 
-        editProfileButton.setOnClickListener {
+        /* editProfileButton.setOnClickListener {
             editProfileButton.error("Currently not available!")
-        }
+        }  */
 
         dietTrackerButton.setOnClickListener {
             // ask if is it gonna be seperate or will be directed to the food page ???
