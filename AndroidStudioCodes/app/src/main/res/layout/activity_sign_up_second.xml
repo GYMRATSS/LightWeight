@@ -40,7 +40,7 @@
             android:layout_width="118dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/jura"
-            android:text="Hafif"
+            android:text="Az"
             android:textSize="16sp" />
 
         <RadioButton
@@ -56,7 +56,7 @@
             android:layout_width="113dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/jura"
-            android:text="Ağır"
+            android:text="Çok"
             android:textSize="16sp" />
     </RadioGroup>
 
@@ -99,9 +99,9 @@
         android:layout_height="31dp"
         android:fontFamily="@font/jura_bold"
         android:gravity="center_horizontal"
-        android:text="Tercih ettiğiniz hareket temposu :"
+        android:text="Günlük yaşamdaki hareket seviyeniz :"
         android:textColor="#FFFF"
-        android:textSize="20sp"
+        android:textSize="19sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.66"
@@ -288,6 +288,7 @@
         app:layout_constraintVertical_bias="0.963" />
 
     <RadioGroup
+        android:id="@+id/radioChoose"
         android:layout_width="364dp"
         android:layout_height="55dp"
         android:orientation="horizontal"
