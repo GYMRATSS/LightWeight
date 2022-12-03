@@ -3,12 +3,15 @@ package com.example.lightweight
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.ProgressBar
-import android.widget.TextView
+import android.widget.*
+import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.database.*
 
-class CalorieCount : AppCompatActivity() {
+class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
+    var ref: DatabaseReference? = null /**/
+    var list: ArrayList<meal>? = ArrayList<meal>()
+    var recView : RecyclerView? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calorie_count)
@@ -89,17 +92,39 @@ class CalorieCount : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val gymButton = findViewById<ImageButton>(R.id.gympage)
+        ref = FirebaseDatabase.getInstance().reference.child("yemekler") //TODO will changed with user meal list
+        recView = findViewById(R.id.foods)
+    }
 
-        gymButton.setOnClickListener {
-            val intent = Intent(this, Workout::class.java)
-            startActivity(intent)
+    override fun onStart(){
+        super.onStart()
+        if(ref != null){
+            ref!!.addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    if (snapshot.exists()){
+                        for (ds in snapshot.children)
+                        {
+                            val temp: ArrayList<String> = ArrayList<String>()
+                            for (v in ds.children) {
+                                temp.add(v.value.toString())
+                            }
+                            val m = meal(ds.key, temp)
+                            list?.add(m)
+                        }
+                        var adapterC: AdapterClass = AdapterClass(list!!,this@CalorieCount)
+                        recView?.adapter = adapterC
+                    }
+                }
 
+                override fun onCancelled(error: DatabaseError) {
+                    Toast.makeText(this@CalorieCount, error.message, Toast.LENGTH_SHORT).show()
+                }
+            })
         }
 
-        /* food.setOnClickListener() {
-            val intent = Intent(this, CalorieCount::class.java)
-            startActivity(intent)
-        } */
+    }
+
+    override fun ClickedItem(meal: meal) {
+
     }
 }
