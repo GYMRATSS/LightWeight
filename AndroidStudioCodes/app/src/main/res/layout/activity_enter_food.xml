@@ -25,27 +25,27 @@
         android:layout_width="348dp"
         android:layout_height="45dp"
         android:background="@drawable/search_bar"
+        android:queryHint="Arama.."
         android:tooltipText="@string/app_name"
         app:layout_constraintBottom_toTopOf="@+id/menulayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.355"
         app:layout_constraintStart_toStartOf="parent"
-        android:queryHint="Arama.."
         app:layout_constraintTop_toBottomOf="@+id/prePage"
-        app:layout_constraintVertical_bias="0.014" />
+        app:layout_constraintVertical_bias="0.026" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/foodList"
         android:layout_width="match_parent"
         android:layout_height="536dp"
+        android:layout_margin="5dp"
         android:layout_marginTop="1dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/menulayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/foodSearch"
-        app:layout_constraintVertical_bias="0.44"
-        android:layout_margin="5dp"/>
+        app:layout_constraintVertical_bias="0.241" />
 
     <LinearLayout
         android:id="@+id/menulayout"

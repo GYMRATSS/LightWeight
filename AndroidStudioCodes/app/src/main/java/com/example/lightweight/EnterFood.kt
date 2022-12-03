@@ -4,9 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
-import android.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 
 class EnterFood : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +19,6 @@ class EnterFood : AppCompatActivity() {
         prePage.setOnClickListener() {
             finish()
         }
-
 
         /******************** Menu ***************************************/
         val shp: ImageButton = findViewById(R.id.shopage)

@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
 
         })
         logIn.setOnClickListener() {
-            val intent = Intent(this, LogIn::class.java)
+            val intent = Intent(this, CalorieCount::class.java)
             startActivity(intent)
         }
     }

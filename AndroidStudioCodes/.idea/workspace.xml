@@ -12,8 +12,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6328b85-eb1c-4520-8476-6429d3790431" name="Changes" comment="shop page general draft">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_calorie_count.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_calorie_count.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/AdapterClass.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/AdapterClass.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/EnterFood.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/EnterFood.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/LogIn.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_enter_food.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_enter_food.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_log_in.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +101,7 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="Properties" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/java/com/example/lightweight" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -109,6 +121,7 @@
       <recent name="com.example.lightweight" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Tugce\Documents\GitHub\LightWeight\AndroidStudioCodes\app\src\main\java\com\example\lightweight" />
       <recent name="C:\Users\Tugce\Documents\GitHub\LightWeight\AndroidStudioCodes\app\src\main\res\mipmap-xxxhdpi" />
       <recent name="C:\Users\Tugce\Documents\GitHub\LightWeight\AndroidStudioCodes\app\src\main\res\drawable" />
       <recent name="C:\Users\Tugce\Documents\GitHub\LightWeight\AndroidStudioCodes\app\src\main\res\mipmap-xxhdpi" />
