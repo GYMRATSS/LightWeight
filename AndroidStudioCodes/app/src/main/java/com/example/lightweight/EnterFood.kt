@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
 
 
-class EnterFood : AppCompatActivity() {
+class EnterFood : AppCompatActivity(), AdapterClass.ClickListener{
     var ref: DatabaseReference? = null /**/
     var list: ArrayList<meal>? = ArrayList<meal>()
     var recView : RecyclerView? = null
@@ -71,12 +71,7 @@ class EnterFood : AppCompatActivity() {
         recView = findViewById(R.id.foodList)
         sView = findViewById(R.id.foodSearch)
 
-        val card : CardView = findViewById(R.id.foodList)
 
-        card.setOnClickListener {
-            val intent = Intent(this, AddFoodToUser::class.java)
-            startActivity(intent)
-        }
 
     }
 
@@ -95,7 +90,7 @@ class EnterFood : AppCompatActivity() {
                             val m = meal(ds.key, temp)
                             list?.add(m)
                         }
-                        var adapterC: AdapterClass = AdapterClass(list!!)
+                        var adapterC: AdapterClass = AdapterClass(list!!,this@EnterFood)
                         recView?.adapter = adapterC
                     }
                 }
@@ -130,9 +125,14 @@ class EnterFood : AppCompatActivity() {
                 mylist.add(obj)
             }
         }
-        var adapterC: AdapterClass = AdapterClass(mylist)
+        var adapterC: AdapterClass = AdapterClass(mylist,this@EnterFood)
         recView?.adapter = adapterC
 
+    }
+
+    override fun ClickedItem(Meal: meal) {
+        val intent = Intent(this@EnterFood, AddFoodToUser::class.java)
+        startActivity(intent)
     }
 
 }

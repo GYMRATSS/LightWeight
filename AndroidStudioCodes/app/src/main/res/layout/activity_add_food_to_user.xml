@@ -4,6 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddFoodToUser">
+    tools:context=".AddFoodToUser"
+    android:background="@mipmap/wallp">
+
+    <ImageButton
+        android:id="@+id/prePage"
+        android:layout_width="40dp"
+        android:layout_height="38dp"
+        android:background="@drawable/arrow"
+        android:clickable="true"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

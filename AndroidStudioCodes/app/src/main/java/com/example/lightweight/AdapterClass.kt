@@ -7,16 +7,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.TextView
 
-class AdapterClass(var list: ArrayList<meal>) : RecyclerView.Adapter<MyViewHolder>() {
+class AdapterClass(var list: ArrayList<meal>, var clickListener: ClickListener) : RecyclerView.Adapter<MyViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.holder, parent, false)
         return MyViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        val Modal = list[position]
         holder.id.text = list[position].id
         holder.desc.text = "Kalori: " +list[position].kalori + "\n" +  "Karbonhidrat: " + list[position].karbonhidrat +"\n"+
                             "Yağ: " +list[position].yağ + "\n" + "Protein: " +list[position].protein + "\n"
+
+        holder.itemView.setOnClickListener{
+            clickListener.ClickedItem(Modal)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -31,5 +36,9 @@ class AdapterClass(var list: ArrayList<meal>) : RecyclerView.Adapter<MyViewHolde
             id = itemView.findViewById(R.id.foodId)
             desc = itemView.findViewById(R.id.descrb)
         }
+    }
+
+    interface ClickListener{
+        fun ClickedItem(meal : meal)
     }
 }
