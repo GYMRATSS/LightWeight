@@ -27,7 +27,7 @@
         android:background="@drawable/search_bar"
         android:queryHint="Arama.."
         android:tooltipText="@string/app_name"
-        app:layout_constraintBottom_toTopOf="@+id/menulayout"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.355"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,76 +37,18 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/foodList"
         android:layout_width="match_parent"
-        android:layout_height="536dp"
+        android:layout_height="600dp"
         android:layout_margin="5dp"
+        android:layout_marginBottom="5dp"
         android:layout_marginTop="1dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toTopOf="@+id/menulayout"
+
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/foodSearch"
         app:layout_constraintVertical_bias="0.241" />
 
-    <LinearLayout
-        android:id="@+id/menulayout"
-        android:layout_width="match_parent"
-        android:layout_height="83dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageButton
-            android:id="@+id/homepage"
-            android:layout_width="78dp"
-            android:layout_height="match_parent"
-            android:background="#00F44336"
-            android:clickable="true"
-            android:contentDescription="@string/app_name"
-            android:src="@mipmap/home_icon" />
-
-        <ImageButton
-            android:id="@+id/gympage"
-            android:layout_width="77dp"
-            android:layout_height="match_parent"
-            android:background="#00F44336"
-            android:clickable="true"
-            android:contentDescription="@string/app_name"
-            android:src="@mipmap/gym_icon"
-            tools:ignore="DuplicateSpeakableTextCheck">
-
-        </ImageButton>
-
-        <ImageButton
-            android:id="@+id/foodpage"
-            android:layout_width="78dp"
-            android:layout_height="match_parent"
-            android:background="#00F44336"
-            android:clickable="true"
-            android:contentDescription="@string/app_name"
-            android:src="@mipmap/food_icon"/>
-
-        <ImageButton
-            android:id="@+id/shopage"
-            android:layout_width="78dp"
-            android:layout_height="match_parent"
-            android:background="#00F44336"
-            android:clickable="true"
-            android:contentDescription="@string/app_name"
-            android:src="@mipmap/shop_icon" />
-
-        <ImageButton
-            android:id="@+id/userpage"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="1dp"
-            android:background="#00F44336"
-            android:clickable="true"
-            android:contentDescription="@string/app_name"
-            android:src="@mipmap/user_icon"
-            tools:ignore="DuplicateSpeakableTextCheck"/>
-
-    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

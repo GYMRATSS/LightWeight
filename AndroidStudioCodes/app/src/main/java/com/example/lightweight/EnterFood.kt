@@ -29,43 +29,7 @@ class EnterFood : AppCompatActivity(), AdapterClass.ClickListener{
         prePage.setOnClickListener() {
             finish()
         }
-        /******************** Menu ***************************************/
-        val shp: ImageButton = findViewById(R.id.shopage)
-
-        shp.setOnClickListener() {
-            val intent = Intent(this, Shop::class.java)
-            startActivity(intent)
-        }
-
-        val food: ImageButton = findViewById(R.id.foodpage)
-
-        food.setOnClickListener() {
-            val intent = Intent(this, CalorieCount::class.java)
-            startActivity(intent)
-        }
-
-        val homeButton = findViewById<ImageButton>(R.id.homepage)
-        val gymButton = findViewById<ImageButton>(R.id.gympage)
-        val profileButton = findViewById<ImageButton>(R.id.userpage)
-
-        profileButton.setOnClickListener {
-            val intent = Intent(this, Profile::class.java)
-            startActivity(intent)
-        }
-
-        gymButton.setOnClickListener {
-            /*
-            wait for ilayda
-            val intent = Intent (this, ::class.java)
-            startActivity(intent)
-            */
-        }
-
-        homeButton.setOnClickListener {
-            val intent = Intent(this, homePage::class.java)
-            startActivity(intent)
-        }
-
+        
         /********************************************/
         ref = FirebaseDatabase.getInstance().reference.child("yemekler")
         recView = findViewById(R.id.foodList)

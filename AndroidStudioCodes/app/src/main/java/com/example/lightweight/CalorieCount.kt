@@ -89,6 +89,40 @@ class CalorieCount : AppCompatActivity() {
             startActivity(intent)
         }
 
+        ref = FirebaseDatabase.getInstance().reference.child("yemekler") //TODO will changed with user meal list
+        recView = findViewById(R.id.foods)
+    }
+
+    override fun onStart(){
+        super.onStart()
+        if(ref != null){
+            ref!!.addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    if (snapshot.exists()){
+                        for (ds in snapshot.children)
+                        {
+                            val temp: ArrayList<String> = ArrayList<String>()
+                            for (v in ds.children) {
+                                temp.add(v.value.toString())
+                            }
+                            val m = meal(ds.key, temp)
+                            list?.add(m)
+                        }
+                        var adapterC: AdapterClass = AdapterClass(list!!,this@CalorieCount)
+                        recView?.adapter = adapterC
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    Toast.makeText(this@CalorieCount, error.message, Toast.LENGTH_SHORT).show()
+                }
+            })
+        }
+
+    }
+
+    override fun ClickedItem(meal: meal) {
+
         val gymButton = findViewById<ImageButton>(R.id.gympage)
 
         gymButton.setOnClickListener {
