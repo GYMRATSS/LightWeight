@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
+import android.widget.ProgressBar
 import android.widget.TextView
 
 class homePage : AppCompatActivity() {
@@ -26,6 +27,20 @@ class homePage : AppCompatActivity() {
         val profileButton = findViewById<ImageButton>(R.id.userpage)
 
         homeButton.isClickable = false
+
+        val c_bar: ProgressBar = findViewById (R.id.caloryProgressBar)
+        val tc_text: TextView = findViewById (R.id.takenCalVal)
+        val ttc_text: TextView = findViewById (R.id.totalCalVal)
+        val cPercent: TextView = findViewById (R.id.c_persent)
+
+        var takenCal = tc_text.text.toString().toIntOrNull() ?: 0 //TODO with firebase
+        var totalCal = ttc_text.text.toString().toIntOrNull() ?: 0 //TODO with firebase
+        c_bar.progress = (takenCal*100)/totalCal
+        val percent = (takenCal*100)/totalCal
+        cPercent.text = "%$percent"
+
+
+        /***********************Menu*******************/
 
         gymButton.setOnClickListener {
             /*

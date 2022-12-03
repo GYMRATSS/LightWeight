@@ -102,7 +102,8 @@ class Profile : AppCompatActivity() {
 
         homeButton.setOnClickListener {
 
-            // main page must be implemented
+            val intent = Intent(this, homePage::class.java)
+            startActivity(intent)
 
         }
 
@@ -125,6 +126,7 @@ class Profile : AppCompatActivity() {
             val intent = Intent(this, Shop::class.java)
             startActivity(intent)
         }
+
 
     }
 }

@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
             auth.signInWithEmailAndPassword(girisEmail,girisParola)
                 .addOnCompleteListener(this){ //it adında task resultu oluşturdu
                     if(it.isSuccessful){
-                        intent = Intent(applicationContext,Profile::class.java)
+                        intent = Intent(applicationContext,homePage::class.java)
                         startActivity(intent)
                         finish()
                     } else {
