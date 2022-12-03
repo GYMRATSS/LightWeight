@@ -1,16 +1,13 @@
 package com.example.lightweight
 
-import com.example.lightweight.meal
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lightweight.AdapterClass.MyViewHolder
 import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.view.View
-import com.example.lightweight.R
 import android.widget.TextView
-import java.util.ArrayList
 
-private class AdapterClass(var list: ArrayList<meal>) : RecyclerView.Adapter<MyViewHolder>() {
+class AdapterClass(var list: MutableList<meal>) : RecyclerView.Adapter<MyViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.holder, parent, false)
         return MyViewHolder(view)
@@ -25,7 +22,7 @@ private class AdapterClass(var list: ArrayList<meal>) : RecyclerView.Adapter<MyV
         return list.size
     }
 
-    internal inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var id: TextView
         var desc: TextView
 
