@@ -48,11 +48,10 @@ class homePage : AppCompatActivity() {
         /***********************Menu*******************/
 
         gymButton.setOnClickListener {
-            /*
-            wait for ilayda
-            val intent = Intent (this, ::class.java)
+
+            val intent = Intent (this, Workout::class.java)
             startActivity(intent)
-            */
+
         }
 
         foodButton.setOnClickListener {

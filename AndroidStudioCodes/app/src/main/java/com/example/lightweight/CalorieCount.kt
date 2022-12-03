@@ -89,6 +89,14 @@ class CalorieCount : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val gymButton = findViewById<ImageButton>(R.id.gympage)
+
+        gymButton.setOnClickListener {
+            val intent = Intent(this, Workout::class.java)
+            startActivity(intent)
+
+        }
+
         /* food.setOnClickListener() {
             val intent = Intent(this, CalorieCount::class.java)
             startActivity(intent)

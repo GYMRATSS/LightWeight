@@ -16,12 +16,16 @@ class Workout : AppCompatActivity() {
         val actionBar = supportActionBar
         actionBar!!.hide()
 
-        val homeButton = findViewById<ImageButton>(R.id.homepage)
         val gymButton = findViewById<ImageButton>(R.id.gympage)
-        val foodButton = findViewById<ImageButton>(R.id.foodpage)
-        val shopButton = findViewById<ImageButton>(R.id.shopage)
-        val profileButton = findViewById<ImageButton>(R.id.userpage)
-        /*gymButton.isClickable = false*/
+
+        gymButton.isClickable = false
+
+        val homeButton = findViewById<ImageButton>(R.id.homepage)
+        homeButton.setOnClickListener {
+            val intent = Intent(this, homePage::class.java)
+            startActivity(intent)
+        }
+
         val shp:  ImageButton = findViewById(R.id.shopage)
 
         shp.setOnClickListener() {
