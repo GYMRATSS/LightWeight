@@ -12,8 +12,7 @@ import android.widget.Toast
 import android.widget.Toast.LENGTH_LONG
 import com.example.lightweight.databinding.ActivitySignUpFirstBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 
 class SignUpFirst : AppCompatActivity() {
     lateinit var binding: ActivitySignUpFirstBinding /**/
@@ -41,8 +40,17 @@ class SignUpFirst : AppCompatActivity() {
         binding.nextSignIn.setOnClickListener{
             //radio buton okuma
             val slcBtn:Int = rdGroup!!.checkedRadioButtonId
-            val uyeCinsiyet = findViewById<RadioButton>(slcBtn).text.toString()
+            var uyeCinsiyet = ""
+
+            if(findViewById<RadioButton>(slcBtn)!=null){
+                uyeCinsiyet = findViewById<RadioButton>(slcBtn).text.toString()
+
+            } else {
+                Toast.makeText(this@SignUpFirst,"Lütfen birini işaretleyin.", LENGTH_LONG).show()
+                return@setOnClickListener
+            }
             //Toast.makeText(this@SignUpFirst,uyeCinsiyet, LENGTH_LONG).show()
+
 
             var uyeAdSoyad = binding.nameInfoFromUser.text.toString()
             var uyeYas = binding.ageInfoFromUser.text.toString()
