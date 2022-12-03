@@ -68,7 +68,7 @@ class Profile : AppCompatActivity() {
         val editProfileButton = findViewById<Button>(R.id.editProfile)
         val dietTrackerButton = findViewById<Button>(R.id.dietTracker)
         val workoutActivitiesButton = findViewById<Button>(R.id.workoutActivities)
-        val qaButton = findViewById<Button>(R.id.QandA)
+        val qaButton = findViewById<Button>(R.id.qa)
         val logOutButton = findViewById<Button>(R.id.logOut)
 
         val homeButton = findViewById<ImageButton>(R.id.homepage)
@@ -92,11 +92,10 @@ class Profile : AppCompatActivity() {
         }
 
         qaButton.setOnClickListener {
-            /*
-            wait for ilayda
-            val intent = Intent (this, ::class.java)
+
+            val intent = Intent (this, QandA::class.java)
             startActivity(intent)
-            */
+
         }
         logOutButton.setOnClickListener {
 
@@ -113,11 +112,11 @@ class Profile : AppCompatActivity() {
         }
 
         gymButton.setOnClickListener {
-            /*
-            wait for ilayda
-            val intent = Intent (this, ::class.java)
+
+
+            val intent = Intent(this, Workout::class.java)
             startActivity(intent)
-            */
+
         }
 
         foodButton.setOnClickListener {

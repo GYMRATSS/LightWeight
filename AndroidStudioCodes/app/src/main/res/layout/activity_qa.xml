@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/wallp"
+    tools:context=".QandA">
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/question3"
+        android:layout_width="417dp"
+        android:layout_height="50dp"
+        android:background="#403939"
+        android:fontFamily="@font/jura_bold"
+        android:foregroundTint="#3E363E"
+        android:gravity="center"
+        android:text="Macrolar ve microlar beslenmede ne anlama gelir? "
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.368" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/question4"
+        android:layout_width="417dp"
+        android:layout_height="50dp"
+        android:background="#2E2929"
+        android:fontFamily="@font/jura_bold"
+        android:foregroundTint="#3E363E"
+        android:gravity="center"
+        android:text="Dinlenme günümde ne yapmalıyım?"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.201" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/question5"
+        android:layout_width="417dp"
+        android:layout_height="50dp"
+        android:background="#272323"
+        android:fontFamily="@font/jura_bold"
+        android:foregroundTint="#872787"
+        android:gravity="center"
+        android:text="Neden kas ağrısı çekmiyorum?"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.114" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/question1"
+        android:layout_width="417dp"
+        android:layout_height="50dp"
+        android:background="#4C4646"
+        android:fontFamily="@font/jura_bold"
+        android:foregroundTint="#3E363E"
+        android:gravity="center"
+        android:text="Setlerimin arasında ne kadar dinlenmeliyim?"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.538" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/question2"
+        android:layout_width="417dp"
+        android:layout_height="50dp"
+        android:background="#393434"
+        android:fontFamily="@font/jura_bold"
+        android:foregroundTint="#3C3A3A"
+        android:gravity="center"
+        android:text="Bir programı bitirdikten sonra ne yapmalıyım?"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.284" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/question6"
+        android:layout_width="417dp"
+        android:layout_height="50dp"
+        android:background="#474242"
+        android:fontFamily="@font/jura_bold"
+        android:foregroundTint="#3C3A3A"
+        android:gravity="center"
+        android:text="Antrenman için günün en iyi saati hangisidir?"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.453" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/question10"
+        android:layout_width="417dp"
+        android:layout_height="50dp"
+        android:background="#595454"
+        android:fontFamily="@font/jura_bold"
+        android:foregroundTint="#3E363E"
+        android:gravity="center"
+        android:text="Esneme hareketi yapmak zorunda mıyım?"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.624" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/question9"
+        android:layout_width="417dp"
+        android:layout_height="50dp"
+        android:background="#A5A0A0"
+        android:fontFamily="@font/jura_bold"
+        android:foregroundTint="#3E363E"
+        android:gravity="center"
+        android:text="Gelişimimi nasıl takip edebilirim?"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.878" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/question7"
+        android:layout_width="417dp"
+        android:layout_height="50dp"
+        android:background="#736F6F"
+        android:fontFamily="@font/jura_bold"
+        android:foregroundTint="#3E363E"
+        android:gravity="center"
+        android:text="Kas ağrısı nasıl geçer?"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.709" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/question8"
+        android:layout_width="417dp"
+        android:layout_height="50dp"
+        android:background="#989393"
+        android:fontFamily="@font/jura_bold"
+        android:foregroundTint="#3E363E"
+        android:gravity="center"
+        android:text="Antrenmanımdan kaç saat önce yemek yemeliyim?"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.792" />
+
+    <LinearLayout
+        android:id="@+id/menulayout"
+        android:layout_width="wrap_content"
+        android:layout_height="83dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/homepage"
+            android:layout_width="78dp"
+            android:layout_height="match_parent"
+            android:background="#00F44336"
+            android:clickable="true"
+            android:contentDescription="@string/app_name"
+            android:src="@mipmap/home_icon" />
+
+        <ImageButton
+            android:id="@+id/gympage"
+            android:layout_width="77dp"
+            android:layout_height="match_parent"
+            android:background="#00F44336"
+            android:clickable="true"
+            android:contentDescription="@string/app_name"
+            android:src="@mipmap/gym_icon"
+            tools:ignore="DuplicateSpeakableTextCheck">
+
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/foodpage"
+            android:layout_width="78dp"
+            android:layout_height="match_parent"
+            android:background="#00F44336"
+            android:clickable="true"
+            android:contentDescription="@string/app_name"
+            android:src="@mipmap/food_icon"></ImageButton>
+
+        <ImageButton
+            android:id="@+id/shopage"
+            android:layout_width="78dp"
+            android:layout_height="match_parent"
+            android:background="#00F44336"
+            android:clickable="true"
+            android:contentDescription="@string/app_name"
+            android:src="@mipmap/shop_icon" />
+
+        <ImageButton
+            android:id="@+id/userpage"
+            android:layout_width="89dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="1dp"
+            android:background="#00F44336"
+            android:clickable="true"
+            android:contentDescription="@string/app_name"
+            android:src="@mipmap/user_icon"
+            tools:ignore="DuplicateSpeakableTextCheck"></ImageButton>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/qa"
+        android:layout_width="162dp"
+        android:layout_height="75dp"
+        android:fontFamily="@font/jura"
+        android:gravity="center"
+        android:text="Q &amp; A"
+        android:textColor="#BFCAD5"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

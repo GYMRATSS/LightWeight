@@ -1,6 +1,7 @@
 package com.example.lightweight
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.AdapterView
@@ -20,25 +21,29 @@ class Shop : AppCompatActivity() {
         val protein: Button = findViewById (R.id.protein)
 
         protein.setOnClickListener() {
-
+            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.supplementler.com/c/protein-tozu-11"))
+            startActivity(i)
         }
 
         val creatine: Button = findViewById (R.id.creatine)
 
         creatine.setOnClickListener() {
-
+            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.supplementler.com/c/kreatin-14"))
+            startActivity(i)
         }
 
         val bcaa: Button = findViewById (R.id.bcaa)
 
         bcaa.setOnClickListener() {
-
+            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.supplementler.com/c/bcaa-22"))
+            startActivity(i)
         }
 
         val eq: Button = findViewById (R.id.gymEquipments)
 
         eq.setOnClickListener() {
-
+            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.supplementler.com/c/fitness-aksesuarlari-8"))
+            startActivity(i)
         }
 
         /**********************************************/
@@ -55,6 +60,13 @@ class Shop : AppCompatActivity() {
 
         food.setOnClickListener() {
             val intent = Intent(this, CalorieCount::class.java)
+            startActivity(intent)
+        }
+
+        val gympag:  ImageButton = findViewById(R.id.gympage)
+
+        gympag.setOnClickListener() {
+            val intent = Intent(this, Workout::class.java)
             startActivity(intent)
         }
 

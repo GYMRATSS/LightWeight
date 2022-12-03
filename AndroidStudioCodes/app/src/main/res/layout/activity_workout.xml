@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/wallp"
+    tools:context=".Workout"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="12dp">
+
+
+    <TextView
+        android:id="@+id/textworkouttype2"
+        android:layout_width="171dp"
+        android:layout_height="48dp"
+        android:fontFamily="@font/jura_bold"
+        android:gravity="center"
+        android:text="Analytics   "
+        android:textColor="#000000"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.022"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.654" />
+
+    <TextView
+        android:id="@+id/wo9"
+        android:layout_width="187dp"
+        android:layout_height="24dp"
+        android:fontFamily="@font/jura_bold"
+        android:gravity="center|left"
+        android:text="%10 Hips"
+        android:textColor="#000000"
+        android:textSize="19sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.765" />
+
+    <TextView
+        android:id="@+id/wo10"
+        android:layout_width="187dp"
+        android:layout_height="24dp"
+        android:fontFamily="@font/jura_bold"
+        android:gravity="center|left"
+        android:text="%5 Back"
+        android:textColor="#000000"
+        android:textSize="19sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.796" />
+
+    <TextView
+        android:id="@+id/wo7"
+        android:layout_width="187dp"
+        android:layout_height="24dp"
+        android:fontFamily="@font/jura_bold"
+        android:gravity="center|left"
+        android:text="%10 Arms"
+        android:textColor="#000000"
+        android:textSize="19sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.702" />
+
+    <TextView
+        android:id="@+id/wo8"
+        android:layout_width="187dp"
+        android:layout_height="24dp"
+        android:fontFamily="@font/jura_bold"
+        android:gravity="center|left"
+        android:text="%75 Legs"
+        android:textColor="#000000"
+        android:textSize="19sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.733" />
+
+    <ProgressBar
+        android:id="@+id/workoutProgressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="204dp"
+        android:layout_height="179dp"
+        android:layout_marginBottom="332dp"
+        android:indeterminateOnly="false"
+        android:progressDrawable="@drawable/circle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.01"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/workout_persent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:fontFamily="@font/jura_bold"
+        android:text="%0"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toBottomOf="@+id/workoutProgressBar"
+        app:layout_constraintEnd_toEndOf="@+id/workoutProgressBar"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="@+id/workoutProgressBar"
+        app:layout_constraintTop_toTopOf="@+id/workoutProgressBar"
+        app:layout_constraintVertical_bias="0.04" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/startbutton"
+        android:layout_width="166dp"
+        android:layout_height="105dp"
+        android:background="@mipmap/workout_startb"
+        android:ellipsize="none"
+        android:fontFamily="@font/jura_bold"
+        android:foregroundTint="#3E363E"
+        android:gravity="center"
+        android:radius="10dp"
+        android:text="Start"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="39sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.186" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/changeprogrambutton"
+        android:layout_width="171dp"
+        android:layout_height="105dp"
+        android:background="@mipmap/change_progb"
+        android:ellipsize="none"
+        android:fontFamily="@font/jura_bold"
+        android:foregroundTint="#3E363E"
+        android:gravity="center"
+        android:radius="10dp"
+        android:text="Change Program"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="39sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.875"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.186" />
+
+    <TextView
+        android:id="@+id/qa"
+        android:layout_width="176dp"
+        android:layout_height="99dp"
+        android:fontFamily="@font/jura"
+        android:gravity="center"
+        android:text="Today's Program"
+        android:textColor="#BFCAD5"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.021"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.025" />
+
+
+    <TextView
+        android:id="@+id/textworkouttype"
+        android:layout_width="171dp"
+        android:layout_height="48dp"
+        android:fontFamily="@font/jura_bold"
+        android:gravity="center"
+        android:text="Leg Day "
+        android:textColor="#000000"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.353" />
+
+    <TextView
+        android:id="@+id/wo2"
+        android:layout_width="187dp"
+        android:layout_height="24dp"
+        android:fontFamily="@font/jura_bold"
+        android:gravity="center"
+        android:text="3x12 Leg Extensions"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.463" />
+
+    <TextView
+        android:id="@+id/wo1"
+        android:layout_width="190dp"
+        android:layout_height="18dp"
+        android:fontFamily="@font/jura_bold"
+        android:gravity="center"
+        android:text="3x12 Leg Curls"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.55" />
+
+    <TextView
+        android:id="@+id/wo6"
+        android:layout_width="187dp"
+        android:layout_height="24dp"
+        android:fontFamily="@font/jura_bold"
+        android:gravity="center"
+        android:text="3x10 Barbell Squat"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.494" />
+
+    <TextView
+        android:id="@+id/wo5"
+        android:layout_width="187dp"
+        android:layout_height="24dp"
+        android:fontFamily="@font/jura_bold"
+        android:gravity="center"
+        android:text="4x12 Dumbell Lunges"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.431" />
+
+    <TextView
+        android:id="@+id/wo4"
+        android:layout_width="187dp"
+        android:layout_height="24dp"
+        android:fontFamily="@font/jura_bold"
+        android:gravity="center"
+        android:text="4x12 Barbell Curls"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.402" />
+
+    <TextView
+        android:id="@+id/wo3"
+        android:layout_width="187dp"
+        android:layout_height="24dp"
+        android:fontFamily="@font/jura_bold"
+        android:gravity="center"
+        android:text="4x10 Leg Press"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.524" />
+
+    <LinearLayout
+        android:id="@+id/menulayout"
+        android:layout_width="wrap_content"
+        android:layout_height="83dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/homepage"
+            android:layout_width="78dp"
+            android:layout_height="match_parent"
+            android:background="#00F44336"
+            android:clickable="true"
+            android:contentDescription="@string/app_name"
+            android:src="@mipmap/home_icon" />
+
+        <ImageButton
+            android:id="@+id/gympage"
+            android:layout_width="77dp"
+            android:layout_height="match_parent"
+            android:background="#00F44336"
+            android:clickable="true"
+            android:contentDescription="@string/app_name"
+            android:src="@mipmap/gym_icon"
+            tools:ignore="DuplicateSpeakableTextCheck">
+
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/foodpage"
+            android:layout_width="78dp"
+            android:layout_height="match_parent"
+            android:background="#00F44336"
+            android:clickable="true"
+            android:contentDescription="@string/app_name"
+            android:src="@mipmap/food_icon"></ImageButton>
+
+        <ImageButton
+            android:id="@+id/shopage"
+            android:layout_width="78dp"
+            android:layout_height="match_parent"
+            android:background="#00F44336"
+            android:clickable="true"
+            android:contentDescription="@string/app_name"
+            android:src="@mipmap/shop_icon" />
+
+        <ImageButton
+            android:id="@+id/userpage"
+            android:layout_width="89dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="1dp"
+            android:background="#00F44336"
+            android:clickable="true"
+            android:contentDescription="@string/app_name"
+            android:src="@mipmap/user_icon"
+            tools:ignore="DuplicateSpeakableTextCheck"></ImageButton>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="110dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="27dp"
+        app:layout_constraintBottom_toTopOf="@+id/menulayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/wo9"
+        app:layout_constraintTop_toBottomOf="@+id/wo1"
+        app:srcCompat="@mipmap/bodymuscles" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="65dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="31dp"
+        app:layout_constraintBottom_toTopOf="@+id/changeprogrambutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/qa"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/calendar_gym" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

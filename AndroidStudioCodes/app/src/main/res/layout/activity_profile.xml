@@ -39,7 +39,7 @@ tools:context=".Profile">
         app:layout_constraintVertical_bias="0.855" />
 
     <Button
-        android:id="@+id/QandA"
+        android:id="@+id/qa"
         android:layout_width="417dp"
         android:layout_height="45dp"
         android:backgroundTint="#5F5C65"
