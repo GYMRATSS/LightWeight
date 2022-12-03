@@ -15,6 +15,8 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
     var recView : RecyclerView? = null
     var takenCal = 0
 
+    // TUÇEMİ SEVİORUM
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calorie_count)
