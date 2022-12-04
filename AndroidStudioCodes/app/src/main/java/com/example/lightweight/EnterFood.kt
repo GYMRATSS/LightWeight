@@ -32,6 +32,7 @@ class EnterFood : AppCompatActivity(), AdapterClass.ClickListener{
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_enter_food)
 
+
         val actionBar = supportActionBar
         actionBar!!.hide()
 

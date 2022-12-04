@@ -141,10 +141,13 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
         ref = userReference?.child("besin")?.child("besin kayıtları")?.child(LocalDate.now().toString())
         recView = findViewById(R.id.foods)
 
+
+
         if(ref != null){
             ref!!.addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.exists()){
+
                         for (ds in snapshot.children)
                         {
                             val temp: ArrayList<String> = ArrayList<String>()
@@ -170,6 +173,18 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
 
 
     fun calculations(takenCal: Int){
+
+
+        userReference!!.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                var a:TextView = findViewById (R.id.totalCalVal)
+                a.text = snapshot.child("Kalori ihtiyacı").value.toString()
+
+            }
+            override fun onCancelled(error: DatabaseError) {
+            }
+        })
+
         var c_bar: ProgressBar = findViewById (R.id.caloryProgressBar)
         var tc_text: TextView= findViewById (R.id.takenCalVal)
         var ttc_text:TextView = findViewById (R.id.totalCalVal)
@@ -185,6 +200,10 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
         tc_text?.text = "$takenCal"
         remain = totalCal - takenCal
         rc_text?.text = "$remain"
+
+        userReference?.child("besin")?.child("kalori kayıtları")?.child(LocalDate.now().toString())?.child("Alınan kalori")?.setValue(takenCal)
+        userReference?.child("besin")?.child("kalori kayıtları")?.child(LocalDate.now().toString())?.child("Kalan kalori")?.setValue(remain)
+
 
     }
 
