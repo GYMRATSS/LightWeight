@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import java.time.LocalDate
+import java.time.LocalDateTime
 
 class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
     var ref: DatabaseReference? = null /**/
@@ -17,18 +18,9 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
 
     // TUÇEMİ SEVİORUM
 
-    private lateinit var auth: FirebaseAuth /**/
-    var databaseReference: DatabaseReference? = null /**/
-    var database: FirebaseDatabase? = null /**/
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calorie_count)
-
-        auth = FirebaseAuth.getInstance() /**/
-        database = FirebaseDatabase.getInstance() /**/
-        databaseReference = database?.reference!!.child("Kullanıcılar")
-        var currentUser = auth.currentUser
 
         val actionBar = supportActionBar
         actionBar!!.hide()
@@ -60,7 +52,6 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
         newFood.setOnClickListener() {
             val intent = Intent(this, EnterFood::class.java)
             startActivity(intent)
-            finish()
         }
 
         /******************** Menu ***************************************/
@@ -95,10 +86,8 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
         }
 
         /**************************************************/
-        //FirebaseAuth.getInstance().currentUser?.uid.toString()
-        //Kullanıcının id'sini alıyoruz
-        var userReference = databaseReference?.child(currentUser?.uid!!)
-        ref = userReference?.child("besin")?.child("besin kayıtları")?.child(LocalDate.now().toString())
+        ref = FirebaseDatabase.getInstance().reference.child("User").child(FirebaseAuth.getInstance().currentUser?.uid.toString())
+            .child("besin").child("besin kayıtları").child(LocalDate.now().toString())
         recView = findViewById(R.id.foods)
 
         if(ref != null){
