@@ -40,6 +40,17 @@ class homePage : AppCompatActivity() {
                 binding.takenCalVal.setText(snapshot.child("besin").child("kalori kayıtları").child(
                     LocalDate.now().toString()).child("Alınan kalori").value.toString())
 
+                val c_bar: ProgressBar = findViewById (R.id.caloryProgressBar)
+                val tc_text: TextView = findViewById (R.id.takenCalVal)
+                val ttc_text: TextView = findViewById (R.id.totalCalVal)
+                val cPercent: TextView = findViewById (R.id.c_persent)
+
+                var takenCal = tc_text.text.toString().toIntOrNull() ?: 0 //TODO with firebase
+                var totalCal = ttc_text.text.toString().toIntOrNull() ?: 0 //TODO with firebase
+                c_bar.progress = (takenCal*100)/totalCal
+                val percent = (takenCal*100)/totalCal
+                cPercent.text = "%$percent"
+
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -48,10 +59,10 @@ class homePage : AppCompatActivity() {
 
         })
 
-        val userName = intent.getStringExtra("USER")
-        val textView = findViewById<TextView>(R.id.hiName)
-        val message = "Merhaba, $userName"          // name database'den gelsin suan sadece sign uptan geleni yazıyor
-        textView.text = message
+        //val userName = intent.getStringExtra("USER")
+        //val textView = findViewById<TextView>(R.id.hiName)
+        //val message = "Merhaba, $userName"          // name database'den gelsin suan sadece sign uptan geleni yazıyor
+        //textView.text = message
 
         val homeButton = findViewById<ImageButton>(R.id.homepage)
         val gymButton = findViewById<ImageButton>(R.id.gympage)
@@ -61,16 +72,7 @@ class homePage : AppCompatActivity() {
 
         homeButton.isClickable = false
 
-        val c_bar: ProgressBar = findViewById (R.id.caloryProgressBar)
-        val tc_text: TextView = findViewById (R.id.takenCalVal)
-        val ttc_text: TextView = findViewById (R.id.totalCalVal)
-        val cPercent: TextView = findViewById (R.id.c_persent)
 
-        var takenCal = tc_text.text.toString().toIntOrNull() ?: 0 //TODO with firebase
-        var totalCal = ttc_text.text.toString().toIntOrNull() ?: 0 //TODO with firebase
-        c_bar.progress = (takenCal*100)/totalCal
-        val percent = (takenCal*100)/totalCal
-        cPercent.text = "%$percent"
 
         val activityBar = findViewById<ProgressBar>(R.id.workoutProgressBar)
         activityBar.progress = 0                                               // hardcoded progress change it!!!
