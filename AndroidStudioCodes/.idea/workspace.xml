@@ -20,7 +20,7 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2022_00_15__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2022_00_15__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/CalorieCount.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/CalorieCount.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -298,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670180259471</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="home page'e veri bağlantısı yapıldı, progress bar çalışıyor">
+      <created>1670192587301</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1670192587301</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -334,7 +341,8 @@
     <MESSAGE value="added app logo" />
     <MESSAGE value="günlük kalori ihtiyacı, yağ oranı, BMR hesaplandı. profilde cinsiyet kısmında non binary sığmıyordu. text size küçültüldü." />
     <MESSAGE value="9-10 tane yemek eklenebiliyo çökmeden" />
-    <option name="LAST_COMMIT_MESSAGE" value="9-10 tane yemek eklenebiliyo çökmeden" />
+    <MESSAGE value="home page'e veri bağlantısı yapıldı, progress bar çalışıyor" />
+    <option name="LAST_COMMIT_MESSAGE" value="home page'e veri bağlantısı yapıldı, progress bar çalışıyor" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
