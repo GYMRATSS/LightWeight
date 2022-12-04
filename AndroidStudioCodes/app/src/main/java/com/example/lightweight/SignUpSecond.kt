@@ -8,6 +8,7 @@ import android.widget.*
 import com.example.lightweight.databinding.ActivitySignUpSecondBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import kotlin.math.log10
 
 class SignUpSecond : AppCompatActivity() {
     lateinit var binding: ActivitySignUpSecondBinding /**/
@@ -75,6 +76,7 @@ class SignUpSecond : AppCompatActivity() {
             var uyeBMI = ""
             var uyeBMR = ""
             var uyeKaloriIhtiyaci = ""
+            var uyeYagOrani = ""
 
 
 
@@ -97,23 +99,27 @@ class SignUpSecond : AppCompatActivity() {
                 //Inputlar doğru ise hesaplama yapılır
                 number = ((uyeKilo.toDouble()/(uyeBoy.toDouble()*uyeBoy.toDouble()))*10000.0)
                 uyeBMI = String.format("%.2f", number)
-                //kalori ihtiyacı hesaplama
 
-                //Harris-Benedict equation formula
+                //Harris-Benedict equation formula for calorie calculation
                 //men= 66.4730 + 13.7516 x weight in kg + 5.0033 x height in cm – 6.7550 x age
                 //women= 655.0955 + 9.5634 x weight in kg + 1.8496 x height in cm – 4.6756 x age
                 //https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7784146/
                 //https://www.thejakartapost.com/life/2016/09/27/how-to-calculate-your-ideal-calorie-intake.html#:~:text=Formula%20used%20to%20calculate%20men's,divided%20by%204.7%20x%20age.
+
+                //Measuring Body Fat Percentage According to U.S. Navy Method
 
                 var uyeYas = binding.ageHolder.text.toString()
                 var uyeCinsiyet = binding.cinsiyetHolder.text.toString()
 
                 if(uyeCinsiyet == "Erkek"){
                     uyeBMR = (66.4730 + 13.7516*(uyeKilo.toDouble()) + 5.0033*(uyeBoy.toDouble()) + (-6.7550*(uyeYas.toDouble()))).toString()
+                    uyeYagOrani = (495/(1.0324 - 0.19077*log10(uyeBel.toDouble()-uyeBoyun.toDouble()) + 0.15456*log10(uyeBoy.toDouble())) - 450).toString()
                 }else if (uyeCinsiyet == "Kadın"){
                     uyeBMR= (655.0955 + 9.5634*(uyeKilo.toDouble()) + 1.8496*(uyeBoy.toDouble()) + (-4.6756*(uyeYas.toDouble()))).toString()
+                    uyeYagOrani = (495/(1.0324 - 0.19077*log10(uyeBel.toDouble()-uyeBoyun.toDouble()) + 0.15456*log10(uyeBoy.toDouble())) - 450).toString()
                 }else { //Treated as woman
                     uyeBMR= (655.0955 + 9.5634*(uyeKilo.toDouble()) + 1.8496*(uyeBoy.toDouble()) + (-4.6756*(uyeYas.toDouble()))).toString()
+                    uyeYagOrani = (495/(1.0324 - 0.19077*log10(uyeBel.toDouble()-uyeBoyun.toDouble()) + 0.15456*log10(uyeBoy.toDouble())) - 450).toString()
                 }
 
                 if(uyeHareketTercih == "Az"){
@@ -125,16 +131,18 @@ class SignUpSecond : AppCompatActivity() {
                 }
 
                 if(uyeHedefTercih == "Kilo al"){
-                    uyeKaloriIhtiyaci = (uyeBMR.toDouble() + 400.0).toString()
+                    uyeKaloriIhtiyaci = (uyeKaloriIhtiyaci.toDouble() + 400.0).toString()
                 }else if(uyeHedefTercih == "Kilo ver"){
-                    uyeKaloriIhtiyaci = (uyeBMR.toDouble() - 400.0).toString()
+                    uyeKaloriIhtiyaci = (uyeKaloriIhtiyaci.toDouble() - 400.0).toString()
                 }else{
                     //nothing
                 }
 
+
                 //Küsürattan kurtulmak
                 uyeBMR= String.format("%.0f", uyeBMR.toDouble())
                 uyeKaloriIhtiyaci = String.format("%.0f", uyeKaloriIhtiyaci.toDouble())
+                uyeYagOrani = String.format("%.2f", uyeYagOrani.toDouble())
             }
 
 
@@ -157,6 +165,7 @@ class SignUpSecond : AppCompatActivity() {
             currentUserDb?.child("BMR")?.setValue(uyeBMR)
             currentUserDb?.child("Hareket seviyesi")?.setValue(uyeHareketTercih)
             currentUserDb?.child("Kalori ihtiyacı")?.setValue(uyeKaloriIhtiyaci)
+            currentUserDb?.child("Yağ oranı")?.setValue(uyeYagOrani)
 
 
             //Profil sayfasına gitmek için
