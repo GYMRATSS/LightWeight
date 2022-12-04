@@ -17,17 +17,16 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
 
     // TUÇEMİ SEVİORUM
 
-    private lateinit var auth: FirebaseAuth /**/
-    var databaseReference: DatabaseReference? = null /**/
-    var database: FirebaseDatabase? = null /**/
+    var auth = FirebaseAuth.getInstance() /**/
+    var database = FirebaseDatabase.getInstance() /**/
+    var databaseReference = database?.reference!!.child("Kullanıcılar") /**/
+    var currentUser = auth.currentUser
+    var userReference = databaseReference?.child(currentUser?.uid!!)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calorie_count)
 
-        auth = FirebaseAuth.getInstance() /**/
-        database = FirebaseDatabase.getInstance() /**/
-        databaseReference = database?.reference!!.child("Kullanıcılar")
 
         val actionBar = supportActionBar
         actionBar!!.hide()
@@ -52,10 +51,6 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
 
         /*********************************************************/
 
-        var currentUser = auth.currentUser
-        //FirebaseAuth.getInstance().currentUser?.uid.toString()
-        //Kullanıcının id'sini alıyoruz
-        var userReference = databaseReference?.child(currentUser?.uid!!)
         ref = userReference?.child("besin")?.child("besin kayıtları")?.child(LocalDate.now().toString())
         recView = findViewById(R.id.foods)
 
@@ -98,6 +93,7 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
         shp.setOnClickListener() {
             val intent = Intent(this, Shop::class.java)
             startActivity(intent)
+            finish()
         }
 
         val profilePageButton:  ImageButton = findViewById(R.id.userpage)
@@ -105,6 +101,7 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
         profilePageButton.setOnClickListener() {
             val intent = Intent(this, Profile::class.java)
             startActivity(intent)
+            finish()
         }
 
         val food:  ImageButton = findViewById(R.id.foodpage)
@@ -114,12 +111,14 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
         homeButton.setOnClickListener {
             val intent = Intent(this, homePage::class.java)
             startActivity(intent)
+            finish()
         }
         val gymButton = findViewById<ImageButton>(R.id.gympage)
         gymButton.setOnClickListener {
 
             val intent = Intent (this, Workout::class.java)
             startActivity(intent)
+            finish()
 
         }
 
@@ -132,9 +131,6 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
 
     override fun onStop() {
         super.onStop()
-        auth = FirebaseAuth.getInstance() /**/
-        database = FirebaseDatabase.getInstance() /**/
-        databaseReference = database?.reference!!.child("Kullanıcılar")
 
         /*********************************************************/
         val newFood:  Button = findViewById(R.id.newFood)
@@ -142,10 +138,6 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
             val intent = Intent(this, EnterFood::class.java)
             startActivity(intent)
         }
-        var currentUser = auth.currentUser
-        //FirebaseAuth.getInstance().currentUser?.uid.toString()
-        //Kullanıcının id'sini alıyoruz
-        var userReference = databaseReference?.child(currentUser?.uid!!)
         ref = userReference?.child("besin")?.child("besin kayıtları")?.child(LocalDate.now().toString())
         recView = findViewById(R.id.foods)
 
