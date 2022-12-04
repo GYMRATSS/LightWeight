@@ -17,9 +17,18 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
 
     // TUÇEMİ SEVİORUM
 
+    private lateinit var auth: FirebaseAuth /**/
+    var databaseReference: DatabaseReference? = null /**/
+    var database: FirebaseDatabase? = null /**/
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calorie_count)
+
+        auth = FirebaseAuth.getInstance() /**/
+        database = FirebaseDatabase.getInstance() /**/
+        databaseReference = database?.reference!!.child("Kullanıcılar")
+        var currentUser = auth.currentUser
 
         val actionBar = supportActionBar
         actionBar!!.hide()
@@ -51,6 +60,7 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
         newFood.setOnClickListener() {
             val intent = Intent(this, EnterFood::class.java)
             startActivity(intent)
+            finish()
         }
 
         /******************** Menu ***************************************/
@@ -86,8 +96,9 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
 
         /**************************************************/
         //FirebaseAuth.getInstance().currentUser?.uid.toString()
-        ref = FirebaseDatabase.getInstance().reference.child("Users").child("id1")
-            .child("besin").child("besin kayıtları").child("2022-12-02")
+        //Kullanıcının id'sini alıyoruz
+        var userReference = databaseReference?.child(currentUser?.uid!!)
+        ref = userReference?.child("besin")?.child("besin kayıtları")?.child(LocalDate.now().toString())
         recView = findViewById(R.id.foods)
 
         if(ref != null){
