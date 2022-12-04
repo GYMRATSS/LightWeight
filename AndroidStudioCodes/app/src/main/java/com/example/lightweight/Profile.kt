@@ -164,14 +164,14 @@ class Profile : AppCompatActivity() {
     }
 
     fun calculate(){
-        var startWeightText: TextView = findViewById (R.id.start)
-        var initialWeight = startWeightText?.text.toString().toIntOrNull() ?: 0
+        val startWeightText: TextView = findViewById (R.id.start)
+        val initialWeight = startWeightText?.text.toString().toIntOrNull() ?: 0
 
-        var weightGoalText: TextView = findViewById (R.id.goal)
-        var weightGoal = weightGoalText?.text.toString().toIntOrNull() ?: 0
+        val weightGoalText: TextView = findViewById (R.id.goal)
+        val weightGoal = weightGoalText?.text.toString().toIntOrNull() ?: 0
 
-        var currentWeightText: TextView = findViewById (R.id.weight)
-        var currentWeight = currentWeightText?.text.toString().toIntOrNull() ?: 0
+        val currentWeightText: TextView = findViewById (R.id.weight)
+        val currentWeight = currentWeightText?.text.toString().toIntOrNull() ?: 0
 
         var weightProgress = findViewById<ProgressBar>(R.id.weightProgressBar)
 
