@@ -33,6 +33,7 @@ class Profile : AppCompatActivity() {
         val actionBar = supportActionBar
         actionBar!!.hide()
 
+
         userReference?.addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 binding.age.text = snapshot.child("Yaş").value.toString()
@@ -45,7 +46,8 @@ class Profile : AppCompatActivity() {
                 binding.start.text = snapshot.child("Kilo").value.toString()
                 binding.goal.text = snapshot.child("Hedef").value.toString()
                 binding.userName.text = snapshot.child("İsim-soyisim").value.toString()
-                binding.fatRatio.text = snapshot.child("Yağ oranı").value.toString()
+
+                calculate()
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -65,6 +67,25 @@ class Profile : AppCompatActivity() {
             startActivity(Intent(this@Profile,CalorieCount::class.java))
             finish()
         }
+
+
+
+        // initialWeight = userReference?.child("Kilo").toString().toInt()
+
+       /* newWeight =
+        weightGoal = binding.goal.text.toString().toInt() */
+        //userReference?.child("Kilo")!!.setValue(newWeight)
+        /*var initialWeight =
+            userReference?.child("İlk Kilo")!!.setValue(newWeight)
+        var weightGoal = userReference?.child("Hedef")*/
+
+
+        /* initialWeight = binding.start.text.toString().toInt()
+        newWeight = binding.weight.text.toString().toInt()
+        weightGoal = binding.goal.text.toString().toInt() */
+
+
+
 
         val dietTrackerButton = findViewById<Button>(R.id.dietTracker)
         val workoutActivitiesButton = findViewById<Button>(R.id.workoutActivities)
@@ -141,4 +162,21 @@ class Profile : AppCompatActivity() {
 
 
     }
+
+    fun calculate(){
+        var startWeightText: TextView = findViewById (R.id.start)
+        var initialWeight = startWeightText?.text.toString().toIntOrNull() ?: 0
+
+        var weightGoalText: TextView = findViewById (R.id.goal)
+        var weightGoal = weightGoalText?.text.toString().toIntOrNull() ?: 0
+
+        var currentWeightText: TextView = findViewById (R.id.weight)
+        var currentWeight = currentWeightText?.text.toString().toIntOrNull() ?: 0
+
+        var weightProgress = findViewById<ProgressBar>(R.id.weightProgressBar)
+
+        if(weightProgress?.progress!! < 100)
+            weightProgress?.progress = (Math.abs(currentWeight - initialWeight) * 100) / Math.abs(weightGoal - initialWeight)
+    }
+
 }
