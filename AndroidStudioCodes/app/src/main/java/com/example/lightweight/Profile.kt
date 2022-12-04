@@ -3,9 +3,7 @@ package com.example.lightweight
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.Toast
+import android.widget.*
 import com.example.lightweight.databinding.ActivityProfileBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -43,8 +41,10 @@ class Profile : AppCompatActivity() {
                 binding.waist.text = snapshot.child("Bel").value.toString()
                 binding.neck.text = snapshot.child("Boyun").value.toString()
                 binding.bmi.text = snapshot.child("BMI").value.toString()
-                binding.start.text = snapshot.child("Kilo").value.toString()
+                binding.start.text = snapshot.child("İlk kilo").value.toString()
                 binding.goal.text = snapshot.child("Hedef").value.toString()
+                binding.fatRatio.text = snapshot.child("Yağ oranı").value.toString()
+                binding.calorieIntake.text = snapshot.child("Kalori ihtiyacı").value.toString()
                 binding.userName.text = snapshot.child("İsim-soyisim").value.toString()
 
                 calculate()
