@@ -45,6 +45,7 @@ class Profile : AppCompatActivity() {
                 binding.start.text = snapshot.child("Kilo").value.toString()
                 binding.goal.text = snapshot.child("Hedef").value.toString()
                 binding.userName.text = snapshot.child("İsim-soyisim").value.toString()
+                binding.fatRatio.text = snapshot.child("Yağ oranı").value.toString()
             }
 
             override fun onCancelled(error: DatabaseError) {

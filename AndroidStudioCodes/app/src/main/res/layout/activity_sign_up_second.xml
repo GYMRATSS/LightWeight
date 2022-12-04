@@ -13,7 +13,7 @@
         android:layout_height="41dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="39cm"
+        android:hint="90cm"
         android:inputType="numberDecimal"
         android:textColor="#FFFF"
         android:textSize="20sp"

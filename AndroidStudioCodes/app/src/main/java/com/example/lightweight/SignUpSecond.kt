@@ -77,6 +77,12 @@ class SignUpSecond : AppCompatActivity() {
             var uyeBMR = ""
             var uyeKaloriIhtiyaci = ""
             var uyeYagOrani = ""
+            var uyeKalca = binding.hipInput.text.toString()
+
+            //Kalça boş bırakılmışsa default 90 ayarlanıyor.
+            if(TextUtils.isEmpty(uyeKalca) || uyeKalca.toInt()<1){
+                uyeKalca = "90"
+            }
 
 
 
@@ -116,10 +122,10 @@ class SignUpSecond : AppCompatActivity() {
                     uyeYagOrani = (495/(1.0324 - 0.19077*log10(uyeBel.toDouble()-uyeBoyun.toDouble()) + 0.15456*log10(uyeBoy.toDouble())) - 450).toString()
                 }else if (uyeCinsiyet == "Kadın"){
                     uyeBMR= (655.0955 + 9.5634*(uyeKilo.toDouble()) + 1.8496*(uyeBoy.toDouble()) + (-4.6756*(uyeYas.toDouble()))).toString()
-                    uyeYagOrani = (495/(1.0324 - 0.19077*log10(uyeBel.toDouble()-uyeBoyun.toDouble()) + 0.15456*log10(uyeBoy.toDouble())) - 450).toString()
+                    uyeYagOrani = (495/(1.29579 - 0.35004*log10(uyeBel.toDouble() + uyeKalca.toDouble()-uyeBoyun.toDouble()) + 0.221*log10(uyeBoy.toDouble())) - 450).toString()
                 }else { //Treated as woman
                     uyeBMR= (655.0955 + 9.5634*(uyeKilo.toDouble()) + 1.8496*(uyeBoy.toDouble()) + (-4.6756*(uyeYas.toDouble()))).toString()
-                    uyeYagOrani = (495/(1.0324 - 0.19077*log10(uyeBel.toDouble()-uyeBoyun.toDouble()) + 0.15456*log10(uyeBoy.toDouble())) - 450).toString()
+                    uyeYagOrani = (495/(1.29579 - 0.35004*log10(uyeBel.toDouble() + uyeKalca.toDouble()-uyeBoyun.toDouble()) + 0.221*log10(uyeBoy.toDouble())) - 450).toString()
                 }
 
                 if(uyeHareketTercih == "Az"){
