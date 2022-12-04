@@ -8,7 +8,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.lightweight.databinding.ActivityEnterFoodBinding
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import java.time.LocalDate
 
 
 class EnterFood : AppCompatActivity(), AdapterClass.ClickListener{
@@ -16,6 +19,14 @@ class EnterFood : AppCompatActivity(), AdapterClass.ClickListener{
     var list: ArrayList<meal>? = ArrayList<meal>()
     var recView : RecyclerView? = null
     private var sView : SearchView? = null
+
+    var auth = FirebaseAuth.getInstance() /**/
+    var database = FirebaseDatabase.getInstance() /**/
+    var databaseReference = database?.reference!!.child("Kullanıcılar") /**/
+    var currentUser = auth.currentUser
+    var userReference = databaseReference?.child(currentUser?.uid!!)
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -93,6 +104,14 @@ class EnterFood : AppCompatActivity(), AdapterClass.ClickListener{
     }
 
     override fun ClickedItem(Meal: meal) {
+
+
+        userReference?.child("besin")?.child("besin kayıtları")?.child(LocalDate.now().toString())?.child(Meal.id.toString())?.child("kalori")?.setValue(Meal.kalori)
+        userReference?.child("besin")?.child("besin kayıtları")?.child(LocalDate.now().toString())?.child(Meal.id.toString())?.child("protein")?.setValue(Meal.protein)
+        userReference?.child("besin")?.child("besin kayıtları")?.child(LocalDate.now().toString())?.child(Meal.id.toString())?.child("yağ")?.setValue(Meal.yağ)
+        userReference?.child("besin")?.child("besin kayıtları")?.child(LocalDate.now().toString())?.child(Meal.id.toString())?.child("karbonhidrat")?.setValue(Meal.karbonhidrat)
+
+        //LocalDate.now().toString()
 
     }
 

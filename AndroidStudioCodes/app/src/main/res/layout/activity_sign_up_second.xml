@@ -7,6 +7,39 @@
     android:background="@mipmap/wallp"
     tools:context=".SignUpSecond">
 
+    <EditText
+        android:id="@+id/hipInput"
+        android:layout_width="196dp"
+        android:layout_height="41dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="90cm"
+        android:inputType="numberDecimal"
+        android:textColor="#FFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.893"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.423" />
+
+    <TextView
+        android:id="@+id/getHip"
+        android:layout_width="144dp"
+        android:layout_height="42dp"
+        android:fontFamily="@font/jura"
+        android:gravity="center_vertical"
+        android:text="Kalça : "
+        android:textColor="#FFFF"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.157"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.423" />
+
     <TextView
         android:id="@+id/weightQuestionHeader"
         android:layout_width="284dp"
@@ -111,8 +144,8 @@
 
     <EditText
         android:id="@+id/neckInput"
-        android:layout_width="206dp"
-        android:layout_height="56dp"
+        android:layout_width="196dp"
+        android:layout_height="41dp"
         android:ems="10"
         android:gravity="center"
         android:hint="39cm"
@@ -121,15 +154,15 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.936"
+        app:layout_constraintHorizontal_bias="0.893"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.462" />
+        app:layout_constraintVertical_bias="0.363" />
 
     <EditText
         android:id="@+id/waistInput"
-        android:layout_width="206dp"
-        android:layout_height="56dp"
+        android:layout_width="197dp"
+        android:layout_height="41dp"
         android:ems="10"
         android:gravity="center"
         android:hint="83cm"
@@ -138,15 +171,15 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.936"
+        app:layout_constraintHorizontal_bias="0.897"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.373" />
+        app:layout_constraintVertical_bias="0.304" />
 
     <TextView
         android:id="@+id/getNeck"
-        android:layout_width="152dp"
-        android:layout_height="58dp"
+        android:layout_width="146dp"
+        android:layout_height="40dp"
         android:fontFamily="@font/jura"
         android:gravity="center_vertical"
         android:text="Boyun : "
@@ -157,12 +190,12 @@
         app:layout_constraintHorizontal_bias="0.154"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.46" />
+        app:layout_constraintVertical_bias="0.365" />
 
     <TextView
         android:id="@+id/getWaist"
-        android:layout_width="152dp"
-        android:layout_height="58dp"
+        android:layout_width="146dp"
+        android:layout_height="43dp"
         android:fontFamily="@font/jura"
         android:gravity="center_vertical"
         android:text="Bel :"
@@ -170,15 +203,15 @@
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.154"
+        app:layout_constraintHorizontal_bias="0.158"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.374" />
+        app:layout_constraintVertical_bias="0.305" />
 
     <TextView
         android:id="@+id/getHeight"
-        android:layout_width="152dp"
-        android:layout_height="58dp"
+        android:layout_width="146dp"
+        android:layout_height="44dp"
         android:fontFamily="@font/jura"
         android:gravity="center_vertical"
         android:text="Boy : "
@@ -186,15 +219,15 @@
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.154"
+        app:layout_constraintHorizontal_bias="0.158"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.288" />
+        app:layout_constraintVertical_bias="0.241" />
 
     <TextView
         android:id="@+id/getWeight"
-        android:layout_width="152dp"
-        android:layout_height="58dp"
+        android:layout_width="147dp"
+        android:layout_height="43dp"
         android:fontFamily="@font/jura"
         android:gravity="center_vertical"
         android:text="Kilo :"
@@ -205,12 +238,12 @@
         app:layout_constraintHorizontal_bias="0.154"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.202" />
+        app:layout_constraintVertical_bias="0.178" />
 
     <EditText
         android:id="@+id/weightInput"
-        android:layout_width="206dp"
-        android:layout_height="56dp"
+        android:layout_width="196dp"
+        android:layout_height="48dp"
         android:ems="10"
         android:gravity="center"
         android:hint="72kg"
@@ -219,15 +252,15 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.921"
+        app:layout_constraintHorizontal_bias="0.893"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.201" />
+        app:layout_constraintVertical_bias="0.175" />
 
     <EditText
         android:id="@+id/heightInput"
-        android:layout_width="206dp"
-        android:layout_height="56dp"
+        android:layout_width="196dp"
+        android:layout_height="42dp"
         android:ems="10"
         android:gravity="center"
         android:hint="170cm"
@@ -236,10 +269,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.936"
+        app:layout_constraintHorizontal_bias="0.893"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.287" />
+        app:layout_constraintVertical_bias="0.243" />
 
     <TextView
         android:id="@+id/startHeader"

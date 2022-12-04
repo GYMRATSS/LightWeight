@@ -7,6 +7,72 @@ android:layout_height="match_parent"
 android:background="@mipmap/wallp"
 tools:context=".Profile">
 
+    <TextView
+        android:id="@+id/calorieIntake"
+        android:layout_width="87dp"
+        android:layout_height="29dp"
+        android:ems="10"
+        android:fontFamily="@font/jura"
+        android:gravity="center"
+        android:text=""
+        android:textColor="#E6D9D9"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.404" />
+
+    <TextView
+        android:id="@+id/fatRatioBox2"
+        android:layout_width="105dp"
+        android:layout_height="43dp"
+        android:fontFamily="@font/jura"
+        android:gravity="center"
+        android:text="Günlük Kalori İhtiyacı"
+        android:textColor="#E6D9D9"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.66"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.411" />
+
+    <TextView
+        android:id="@+id/fatRatio"
+        android:layout_width="89dp"
+        android:layout_height="24dp"
+        android:ems="10"
+        android:fontFamily="@font/jura"
+        android:gravity="center"
+        android:text=""
+        android:textColor="#E6D9D9"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.367" />
+
+    <TextView
+        android:id="@+id/fatRatioBox"
+        android:layout_width="84dp"
+        android:layout_height="25dp"
+        android:fontFamily="@font/jura"
+        android:gravity="center_vertical"
+        android:text="Yağ Oranı"
+        android:textColor="#E6D9D9"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.685"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.365" />
+
     <Button
         android:id="@+id/editUser"
         android:layout_width="417dp"
@@ -40,7 +106,7 @@ tools:context=".Profile">
 
     <Button
         android:id="@+id/logOut"
-        android:layout_width="417dp"
+        android:layout_width="421dp"
         android:layout_height="45dp"
         android:backgroundTint="#858791"
         android:fontFamily="@font/jura"
@@ -48,7 +114,6 @@ tools:context=".Profile">
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.879" />
@@ -129,8 +194,8 @@ tools:context=".Profile">
 
     <TextView
         android:id="@+id/bmiBox"
-        android:layout_width="76dp"
-        android:layout_height="34dp"
+        android:layout_width="85dp"
+        android:layout_height="23dp"
         android:fontFamily="@font/jura"
         android:gravity="center_vertical"
         android:text="BMI"
@@ -138,15 +203,15 @@ tools:context=".Profile">
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.686"
+        app:layout_constraintHorizontal_bias="0.687"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.436" />
+        app:layout_constraintVertical_bias="0.331" />
 
     <TextView
         android:id="@+id/neckBox"
-        android:layout_width="77dp"
-        android:layout_height="35dp"
+        android:layout_width="84dp"
+        android:layout_height="29dp"
         android:fontFamily="@font/jura"
         android:gravity="center_vertical"
         android:text="Boyun (cm)"
@@ -154,15 +219,15 @@ tools:context=".Profile">
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.686"
+        app:layout_constraintHorizontal_bias="0.685"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.385" />
+        app:layout_constraintVertical_bias="0.294" />
 
     <TextView
         android:id="@+id/waistBox"
-        android:layout_width="76dp"
-        android:layout_height="33dp"
+        android:layout_width="84dp"
+        android:layout_height="28dp"
         android:fontFamily="@font/jura"
         android:gravity="center_vertical"
         android:text="Bel (cm)"
@@ -173,12 +238,12 @@ tools:context=".Profile">
         app:layout_constraintHorizontal_bias="0.686"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.336" />
+        app:layout_constraintVertical_bias="0.254" />
 
     <TextView
         android:id="@+id/heightBox"
-        android:layout_width="76dp"
-        android:layout_height="35dp"
+        android:layout_width="83dp"
+        android:layout_height="27dp"
         android:fontFamily="@font/jura"
         android:gravity="center_vertical"
         android:text="Boy (m)"
@@ -186,15 +251,15 @@ tools:context=".Profile">
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.688"
+        app:layout_constraintHorizontal_bias="0.682"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.287" />
+        app:layout_constraintVertical_bias="0.215" />
 
     <TextView
         android:id="@+id/weightBox"
-        android:layout_width="76dp"
-        android:layout_height="33dp"
+        android:layout_width="83dp"
+        android:layout_height="27dp"
         android:fontFamily="@font/jura"
         android:gravity="center_vertical"
         android:text="Kilo (kg)"
@@ -202,15 +267,15 @@ tools:context=".Profile">
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.686"
+        app:layout_constraintHorizontal_bias="0.682"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.239" />
+        app:layout_constraintVertical_bias="0.178" />
 
     <TextView
         android:id="@+id/genderBox"
-        android:layout_width="76dp"
-        android:layout_height="35dp"
+        android:layout_width="83dp"
+        android:layout_height="28dp"
         android:fontFamily="@font/jura"
         android:gravity="center_vertical"
         android:text="Cinsiyet"
@@ -218,10 +283,10 @@ tools:context=".Profile">
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.686"
+        app:layout_constraintHorizontal_bias="0.682"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.188" />
+        app:layout_constraintVertical_bias="0.139" />
 
     <TextView
         android:id="@+id/userName"
@@ -235,15 +300,15 @@ tools:context=".Profile">
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.159"
+        app:layout_constraintHorizontal_bias="0.143"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.412" />
+        app:layout_constraintVertical_bias="0.41" />
 
     <TextView
         android:id="@+id/bmi"
-        android:layout_width="89dp"
-        android:layout_height="34dp"
+        android:layout_width="87dp"
+        android:layout_height="25dp"
         android:ems="10"
         android:fontFamily="@font/jura"
         android:gravity="center"
@@ -252,15 +317,15 @@ tools:context=".Profile">
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintHorizontal_bias="0.953"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.436" />
+        app:layout_constraintVertical_bias="0.332" />
 
     <TextView
         android:id="@+id/neck"
-        android:layout_width="89dp"
-        android:layout_height="34dp"
+        android:layout_width="85dp"
+        android:layout_height="28dp"
         android:ems="10"
         android:fontFamily="@font/jura"
         android:gravity="center"
@@ -269,15 +334,15 @@ tools:context=".Profile">
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintHorizontal_bias="0.947"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.387" />
+        app:layout_constraintVertical_bias="0.294" />
 
     <TextView
         android:id="@+id/waist"
-        android:layout_width="89dp"
-        android:layout_height="34dp"
+        android:layout_width="87dp"
+        android:layout_height="27dp"
         android:ems="10"
         android:fontFamily="@font/jura"
         android:gravity="center"
@@ -289,12 +354,12 @@ tools:context=".Profile">
         app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.335" />
+        app:layout_constraintVertical_bias="0.255" />
 
     <TextView
         android:id="@+id/height"
-        android:layout_width="89dp"
-        android:layout_height="34dp"
+        android:layout_width="85dp"
+        android:layout_height="27dp"
         android:ems="10"
         android:fontFamily="@font/jura"
         android:gravity="center"
@@ -303,15 +368,15 @@ tools:context=".Profile">
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintHorizontal_bias="0.941"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.286" />
+        app:layout_constraintVertical_bias="0.215" />
 
     <TextView
         android:id="@+id/weight"
-        android:layout_width="89dp"
-        android:layout_height="34dp"
+        android:layout_width="87dp"
+        android:layout_height="26dp"
         android:ems="10"
         android:fontFamily="@font/jura"
         android:gravity="center"
@@ -320,15 +385,15 @@ tools:context=".Profile">
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintHorizontal_bias="0.947"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.238" />
+        app:layout_constraintVertical_bias="0.177" />
 
     <TextView
         android:id="@+id/gender"
-        android:layout_width="89dp"
-        android:layout_height="34dp"
+        android:layout_width="97dp"
+        android:layout_height="28dp"
         android:ems="10"
         android:fontFamily="@font/jura"
         android:gravity="center"
@@ -337,15 +402,15 @@ tools:context=".Profile">
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintHorizontal_bias="0.977"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.189" />
+        app:layout_constraintVertical_bias="0.139" />
 
     <TextView
         android:id="@+id/age"
-        android:layout_width="89dp"
-        android:layout_height="34dp"
+        android:layout_width="86dp"
+        android:layout_height="25dp"
         android:ems="10"
         android:fontFamily="@font/jura"
         android:gravity="center"
@@ -354,10 +419,10 @@ tools:context=".Profile">
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintHorizontal_bias="0.941"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.14" />
+        app:layout_constraintVertical_bias="0.103" />
 
     <LinearLayout
     android:id="@+id/menulayout"
@@ -425,22 +490,22 @@ tools:context=".Profile">
 
 </LinearLayout>
 
-<ImageView
-    android:id="@+id/imageView"
-    android:layout_width="214dp"
-    android:layout_height="197dp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.081"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.157"
-    app:srcCompat="@mipmap/noel" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="214dp"
+        android:layout_height="197dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.025"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.155"
+        app:srcCompat="@mipmap/noel" />
 
     <TextView
         android:id="@+id/ageBox"
-        android:layout_width="76dp"
-        android:layout_height="33dp"
+        android:layout_width="82dp"
+        android:layout_height="26dp"
         android:fontFamily="@font/jura"
         android:gravity="center_vertical"
         android:text="Yaş"
@@ -448,13 +513,13 @@ tools:context=".Profile">
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.688"
+        app:layout_constraintHorizontal_bias="0.68"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.141" />
+        app:layout_constraintVertical_bias="0.102" />
 
     <ProgressBar
-        android:id="@+id/progressBar2"
+        android:id="@+id/weightProgressBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="356dp"
         android:layout_height="49dp"
@@ -467,7 +532,7 @@ tools:context=".Profile">
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.495" />
+        app:layout_constraintVertical_bias="0.483" />
 
     <TextView
         android:id="@+id/startBox"
@@ -500,8 +565,8 @@ tools:context=".Profile">
 
     <TextView
         android:id="@+id/profileInfo"
-        android:layout_width="149dp"
-        android:layout_height="49dp"
+        android:layout_width="152dp"
+        android:layout_height="37dp"
         android:fontFamily="@font/jura"
         android:gravity="center"
         android:text="Profil Bilgileri"
@@ -509,9 +574,9 @@ tools:context=".Profile">
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.908"
+        app:layout_constraintHorizontal_bias="0.891"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.051" />
+        app:layout_constraintVertical_bias="0.037" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
