@@ -53,7 +53,7 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
         ref = userReference?.child("besin")?.child("besin kayıtları")?.child(LocalDate.now().toString())
         recView = findViewById(R.id.foods)
 
-        takenCal = 0
+        /*takenCal = 0
         var list: ArrayList<meal>? = ArrayList<meal>()
         if(ref != null){
             ref!!.addValueEventListener(object : ValueEventListener {
@@ -61,13 +61,13 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
                     if (snapshot.exists()){
                         for (ds in snapshot.children)
                         {
-                            val temp: ArrayList<String> = ArrayList<String>()
+                            /*val temp: ArrayList<String> = ArrayList<String>()
                             for (v in ds.children) {
                                 temp.add(v.value.toString())
                             }
-                            val m = meal(ds.key, temp)
-                            list?.add(m)
-                            takenCal += m.kalori!!.toInt()
+                            val m = meal(ds.key, temp)*/
+                            list?.add(ds.getValue(meal::class.java)!!)
+                            takenCal += list?.last()?.kalori!!.toInt()
                         }
                         val adapterC: AdapterClass = AdapterClass(list!!,this@CalorieCount)
                         recView?.adapter = adapterC
@@ -79,7 +79,7 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
                     Toast.makeText(this@CalorieCount, error.message, Toast.LENGTH_SHORT).show()
                 }
             })
-        }
+        }*/
 
         val newFood:  Button = findViewById(R.id.newFood)
         newFood.setOnClickListener() {
@@ -126,8 +126,8 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
 
     }
 
-    override fun onResume() {
-        super.onResume()
+    override fun onStart() {
+        super.onStart()
         takenCal = 0
         var list: ArrayList<meal>? = ArrayList<meal>()
         if(ref != null){
@@ -136,13 +136,15 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
                     if (snapshot.exists()){
                         for (ds in snapshot.children)
                         {
-                            val temp: ArrayList<String> = ArrayList<String>()
+                            /*val temp: ArrayList<String> = ArrayList<String>()
                             for (v in ds.children) {
                                 temp.add(v.value.toString())
                             }
                             val m = meal(ds.key, temp)
                             list?.add(m)
-                            takenCal += m.kalori!!.toInt()
+                            takenCal += m.kalori!!.toInt()*/
+                            list?.add(ds.getValue(meal::class.java)!!)
+                            takenCal += list?.last()?.kalori!!.toInt()
                         }
                         val adapterC: AdapterClass = AdapterClass(list!!,this@CalorieCount)
                         recView?.adapter = adapterC
@@ -157,7 +159,7 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
         }
     }
 
-    /*override fun onStop() {
+   /* override fun onStop() {
         super.onStop()
 
         /*********************************************************/
@@ -168,20 +170,22 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
         }
         ref = userReference?.child("besin")?.child("besin kayıtları")?.child(LocalDate.now().toString())
         recView = findViewById(R.id.foods)
-
+        var list: ArrayList<meal>? = ArrayList<meal>()
         if(ref != null){
             ref!!.addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.exists()){
                         for (ds in snapshot.children)
                         {
-                            val temp: ArrayList<String> = ArrayList<String>()
+                            /*val temp: ArrayList<String> = ArrayList<String>()
                             for (v in ds.children) {
                                 temp.add(v.value.toString())
                             }
                             val m = meal(ds.key, temp)
                             list?.add(m)
-                            takenCal += m.kalori!!.toInt()
+                            takenCal += m.kalori!!.toInt()*/
+                            list?.add(ds.getValue(meal::class.java)!!)
+                            takenCal += list?.last()?.kalori!!.toInt()
                         }
                         val adapterC: AdapterClass = AdapterClass(list!!,this@CalorieCount)
                         recView?.adapter = adapterC
