@@ -86,7 +86,7 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
         }
 
         /**************************************************/
-        ref = FirebaseDatabase.getInstance().reference.child(FirebaseAuth.getInstance().currentUser?.uid.toString()).child("id1")
+        ref = FirebaseDatabase.getInstance().reference.child("User").child(FirebaseAuth.getInstance().currentUser?.uid.toString())
             .child("besin").child("besin kayıtları").child(LocalDate.now().toString())
         recView = findViewById(R.id.foods)
 
