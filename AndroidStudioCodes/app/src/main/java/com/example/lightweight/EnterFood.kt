@@ -93,8 +93,7 @@ class EnterFood : AppCompatActivity(), AdapterClass.ClickListener{
     }
 
     override fun ClickedItem(Meal: meal) {
-        val intent = Intent(this@EnterFood, AddFoodToUser::class.java)
-        startActivity(intent)
+
     }
 
 }
