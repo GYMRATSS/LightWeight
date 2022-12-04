@@ -28,10 +28,10 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
         auth = FirebaseAuth.getInstance() /**/
         database = FirebaseDatabase.getInstance() /**/
         databaseReference = database?.reference!!.child("Kullanıcılar")
-        var currentUser = auth.currentUser
 
         val actionBar = supportActionBar
         actionBar!!.hide()
+
         /******** water entry **********/
         var remainW = 2000
 
@@ -51,16 +51,45 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
         }
 
         /*********************************************************/
-        val newFood:  Button = findViewById(R.id.newFood)
-        /*newFood.setOnClickListener() {
-            takenCal += 100 //TODO new food calory will be entered here
-            updateCalBar()
-        }*/
 
+        var currentUser = auth.currentUser
+        //FirebaseAuth.getInstance().currentUser?.uid.toString()
+        //Kullanıcının id'sini alıyoruz
+        var userReference = databaseReference?.child(currentUser?.uid!!)
+        ref = userReference?.child("besin")?.child("besin kayıtları")?.child(LocalDate.now().toString())
+        recView = findViewById(R.id.foods)
+
+        if(ref != null){
+            ref!!.addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    if (snapshot.exists()){
+                        for (ds in snapshot.children)
+                        {
+                            val temp: ArrayList<String> = ArrayList<String>()
+                            for (v in ds.children) {
+                                temp.add(v.value.toString())
+                            }
+                            val m = meal(ds.key, temp)
+                            list?.add(m)
+                            takenCal += m.kalori!!.toInt()
+                        }
+                        val adapterC: AdapterClass = AdapterClass(list!!,this@CalorieCount)
+                        recView?.adapter = adapterC
+                    }
+                    calculations(takenCal)
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    Toast.makeText(this@CalorieCount, error.message, Toast.LENGTH_SHORT).show()
+                }
+            })
+        }
+
+
+        val newFood:  Button = findViewById(R.id.newFood)
         newFood.setOnClickListener() {
             val intent = Intent(this, EnterFood::class.java)
             startActivity(intent)
-            finish()
         }
 
         /******************** Menu ***************************************/
@@ -95,6 +124,25 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
         }
 
         /**************************************************/
+
+
+    }
+
+
+
+    override fun onStop() {
+        super.onStop()
+        auth = FirebaseAuth.getInstance() /**/
+        database = FirebaseDatabase.getInstance() /**/
+        databaseReference = database?.reference!!.child("Kullanıcılar")
+
+        /*********************************************************/
+        val newFood:  Button = findViewById(R.id.newFood)
+        newFood.setOnClickListener() {
+            val intent = Intent(this, EnterFood::class.java)
+            startActivity(intent)
+        }
+        var currentUser = auth.currentUser
         //FirebaseAuth.getInstance().currentUser?.uid.toString()
         //Kullanıcının id'sini alıyoruz
         var userReference = databaseReference?.child(currentUser?.uid!!)
@@ -126,12 +174,10 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
                 }
             })
         }
-
     }
 
 
-    fun calculations(takenCal :Int){
-
+    fun calculations(takenCal: Int){
         var c_bar: ProgressBar = findViewById (R.id.caloryProgressBar)
         var tc_text: TextView= findViewById (R.id.takenCalVal)
         var ttc_text:TextView = findViewById (R.id.totalCalVal)
