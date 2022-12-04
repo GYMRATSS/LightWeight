@@ -180,29 +180,31 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
                 var a:TextView = findViewById (R.id.totalCalVal)
                 a.text = snapshot.child("Kalori ihtiyacı").value.toString()
 
+                var c_bar: ProgressBar = findViewById (R.id.caloryProgressBar)
+                var tc_text: TextView= findViewById (R.id.takenCalVal)
+                var ttc_text:TextView = findViewById (R.id.totalCalVal)
+                var rc_text: TextView = findViewById (R.id.remainCalVal)
+                var cPercent: TextView = findViewById (R.id.c_persent)
+
+                var totalCal = ttc_text?.text.toString().toIntOrNull() ?: 0 //TODO with firebase
+
+                var remain = totalCal - takenCal
+                if(c_bar?.progress!! < 100) c_bar?.progress = (takenCal*100)/totalCal
+                val percent = (takenCal*100)/totalCal
+                cPercent?.text = "%$percent"
+                tc_text?.text = "$takenCal"
+                remain = totalCal - takenCal
+                rc_text?.text = "$remain"
+
+                userReference?.child("besin")?.child("kalori kayıtları")?.child(LocalDate.now().toString())?.child("Alınan kalori")?.setValue(takenCal)
+                userReference?.child("besin")?.child("kalori kayıtları")?.child(LocalDate.now().toString())?.child("Kalan kalori")?.setValue(remain)
+
+
+
             }
             override fun onCancelled(error: DatabaseError) {
             }
         })
-
-        var c_bar: ProgressBar = findViewById (R.id.caloryProgressBar)
-        var tc_text: TextView= findViewById (R.id.takenCalVal)
-        var ttc_text:TextView = findViewById (R.id.totalCalVal)
-        var rc_text: TextView = findViewById (R.id.remainCalVal)
-        var cPercent: TextView = findViewById (R.id.c_persent)
-
-        var totalCal = ttc_text?.text.toString().toIntOrNull() ?: 0 //TODO with firebase
-
-        var remain = totalCal - takenCal
-        if(c_bar?.progress!! < 100) c_bar?.progress = (takenCal*100)/totalCal
-        val percent = (takenCal*100)/totalCal
-        cPercent?.text = "%$percent"
-        tc_text?.text = "$takenCal"
-        remain = totalCal - takenCal
-        rc_text?.text = "$remain"
-
-        userReference?.child("besin")?.child("kalori kayıtları")?.child(LocalDate.now().toString())?.child("Alınan kalori")?.setValue(takenCal)
-        userReference?.child("besin")?.child("kalori kayıtları")?.child(LocalDate.now().toString())?.child("Kalan kalori")?.setValue(remain)
 
 
     }
