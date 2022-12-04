@@ -328,4 +328,11 @@
     <MESSAGE value="günlük kalori ihtiyacı, yağ oranı, BMR hesaplandı. profilde cinsiyet kısmında non binary sığmıyordu. text size küçültüldü." />
     <option name="LAST_COMMIT_MESSAGE" value="günlük kalori ihtiyacı, yağ oranı, BMR hesaplandı. profilde cinsiyet kısmında non binary sığmıyordu. text size küçültüldü." />
   </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="kotlin.jvm.internal.Ref$ObjectRef" memberName="element" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
 </project>
