@@ -105,12 +105,8 @@ class EnterFood : AppCompatActivity(), AdapterClass.ClickListener{
 
     override fun ClickedItem(Meal: meal) {
 
-
-        userReference?.child("besin")?.child("besin kayıtları")?.child(LocalDate.now().toString())?.child(Meal.id.toString())?.child("kalori")?.setValue(Meal.kalori)
-        userReference?.child("besin")?.child("besin kayıtları")?.child(LocalDate.now().toString())?.child(Meal.id.toString())?.child("protein")?.setValue(Meal.protein)
-        userReference?.child("besin")?.child("besin kayıtları")?.child(LocalDate.now().toString())?.child(Meal.id.toString())?.child("yağ")?.setValue(Meal.yağ)
-        userReference?.child("besin")?.child("besin kayıtları")?.child(LocalDate.now().toString())?.child(Meal.id.toString())?.child("karbonhidrat")?.setValue(Meal.karbonhidrat)
-
+        userReference?.child("besin")?.child("besin kayıtları")?.child(LocalDate.now().toString())?.child(Meal.id.toString())?.setValue(Meal)
+        userReference?.child("besin")?.child("besin kayıtları")?.child(LocalDate.now().toString())?.child(Meal.id.toString())?.child("id")?.removeValue()
         finish()
 
     }
