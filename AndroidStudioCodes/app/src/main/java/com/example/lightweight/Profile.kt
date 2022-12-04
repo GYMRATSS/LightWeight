@@ -69,8 +69,8 @@ class Profile : AppCompatActivity() {
         val workoutActivitiesButton = findViewById<Button>(R.id.workoutActivities)
         val qaButton = findViewById<Button>(R.id.qa)
         val logOutButton = findViewById<Button>(R.id.logOut)
-        val editAccountButton = findViewById<Button>(R.id.editUser)
-        val editProfileButton = findViewById<Button>(R.id.editProfile)
+        val editAccountButton = findViewById<Button>(R.id.editProfile)
+        val editProfileButton = findViewById<Button>(R.id.editUser)
 
         val homeButton = findViewById<ImageButton>(R.id.homepage)
         val gymButton = findViewById<ImageButton>(R.id.gympage)

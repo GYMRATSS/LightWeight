@@ -7,6 +7,25 @@
     android:background="@mipmap/wallp"
     tools:context=".updateAccount">
 
+    <Button
+        android:id="@+id/guncelleButonu"
+        android:layout_width="132dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="58dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="124dp"
+        android:backgroundTint="@color/black"
+        android:text="Güncelle"
+        android:fontFamily="@font/jura_bold"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editProfileHeader12" />
+
     <EditText
         android:id="@+id/updatePasswordInfoAgain"
         android:layout_width="170dp"
