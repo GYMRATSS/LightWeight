@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import java.time.LocalDate
+import java.time.LocalDateTime
 
 class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
     var ref: DatabaseReference? = null /**/
@@ -85,9 +86,8 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
         }
 
         /**************************************************/
-        //FirebaseAuth.getInstance().currentUser?.uid.toString()
-        ref = FirebaseDatabase.getInstance().reference.child("Users").child("id1")
-            .child("besin").child("besin kayıtları").child("2022-12-02")
+        ref = FirebaseDatabase.getInstance().reference.child(FirebaseAuth.getInstance().currentUser?.uid.toString()).child("id1")
+            .child("besin").child("besin kayıtları").child(LocalDate.now().toString())
         recView = findViewById(R.id.foods)
 
         if(ref != null){
