@@ -61,21 +61,26 @@ class updateInfo : AppCompatActivity() {
             //realtimedatabase ad soyad güncelleme
             currentUserDb?.child("İsim-soyisim")?.removeValue()
             currentUserDb?.child("İsim-soyisim")?.setValue(newName)
+            if(newAge.toInt()>0){
             currentUserDb?.child("Yaş")?.removeValue()
-            currentUserDb?.child("Yaş")?.setValue(newAge)
+            currentUserDb?.child("Yaş")?.setValue(newAge)}
+            if(newWeight.toInt()>0){
             currentUserDb?.child("Kilo")?.removeValue()
-            currentUserDb?.child("Kilo")?.setValue(newWeight)
+            currentUserDb?.child("Kilo")?.setValue(newWeight)}
+            if(newHeight.toInt()>0){
             currentUserDb?.child("Boy")?.removeValue()
-            currentUserDb?.child("Boy")?.setValue(newHeight)
+            currentUserDb?.child("Boy")?.setValue(newHeight)}
+            if(newWaist.toInt()>0){
             currentUserDb?.child("Bel")?.removeValue()
-            currentUserDb?.child("Bel")?.setValue(newWaist)
+            currentUserDb?.child("Bel")?.setValue(newWaist)}
+            if(newNeck.toInt()>0){
             currentUserDb?.child("Boyun")?.removeValue()
-            currentUserDb?.child("Boyun")?.setValue(newNeck)
+            currentUserDb?.child("Boyun")?.setValue(newNeck)}
+            if(newGoalWeight.toInt()>0){
             currentUserDb?.child("Hedef")?.removeValue()
-            currentUserDb?.child("Hedef")?.setValue(newGoalWeight)
+            currentUserDb?.child("Hedef")?.setValue(newGoalWeight)}
 
             Toast.makeText(applicationContext,"Bilgileriniz güncellendi.", Toast.LENGTH_LONG).show()
-
 
         }
 
