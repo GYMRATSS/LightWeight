@@ -6,14 +6,47 @@ import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.ProgressBar
 import android.widget.TextView
+import com.example.lightweight.databinding.ActivityHomePageBinding
+import com.example.lightweight.databinding.ActivityUpdateInfoBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import java.time.LocalDate
 
 class homePage : AppCompatActivity() {
+
+    var auth = FirebaseAuth.getInstance() /**/
+    var database = FirebaseDatabase.getInstance() /**/
+    var databaseReference = database?.reference!!.child("Kullanıcılar") /**/
+    var currentUser = auth.currentUser
+    var userReference = databaseReference?.child(currentUser?.uid!!)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home_page)
+        val binding = ActivityHomePageBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val actionBar = supportActionBar
         actionBar!!.hide()
+
+        userReference?.addValueEventListener(object: ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                binding.hiName.setText("Merhaba " + snapshot.child("İsim-soyisim").value.toString())
+                binding.totalCalVal.setText(snapshot.child("Kalori ihtiyacı").value.toString())
+                binding.remainCalVal.setText(snapshot.child("besin").child("kalori kayıtları").child(
+                    LocalDate.now().toString()).child("Kalan kalori").value.toString())
+                binding.takenCalVal.setText(snapshot.child("besin").child("kalori kayıtları").child(
+                    LocalDate.now().toString()).child("Alınan kalori").value.toString())
+
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
 
         val userName = intent.getStringExtra("USER")
         val textView = findViewById<TextView>(R.id.hiName)
@@ -40,9 +73,9 @@ class homePage : AppCompatActivity() {
         cPercent.text = "%$percent"
 
         val activityBar = findViewById<ProgressBar>(R.id.workoutProgressBar)
-        activityBar.progress = 30                                               // hardcoded progress change it!!!
+        activityBar.progress = 0                                               // hardcoded progress change it!!!
         val workoutPercent = findViewById<TextView>(R.id.workout_percent)
-        workoutPercent.text = "%30"
+        workoutPercent.text = "%0"
 
 
         /***********************Menu*******************/
