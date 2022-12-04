@@ -257,6 +257,40 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.07" />
 
+    <TextView
+        android:id="@+id/ageHolder"
+        android:layout_width="259dp"
+        android:layout_height="74dp"
+        android:fontFamily="@font/jura_bold"
+        android:gravity="center_horizontal"
+        android:text="Başlayalım"
+        android:textColor="#ABB3BE"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.578"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.07" />
+
+    <TextView
+        android:id="@+id/cinsiyetHolder"
+        android:layout_width="259dp"
+        android:layout_height="74dp"
+        android:fontFamily="@font/jura_bold"
+        android:gravity="center_horizontal"
+        android:text="Başlayalım"
+        android:textColor="#ABB3BE"
+        android:textSize="25sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.578"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.07" />
+
     <RadioGroup
         android:id="@+id/radioPrefer"
         android:layout_width="wrap_content"
