@@ -21,7 +21,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/CalorieCount.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/CalorieCount.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/EnterFood.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/EnterFood.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -292,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670147829892</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="9-10 tane yemek eklenebiliyo çökmeden">
+      <created>1670180259471</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1670180259471</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -327,7 +333,8 @@
     <MESSAGE value="fixes on lower menu" />
     <MESSAGE value="added app logo" />
     <MESSAGE value="günlük kalori ihtiyacı, yağ oranı, BMR hesaplandı. profilde cinsiyet kısmında non binary sığmıyordu. text size küçültüldü." />
-    <option name="LAST_COMMIT_MESSAGE" value="günlük kalori ihtiyacı, yağ oranı, BMR hesaplandı. profilde cinsiyet kısmında non binary sığmıyordu. text size küçültüldü." />
+    <MESSAGE value="9-10 tane yemek eklenebiliyo çökmeden" />
+    <option name="LAST_COMMIT_MESSAGE" value="9-10 tane yemek eklenebiliyo çökmeden" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
