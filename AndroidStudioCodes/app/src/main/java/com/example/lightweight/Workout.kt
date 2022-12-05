@@ -49,7 +49,7 @@ class Workout : AppCompatActivity(), AdapterClassWorkout.ClickListener {
         var userReference = databaseReference?.child(currentUser?.uid!!)
         ref = userReference?.child("workout plans")?.child("plan1")*/
             /*.child(LocalDate.now().toString())   cikarildi*/
-        ref = userReference?.child("workout plans")?.child("plan1")?.child(LocalDate.now().toString())
+        ref = userReference?.child("workout plans")?.child("plan1")
         recView = findViewById(R.id.moves)
 
 
@@ -59,12 +59,13 @@ class Workout : AppCompatActivity(), AdapterClassWorkout.ClickListener {
                     if (snapshot.exists()){
                         for (ds in snapshot.children)
                         {
-                            val temp: ArrayList<String> = ArrayList<String>()
+                            /*val temp: ArrayList<String> = ArrayList<String>()
                             for (v in ds.children) {
                                 temp.add(v.value.toString())
                             }
-                            val m = workoutplan(ds.key, temp)
-                            list?.add(m)
+                            val m = workoutplan(ds.key, temp)*/
+                            /*list?.add(m)*/
+                            list?.add(ds.getValue(workoutplan::class.java)!!)
 
                         }
                         val adapterC: AdapterClassWorkout = AdapterClassWorkout(list!!,this@Workout)
@@ -132,13 +133,13 @@ class Workout : AppCompatActivity(), AdapterClassWorkout.ClickListener {
                     if (snapshot.exists()){
                         for (ds in snapshot.children)
                         {
-                            val temp: ArrayList<String> = ArrayList<String>()
+                            /*val temp: ArrayList<String> = ArrayList<String>()
                             for (v in ds.children) {
                                 temp.add(v.value.toString())
                             }
                             val m = workoutplan(ds.key, temp)
-                            list?.add(m)
-
+                            list?.add(m)*/
+                            list?.add(ds.getValue(workoutplan::class.java)!!)
                         }
                         val adapterC: AdapterClassWorkout = AdapterClassWorkout(list!!,this@Workout)
                         recView?.adapter = adapterC
@@ -147,7 +148,7 @@ class Workout : AppCompatActivity(), AdapterClassWorkout.ClickListener {
                 }
 
                 override fun onCancelled(error: DatabaseError) {
-                    Toast.makeText(this@Workout, error.message, Toast.LENGTH_SHORT).show()
+                    /*Toast.makeText(this@Workout, error.message, Toast.LENGTH_SHORT).show()*/
                 }
             })
         }

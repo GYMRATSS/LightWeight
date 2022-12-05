@@ -49,6 +49,7 @@ class ChangeProgram : AppCompatActivity(), AdapterClassWorkout.ClickListener{
         sView = findViewById(R.id.programSearch)
 
 
+
         /******************** Menu ***************************************/
 
         val shp: ImageButton = findViewById(R.id.shopage)
@@ -98,12 +99,14 @@ class ChangeProgram : AppCompatActivity(), AdapterClassWorkout.ClickListener{
                     if (snapshot.exists()){
                         for (ds in snapshot.children)
                         {
-                            val temp: ArrayList<String> = ArrayList<String>()
+                            /*try commenting here*/
+                            /*val temp: ArrayList<String> = ArrayList<String>()
                             for (v in ds.children) {
                                 temp.add(v.value.toString())
                             }
                             val m = workoutplan(ds.key, temp)
-                            list?.add(m)
+                            list?.add(m)*/
+                            list?.add(ds.getValue(workoutplan::class.java)!!)
                         }
                         /*change program or workout*/
                         val adapterC: AdapterClassWorkout = AdapterClassWorkout(list!!,this@ChangeProgram)
@@ -152,10 +155,13 @@ class ChangeProgram : AppCompatActivity(), AdapterClassWorkout.ClickListener{
 
     override fun ClickedItem(Workoutplan : workoutplan) {
 
-        /*can change*/
         userReference?.child("workout plans")?.child("plan1")?.child(Workoutplan.workoutid.toString())?.child("ağırlık")?.setValue(Workoutplan)
-
-
+        userReference?.child("workout plans")?.child("plan1")?.child(Workoutplan.workoutid.toString())?.child("set")?.setValue(Workoutplan)
+        userReference?.child("workout plans")?.child("plan1")?.child(Workoutplan.workoutid.toString())?.child("tekrar")?.setValue(Workoutplan)
+        finish()
+        /*userReference?.child("workout plans")?.child("plan1")?.child(Workoutplan.workoutid.toString())?.setValue(Workoutplan)
+        userReference?.child("workout plans")?.child("plan1")?.child(Workoutplan.workoutid.toString())?.child("workoutid")?.removeValue()
+        finish()*/
 
     }
 }
