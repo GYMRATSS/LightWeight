@@ -14,10 +14,10 @@ import com.google.firebase.database.*
 import java.time.LocalDate
 
 /*clicklistener check*/
-class ChangeProgram : AppCompatActivity(), AdapterClassWorkout.ClickListener{
+class ChangeProgram : AppCompatActivity(), AdaptoWList.ClickListener{
 
     var ref: DatabaseReference? = null /**/
-    var list: ArrayList<workoutplan>? = ArrayList<workoutplan>()
+    var list: ArrayList<workoutPlanList>? = ArrayList<workoutPlanList>()
     var recView : RecyclerView? = null
     private var sView : SearchView? = null
 
@@ -92,24 +92,17 @@ class ChangeProgram : AppCompatActivity(), AdapterClassWorkout.ClickListener{
 
     override fun onStart(){
         super.onStart()
-        /*var list: ArrayList<workoutplan>? = ArrayList<workoutplan>()*/
         if(ref != null){
             ref!!.addValueEventListener(object : ValueEventListener{
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.exists()){
                         for (ds in snapshot.children)
                         {
-                            /*try commenting here*/
-                            /*val temp: ArrayList<String> = ArrayList<String>()
-                            for (v in ds.children) {
-                                temp.add(v.value.toString())
-                            }
-                            val m = workoutplan(ds.key, temp)
-                            list?.add(m)*/
-                            list?.add(ds.getValue(workoutplan::class.java)!!)
+                            val m = workoutPlanList(ds.key, ds.value.toString())
+                            list?.add(m)
                         }
                         /*change program or workout*/
-                        val adapterC: AdapterClassWorkout = AdapterClassWorkout(list!!,this@ChangeProgram)
+                        val adapterC: AdaptoWList = AdaptoWList(list!!,this@ChangeProgram)
                         recView?.adapter = adapterC
                     }
                 }
@@ -136,32 +129,28 @@ class ChangeProgram : AppCompatActivity(), AdapterClassWorkout.ClickListener{
 
     }
 
-
-
-
-
     fun search(str: String?){
-        val mylist2: ArrayList<workoutplan> = ArrayList<workoutplan>()
-        for (obj : workoutplan in list!!)
+        val mylist2: ArrayList<workoutPlanList> = ArrayList<workoutPlanList>()
+        for (obj : workoutPlanList in list!!)
         {
             if(obj.workoutid?.lowercase()!!.contains(str!!.lowercase())){
                 mylist2.add(obj)
             }
         }
-        var adapterC: AdapterClassWorkout = AdapterClassWorkout(mylist2, this@ChangeProgram)
+        var adapterC: AdaptoWList = AdaptoWList(mylist2, this@ChangeProgram)
         recView?.adapter = adapterC
 
     }
 
-    override fun ClickedItem(Workoutplan : workoutplan) {
+    override fun ClickedItem(Workoutplan : workoutPlanList) {
 
-        userReference?.child("workout plans")?.child("plan1")?.child(Workoutplan.workoutid.toString())?.child("ağırlık")?.setValue(Workoutplan)
+        /*userReference?.child("workout plans")?.child("plan1")?.child(Workoutplan.workoutid.toString())?.child("ağırlık")?.setValue(Workoutplan)
         userReference?.child("workout plans")?.child("plan1")?.child(Workoutplan.workoutid.toString())?.child("set")?.setValue(Workoutplan)
         userReference?.child("workout plans")?.child("plan1")?.child(Workoutplan.workoutid.toString())?.child("tekrar")?.setValue(Workoutplan)
-        finish()
-        /*userReference?.child("workout plans")?.child("plan1")?.child(Workoutplan.workoutid.toString())?.setValue(Workoutplan)
-        userReference?.child("workout plans")?.child("plan1")?.child(Workoutplan.workoutid.toString())?.child("workoutid")?.removeValue()
         finish()*/
+        userReference?.child("workout plans")?.child("plan1")?.child(Workoutplan.workoutid.toString())?.setValue(Workoutplan)
+        userReference?.child("workout plans")?.child("plan1")?.child(Workoutplan.workoutid.toString())?.child("workoutid")?.removeValue()
+        /*finish()*/
 
     }
 }

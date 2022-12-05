@@ -19,8 +19,6 @@ class workoutplan {
 
     }
 
-
-
     constructor(workoutid: String?, ağırlık: String?, set: String?, tekrar: String?) {
         /*this.planid = planid*/
         this.workoutid = workoutid
