@@ -93,6 +93,9 @@ class updateAccount : AppCompatActivity() {
             }
         }
 
+        val actionBar = supportActionBar
+        actionBar!!.hide()
+
         binding.closeUpdateAccount.setOnClickListener {
             val intent = Intent (this, Profile::class.java)
             startActivity(intent)

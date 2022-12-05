@@ -173,6 +173,7 @@ class SignUpSecond : AppCompatActivity() {
             currentUserDb?.child("Kalori ihtiyacı")?.setValue(uyeKaloriIhtiyaci)
             currentUserDb?.child("Yağ oranı")?.setValue(uyeYagOrani)
             currentUserDb?.child("İlk kilo")?.setValue(uyeKilo)
+            currentUserDb?.child("Kalça")?.setValue(uyeKalca)
 
 
             //Profil sayfasına gitmek için
