@@ -129,7 +129,7 @@
         android:foregroundTint="#3E363E"
         android:gravity="center"
         android:radius="10dp"
-        android:text="Start"
+        android:text="Başla"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="39sp"
@@ -150,7 +150,7 @@
         android:foregroundTint="#3E363E"
         android:gravity="center"
         android:radius="10dp"
-        android:text="Change Program"
+        android:text="Program Değiştir"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="39sp"
@@ -167,7 +167,7 @@
         android:layout_height="99dp"
         android:fontFamily="@font/jura"
         android:gravity="center"
-        android:text="Today's Program"
+        android:text="Günün Programı"
         android:textColor="#BFCAD5"
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -178,117 +178,9 @@
         app:layout_constraintVertical_bias="0.025" />
 
 
-    <TextView
-        android:id="@+id/textworkouttype"
-        android:layout_width="171dp"
-        android:layout_height="48dp"
-        android:fontFamily="@font/jura_bold"
-        android:gravity="center"
-        android:text="Leg Day "
-        android:textColor="#000000"
-        android:textSize="28sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.353" />
 
-    <TextView
-        android:id="@+id/wo2"
-        android:layout_width="187dp"
-        android:layout_height="24dp"
-        android:fontFamily="@font/jura_bold"
-        android:gravity="center"
-        android:text="3x12 Leg Extensions"
-        android:textColor="#000000"
-        android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.463" />
 
-    <TextView
-        android:id="@+id/wo1"
-        android:layout_width="190dp"
-        android:layout_height="18dp"
-        android:fontFamily="@font/jura_bold"
-        android:gravity="center"
-        android:text="3x12 Leg Curls"
-        android:textColor="#000000"
-        android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.55" />
 
-    <TextView
-        android:id="@+id/wo6"
-        android:layout_width="187dp"
-        android:layout_height="24dp"
-        android:fontFamily="@font/jura_bold"
-        android:gravity="center"
-        android:text="3x10 Barbell Squat"
-        android:textColor="#000000"
-        android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.494" />
-
-    <TextView
-        android:id="@+id/wo5"
-        android:layout_width="187dp"
-        android:layout_height="24dp"
-        android:fontFamily="@font/jura_bold"
-        android:gravity="center"
-        android:text="4x12 Dumbell Lunges"
-        android:textColor="#000000"
-        android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.431" />
-
-    <TextView
-        android:id="@+id/wo4"
-        android:layout_width="187dp"
-        android:layout_height="24dp"
-        android:fontFamily="@font/jura_bold"
-        android:gravity="center"
-        android:text="4x12 Barbell Curls"
-        android:textColor="#000000"
-        android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.402" />
-
-    <TextView
-        android:id="@+id/wo3"
-        android:layout_width="187dp"
-        android:layout_height="24dp"
-        android:fontFamily="@font/jura_bold"
-        android:gravity="center"
-        android:text="4x10 Leg Press"
-        android:textColor="#000000"
-        android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.524" />
 
     <LinearLayout
         android:id="@+id/menulayout"
@@ -356,14 +248,17 @@
         android:id="@+id/imageView4"
         android:layout_width="110dp"
         android:layout_height="200dp"
-        android:layout_marginStart="47dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="27dp"
         app:layout_constraintBottom_toTopOf="@+id/menulayout"
+
+
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/wo9"
-        app:layout_constraintTop_toBottomOf="@+id/wo1"
+        app:layout_constraintTop_toBottomOf="@+id/moves"
         app:srcCompat="@mipmap/bodymuscles" />
 
     <ImageView
@@ -379,5 +274,19 @@
         app:layout_constraintStart_toEndOf="@+id/qa"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/calendar_gym" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/moves"
+        android:layout_width="202dp"
+        android:layout_height="156dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/workoutProgressBar"
+        app:layout_constraintTop_toBottomOf="@+id/changeprogrambutton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
