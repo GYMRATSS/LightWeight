@@ -140,6 +140,16 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
         ref = userReference?.child("besin")?.child("besin kayıtları")?.child(LocalDate.now().toString())
         recView = findViewById(R.id.foods)
 
+        userReference!!.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                var a:TextView = findViewById (R.id.totalCalVal)
+                a.text = snapshot.child("Kalori ihtiyacı").value.toString()
+
+            }
+            override fun onCancelled(error: DatabaseError) {
+            }
+        })
+
         var list: ArrayList<meal>? = ArrayList<meal>()
         var takenCal = 0
         if(ref != null){
@@ -175,15 +185,7 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
     fun calculations(takenCal: Int){
 
 
-        userReference!!.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                var a:TextView = findViewById (R.id.totalCalVal)
-                a.text = snapshot.child("Kalori ihtiyacı").value.toString()
 
-            }
-            override fun onCancelled(error: DatabaseError) {
-            }
-        })
 
         //Aşağıdaki satırlar üstte listener'ın içindeydi
         var c_bar: ProgressBar = findViewById (R.id.caloryProgressBar)
