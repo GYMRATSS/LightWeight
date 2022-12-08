@@ -108,7 +108,7 @@ class EnterFood : AppCompatActivity(), AdapterClass.ClickListener{
 
         userReference?.child("besin")?.child("besin kayıtları")?.child(LocalDate.now().toString())?.child(Meal.id.toString())?.setValue(Meal)
         Thread.sleep(50)
-        userReference?.child("besin")?.child("besin kayıtları")?.child(LocalDate.now().toString())?.child(Meal.id.toString())?.child("id")?.removeValue()
+        //userReference?.child("besin")?.child("besin kayıtları")?.child(LocalDate.now().toString())?.child(Meal.id.toString())?.child("id")?.removeValue()
         Thread.sleep(50)
 
         finish()
