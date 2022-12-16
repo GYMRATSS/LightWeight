@@ -101,6 +101,12 @@ class SignUpSecond : AppCompatActivity() {
             }else if(TextUtils.isEmpty(uyeHedef) || uyeHedef.toInt()<1){
                 binding.goalInput.error = "Lütfen uygun bir hedef giriniz."
                 return@setOnClickListener
+            }else if(uyeHedefTercih == "Kilo al" && uyeHedef <= uyeKilo){
+                binding.goalInput.error = "Lütfen uygun bir hedef giriniz."
+                return@setOnClickListener
+            }else if(uyeHedefTercih == "Kilo ver" && uyeHedef >= uyeKilo){
+                binding.goalInput.error = "Lütfen uygun bir hedef giriniz."
+                return@setOnClickListener
             } else {
                 //Inputlar doğru ise hesaplama yapılır
                 number = ((uyeKilo.toDouble()/(uyeBoy.toDouble()*uyeBoy.toDouble()))*10000.0)

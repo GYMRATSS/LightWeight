@@ -18,17 +18,15 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/SignUpSecond.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/SignUpSecond.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/updateAccount.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/updateAccount.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\Umut Can\.android\avd\Pixel_3a_API_33_x86_64.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[R68RA01D3VT]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -223,7 +221,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b6328b85-eb1c-4520-8476-6429d3790431" name="Changes" comment="" />
+      <changelist id="750aced5-74ea-4611-97af-cdedd1e52d8b" name="Changes" comment="home page'e veri bağlantısı yapıldı, progress bar çalışıyor" />
       <created>1666546763163</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -306,7 +304,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670192587301</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="yemek sayfasında yenen yemeklerin yazmayan isimleri artık yazıyor (id de tutuluyor database'de)">
+      <created>1670529250069</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1670529250069</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -343,7 +348,8 @@
     <MESSAGE value="günlük kalori ihtiyacı, yağ oranı, BMR hesaplandı. profilde cinsiyet kısmında non binary sığmıyordu. text size küçültüldü." />
     <MESSAGE value="9-10 tane yemek eklenebiliyo çökmeden" />
     <MESSAGE value="home page'e veri bağlantısı yapıldı, progress bar çalışıyor" />
-    <option name="LAST_COMMIT_MESSAGE" value="home page'e veri bağlantısı yapıldı, progress bar çalışıyor" />
+    <MESSAGE value="yemek sayfasında yenen yemeklerin yazmayan isimleri artık yazıyor (id de tutuluyor database'de)" />
+    <option name="LAST_COMMIT_MESSAGE" value="yemek sayfasında yenen yemeklerin yazmayan isimleri artık yazıyor (id de tutuluyor database'de)" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
