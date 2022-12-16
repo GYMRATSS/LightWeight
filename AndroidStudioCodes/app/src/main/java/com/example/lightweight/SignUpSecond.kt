@@ -177,9 +177,9 @@ class SignUpSecond : AppCompatActivity() {
 
 
             //Profil sayfasına gitmek için
-                intent = Intent(applicationContext, Profile::class.java)
-                startActivity(intent)
-                finish() //Bu activity yi kapatıyor.
+            intent = Intent(applicationContext, Profile::class.java)
+            startActivity(intent)
+            finish() //Bu activity yi kapatıyor.
 
         }
 

@@ -23,8 +23,8 @@ class QandA : AppCompatActivity() {
         val question5: Button = findViewById (R.id.question5)
 
         question5.setOnClickListener() {
-                val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://fitbod.me/blog/not-sore-after-workout/"))
-                startActivity(i)
+            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://fitbod.me/blog/not-sore-after-workout/"))
+            startActivity(i)
         }
 
         val question1: Button = findViewById (R.id.question1)
