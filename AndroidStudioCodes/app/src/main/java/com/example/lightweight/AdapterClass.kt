@@ -1,25 +1,27 @@
 package com.example.lightweight
 
 import androidx.recyclerview.widget.RecyclerView
-import com.example.lightweight.AdapterClass.MyViewHolder
+import com.example.lightweight.AdapterClass.ViewHolder
 import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
 
-class AdapterClass(var list: ArrayList<meal>, var clickListener: ClickListener) : RecyclerView.Adapter<MyViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+class AdapterClass(private val list: ArrayList<meal>, private val clickListener: ClickListener) : RecyclerView.Adapter<AdapterClass.ViewHolder>() {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.holder, parent, false)
-        return MyViewHolder(view)
+        return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val Modal = list[position]
         holder.id.text = list[position].id
         holder.desc.text = "Kalori: " +list[position].kalori + "\n" +  "Karbonhidrat: " + list[position].karbonhidrat +"\n"+
-                            "Yağ: " +list[position].yağ + "\n" + "Protein: " +list[position].protein + "\n"
+                "Yağ: " +list[position].yağ + "\n" + "Protein: " +list[position].protein + "\n"
 
-        holder.itemView.setOnClickListener{
+        holder.enterGram.setOnClickListener {
             clickListener.ClickedItem(Modal)
         }
     }
@@ -28,17 +30,13 @@ class AdapterClass(var list: ArrayList<meal>, var clickListener: ClickListener) 
         return list.size
     }
 
-    inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var id: TextView
-        var desc: TextView
-
-        init {
-            id = itemView.findViewById(R.id.foodId)
-            desc = itemView.findViewById(R.id.descrb)
-        }
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val id: TextView = itemView.findViewById(R.id.foodId)
+        val desc: TextView = itemView.findViewById(R.id.descrb)
+        val enterGram: Button = itemView.findViewById(R.id.enterGram)
     }
 
-    interface ClickListener{
-        fun ClickedItem(meal : meal)
+    interface ClickListener {
+        fun ClickedItem(meal: meal)
     }
 }

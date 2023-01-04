@@ -9,7 +9,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import java.time.LocalDate
 
-class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
+class CalorieCount : AppCompatActivity() {
     var ref: DatabaseReference? = null /**/
     var recView : RecyclerView? = null
 
@@ -68,7 +68,7 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
                             list?.add(ds.getValue(meal::class.java)!!)
                             takenCal += list?.get(list.size-1)?.kalori!!.toInt()
                         }
-                        val adapterC: AdapterClass = AdapterClass(list!!,this@CalorieCount)
+                        val adapterC: AdapterForList = AdapterForList(list!!)
                         recView?.adapter = adapterC
                     }
                     calculations(takenCal)
@@ -168,7 +168,7 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
                             list?.add(ds.getValue(meal::class.java)!!)
                             takenCal += list?.get(list.size-1)?.kalori!!.toInt()
                         }
-                        val adapterC: AdapterClass = AdapterClass(list!!,this@CalorieCount)
+                        val adapterC: AdapterForList = AdapterForList(list!!)
                         recView?.adapter = adapterC
                     }
                     calculations(takenCal)
@@ -213,8 +213,4 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
 
     }
 
-
-    override fun ClickedItem(meal: meal) {
-
-    }
 }
