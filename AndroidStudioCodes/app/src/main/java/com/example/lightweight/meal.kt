@@ -8,10 +8,20 @@ class meal {
     var yağ: String? = null
 
     constructor() {}
-    constructor(kalori: String?, karbonhidrat: String?, protein: String?, yağ: String?) {
+    constructor(id: String?, value: ArrayList<String>) {
+        this.id = id
+        this.kalori = value[0]
+        this.karbonhidrat = value[1]
+        this.protein = value[2]
+        this.yağ = value[3]
+
+    }
+    constructor(id: String?, kalori: String?, karbonhidrat: String?, protein: String?, yağ: String?) {
+        this.id = id
         this.kalori = kalori
         this.karbonhidrat = karbonhidrat
         this.protein = protein
         this.yağ = yağ
     }
+
 }

@@ -3,9 +3,7 @@ package com.example.lightweight
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.Toast
+import android.widget.*
 import com.example.lightweight.databinding.ActivityProfileBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -33,6 +31,7 @@ class Profile : AppCompatActivity() {
         val actionBar = supportActionBar
         actionBar!!.hide()
 
+
         userReference?.addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 binding.age.text = snapshot.child("Yaş").value.toString()
@@ -42,9 +41,13 @@ class Profile : AppCompatActivity() {
                 binding.waist.text = snapshot.child("Bel").value.toString()
                 binding.neck.text = snapshot.child("Boyun").value.toString()
                 binding.bmi.text = snapshot.child("BMI").value.toString()
-                binding.start.text = snapshot.child("Kilo").value.toString()
+                binding.start.text = snapshot.child("İlk kilo").value.toString()
                 binding.goal.text = snapshot.child("Hedef").value.toString()
+                binding.fatRatio.text = snapshot.child("Yağ oranı").value.toString()
+                binding.calorieIntake.text = snapshot.child("Kalori ihtiyacı").value.toString()
                 binding.userName.text = snapshot.child("İsim-soyisim").value.toString()
+
+                calculate()
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -65,11 +68,31 @@ class Profile : AppCompatActivity() {
             finish()
         }
 
-        val editProfileButton = findViewById<Button>(R.id.editProfile)
+
+
+        // initialWeight = userReference?.child("Kilo").toString().toInt()
+
+       /* newWeight =
+        weightGoal = binding.goal.text.toString().toInt() */
+        //userReference?.child("Kilo")!!.setValue(newWeight)
+        /*var initialWeight =
+            userReference?.child("İlk Kilo")!!.setValue(newWeight)
+        var weightGoal = userReference?.child("Hedef")*/
+
+
+        /* initialWeight = binding.start.text.toString().toInt()
+        newWeight = binding.weight.text.toString().toInt()
+        weightGoal = binding.goal.text.toString().toInt() */
+
+
+
+
         val dietTrackerButton = findViewById<Button>(R.id.dietTracker)
         val workoutActivitiesButton = findViewById<Button>(R.id.workoutActivities)
         val qaButton = findViewById<Button>(R.id.qa)
         val logOutButton = findViewById<Button>(R.id.logOut)
+        val editAccountButton = findViewById<Button>(R.id.editProfile)
+        val editProfileButton = findViewById<Button>(R.id.editUser)
 
         val homeButton = findViewById<ImageButton>(R.id.homepage)
         val gymButton = findViewById<ImageButton>(R.id.gympage)
@@ -80,11 +103,17 @@ class Profile : AppCompatActivity() {
         profileButton.isClickable = false
 
         editProfileButton.setOnClickListener {
-            //editProfile.error("Currently not available!")
+            val intent = Intent (this, updateAccount::class.java)
+            startActivity(intent)
+        }
+
+        editAccountButton.setOnClickListener {
+            val intent = Intent (this, updateInfo::class.java)
+            startActivity(intent)
         }
 
         dietTrackerButton.setOnClickListener {
-            // ask if is it gonna be seperate or will be directed to the food page ???
+            // will be directed to the calendar page on food page
         }
 
         workoutActivitiesButton.setOnClickListener {
@@ -133,4 +162,21 @@ class Profile : AppCompatActivity() {
 
 
     }
+
+    fun calculate(){
+        var startWeightText: TextView = findViewById (R.id.start)
+        var initialWeight = startWeightText?.text.toString().toIntOrNull() ?: 0
+
+        var weightGoalText: TextView = findViewById (R.id.goal)
+        var weightGoal = weightGoalText?.text.toString().toIntOrNull() ?: 0
+
+        var currentWeightText: TextView = findViewById (R.id.weight)
+        var currentWeight = currentWeightText?.text.toString().toIntOrNull() ?: 0
+
+        var weightProgress = findViewById<ProgressBar>(R.id.weightProgressBar)
+
+        if(weightProgress?.progress!! < 100)
+            weightProgress?.progress = (Math.abs(currentWeight - initialWeight) * 100) / Math.abs(weightGoal - initialWeight)
+    }
+
 }

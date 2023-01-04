@@ -8,21 +8,6 @@
     tools:context=".homePage">
 
     <TextView
-        android:id="@+id/c_persent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/jura_bold"
-        android:text="%0"
-        android:textColor="@color/white"
-        android:textSize="35sp"
-        app:layout_constraintBottom_toBottomOf="@+id/caloryProgressBar"
-        app:layout_constraintEnd_toEndOf="@+id/caloryProgressBar"
-        app:layout_constraintHorizontal_bias="0.477"
-        app:layout_constraintStart_toStartOf="@+id/caloryProgressBar"
-        app:layout_constraintTop_toTopOf="@+id/caloryProgressBar"
-        app:layout_constraintVertical_bias="0.488" />
-
-    <TextView
         android:id="@+id/todaysWorkout"
         android:layout_width="357dp"
         android:layout_height="49dp"
@@ -37,29 +22,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.514" />
 
-    <TextView
-        android:id="@+id/protein"
-        android:layout_width="92dp"
-        android:layout_height="15dp"
-        android:fontFamily="@font/jura"
-        android:text="PROTEİN : "
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.796"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.265" />
-
     <LinearLayout
         android:id="@+id/menulayout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="83dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
@@ -69,7 +38,8 @@
             android:background="#00F44336"
             android:clickable="true"
             android:contentDescription="@string/app_name"
-            android:src="@mipmap/home_icon" />
+            android:src="@mipmap/home_icon"
+            tools:ignore="DuplicateSpeakableTextCheck" />
 
         <ImageButton
             android:id="@+id/gympage"
@@ -90,7 +60,7 @@
             android:background="#00F44336"
             android:clickable="true"
             android:contentDescription="@string/app_name"
-            android:src="@mipmap/food_icon"></ImageButton>
+            android:src="@mipmap/food_icon"/>
 
         <ImageButton
             android:id="@+id/shopage"
@@ -103,51 +73,23 @@
 
         <ImageButton
             android:id="@+id/userpage"
-            android:layout_width="89dp"
+            android:layout_width="78dp"
             android:layout_height="match_parent"
             android:layout_marginStart="1dp"
             android:background="#00F44336"
             android:clickable="true"
             android:contentDescription="@string/app_name"
             android:src="@mipmap/user_icon"
-            tools:ignore="DuplicateSpeakableTextCheck"></ImageButton>
+            tools:ignore="DuplicateSpeakableTextCheck"/>
 
     </LinearLayout>
 
-    <ProgressBar
-        android:id="@+id/caloryProgressBar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="204dp"
-        android:layout_height="179dp"
-        android:layout_marginTop="68dp"
-        android:indeterminateOnly="false"
-        android:progressDrawable="@drawable/circle"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.198"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.214" />
-
-    <TextView
-        android:id="@+id/workout_percent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/jura_bold"
-        android:text="%0"
-        android:textColor="@color/white"
-        android:textSize="35sp"
-        app:layout_constraintBottom_toBottomOf="@+id/workoutProgressBar"
-        app:layout_constraintEnd_toEndOf="@+id/workoutProgressBar"
-        app:layout_constraintStart_toStartOf="@+id/workoutProgressBar"
-        app:layout_constraintTop_toTopOf="@+id/workoutProgressBar" />
-
     <TextView
         android:id="@+id/hiName"
-        android:layout_width="403dp"
-        android:layout_height="52dp"
+        android:layout_width="387dp"
+        android:layout_height="50dp"
         android:fontFamily="@font/jura"
-        android:gravity="right"
+        android:gravity="end"
         android:text="Merhaba, "
         android:textColor="#A9B0BB"
         android:textSize="30sp"
@@ -156,201 +98,282 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.058" />
+        app:layout_constraintVertical_bias="0.038" />
 
-    <TextView
-        android:id="@+id/totalCal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/jura"
-        android:text="TOPLAM KALORİ:"
-        android:textColor="@color/white"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.145"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.154" />
-
-    <TextView
-        android:id="@+id/takenCal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/jura"
-        android:text="ALINAN KALORİ:"
-        android:textColor="@color/white"
-        android:textSize="12dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="247dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/rounded_green"
         app:layout_constraintBottom_toBottomOf="@+id/menulayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.153" />
+        app:layout_constraintVertical_bias="0.188"
+        tools:layout_editor_absoluteX="-14dp">
 
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/jura"
-        android:text="KALAN KALORİ:"
-        android:textColor="@color/white"
-        android:textSize="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.827"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.153" />
+        <TextView
+            android:id="@+id/carb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:fontFamily="@font/jura"
+            android:text="KARBONHİDRAT:"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/fatVal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.587" />
 
-    <TextView
-        android:id="@+id/totalCalVal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/jura"
-        android:text="2500"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.188"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.185" />
+        <TextView
+            android:id="@+id/carbVal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="108dp"
+            android:fontFamily="@font/jura"
+            android:text="000"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/fatVal"
+            app:layout_constraintTop_toBottomOf="@+id/fat"
+            app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/takenCalVal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/jura"
-        android:text="1000"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.185" />
+        <TextView
+            android:id="@+id/proteinVal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="104dp"
+            android:fontFamily="@font/jura"
+            android:text="0000"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/fatVal"
+            app:layout_constraintTop_toBottomOf="@+id/protein"
+            app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/remainCalVal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/jura"
-        android:text="1500"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/menulayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.185" />
+        <TextView
+            android:id="@+id/fatVal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="112dp"
+            android:fontFamily="@font/jura"
+            android:text="000"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/fat"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/caloryProgressBar"
+            app:layout_constraintTop_toBottomOf="@+id/carb"
+            app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/fat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/jura"
-        android:text="YAĞ:"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.661"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.42" />
+        <TextView
+            android:id="@+id/fat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="108dp"
+            android:fontFamily="@font/jura"
+            android:text="YAĞ:"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/carb"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.864" />
 
-    <TextView
-        android:id="@+id/carb"
-        android:layout_width="101dp"
-        android:layout_height="24dp"
-        android:fontFamily="@font/jura"
-        android:text="KARBONHİDRAT:"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.819"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.339" />
+        <TextView
+            android:id="@+id/remainCalVal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="88dp"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="@font/jura"
+            android:text="1500"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/caloryProgressBar"
+            app:layout_constraintEnd_toStartOf="@+id/takenCalVal"
+            app:layout_constraintTop_toBottomOf="@+id/takenCal" />
 
-    <TextView
-        android:id="@+id/proteinVal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/jura"
-        android:text="0000"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.675"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.286" />
+        <TextView
+            android:id="@+id/takenCalVal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="@font/jura"
+            android:text="1000"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/caloryProgressBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
-    <TextView
-        android:id="@+id/fatVal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/jura"
-        android:text="000"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.659"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.368" />
+        <TextView
+            android:id="@+id/totalCalVal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="@font/jura"
+            android:text="2500"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/caloryProgressBar"
+            app:layout_constraintEnd_toStartOf="@+id/remainCalVal"
+            app:layout_constraintHorizontal_bias="0.436"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/totalCal" />
 
-    <TextView
-        android:id="@+id/carbVal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/jura"
-        android:text="000"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.659"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.441" />
+        <TextView
+            android:id="@+id/protein"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="72dp"
+            android:fontFamily="@font/jura"
+            android:text="PROTEİN : "
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/carb"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.302" />
 
-    <ProgressBar
-        android:id="@+id/workoutProgressBar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="159dp"
-        android:layout_height="149dp"
-        android:indeterminateOnly="false"
-        android:indeterminateTint="@color/Maroon"
-        android:progressBackgroundTint="#9A525B"
-        android:progressDrawable="@drawable/workout"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.771"
-        tools:visibility="visible" />
+        <TextView
+            android:id="@+id/c_persent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jura_bold"
+            android:text="%0"
+            android:textColor="@color/white"
+            android:textSize="35sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/caloryProgressBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/caloryProgressBar" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/workoutList"
-        android:layout_width="202dp"
-        android:layout_height="213dp"
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/jura"
+            android:text="ALINAN KALORİ:"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.909"
+            app:layout_constraintStart_toEndOf="@+id/takenCal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.034" />
+
+        <TextView
+            android:id="@+id/takenCal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:fontFamily="@font/jura"
+            android:text="KALAN KALORİ:"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/totalCal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.034" />
+
+        <TextView
+            android:id="@+id/totalCal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:fontFamily="@font/jura"
+            android:text="TOPLAM KALORİ:"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.034" />
+
+        <ProgressBar
+            android:id="@+id/caloryProgressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="204dp"
+            android:layout_height="179dp"
+            android:indeterminateOnly="false"
+            android:progressDrawable="@drawable/circle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="238dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
         android:background="@drawable/rounded"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/menulayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.129"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.814" />
+        app:layout_constraintVertical_bias="0.975">
+
+        <ProgressBar
+            android:id="@+id/workoutProgressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="159dp"
+            android:layout_height="149dp"
+            android:indeterminateOnly="false"
+            android:indeterminateTint="@color/Maroon"
+            android:progressBackgroundTint="#7E7F89"
+            android:progressDrawable="@drawable/workout"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.934"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.505"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/workout_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jura_bold"
+            android:text="%0"
+            android:textColor="@color/white"
+            android:textSize="35sp"
+            app:layout_constraintBottom_toBottomOf="@+id/workoutProgressBar"
+            app:layout_constraintEnd_toEndOf="@+id/workoutProgressBar"
+            app:layout_constraintStart_toStartOf="@+id/workoutProgressBar"
+            app:layout_constraintTop_toTopOf="@+id/workoutProgressBar" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/workoutList"
+            android:layout_width="202dp"
+            android:layout_height="213dp"
+            android:background="@drawable/rounded"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/workoutProgressBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

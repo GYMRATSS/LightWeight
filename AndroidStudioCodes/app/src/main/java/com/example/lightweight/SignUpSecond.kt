@@ -8,6 +8,7 @@ import android.widget.*
 import com.example.lightweight.databinding.ActivitySignUpSecondBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import kotlin.math.log10
 
 class SignUpSecond : AppCompatActivity() {
     lateinit var binding: ActivitySignUpSecondBinding /**/
@@ -33,6 +34,10 @@ class SignUpSecond : AppCompatActivity() {
         userReference?.addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 binding.startHeader.text = "Başlayalım " + snapshot.child("İsim-soyisim").value.toString()
+                //yaş bilgisini görünmez bir textte depoluyoruz
+                binding.ageHolder.text = snapshot.child("Yaş").value.toString()
+                binding.cinsiyetHolder.text = snapshot.child("Cinsiyet").value.toString()
+
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -45,17 +50,17 @@ class SignUpSecond : AppCompatActivity() {
         val rdGroup = findViewById<RadioGroup>(R.id.radioChoose)
         val rdGroup2 = findViewById<RadioGroup>(R.id.activityLevelRadioGroup)
 
-        //kaydet butonu ile kaydetme adımları
+        //next butonu ile kaydetme adımları
         binding.skipButton.setOnClickListener{
             val slcBtn:Int = rdGroup!!.checkedRadioButtonId
-            var uyeTercih = ""
+            var uyeHedefTercih = ""
 
             val slcBtn2:Int = rdGroup2!!.checkedRadioButtonId
-            var uyeTercih2 = ""
+            var uyeHareketTercih = ""
 
             if(findViewById<RadioButton>(slcBtn)!=null && findViewById<RadioButton>(slcBtn2)!=null ){
-                uyeTercih = findViewById<RadioButton>(slcBtn).text.toString()
-                uyeTercih2 = findViewById<RadioButton>(slcBtn2).text.toString()
+                uyeHedefTercih = findViewById<RadioButton>(slcBtn).text.toString()
+                uyeHareketTercih = findViewById<RadioButton>(slcBtn2).text.toString()
 
             } else {
                 Toast.makeText(this@SignUpSecond,"Lütfen birini işaretleyin.", Toast.LENGTH_LONG).show()
@@ -69,6 +74,16 @@ class SignUpSecond : AppCompatActivity() {
             var uyeHedef = binding.goalInput.text.toString()
             var number = 3.14
             var uyeBMI = ""
+            var uyeBMR = ""
+            var uyeKaloriIhtiyaci = ""
+            var uyeYagOrani = ""
+            var uyeKalca = binding.hipInput.text.toString()
+
+            //Kalça boş bırakılmışsa default 90 ayarlanıyor.
+            if(TextUtils.isEmpty(uyeKalca) || uyeKalca.toInt()<1){
+                uyeKalca = "90"
+            }
+
 
 
             if(TextUtils.isEmpty(uyeKilo) || uyeKilo.toInt()<1){
@@ -87,8 +102,53 @@ class SignUpSecond : AppCompatActivity() {
                 binding.goalInput.error = "Lütfen uygun bir hedef giriniz."
                 return@setOnClickListener
             } else {
+                //Inputlar doğru ise hesaplama yapılır
                 number = ((uyeKilo.toDouble()/(uyeBoy.toDouble()*uyeBoy.toDouble()))*10000.0)
                 uyeBMI = String.format("%.2f", number)
+
+                //Harris-Benedict equation formula for calorie calculation
+                //men= 66.4730 + 13.7516 x weight in kg + 5.0033 x height in cm – 6.7550 x age
+                //women= 655.0955 + 9.5634 x weight in kg + 1.8496 x height in cm – 4.6756 x age
+                //https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7784146/
+                //https://www.thejakartapost.com/life/2016/09/27/how-to-calculate-your-ideal-calorie-intake.html#:~:text=Formula%20used%20to%20calculate%20men's,divided%20by%204.7%20x%20age.
+
+                //Measuring Body Fat Percentage According to U.S. Navy Method
+
+                var uyeYas = binding.ageHolder.text.toString()
+                var uyeCinsiyet = binding.cinsiyetHolder.text.toString()
+
+                if(uyeCinsiyet == "Erkek"){
+                    uyeBMR = (66.4730 + 13.7516*(uyeKilo.toDouble()) + 5.0033*(uyeBoy.toDouble()) + (-6.7550*(uyeYas.toDouble()))).toString()
+                    uyeYagOrani = (495/(1.0324 - 0.19077*log10(uyeBel.toDouble()-uyeBoyun.toDouble()) + 0.15456*log10(uyeBoy.toDouble())) - 450).toString()
+                }else if (uyeCinsiyet == "Kadın"){
+                    uyeBMR= (655.0955 + 9.5634*(uyeKilo.toDouble()) + 1.8496*(uyeBoy.toDouble()) + (-4.6756*(uyeYas.toDouble()))).toString()
+                    uyeYagOrani = (495/(1.29579 - 0.35004*log10(uyeBel.toDouble() + uyeKalca.toDouble()-uyeBoyun.toDouble()) + 0.221*log10(uyeBoy.toDouble())) - 450).toString()
+                }else { //Treated as woman
+                    uyeBMR= (655.0955 + 9.5634*(uyeKilo.toDouble()) + 1.8496*(uyeBoy.toDouble()) + (-4.6756*(uyeYas.toDouble()))).toString()
+                    uyeYagOrani = (495/(1.29579 - 0.35004*log10(uyeBel.toDouble() + uyeKalca.toDouble()-uyeBoyun.toDouble()) + 0.221*log10(uyeBoy.toDouble())) - 450).toString()
+                }
+
+                if(uyeHareketTercih == "Az"){
+                    uyeKaloriIhtiyaci = (uyeBMR.toDouble()*1.2).toString()
+                }else if(uyeHareketTercih == "Orta"){
+                    uyeKaloriIhtiyaci = (uyeBMR.toDouble()*1.3).toString()
+                }else{
+                    uyeKaloriIhtiyaci = (uyeBMR.toDouble()*1.4).toString()
+                }
+
+                if(uyeHedefTercih == "Kilo al"){
+                    uyeKaloriIhtiyaci = (uyeKaloriIhtiyaci.toDouble() + 400.0).toString()
+                }else if(uyeHedefTercih == "Kilo ver"){
+                    uyeKaloriIhtiyaci = (uyeKaloriIhtiyaci.toDouble() - 400.0).toString()
+                }else{
+                    //nothing
+                }
+
+
+                //Küsürattan kurtulmak
+                uyeBMR= String.format("%.0f", uyeBMR.toDouble())
+                uyeKaloriIhtiyaci = String.format("%.0f", uyeKaloriIhtiyaci.toDouble())
+                uyeYagOrani = String.format("%.2f", uyeYagOrani.toDouble())
             }
 
 
@@ -105,10 +165,15 @@ class SignUpSecond : AppCompatActivity() {
             currentUserDb?.child("Boy")?.setValue(uyeBoy)
             currentUserDb?.child("Bel")?.setValue(uyeBel)
             currentUserDb?.child("Boyun")?.setValue(uyeBoyun)
-            currentUserDb?.child("Tercih")?.setValue(uyeTercih)
+            currentUserDb?.child("Tercih")?.setValue(uyeHedefTercih)
             currentUserDb?.child("Hedef")?.setValue(uyeHedef)
             currentUserDb?.child("BMI")?.setValue(uyeBMI)
-            currentUserDb?.child("Hareket seviyesi")?.setValue(uyeTercih2)
+            currentUserDb?.child("BMR")?.setValue(uyeBMR)
+            currentUserDb?.child("Hareket seviyesi")?.setValue(uyeHareketTercih)
+            currentUserDb?.child("Kalori ihtiyacı")?.setValue(uyeKaloriIhtiyaci)
+            currentUserDb?.child("Yağ oranı")?.setValue(uyeYagOrani)
+            currentUserDb?.child("İlk kilo")?.setValue(uyeKilo)
+            currentUserDb?.child("Kalça")?.setValue(uyeKalca)
 
 
             //Profil sayfasına gitmek için
