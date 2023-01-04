@@ -140,13 +140,23 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
         ref = userReference?.child("besin")?.child("besin kayıtları")?.child(LocalDate.now().toString())
         recView = findViewById(R.id.foods)
 
+        userReference!!.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                var a:TextView = findViewById (R.id.totalCalVal)
+                a.text = snapshot.child("Kalori ihtiyacı").value.toString()
+
+            }
+            override fun onCancelled(error: DatabaseError) {
+            }
+        })
+
         var list: ArrayList<meal>? = ArrayList<meal>()
         var takenCal = 0
         if(ref != null){
             ref!!.addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.exists()){
-
+                        Thread.sleep(100)
                         for (ds in snapshot.children)
                         {
                             /*val temp: ArrayList<String> = ArrayList<String>()
@@ -175,36 +185,30 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
     fun calculations(takenCal: Int){
 
 
-        userReference!!.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                var a:TextView = findViewById (R.id.totalCalVal)
-                a.text = snapshot.child("Kalori ihtiyacı").value.toString()
 
-                var c_bar: ProgressBar = findViewById (R.id.caloryProgressBar)
-                var tc_text: TextView= findViewById (R.id.takenCalVal)
-                var ttc_text:TextView = findViewById (R.id.totalCalVal)
-                var rc_text: TextView = findViewById (R.id.remainCalVal)
-                var cPercent: TextView = findViewById (R.id.c_persent)
 
-                var totalCal = ttc_text?.text.toString().toIntOrNull() ?: 0 //TODO with firebase
+        //Aşağıdaki satırlar üstte listener'ın içindeydi
+        var c_bar: ProgressBar = findViewById (R.id.caloryProgressBar)
+        var tc_text: TextView= findViewById (R.id.takenCalVal)
+        var ttc_text:TextView = findViewById (R.id.totalCalVal)
+        var rc_text: TextView = findViewById (R.id.remainCalVal)
+        var cPercent: TextView = findViewById (R.id.c_persent)
 
-                var remain = totalCal - takenCal
-                if(c_bar?.progress!! < 100) c_bar?.progress = (takenCal*100)/totalCal
-                val percent = (takenCal*100)/totalCal
-                cPercent?.text = "%$percent"
-                tc_text?.text = "$takenCal"
-                remain = totalCal - takenCal
-                rc_text?.text = "$remain"
+        var totalCal = ttc_text?.text.toString().toIntOrNull() ?: 0 //TODO with firebase
 
-                userReference?.child("besin")?.child("kalori kayıtları")?.child(LocalDate.now().toString())?.child("Alınan kalori")?.setValue(takenCal)
-                userReference?.child("besin")?.child("kalori kayıtları")?.child(LocalDate.now().toString())?.child("Kalan kalori")?.setValue(remain)
+        var remain = totalCal - takenCal
+        if(c_bar?.progress!! < 100) c_bar?.progress = (takenCal*100)/totalCal
+        val percent = (takenCal*100)/totalCal
+        cPercent?.text = "%$percent"
+        tc_text?.text = "$takenCal"
+        remain = totalCal - takenCal
+        rc_text?.text = "$remain"
+        Thread.sleep(100)
+        userReference?.child("besin")?.child("kalori kayıtları")?.child(LocalDate.now().toString())?.child("Alınan kalori")?.setValue(takenCal)
+        userReference?.child("besin")?.child("kalori kayıtları")?.child(LocalDate.now().toString())?.child("Kalan kalori")?.setValue(remain)
 
 
 
-            }
-            override fun onCancelled(error: DatabaseError) {
-            }
-        })
 
 
     }

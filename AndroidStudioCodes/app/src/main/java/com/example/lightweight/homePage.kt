@@ -3,6 +3,7 @@ package com.example.lightweight
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.widget.ImageButton
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -35,10 +36,16 @@ class homePage : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 binding.hiName.setText("Merhaba " + snapshot.child("İsim-soyisim").value.toString())
                 binding.totalCalVal.setText(snapshot.child("Kalori ihtiyacı").value.toString())
+                var a = snapshot.child("besin").child("kalori kayıtları").child(
+                    LocalDate.now().toString()).child("Kalan kalori").value.toString()
+                if(a=="null"){
+                    binding.remainCalVal.setText(binding.totalCalVal.text.toString())
+                    binding.takenCalVal.setText("0")
+                }else {
                 binding.remainCalVal.setText(snapshot.child("besin").child("kalori kayıtları").child(
                     LocalDate.now().toString()).child("Kalan kalori").value.toString())
                 binding.takenCalVal.setText(snapshot.child("besin").child("kalori kayıtları").child(
-                    LocalDate.now().toString()).child("Alınan kalori").value.toString())
+                    LocalDate.now().toString()).child("Alınan kalori").value.toString()) }
 
                 val c_bar: ProgressBar = findViewById (R.id.caloryProgressBar)
                 val tc_text: TextView = findViewById (R.id.takenCalVal)
