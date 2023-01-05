@@ -35,17 +35,41 @@ class homePage : AppCompatActivity() {
         userReference?.addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 binding.hiName.setText("Merhaba " + snapshot.child("İsim-soyisim").value.toString())
-                binding.totalCalVal.setText(snapshot.child("Kalori ihtiyacı").value.toString())
+                binding.totalCalVal.setText(snapshot.child("Kalori ihtiyacı").value.toString() )
                 var a = snapshot.child("besin").child("kalori kayıtları").child(
                     LocalDate.now().toString()).child("Kalan kalori").value.toString()
                 if(a=="null"){
                     binding.remainCalVal.setText(binding.totalCalVal.text.toString())
                     binding.takenCalVal.setText("0")
                 }else {
-                binding.remainCalVal.setText(snapshot.child("besin").child("kalori kayıtları").child(
-                    LocalDate.now().toString()).child("Kalan kalori").value.toString())
-                binding.takenCalVal.setText(snapshot.child("besin").child("kalori kayıtları").child(
-                    LocalDate.now().toString()).child("Alınan kalori").value.toString()) }
+                    binding.remainCalVal.setText(snapshot.child("besin").child("kalori kayıtları").child(
+                        LocalDate.now().toString()).child("Kalan kalori").value.toString())
+                    binding.takenCalVal.setText(snapshot.child("besin").child("kalori kayıtları").child(
+                        LocalDate.now().toString()).child("Alınan kalori").value.toString()) }
+
+                var b = snapshot.child("besin").child("makro kayıtları").child(
+                    LocalDate.now().toString()).child("Karbonhidrat").value.toString()
+                if(b=="null"){
+                    binding.carbVal.setText("000")
+                }else {
+                    binding.carbVal.setText(snapshot.child("besin").child("makro kayıtları").child(
+                        LocalDate.now().toString()).child("Karbonhidrat").value.toString()+ " gr") }
+
+                var c = snapshot.child("besin").child("makro kayıtları").child(
+                    LocalDate.now().toString()).child("Yağ").value.toString()
+                if(c=="null"){
+                    binding.fatVal.setText("000")
+                }else {
+                    binding.fatVal.setText(snapshot.child("besin").child("makro kayıtları").child(
+                        LocalDate.now().toString()).child("Yağ").value.toString()+ " gr") }
+
+                var d = snapshot.child("besin").child("makro kayıtları").child(
+                    LocalDate.now().toString()).child("Protein").value.toString()
+                if(d=="null"){
+                    binding.proteinVal.setText("000")
+                }else {
+                    binding.proteinVal.setText(snapshot.child("besin").child("makro kayıtları").child(
+                        LocalDate.now().toString()).child("Protein").value.toString() + " gr") }
 
                 val c_bar: ProgressBar = findViewById (R.id.caloryProgressBar)
                 val tc_text: TextView = findViewById (R.id.takenCalVal)
