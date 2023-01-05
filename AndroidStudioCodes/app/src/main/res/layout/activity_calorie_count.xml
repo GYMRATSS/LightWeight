@@ -103,7 +103,7 @@
             android:background="#00F44336"
             android:clickable="true"
             android:contentDescription="@string/app_name"
-            android:src="@mipmap/food_icon"/>
+            android:src="@mipmap/food_icon" />
 
         <ImageButton
             android:id="@+id/shopage"
@@ -123,7 +123,7 @@
             android:clickable="true"
             android:contentDescription="@string/app_name"
             android:src="@mipmap/user_icon"
-            tools:ignore="DuplicateSpeakableTextCheck"/>
+            tools:ignore="DuplicateSpeakableTextCheck" />
 
     </LinearLayout>
 
