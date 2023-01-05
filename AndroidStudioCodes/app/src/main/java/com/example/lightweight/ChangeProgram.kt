@@ -6,12 +6,9 @@ import android.widget.ImageButton
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.lightweight.databinding.ActivityChangeProgramBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import java.time.LocalDate
 
 /*clicklistener check*/
 class ChangeProgram : AppCompatActivity(), AdaptoWList.ClickListener{
@@ -92,17 +89,21 @@ class ChangeProgram : AppCompatActivity(), AdaptoWList.ClickListener{
 
     override fun onStart(){
         super.onStart()
+        var i = 0
         if(ref != null){
             ref!!.addValueEventListener(object : ValueEventListener{
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.exists()){
                         for (ds in snapshot.children)
                         {
-                            val m = workoutPlanList(ds.key, ds.value.toString())
-                            list?.add(m)
+
+                                val m = workoutPlanList(ds.key, ds.value.toString())
+                                list?.add(m)
+
+
                         }
                         /*change program or workout*/
-                        val adapterC: AdaptoWList = AdaptoWList(list!!,this@ChangeProgram)
+                        var adapterC: AdaptoWList = AdaptoWList(list!!,this@ChangeProgram)
                         recView?.adapter = adapterC
                     }
                 }
@@ -141,16 +142,21 @@ class ChangeProgram : AppCompatActivity(), AdaptoWList.ClickListener{
         recView?.adapter = adapterC
 
     }
-
-    override fun ClickedItem(Workoutplan : workoutPlanList) {
+    /*WorkoutPlan : workoutplanlis*/
+    override fun ClickedItem(WorkoutPlanList : workoutPlanList) {
 
         /*userReference?.child("workout plans")?.child("plan1")?.child(Workoutplan.workoutid.toString())?.child("ağırlık")?.setValue(Workoutplan)
         userReference?.child("workout plans")?.child("plan1")?.child(Workoutplan.workoutid.toString())?.child("set")?.setValue(Workoutplan)
         userReference?.child("workout plans")?.child("plan1")?.child(Workoutplan.workoutid.toString())?.child("tekrar")?.setValue(Workoutplan)
         finish()*/
-        userReference?.child("workout plans")?.child("plan1")?.child(Workoutplan.workoutid.toString())?.setValue(Workoutplan)
-        userReference?.child("workout plans")?.child("plan1")?.child(Workoutplan.workoutid.toString())?.child("workoutid")?.removeValue()
-        /*finish()*/
-
+        //userReference?.child("besin")?.child("besin kayıtları")?.child(LocalDate.now().toString())?.child(Meal.id.toString())?.setValue(Meal)
+        userReference?.child("workout plans")?.child("plan1")?.child(WorkoutPlanList.workoutid.toString())?.setValue(WorkoutPlanList)
+        //Thread.sleep(50)
+        //userReference?.child("workout plans")?.child("plan1")?.child(Workoutplan.workoutid.toString())?.child("workoutid")?.removeValue()
+        /**/
+        Thread.sleep(50)
+        //userReference?.child("besin")?.child("besin kayıtları")?.child(LocalDate.now().toString())?.child(Meal.id.toString())?.child("id")?.removeValue()
+        Thread.sleep(50)
+        finish()
     }
 }

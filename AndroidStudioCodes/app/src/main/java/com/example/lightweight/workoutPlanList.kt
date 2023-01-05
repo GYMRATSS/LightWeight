@@ -5,9 +5,11 @@ class workoutPlanList{
     var name: String? = null
 
     constructor() {}
-    constructor(workoutid: String?, value_workout: String) {
+    constructor(workoutid: String?, value_workout: String?) {
         this.workoutid = workoutid
         this.name = value_workout
     }
 
+
 }
+

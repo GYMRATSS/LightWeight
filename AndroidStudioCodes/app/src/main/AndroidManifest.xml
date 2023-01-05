@@ -91,6 +91,13 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".ChangeProgram"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Shop"
             android:exported="false">
             <meta-data

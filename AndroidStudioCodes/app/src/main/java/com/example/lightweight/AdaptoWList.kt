@@ -1,23 +1,24 @@
 package com.example.lightweight
 
+import androidx.recyclerview.widget.RecyclerView
+import com.example.lightweight.AdaptoWList.MyViewHolderWorkout
+import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
 
-class AdaptoWList(var programlist: ArrayList<workoutPlanList>, var clickListener: AdaptoWList.ClickListener) : RecyclerView.Adapter<AdaptoWList.MyViewHolderWorkout>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdaptoWList.MyViewHolderWorkout {
+class AdaptoWList(var programlist: ArrayList<workoutPlanList>, var clickListener: ClickListener) : RecyclerView.Adapter<MyViewHolderWorkout>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolderWorkout {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.holder_program, parent, false)
         return MyViewHolderWorkout(view)
     }
 
-    override fun onBindViewHolder(holder: AdaptoWList.MyViewHolderWorkout, position: Int) {
+    override fun onBindViewHolder(holder_program: MyViewHolderWorkout, position: Int) {
         val Modal = programlist[position]
-        holder.planid_.text = programlist[position].workoutid
-        holder.descr.text = programlist[position].name
+        holder_program.planid_.text = programlist[position].workoutid
+        holder_program.descr.text = programlist[position].name
 
-        holder.itemView.setOnClickListener{
+        holder_program.itemView.setOnClickListener{
             clickListener.ClickedItem(Modal)
         }
     }
@@ -38,7 +39,7 @@ class AdaptoWList(var programlist: ArrayList<workoutPlanList>, var clickListener
     }
 
     interface ClickListener{
-        fun ClickedItem(workoutplan : workoutPlanList)
+        fun ClickedItem(workoutPlanList: workoutPlanList)
     }
 
 
