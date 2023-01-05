@@ -10,26 +10,10 @@
     tools:context=".DietTracker">
 
     <TextView
-        android:id="@+id/header"
-        android:layout_width="300dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="68dp"
-        android:fontFamily="@font/jura"
-        android:gravity="center"
-        android:text="Besin Geçmişi"
-        android:textColor="#888B95"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/toplamKalori"
         android:layout_width="169dp"
         android:layout_height="38dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginBottom="17dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/jura"
         android:gravity="center"
         android:text="Toplam kalori: "
@@ -37,16 +21,16 @@
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.243"
+        app:layout_constraintHorizontal_bias="0.239"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listView1" />
+        app:layout_constraintTop_toBottomOf="@+id/listView1"
+        app:layout_constraintVertical_bias="0.157" />
 
     <TextView
         android:id="@+id/consumedCaloriesThatDay"
         android:layout_width="131dp"
         android:layout_height="38dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginBottom="17dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/jura"
         android:gravity="center"
         android:text=""
@@ -54,31 +38,37 @@
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.814"
+        app:layout_constraintHorizontal_bias="0.81"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listView1" />
+        app:layout_constraintTop_toBottomOf="@+id/listView1"
+        app:layout_constraintVertical_bias="0.157" />
 
     <ListView
         android:id="@+id/listView1"
-        android:layout_width="299dp"
-        android:layout_height="298dp"
+        android:layout_width="302dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="4dp"
         android:foregroundGravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
-        app:layout_constraintVertical_bias="0.347" />
+        app:layout_constraintTop_toBottomOf="@+id/calendarView" />
 
     <CalendarView
         android:id="@+id/calendarView"
         android:layout_width="300dp"
-        android:layout_height="230dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="289dp"
+        android:layout_marginTop="76dp"
+        android:dateTextAppearance="@style/TextAppearance.AppCompat.Small"
+        android:foregroundTint="#8259CA"
+        android:unfocusedMonthDateColor="#221A1A"
+        android:visibility="visible"
+        android:weekDayTextAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:weekNumberColor="#191515"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/closeDietTracker"
@@ -95,4 +85,4 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
