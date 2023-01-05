@@ -113,7 +113,8 @@ class Profile : AppCompatActivity() {
         }
 
         dietTrackerButton.setOnClickListener {
-            // will be directed to the calendar page on food page
+            val intent = Intent (this, DietTracker::class.java)
+            startActivity(intent)
         }
 
         workoutActivitiesButton.setOnClickListener {
