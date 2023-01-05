@@ -47,6 +47,7 @@ class CalorieCount : AppCompatActivity() {
             }
         }
 
+
         /*********************************************************/
 
         ref = userReference?.child("besin")?.child("besin kayıtları")?.child(LocalDate.now().toString())
@@ -80,6 +81,13 @@ class CalorieCount : AppCompatActivity() {
             })
         }
 
+        val reset: ImageButton = findViewById (R.id.glassButton2)
+        reset.setOnClickListener() {
+            ref?.removeValue()
+            val intent = Intent(this, CalorieCount::class.java)
+            startActivity(intent)
+            finish()
+        }
 
         val newFood:  Button = findViewById(R.id.newFood)
         newFood.setOnClickListener() {
