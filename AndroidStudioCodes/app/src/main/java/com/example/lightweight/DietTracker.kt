@@ -13,6 +13,7 @@ import java.util.*
 class DietTracker : AppCompatActivity(){
 
     var ref: DatabaseReference? = null /**/
+    var ref2: DatabaseReference? = null /**/
     var theListView : ListView? = null
     var theCalendarView: CalendarView? =null
     var auth = FirebaseAuth.getInstance() /**/
@@ -48,7 +49,7 @@ class DietTracker : AppCompatActivity(){
                         for (ds in snapshot.children) {
                             val meal = ds.getValue(meal::class.java)
                             if (meal != null) {
-                                list.add(meal.id!!)
+                                list.add(meal.id!! + " | " + meal.kalori!! + " kcal")
                             }
                         }
                     }
@@ -56,6 +57,20 @@ class DietTracker : AppCompatActivity(){
                     val mealListAsArray = list.toTypedArray()
                     val listadp = ArrayAdapter(this@DietTracker, android.R.layout.simple_list_item_1, mealListAsArray)
                     theListView?.adapter = listadp
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    Toast.makeText(this@DietTracker, error.message, Toast.LENGTH_SHORT).show()
+                }
+            })
+        }
+
+        ref2 = userReference?.child("besin")?.child("kalori kayıtları")?.child(LocalDate.now().toString())
+        if (ref2 != null) {
+            ref2!!.addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    var kalori_text: TextView= findViewById (R.id.consumedCaloriesThatDay)
+                    kalori_text.text = snapshot.child("Alınan kalori").value.toString()
                 }
 
                 override fun onCancelled(error: DatabaseError) {
@@ -89,7 +104,7 @@ class DietTracker : AppCompatActivity(){
                             for (ds in snapshot.children) {
                                 val meal = ds.getValue(meal::class.java)
                                 if (meal != null) {
-                                    list.add(meal.id!!)
+                                    list.add(meal.id!! + " | " + meal.kalori!! + " kcal")
                                 }
                             }
                         }
@@ -104,6 +119,21 @@ class DietTracker : AppCompatActivity(){
                     }
                 })
             }
+
+            ref2 = userReference?.child("besin")?.child("kalori kayıtları")?.child(dateString)
+            if (ref2 != null) {
+                ref2!!.addValueEventListener(object : ValueEventListener {
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        var kalori_text: TextView= findViewById (R.id.consumedCaloriesThatDay)
+                        kalori_text.text = snapshot.child("Alınan kalori").value.toString()
+                    }
+
+                    override fun onCancelled(error: DatabaseError) {
+                        Toast.makeText(this@DietTracker, error.message, Toast.LENGTH_SHORT).show()
+                    }
+                })
+            }
+
         }
 
 
