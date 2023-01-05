@@ -70,7 +70,8 @@ class DietTracker : AppCompatActivity(){
             ref2!!.addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     var kalori_text: TextView= findViewById (R.id.consumedCaloriesThatDay)
-                    kalori_text.text = snapshot.child("Alınan kalori").value.toString()
+                    if(snapshot.child("Alınan kalori").value == null){ kalori_text.text = "0" }
+                    else{ kalori_text.text = snapshot.child("Alınan kalori").value.toString()}
                 }
 
                 override fun onCancelled(error: DatabaseError) {
@@ -125,7 +126,8 @@ class DietTracker : AppCompatActivity(){
                 ref2!!.addValueEventListener(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
                         var kalori_text: TextView= findViewById (R.id.consumedCaloriesThatDay)
-                        kalori_text.text = snapshot.child("Alınan kalori").value.toString()
+                        if(snapshot.child("Alınan kalori").value == null){ kalori_text.text = "0" }
+                        else{ kalori_text.text = snapshot.child("Alınan kalori").value.toString()}
                     }
 
                     override fun onCancelled(error: DatabaseError) {
