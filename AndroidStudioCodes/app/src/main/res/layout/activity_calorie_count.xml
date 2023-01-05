@@ -186,19 +186,16 @@
 
     <ImageButton
         android:id="@+id/glassButton2"
-        android:layout_width="68dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="29dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="30dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="16dp"
+        android:background="@mipmap/garbage"
         android:clickable="true"
-        android:background="@drawable/glass"
         android:contentDescription="@string/app_name"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/carb"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/carb" />
 
     <TextView
         android:id="@+id/waterMessage"
@@ -287,8 +284,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/foods"
             android:layout_width="match_parent"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
     </LinearLayout>
 
     <ImageView
@@ -489,6 +486,21 @@
         app:layout_constraintHorizontal_bias="0.952"
         app:layout_constraintStart_toEndOf="@+id/caloryProgressBar"
         app:layout_constraintTop_toBottomOf="@+id/carb" />
+
+    <TextView
+        android:id="@+id/clear"
+        android:layout_width="31dp"
+        android:layout_height="15dp"
+        android:layout_marginBottom="4dp"
+        android:gravity="center"
+        android:text="clear"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/glassButton2"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
