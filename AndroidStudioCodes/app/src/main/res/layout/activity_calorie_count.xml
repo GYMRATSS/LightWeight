@@ -185,7 +185,7 @@
         app:layout_constraintVertical_bias="0.111" />
 
     <ImageButton
-        android:id="@+id/glassButton2"
+        android:id="@+id/garbageButton"
         android:layout_width="25dp"
         android:layout_height="37dp"
         android:layout_marginTop="16dp"
@@ -499,7 +499,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.972"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/glassButton2"
+        app:layout_constraintTop_toBottomOf="@+id/garbageButton"
         app:layout_constraintVertical_bias="0.466" />
 
 

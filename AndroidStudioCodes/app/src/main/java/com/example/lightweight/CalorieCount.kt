@@ -81,7 +81,7 @@ class CalorieCount : AppCompatActivity() {
             })
         }
 
-        val reset: ImageButton = findViewById (R.id.glassButton2)
+        val reset: ImageButton = findViewById (R.id.garbageButton)
         reset.setOnClickListener() {
             ref?.removeValue()
             val intent = Intent(this, CalorieCount::class.java)
