@@ -13,7 +13,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlin.math.log10
 import com.example.lightweight.databinding.ActivityCurrentWorkoutBinding
-
+import com.example.lightweight.databinding.ActivityUpdateInfoBinding
 
 
 class CurrentWorkout : AppCompatActivity() /*, AdaptoWList.ClickListener*/ {
@@ -51,10 +51,10 @@ class CurrentWorkout : AppCompatActivity() /*, AdaptoWList.ClickListener*/ {
             //programlist[clickCount-1].inside?.size!!
             userReference?.addValueEventListener(object: ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
-                    binding.workoutNamea.text = snapshot.child("workout plans").child("plan1").child((clickCount-1).toString()).child("id").value.toString()
-                    binding.workoutagirlika.text = snapshot.child("workout plans").child("plan1").child((clickCount-1).toString()).child("ağırlık").value.toString()
-                    binding.workoutseta.text = snapshot.child("workout plans").child("plan1").child((clickCount-1).toString()).child("set").value.toString()
-                    binding.workouttekrara.text = snapshot.child("workout plans").child("plan1").child((clickCount-1).toString()).child("tekrar").value.toString()
+                    binding.workoutNamea.text = snapshot.child("workout plans").children.first().child((clickCount-1).toString()).child("id").value.toString()
+                    binding.workoutagirlika.text = snapshot.child("workout plans").children.first().child((clickCount-1).toString()).child("ağırlık").value.toString()
+                    binding.workoutseta.text = snapshot.child("workout plans").children.first().child((clickCount-1).toString()).child("set").value.toString()
+                    binding.workouttekrara.text = snapshot.child("workout plans").children.first().child((clickCount-1).toString()).child("tekrar").value.toString()
                 }
 
                 override fun onCancelled(error: DatabaseError) {
