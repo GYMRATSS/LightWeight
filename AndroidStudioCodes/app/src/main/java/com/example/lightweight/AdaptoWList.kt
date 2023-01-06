@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.TextView
 
+
+
 class AdaptoWList(var programlist: ArrayList<workoutPlanList>, var clickListener: ClickListener) : RecyclerView.Adapter<MyViewHolderWorkout>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolderWorkout {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.holder_program, parent, false)
@@ -17,6 +19,7 @@ class AdaptoWList(var programlist: ArrayList<workoutPlanList>, var clickListener
         val Modal = programlist[position]
         holder_program.planid_.text = programlist[position].workoutid
         var combinedText = ""
+        Size_programlist.mySizePL = Modal.inside!!.size
         for (i in 0 until Modal.inside!!.size)
         {
             combinedText += "\nİsim: " + Modal.inside!![i].id.toString() + "\n" +  "Set: " +

@@ -39,34 +39,45 @@ class CurrentWorkout : AppCompatActivity() /*, AdaptoWList.ClickListener*/ {
 
         val actionBar = supportActionBar
         actionBar!!.hide()
-        var clickCount = 0
+        //var clickCount = 0
+        //Size_programlist.mySizePL
         var tv = findViewById<TextView>(R.id.clickcounttext)
         var hareket = findViewById<TextView>(R.id.workoutNamea)
-        //userReference?.child("workout plans")?.child("plan1")?.child(WorkoutPlanList.workoutid.toString())?.setValue(WorkoutPlanList)
+
         val nextMoveButton1: Button = findViewById(R.id.nextMoveB)
         nextMoveButton1.setOnClickListener() {
+            if ((Size_programlist.clickCount)+1 <= Size_programlist.mySizePL) {
+                tv.setText("Su ana kadar yapilan hareket: ${Size_programlist.clickCount}  ")
 
-            tv.setText("Su ana kadar yapilan hareket: $clickCount  ")
-            //hareket.setText("")
-            //programlist[clickCount-1].inside?.size!!
-            userReference?.addValueEventListener(object: ValueEventListener {
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    binding.workoutNamea.text = snapshot.child("workout plans").children.first().child((clickCount-1).toString()).child("id").value.toString()
-                    binding.workoutagirlika.text = snapshot.child("workout plans").children.first().child((clickCount-1).toString()).child("ağırlık").value.toString()
-                    binding.workoutseta.text = snapshot.child("workout plans").children.first().child((clickCount-1).toString()).child("set").value.toString()
-                    binding.workouttekrara.text = snapshot.child("workout plans").children.first().child((clickCount-1).toString()).child("tekrar").value.toString()
-                }
+                //programlist[clickCount-1].inside?.size!!
+                userReference?.addValueEventListener(object : ValueEventListener {
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        binding.workoutNamea.text = snapshot.child("workout plans").children.first()
+                            .child((Size_programlist.clickCount - 1).toString()).child("id").value.toString()
+                        binding.workoutagirlika.text =
+                            snapshot.child("workout plans").children.first()
+                                .child((Size_programlist.clickCount - 1).toString())
+                                .child("ağırlık").value.toString()
+                        binding.workoutseta.text = snapshot.child("workout plans").children.first()
+                            .child((Size_programlist.clickCount - 1).toString()).child("set").value.toString()
+                        binding.workouttekrara.text =
+                            snapshot.child("workout plans").children.first()
+                                .child((Size_programlist.clickCount - 1).toString()).child("tekrar").value.toString()
+                    }
 
-                override fun onCancelled(error: DatabaseError) {
-                    TODO("Not yet implemented")
-                }
+                    override fun onCancelled(error: DatabaseError) {
+                        TODO("Not yet implemented")
+                    }
 
-            })
+                })
 
 
 
-            //binding.workoutNamea.text = snapshot.child
-            clickCount++
+                Size_programlist.clickCount++
+            }
+            /*if(clickCount+1 > Size_programlist.mySizePL){
+                finish()
+            }*/
         }
 
 

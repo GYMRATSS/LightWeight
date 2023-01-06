@@ -9,7 +9,11 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import java.time.LocalDate
 //import com.example.lightweight.Workout
+object Size_programlist{
 
+    var mySizePL = 1
+    var clickCount = 0
+}
 
 class Workout : AppCompatActivity(), AdaptoWList.ClickListener {
 
@@ -20,6 +24,7 @@ class Workout : AppCompatActivity(), AdaptoWList.ClickListener {
    /* private lateinit var auth: FirebaseAuth /**/
     var databaseReference: DatabaseReference? = null /**/
     var database: FirebaseDatabase? = null /**/*/
+    //var myvar = 0
 
     var auth = FirebaseAuth.getInstance() /**/
     var database = FirebaseDatabase.getInstance() /**/
@@ -45,6 +50,8 @@ class Workout : AppCompatActivity(), AdaptoWList.ClickListener {
         }
 
         val shp:  ImageButton = findViewById(R.id.shopage)
+
+
 
 
 
@@ -78,12 +85,15 @@ class Workout : AppCompatActivity(), AdaptoWList.ClickListener {
                             break
                         }
                     }
+                    calculationw()
                 }
 
                 override fun onCancelled(error: DatabaseError) {
                     Toast.makeText(this@Workout, error.message, Toast.LENGTH_SHORT).show()
                 }
             })
+
+
         }
 
 
@@ -116,6 +126,7 @@ class Workout : AppCompatActivity(), AdaptoWList.ClickListener {
             val intent = Intent(this, Profile::class.java)
             startActivity(intent)
         }
+
 
 
 
@@ -157,15 +168,28 @@ class Workout : AppCompatActivity(), AdaptoWList.ClickListener {
                             break
                         }
                     }
+                    calculationw()
                 }
 
                 override fun onCancelled(error: DatabaseError) {
                     Toast.makeText(this@Workout, error.message, Toast.LENGTH_SHORT).show()
                 }
             })
+
         }
+
+
+
     }
 
+    fun calculationw(){
+        var w_bar: ProgressBar = findViewById (R.id.workoutProgressBar)
+        var wPercent: TextView = findViewById (R.id.w_persent)
+        if(w_bar?.progress!! < 100) w_bar?.progress = ((Size_programlist.clickCount)*100)/Size_programlist.mySizePL
+        val percent =  ((Size_programlist.clickCount)*100)/Size_programlist.mySizePL
+        wPercent?.text = "%$percent"
+
+    }
 
     override fun ClickedItem(workoutPlanList: workoutPlanList) {
 
