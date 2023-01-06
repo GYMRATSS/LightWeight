@@ -31,11 +31,19 @@ class ChangeProgram : AppCompatActivity(), AdaptoWList.ClickListener{
         val actionBar = supportActionBar
         actionBar!!.hide()
 
+        /*custom program butonu*/
+        val customPageB: ImageButton = findViewById(R.id.customprogramb)
+
+        customPageB.setOnClickListener() {
+            finish()
+        }
+
         /*try changing val name*/
         val prevPage: ImageButton = findViewById(R.id.prevPage)
 
         prevPage.setOnClickListener() {
-            finish()
+           /* val intent = Intent(this, Shop::class.java)
+            startActivity(intent)*/
         }
 
         /****************************************************************/
@@ -93,6 +101,7 @@ class ChangeProgram : AppCompatActivity(), AdaptoWList.ClickListener{
         if(ref != null){
             ref!!.addValueEventListener(object : ValueEventListener{
                 override fun onDataChange(snapshot: DataSnapshot) {
+                    //userReference?.child("workout plans")?.child("plan1")?.child(Workoutplan.workoutid.toString())?.child("workoutid")?.removeValue()
                     if (snapshot.exists()){
                         for (ds in snapshot.children)
                         {
