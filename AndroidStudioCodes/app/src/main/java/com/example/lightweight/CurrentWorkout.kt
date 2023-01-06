@@ -2,6 +2,7 @@ package com.example.lightweight
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.SearchView
 import android.widget.Toast
@@ -9,9 +10,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-class CurrentWorkout : AppCompatActivity(), AdaptoWList.ClickListener {
+class CurrentWorkout : AppCompatActivity() /*, AdaptoWList.ClickListener*/ {
 
-    var ref: DatabaseReference? = null /**/
+    /*var ref: DatabaseReference? = null /**/
 
     var recView : RecyclerView? = null
 
@@ -19,7 +20,7 @@ class CurrentWorkout : AppCompatActivity(), AdaptoWList.ClickListener {
     var database = FirebaseDatabase.getInstance() /**/
     var databaseReference = database?.reference!!.child("Kullanıcılar") /**/
     var currentUser = auth.currentUser
-    var userReference = databaseReference?.child(currentUser?.uid!!)
+    var userReference = databaseReference?.child(currentUser?.uid!!)*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,12 +64,12 @@ class CurrentWorkout : AppCompatActivity(), AdaptoWList.ClickListener {
         }*/
         var clickCount = 0
         //userReference?.child("workout plans")?.child("plan1")?.child(WorkoutPlanList.workoutid.toString())?.setValue(WorkoutPlanList)
-        val nextMoveButton1 = findViewById<ImageButton>(R.id.nextMoveB)
-        nextMoveButton1.setOnClickListener {
+        val nextMoveButton1: Button = findViewById(R.id.nextMoveB)
+        nextMoveButton1.setOnClickListener() {
             clickCount++
-        //kullanici bilgisi-> 0 1 2 (clickcount) -> agirlik, set vs
         }
-    /************************menu****************************/
+
+
         val homeButton = findViewById<ImageButton>(R.id.homepage)
         homeButton.setOnClickListener() {
             val intent = Intent(this, homePage::class.java)
@@ -103,12 +104,12 @@ class CurrentWorkout : AppCompatActivity(), AdaptoWList.ClickListener {
             startActivity(intent)
         }
 
-        /*************************************************************/
-    }
-
-
-    override fun ClickedItem(workoutPlanList: workoutPlanList) {
 
     }
+
+
+    /*override fun ClickedItem(workoutPlanList: workoutPlanList) {
+
+    }*/
 
 }

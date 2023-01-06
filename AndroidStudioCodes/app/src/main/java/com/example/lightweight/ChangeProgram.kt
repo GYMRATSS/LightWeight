@@ -33,18 +33,17 @@ class ChangeProgram : AppCompatActivity(), AdaptoWList.ClickListener{
         actionBar!!.hide()
 
         /*custom program butonu*/
-        val customPageB: ImageButton = findViewById(R.id.customprogramb)
+        /*val customPageB: ImageButton = findViewById(R.id.customprogramb)
 
         customPageB.setOnClickListener() {
             finish()
-        }
+        }*/
 
         /*try changing val name*/
         val prevPage: ImageButton = findViewById(R.id.prevPage)
 
         prevPage.setOnClickListener() {
-           /* val intent = Intent(this, Shop::class.java)
-            startActivity(intent)*/
+            finish()
         }
 
         /****************************************************************/
