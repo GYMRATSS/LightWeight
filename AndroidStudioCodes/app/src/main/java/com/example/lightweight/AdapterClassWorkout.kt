@@ -1,14 +1,12 @@
 package com.example.lightweight
 
 import androidx.recyclerview.widget.RecyclerView
-import com.example.lightweight.AdapterClassWorkout.MyViewHolderWorkout
 import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.TextView
 
-class AdapterClassWorkout(var programlist: ArrayList<workoutplan>, var clickListener: ClickListener) : RecyclerView.Adapter<MyViewHolderWorkout>() {
-/*, var clickListener: ChangeProgram cikarildi*/
+class AdapterClassWorkoutList(var programlist: ArrayList<WPlanListGeneral>, var clickListener: ClickListener) : RecyclerView.Adapter<AdapterClassWorkoutList.MyViewHolderWorkout>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolderWorkout {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.holder_program, parent, false)
         return MyViewHolderWorkout(view)
@@ -17,8 +15,7 @@ class AdapterClassWorkout(var programlist: ArrayList<workoutplan>, var clickList
     override fun onBindViewHolder(holder_program: MyViewHolderWorkout, position: Int) {
         val Modal = programlist[position]
         holder_program.planid_.text = programlist[position].workoutid
-        holder_program.descr.text = "Hareket: " +programlist[position].workoutid + "\n" +  "Ağırlık: " + programlist[position].ağırlık +"\n"+
-                "Set: " +programlist[position].set + "\n" + "Tekrar: " +programlist[position].tekrar + "\n"
+        holder_program.descr.text = programlist[position].name
 
         holder_program.itemView.setOnClickListener{
             clickListener.ClickedItem(Modal)
@@ -38,11 +35,11 @@ class AdapterClassWorkout(var programlist: ArrayList<workoutplan>, var clickList
             descr = itemView.findViewById(R.id.description)
         }
 
-
-
     }
+
     interface ClickListener{
-        fun ClickedItem(workoutplan : workoutplan)
+        fun ClickedItem(workoutPlanList: WPlanListGeneral)
     }
+
 
 }
