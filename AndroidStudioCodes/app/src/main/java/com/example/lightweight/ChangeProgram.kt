@@ -105,18 +105,17 @@ class ChangeProgram : AppCompatActivity(), AdaptoWList.ClickListener{
                     if (snapshot.exists()){
                         for (ds in snapshot.children)
                         {
-                                val temp2: ArrayList<workoutplan> = ArrayList<workoutplan>()
-                                val temp: ArrayList<String> = ArrayList<String>()
+                            val temp2: ArrayList<workoutplan> = ArrayList<workoutplan>()
                                 for (v in ds.children) {
+                                    val temp: ArrayList<String> = ArrayList<String>()
                                     for (x in v.children) {
                                         temp.add(x.value.toString())
                                     }
                                     val n = workoutplan(v.key.toString(),temp)
                                     temp2.add(n)
-                                    val m = workoutPlanList(ds.key, temp2)
-                                    list?.add(m)
-
                                 }
+                            val m = workoutPlanList(ds.key, temp2)
+                            list?.add(m)
                         }
                         /*change program or workout*/
                         var adapterC: AdaptoWList = AdaptoWList(list!!,this@ChangeProgram)
