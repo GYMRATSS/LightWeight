@@ -8,12 +8,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import java.time.LocalDate
+//import com.example.lightweight.Workout
 
 
-class Workout : AppCompatActivity(), AdapterClassWorkout.ClickListener {
+class Workout : AppCompatActivity(), AdaptoWList.ClickListener {
 
     var ref: DatabaseReference? = null /**/
-    var list: ArrayList<workoutplan>? = ArrayList<workoutplan>()
+
     var recView : RecyclerView? = null
 
    /* private lateinit var auth: FirebaseAuth /**/
@@ -53,29 +54,30 @@ class Workout : AppCompatActivity(), AdapterClassWorkout.ClickListener {
         var userReference = databaseReference?.child(currentUser?.uid!!)
         ref = userReference?.child("workout plans")?.child("plan1")*/
             /*.child(LocalDate.now().toString())   cikarildi*/
-        ref = userReference?.child("workout plans")?.child("plan1")
+        ref = userReference?.child("workout plans")
         recView = findViewById(R.id.moves)
-
-
+        var list: ArrayList<workoutplan>? = ArrayList<workoutplan>()
+        var i = 0
         if(ref != null){
             ref!!.addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.exists()){
-                        for (ds in snapshot.children)
+                        for(ds in snapshot.children)
                         {
-                            /*val temp: ArrayList<String> = ArrayList<String>()
+
                             for (v in ds.children) {
-                                temp.add(v.value.toString())
+                                val temp: ArrayList<String> = ArrayList<String>()
+                                for (x in v.children) {
+                                    temp.add(x.value.toString())
+                                }
+                                val m = workoutplan(temp[3], temp)
+                                list?.add(m)
                             }
-                            val m = workoutplan(ds.key, temp)*/
-                            /*list?.add(m)*/
-                            list?.add(ds.getValue(workoutplan::class.java)!!)
-
+                            val adapterC: AdapterClassWorkout = AdapterClassWorkout(list!!)
+                            recView?.adapter = adapterC
+                            break
                         }
-                        val adapterC: AdapterClassWorkout = AdapterClassWorkout(list!!,this@Workout)
-                        recView?.adapter = adapterC
                     }
-
                 }
 
                 override fun onCancelled(error: DatabaseError) {
@@ -99,12 +101,7 @@ class Workout : AppCompatActivity(), AdapterClassWorkout.ClickListener {
             startActivity(intent)
         }
 
-        val changep:  Button = findViewById(R.id.changeprogrambutton)
 
-        changep.setOnClickListener() {
-            val intent = Intent(this, ChangeProgram::class.java)
-            startActivity(intent)
-        }
 
         val food:  ImageButton = findViewById(R.id.foodpage)
 
@@ -127,39 +124,50 @@ class Workout : AppCompatActivity(), AdapterClassWorkout.ClickListener {
     }
     override fun onResume() {
         super.onResume()
-        ref = userReference?.child("workout plans")?.child("plan1")?.child(LocalDate.now().toString())
+
+        val changep:  Button = findViewById(R.id.changeprogrambutton)
+
+        changep.setOnClickListener() {
+            val intent = Intent(this, ChangeProgram::class.java)
+            startActivity(intent)
+        }
+
+
+        ref = userReference?.child("workout plans")
         recView = findViewById(R.id.moves)
         var list: ArrayList<workoutplan>? = ArrayList<workoutplan>()
-
+        var i = 0
         if(ref != null){
             ref!!.addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.exists()){
+                        Thread.sleep(100)
                         for (ds in snapshot.children)
                         {
-                            /*val temp: ArrayList<String> = ArrayList<String>()
                             for (v in ds.children) {
-                                temp.add(v.value.toString())
+                                val temp: ArrayList<String> = ArrayList<String>()
+                                for (x in v.children) {
+                                    temp.add(x.value.toString())
+                                }
+                                val m = workoutplan(temp[1], temp)
+                                list?.add(m)
                             }
-                            val m = workoutplan(ds.key, temp)
-                            list?.add(m)*/
-                            list?.add(ds.getValue(workoutplan::class.java)!!)
+                            val adapterC: AdapterClassWorkout = AdapterClassWorkout(list!!)
+                            recView?.adapter = adapterC
+                            break
                         }
-                        val adapterC: AdapterClassWorkout = AdapterClassWorkout(list!!,this@Workout)
-                        recView?.adapter = adapterC
                     }
-
                 }
 
                 override fun onCancelled(error: DatabaseError) {
-                    /*Toast.makeText(this@Workout, error.message, Toast.LENGTH_SHORT).show()*/
+                    Toast.makeText(this@Workout, error.message, Toast.LENGTH_SHORT).show()
                 }
             })
         }
     }
 
 
-    override fun ClickedItem(workoutplan : workoutplan) {
+    override fun ClickedItem(workoutPlanList: workoutPlanList) {
 
     }
 

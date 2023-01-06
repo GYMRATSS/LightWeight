@@ -6,9 +6,7 @@ import android.widget.ImageButton
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.lightweight.databinding.ActivityChangeProgramBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import java.time.LocalDate
@@ -33,6 +31,13 @@ class ChangeProgram : AppCompatActivity(), AdaptoWList.ClickListener{
 
         val actionBar = supportActionBar
         actionBar!!.hide()
+
+        /*custom program butonu*/
+        /*val customPageB: ImageButton = findViewById(R.id.customprogramb)
+
+        customPageB.setOnClickListener() {
+            finish()
+        }*/
 
         /*try changing val name*/
         val prevPage: ImageButton = findViewById(R.id.prevPage)
@@ -92,17 +97,28 @@ class ChangeProgram : AppCompatActivity(), AdaptoWList.ClickListener{
 
     override fun onStart(){
         super.onStart()
+        var i = 0
         if(ref != null){
             ref!!.addValueEventListener(object : ValueEventListener{
                 override fun onDataChange(snapshot: DataSnapshot) {
+                    //userReference?.child("workout plans")?.child("plan1")?.child(Workoutplan.workoutid.toString())?.child("workoutid")?.removeValue()
                     if (snapshot.exists()){
                         for (ds in snapshot.children)
                         {
-                            val m = workoutPlanList(ds.key, ds.value.toString())
+                            val temp2: ArrayList<workoutplan> = ArrayList<workoutplan>()
+                                for (v in ds.children) {
+                                    val temp: ArrayList<String> = ArrayList<String>()
+                                    for (x in v.children) {
+                                        temp.add(x.value.toString())
+                                    }
+                                    val n = workoutplan(v.key.toString(),temp)
+                                    temp2.add(n)
+                                }
+                            val m = workoutPlanList(ds.key, temp2)
                             list?.add(m)
                         }
                         /*change program or workout*/
-                        val adapterC: AdaptoWList = AdaptoWList(list!!,this@ChangeProgram)
+                        var adapterC: AdaptoWList = AdaptoWList(list!!,this@ChangeProgram)
                         recView?.adapter = adapterC
                     }
                 }
@@ -141,16 +157,11 @@ class ChangeProgram : AppCompatActivity(), AdaptoWList.ClickListener{
         recView?.adapter = adapterC
 
     }
-
-    override fun ClickedItem(Workoutplan : workoutPlanList) {
-
-        /*userReference?.child("workout plans")?.child("plan1")?.child(Workoutplan.workoutid.toString())?.child("ağırlık")?.setValue(Workoutplan)
-        userReference?.child("workout plans")?.child("plan1")?.child(Workoutplan.workoutid.toString())?.child("set")?.setValue(Workoutplan)
-        userReference?.child("workout plans")?.child("plan1")?.child(Workoutplan.workoutid.toString())?.child("tekrar")?.setValue(Workoutplan)
-        finish()*/
-        userReference?.child("workout plans")?.child("plan1")?.child(Workoutplan.workoutid.toString())?.setValue(Workoutplan)
-        userReference?.child("workout plans")?.child("plan1")?.child(Workoutplan.workoutid.toString())?.child("workoutid")?.removeValue()
-        /*finish()*/
-
+    /*WorkoutPlan : workoutplanlis*/
+    override fun ClickedItem(WorkoutPlanList : workoutPlanList) {
+        userReference?.child("workout plans")?.child(WorkoutPlanList.workoutid.toString())?.setValue(WorkoutPlanList.inside)
+        Thread.sleep(50)
+        Thread.sleep(50)
+        finish()
     }
 }

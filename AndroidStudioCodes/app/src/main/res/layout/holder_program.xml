@@ -11,16 +11,16 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="200dp"
         android:background="@mipmap/red"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/programId"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:fontFamily="@font/jura"
-            android:padding="10dp"
+            android:layout_marginStart="10dp"
             android:text="input"
             android:textColor="@color/white"
             android:textSize="25sp" />
@@ -28,17 +28,12 @@
         <TextView
             android:id="@+id/description"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:fontFamily="@font/jura"
             android:padding="10dp"
             android:text="inputDesc"
             android:textColor="@color/white" />
 
     </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#000"/>
 
 </androidx.cardview.widget.CardView>
