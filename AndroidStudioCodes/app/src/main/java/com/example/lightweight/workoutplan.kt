@@ -12,9 +12,9 @@ class workoutplan {
     constructor(workoutid: String?, value_workout: ArrayList<String>) {
         /*this.planid = planid*/
         this.id = workoutid
-        this.ağırlık = value_workout[0]
-        this.set = value_workout[2]
-        this.tekrar = value_workout[3]
+        this.ağırlık = value_workout[2]
+        this.set = value_workout[0]
+        this.tekrar = value_workout[1]
 
 
     }
