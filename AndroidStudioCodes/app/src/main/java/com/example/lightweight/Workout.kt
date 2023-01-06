@@ -53,9 +53,9 @@ class Workout : AppCompatActivity(), AdaptoWList.ClickListener {
         var userReference = databaseReference?.child(currentUser?.uid!!)
         ref = userReference?.child("workout plans")?.child("plan1")*/
             /*.child(LocalDate.now().toString())   cikarildi*/
-        ref = userReference?.child("workout plans")?.child("plan1")
+        ref = userReference?.child("workout plans")
         recView = findViewById(R.id.moves)
-        var list: ArrayList<workoutPlanList>? = ArrayList<workoutPlanList>()
+        var list: ArrayList<workoutplan>? = ArrayList<workoutplan>()
         var i = 0
         if(ref != null){
             ref!!.addValueEventListener(object : ValueEventListener {
@@ -63,21 +63,20 @@ class Workout : AppCompatActivity(), AdaptoWList.ClickListener {
                     if (snapshot.exists()){
                         for(ds in snapshot.children)
                         {
-                            /*val temp: ArrayList<String> = ArrayList<String>()
+
                             for (v in ds.children) {
-                                temp.add(v.value.toString())
+                                val temp: ArrayList<String> = ArrayList<String>()
+                                for (x in v.children) {
+                                    temp.add(x.value.toString())
+                                }
+                                val m = workoutplan(temp[3], temp)
+                                list?.add(m)
                             }
-                            val m = workoutplan(ds.key, temp)*/
-                            /*list?.add(m)*/
-
-                                list?.add(ds.getValue(workoutPlanList::class.java)!!)
-
-
+                            val adapterC: AdapterClassWorkout = AdapterClassWorkout(list!!)
+                            recView?.adapter = adapterC
+                            break
                         }
-                        val adapterC: AdaptoWList = AdaptoWList(list!!,this@Workout)
-                        recView?.adapter = adapterC
                     }
-
                 }
 
                 override fun onCancelled(error: DatabaseError) {
@@ -133,9 +132,9 @@ class Workout : AppCompatActivity(), AdaptoWList.ClickListener {
         }
 
 
-        ref = userReference?.child("workout plans")?.child("plan1")
+        ref = userReference?.child("workout plans")
         recView = findViewById(R.id.moves)
-        var list: ArrayList<workoutPlanList>? = ArrayList<workoutPlanList>()
+        var list: ArrayList<workoutplan>? = ArrayList<workoutplan>()
         var i = 0
         if(ref != null){
             ref!!.addValueEventListener(object : ValueEventListener {
@@ -144,21 +143,19 @@ class Workout : AppCompatActivity(), AdaptoWList.ClickListener {
                         Thread.sleep(100)
                         for (ds in snapshot.children)
                         {
-                            /*val temp: ArrayList<String> = ArrayList<String>()
                             for (v in ds.children) {
-                                temp.add(v.value.toString())
+                                val temp: ArrayList<String> = ArrayList<String>()
+                                for (x in v.children) {
+                                    temp.add(x.value.toString())
+                                }
+                                val m = workoutplan(temp[1], temp)
+                                list?.add(m)
                             }
-                            val m = workoutplan(ds.key, temp)
-                            list?.add(m)*/
-
-                                list?.add(ds.getValue(workoutPlanList::class.java)!!)
-
-
+                            val adapterC: AdapterClassWorkout = AdapterClassWorkout(list!!)
+                            recView?.adapter = adapterC
+                            break
                         }
-                        val adapterC: AdaptoWList = AdaptoWList(list!!,this@Workout)
-                        recView?.adapter = adapterC
                     }
-
                 }
 
                 override fun onCancelled(error: DatabaseError) {
