@@ -14,7 +14,7 @@
         android:layout_height="46dp"
         android:fontFamily="@font/jura"
         android:gravity="left|center"
-        android:text="x"
+        android:text=""
         android:textColor="#E9EEF3"
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -41,57 +41,120 @@
         app:layout_constraintVertical_bias="0.022" />
 
     <TextView
-        android:id="@+id/workoutagirlika"
-        android:layout_width="286dp"
-        android:layout_height="31dp"
+        android:id="@+id/textayrıntı1"
+        android:layout_width="95dp"
+        android:layout_height="38dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/jura_bold"
-        android:text="x"
+        android:text="Set:"
+        android:textColor="#E9EEF3"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.671" />
+
+    <TextView
+        android:id="@+id/textayrıntı3"
+        android:layout_width="105dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/jura_bold"
+        android:text="Ağırlık:"
+        android:textColor="#E9EEF3"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.612" />
+
+    <TextView
+        android:id="@+id/textayrıntı2"
+        android:layout_width="114dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/jura_bold"
+        android:text="Tekrar:"
+        android:textColor="#E9EEF3"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.733" />
+
+    <TextView
+        android:id="@+id/workoutagirlika"
+        android:layout_width="180dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/jura_bold"
+        android:text=""
         android:textColor="#E9EEF3"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.408"
+        app:layout_constraintHorizontal_bias="0.532"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.593" />
+        app:layout_constraintVertical_bias="0.611" />
 
     <TextView
         android:id="@+id/workoutseta"
-        android:layout_width="286dp"
-        android:layout_height="31dp"
+        android:layout_width="142dp"
+        android:layout_height="38dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/jura_bold"
-        android:text="x"
+        android:text=""
         android:textColor="#E9EEF3"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.408"
+        app:layout_constraintHorizontal_bias="0.42"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.639" />
+        app:layout_constraintVertical_bias="0.671" />
 
     <TextView
         android:id="@+id/workouttekrara"
-        android:layout_width="286dp"
-        android:layout_height="31dp"
+        android:layout_width="192dp"
+        android:layout_height="29dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/jura_bold"
-        android:text="x"
+        android:text=""
         android:textColor="#E9EEF3"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.408"
+        app:layout_constraintHorizontal_bias="0.602"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.684" />
+        app:layout_constraintVertical_bias="0.722" />
+
+    <TextView
+        android:id="@+id/clickcounttext"
+        android:layout_width="325dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/jura_bold"
+        android:text=""
+        android:textColor="#E9EEF3"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.781" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/nextMoveB"
-        android:layout_width="190dp"
-        android:layout_height="85dp"
+        android:layout_width="177dp"
+        android:layout_height="52dp"
         android:background="@drawable/rounded_button"
         android:ellipsize="none"
         android:fontFamily="@font/jura_bold"
@@ -107,7 +170,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.849" />
+        app:layout_constraintVertical_bias="0.871" />
 
     <LinearLayout
         android:id="@+id/menulayout"
