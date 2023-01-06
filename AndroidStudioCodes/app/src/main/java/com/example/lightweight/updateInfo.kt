@@ -69,26 +69,26 @@ class updateInfo : AppCompatActivity() {
             currentUserDb?.child("İsim-soyisim")?.removeValue()
             currentUserDb?.child("İsim-soyisim")?.setValue(uyeAd)
             if(uyeYas.toInt()>0){
-            currentUserDb?.child("Yaş")?.removeValue()
-            currentUserDb?.child("Yaş")?.setValue(uyeYas)}
+                currentUserDb?.child("Yaş")?.removeValue()
+                currentUserDb?.child("Yaş")?.setValue(uyeYas)}
             if(uyeKilo.toInt()>0){
-            currentUserDb?.child("Kilo")?.removeValue()
-            currentUserDb?.child("Kilo")?.setValue(uyeKilo)}
+                currentUserDb?.child("Kilo")?.removeValue()
+                currentUserDb?.child("Kilo")?.setValue(uyeKilo)}
             if(uyeBoy.toInt()>0){
-            currentUserDb?.child("Boy")?.removeValue()
-            currentUserDb?.child("Boy")?.setValue(uyeBoy)}
+                currentUserDb?.child("Boy")?.removeValue()
+                currentUserDb?.child("Boy")?.setValue(uyeBoy)}
             if(uyeBel.toInt()>0){
-            currentUserDb?.child("Bel")?.removeValue()
-            currentUserDb?.child("Bel")?.setValue(uyeBel)}
+                currentUserDb?.child("Bel")?.removeValue()
+                currentUserDb?.child("Bel")?.setValue(uyeBel)}
             if(uyeBoyun.toInt()>0){
-            currentUserDb?.child("Boyun")?.removeValue()
-            currentUserDb?.child("Boyun")?.setValue(uyeBoyun)}
+                currentUserDb?.child("Boyun")?.removeValue()
+                currentUserDb?.child("Boyun")?.setValue(uyeBoyun)}
             if(uyeHedefKilo.toInt()>0){
                 currentUserDb?.child("Hedef")?.removeValue()
                 currentUserDb?.child("Hedef")?.setValue(uyeHedefKilo)}
             if(uyeKalca.toInt()>0){
-            currentUserDb?.child("Kalça")?.removeValue()
-            currentUserDb?.child("Kalça")?.setValue(uyeKalca)}
+                currentUserDb?.child("Kalça")?.removeValue()
+                currentUserDb?.child("Kalça")?.setValue(uyeKalca)}
 
             //kalori ihtiyacı - yağ oranı - BMI - BMR
             var number = ((uyeKilo.toDouble()/(uyeBoy.toDouble()*uyeBoy.toDouble()))*10000.0)

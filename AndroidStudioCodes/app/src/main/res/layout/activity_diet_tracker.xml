@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/wallp"
+    tools:context=".DietTracker">
+
+    <TextView
+        android:id="@+id/toplamKalori"
+        android:layout_width="169dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/jura"
+        android:gravity="center"
+        android:text="Toplam kalori: "
+        android:textColor="#000000"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.239"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listView1"
+        app:layout_constraintVertical_bias="0.157" />
+
+    <TextView
+        android:id="@+id/consumedCaloriesThatDay"
+        android:layout_width="131dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/jura"
+        android:gravity="center"
+        android:text=""
+        android:textColor="#000000"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.81"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listView1"
+        app:layout_constraintVertical_bias="0.157" />
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="302dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="4dp"
+        android:foregroundGravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.531"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calendarView" />
+
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="300dp"
+        android:layout_height="289dp"
+        android:layout_marginTop="76dp"
+        android:dateTextAppearance="@style/TextAppearance.AppCompat.Small"
+        android:foregroundTint="#8259CA"
+        android:unfocusedMonthDateColor="#221A1A"
+        android:visibility="visible"
+        android:weekDayTextAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:weekNumberColor="#191515"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.531"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/closeDietTracker"
+        android:layout_width="67dp"
+        android:layout_height="60dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023"
+        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

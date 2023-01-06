@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_marginTop="20dp"
     android:layout_height="wrap_content"
@@ -11,7 +12,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="250dp"
         android:background="@mipmap/green"
         android:orientation="vertical">
 
@@ -28,11 +29,55 @@
         <TextView
             android:id="@+id/descrb"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="93dp"
             android:fontFamily="@font/jura"
             android:padding="10dp"
             android:text="inputDesc"
             android:textColor="@color/black" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="106dp">
+
+
+            <EditText
+                android:id="@+id/gramAmount"
+                android:layout_width="233dp"
+                android:layout_height="41dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="16dp"
+                android:ems="10"
+                android:fontFamily="@font/jura"
+                android:gravity="center"
+                android:hint="Yenen miktarı giriniz (gr)"
+                android:text=""
+                android:textColor="#FFFF"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/enterGram"
+                app:layout_constraintEnd_toStartOf="@+id/enterGram"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/enterGram"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/enterGram"
+                android:layout_width="78dp"
+                android:layout_height="41dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="24dp"
+                android:background="@color/Black"
+                android:clickable="true"
+                android:text="Kaydet"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.876"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.707" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     </LinearLayout>
     <View

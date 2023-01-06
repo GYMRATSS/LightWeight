@@ -9,7 +9,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import java.time.LocalDate
 
-class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
+class CalorieCount : AppCompatActivity() {
     var ref: DatabaseReference? = null /**/
     var recView : RecyclerView? = null
 
@@ -47,6 +47,7 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
             }
         }
 
+
         /*********************************************************/
 
         ref = userReference?.child("besin")?.child("besin kayıtları")?.child(LocalDate.now().toString())
@@ -68,7 +69,7 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
                             list?.add(ds.getValue(meal::class.java)!!)
                             takenCal += list?.get(list.size-1)?.kalori!!.toInt()
                         }
-                        val adapterC: AdapterClass = AdapterClass(list!!,this@CalorieCount)
+                        val adapterC: AdapterForList = AdapterForList(list!!)
                         recView?.adapter = adapterC
                     }
                     calculations(takenCal)
@@ -80,6 +81,13 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
             })
         }
 
+        val reset: ImageButton = findViewById (R.id.garbageButton)
+        reset.setOnClickListener() {
+            ref?.removeValue()
+            val intent = Intent(this, CalorieCount::class.java)
+            startActivity(intent)
+            finish()
+        }
 
         val newFood:  Button = findViewById(R.id.newFood)
         newFood.setOnClickListener() {
@@ -152,6 +160,9 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
 
         var list: ArrayList<meal>? = ArrayList<meal>()
         var takenCal = 0
+        var takenCarb = 0
+        var takenFat = 0
+        var takenProtein = 0
         if(ref != null){
             ref!!.addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
@@ -167,11 +178,24 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
                             list?.add(m)*/
                             list?.add(ds.getValue(meal::class.java)!!)
                             takenCal += list?.get(list.size-1)?.kalori!!.toInt()
+                            takenCarb += list?.get(list.size-1)?.karbonhidrat!!.toDouble().toInt()
+                            takenFat += list?.get(list.size-1)?.yağ!!.toDouble().toInt()
+                            takenProtein += list?.get(list.size-1)?.protein!!.toDouble().toInt()
                         }
-                        val adapterC: AdapterClass = AdapterClass(list!!,this@CalorieCount)
+                        val adapterC: AdapterForList = AdapterForList(list!!)
                         recView?.adapter = adapterC
                     }
+                    var b:TextView = findViewById (R.id.carbVal)
+                    b.text = "$takenCarb gr"
+                    var c:TextView = findViewById (R.id.fatVal)
+                    c.text = "$takenFat gr"
+                    var d:TextView = findViewById (R.id.proteinVal)
+                    d.text = "$takenProtein gr"
                     calculations(takenCal)
+                    userReference?.child("besin")?.child("makro kayıtları")?.child(LocalDate.now().toString())?.child("Karbonhidrat")?.setValue(takenCarb)
+                    userReference?.child("besin")?.child("makro kayıtları")?.child(LocalDate.now().toString())?.child("Yağ")?.setValue(takenFat)
+                    userReference?.child("besin")?.child("makro kayıtları")?.child(LocalDate.now().toString())?.child("Protein")?.setValue(takenProtein)
+
                 }
 
                 override fun onCancelled(error: DatabaseError) {
@@ -213,8 +237,4 @@ class CalorieCount : AppCompatActivity(), AdapterClass.ClickListener {
 
     }
 
-
-    override fun ClickedItem(meal: meal) {
-
-    }
 }
