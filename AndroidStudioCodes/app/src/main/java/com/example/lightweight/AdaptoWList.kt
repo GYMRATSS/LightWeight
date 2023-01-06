@@ -16,7 +16,12 @@ class AdaptoWList(var programlist: ArrayList<workoutPlanList>, var clickListener
     override fun onBindViewHolder(holder_program: MyViewHolderWorkout, position: Int) {
         val Modal = programlist[position]
         holder_program.planid_.text = programlist[position].workoutid
-        holder_program.descr.text = programlist[position].name
+        for (i in 0 until programlist[position].inside?.size!!)
+        {
+            holder_program.descr.text = "İsim: " + programlist[position].inside?.get(i)?.workoutid.toString() + "\n" +  "Set: " +
+                    programlist[position].inside?.get(i)?.set.toString() + "\n" +  "Ağırlık: " +
+                        programlist[position].inside?.get(i)?.ağırlık.toString() + "\n" +  "Tekrar: " + programlist[position].inside?.get(i)?.tekrar.toString()
+        }
 
         holder_program.itemView.setOnClickListener{
             clickListener.ClickedItem(Modal)
