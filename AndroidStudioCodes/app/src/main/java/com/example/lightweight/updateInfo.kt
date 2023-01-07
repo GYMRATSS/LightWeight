@@ -153,5 +153,10 @@ class updateInfo : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.guncelleButonu2.setOnClickListener {
+            val intent = Intent (this, updatePic::class.java)
+            startActivity(intent)
+        }
+
     }
 }
