@@ -38,8 +38,7 @@
         android:id="@+id/gramAmount"
         android:layout_width="233dp"
         android:layout_height="48dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:fontFamily="@font/jura"
         android:gravity="center"
@@ -47,29 +46,12 @@
         android:text=""
         android:textColor="#FFFF"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/enterGram"
-        app:layout_constraintEnd_toStartOf="@+id/enterGram"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/enterGram"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/enterGram"
-        android:layout_width="78dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="24dp"
-        android:background="@color/Black"
-        android:clickable="true"
-        android:text="Kaydet"
-        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.829"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.177" />
+        app:layout_constraintEnd_toEndOf="@+id/foodSearch"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/foodSearch"
+        app:layout_constraintTop_toBottomOf="@+id/foodSearch"
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/foodList"

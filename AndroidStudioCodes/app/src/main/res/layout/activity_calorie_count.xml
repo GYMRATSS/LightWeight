@@ -188,7 +188,8 @@
         android:id="@+id/garbageButton"
         android:layout_width="25dp"
         android:layout_height="37dp"
-        android:layout_marginTop="216dp"
+        android:layout_marginTop="226dp"
+        android:layout_marginBottom="7dp"
         android:background="@mipmap/garbage"
         android:clickable="true"
         android:contentDescription="@string/app_name"
@@ -196,8 +197,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.958"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/next"
-        app:layout_constraintVertical_bias="0.066" />
+        app:layout_constraintTop_toBottomOf="@+id/next" />
 
     <TextView
         android:id="@+id/waterMessage"
@@ -351,13 +351,14 @@
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/jura"
         android:text="KALAN KALORİ:"
         android:textColor="@color/white"
         android:textSize="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/remainCalVal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.264"
+        app:layout_constraintHorizontal_bias="0.262"
         app:layout_constraintStart_toEndOf="@+id/takenCal"
         app:layout_constraintTop_toBottomOf="@+id/calendar" />
 
@@ -398,12 +399,10 @@
         android:text="1500"
         android:textColor="@color/white"
         android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/caloryProgressBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.789"
         app:layout_constraintStart_toEndOf="@+id/takenCalVal"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <TextView
         android:id="@+id/protein"
@@ -500,12 +499,13 @@
 
     <TextView
         android:id="@+id/clear"
-        android:layout_width="82dp"
-        android:layout_height="17dp"
-        android:layout_marginBottom="4dp"
+        android:layout_width="126dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/jura_medium"
         android:gravity="right"
-        android:text="besinleri sil"
-        android:textSize="11sp"
+        android:text="Besinleri sil."
+        android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.972"
