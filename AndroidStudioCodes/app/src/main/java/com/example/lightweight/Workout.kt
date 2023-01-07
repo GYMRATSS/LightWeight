@@ -70,12 +70,12 @@ class Workout : AppCompatActivity(), AdaptoWList.ClickListener {
             ref!!.addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.exists()){
-                        for(ds in snapshot.children)
+                        for(ds in snapshot.children) //plan1,2,..
                         {
 
-                            for (v in ds.children) {
+                            for (v in ds.children) {    //0,1,2..
                                 val temp: ArrayList<String> = ArrayList<String>()
-                                for (x in v.children) {
+                                for (x in v.children) {     //id,set,repeat
                                     temp.add(x.value.toString())
                                 }
                                 val m = workoutplan(temp[3], temp)

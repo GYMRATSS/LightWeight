@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.SearchView
 import android.widget.TextView
 import android.widget.Toast
@@ -25,7 +26,7 @@ class CurrentWorkout : AppCompatActivity() /*, AdaptoWList.ClickListener*/ {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // setContentView(R.layout.activity_current_workout) /*this might be important*/
+       // setContentView(R.layout.activity_current_workout) /*this might be important*/
         val binding = ActivityCurrentWorkoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -48,22 +49,15 @@ class CurrentWorkout : AppCompatActivity() /*, AdaptoWList.ClickListener*/ {
         //var tvhareket = findViewById<TextView>(R.id.workoutNamea)
         var tvhazirlan = findViewById<TextView>(R.id.hazirlan)
 
-        if(Size_programlist.clickCount == Size_programlist.mySizePL){
-
-            tvhazirlan.setText("TÜM HAREKETLER TAMAMLANDI")
-        }
-
-
-
         val nextMoveButton1: Button = findViewById(R.id.nextMoveB)
         if (((Size_programlist.clickCount+1) <= Size_programlist.mySizePL) ) {
-            nextMoveButton1.setOnClickListener() {
+        nextMoveButton1.setOnClickListener() {
 
 
-                //Size_programlist.clickCount++
-                if(Size_programlist.clickCount+1 <= Size_programlist.mySizePL) {
-                    Size_programlist.clickCount++
-                }
+            //Size_programlist.clickCount++
+            if(Size_programlist.clickCount+1 <= Size_programlist.mySizePL) {
+                Size_programlist.clickCount++
+            }
                 tv.setText("Su ana kadar yapilan hareket: ${Size_programlist.clickCount}  ")
                 //Size_programlist.clickCount--
                 //programlist[clickCount-1].inside?.size!!
@@ -77,17 +71,17 @@ class CurrentWorkout : AppCompatActivity() /*, AdaptoWList.ClickListener*/ {
                             tvhazirlan.setText("")
 
 
-                            binding.workoutNamea.text = snapshot.child("workout plans").children.first()
-                                .child((Size_programlist.clickCount -1 ).toString()).child("id").value.toString()
-                            binding.workoutagirlika.text =
-                                snapshot.child("workout plans").children.first()
-                                    .child((Size_programlist.clickCount -1 ).toString())
-                                    .child("ağırlık").value.toString()
-                            binding.workoutseta.text = snapshot.child("workout plans").children.first()
-                                .child((Size_programlist.clickCount -1 ).toString()).child("set").value.toString()
-                            binding.workouttekrara.text =
-                                snapshot.child("workout plans").children.first()
-                                    .child((Size_programlist.clickCount -1 ).toString()).child("tekrar").value.toString()
+                        binding.workoutNamea.text = snapshot.child("workout plans").children.first()
+                            .child((Size_programlist.clickCount -1 ).toString()).child("id").value.toString()
+                        binding.workoutagirlika.text =
+                            snapshot.child("workout plans").children.first()
+                                .child((Size_programlist.clickCount -1 ).toString())
+                                .child("ağırlık").value.toString()
+                        binding.workoutseta.text = snapshot.child("workout plans").children.first()
+                            .child((Size_programlist.clickCount -1 ).toString()).child("set").value.toString()
+                        binding.workouttekrara.text =
+                            snapshot.child("workout plans").children.first()
+                                .child((Size_programlist.clickCount -1 ).toString()).child("tekrar").value.toString()
                         }
 
                         //
@@ -108,7 +102,7 @@ class CurrentWorkout : AppCompatActivity() /*, AdaptoWList.ClickListener*/ {
             }*/
         }
 
-
+        
 
 
 
@@ -157,6 +151,7 @@ class CurrentWorkout : AppCompatActivity() /*, AdaptoWList.ClickListener*/ {
 
 
     /*override fun ClickedItem(workoutPlanList: workoutPlanList) {
+
     }*/
 
 }

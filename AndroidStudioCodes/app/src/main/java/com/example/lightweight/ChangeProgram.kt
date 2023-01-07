@@ -160,6 +160,7 @@ class ChangeProgram : AppCompatActivity(), AdaptoWList.ClickListener{
     }
     /*WorkoutPlan : workoutplanlis*/
     override fun ClickedItem(WorkoutPlanList : workoutPlanList) {
+        userReference?.child("workout plans")?.setValue(WorkoutPlanList.workoutid.toString())
         userReference?.child("workout plans")?.child(WorkoutPlanList.workoutid.toString())?.setValue(WorkoutPlanList.inside)
         Thread.sleep(50)
         Thread.sleep(50)

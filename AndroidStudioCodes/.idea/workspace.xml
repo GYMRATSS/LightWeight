@@ -11,8 +11,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="750aced5-74ea-4611-97af-cdedd1e52d8b" name="Changes" comment="hesap bilgileri güncelleme eklendi">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/CustomProgram.kt" afterDir="false" />
+    <list default="true" id="750aced5-74ea-4611-97af-cdedd1e52d8b" name="Changes" comment="garbage icon">
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
@@ -20,19 +19,14 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/ChangeProgram.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/ChangeProgram.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/CurrentWorkout.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/CurrentWorkout.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/Workout.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/Workout.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_current_workout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_current_workout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_custom_program.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_custom_program.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\Tugce\.android\avd\Pixel_3a_API_28.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -59,15 +53,15 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="layoutResourceFile_vertical" />
-        <option value="resourceFile" />
         <option value="Kotlin Class" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="eda" />
+        <entry key="$PROJECT_DIR$/.." value="v2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -101,7 +95,7 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="Properties" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -121,8 +115,8 @@
       <recent name="com.example.lightweight" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Eda\AndroidStudioProjects\LightWeight\AndroidStudioCodes\app\src\main\res\mipmap-xxxhdpi" />
       <recent name="C:\Users\Eda\AndroidStudioProjects\LightWeight\AndroidStudioCodes\app\src\main\res\drawable-v24" />
+      <recent name="C:\Users\Eda\AndroidStudioProjects\LightWeight\AndroidStudioCodes\app\src\main\res\mipmap-xxxhdpi" />
       <recent name="C:\Users\Eda\AndroidStudioProjects\LightWeight\AndroidStudioCodes\app\src\main\res\mipmap-hdpi" />
       <recent name="C:\Users\Tugce\Documents\GitHub\LightWeight\AndroidStudioCodes\app\src\main\res\mipmap-xxxhdpi" />
       <recent name="C:\Users\Tugce\Documents\GitHub\LightWeight\AndroidStudioCodes\app\src\main\res\drawable" />
@@ -330,21 +324,35 @@
       <option name="project" value="LOCAL" />
       <updated>1671212715362</updated>
     </task>
-    <task id="LOCAL-00014" summary="garbage icon">
-      <created>1672940385586</created>
+    <task id="LOCAL-00014" summary="gramla besin ekleme eklendi">
+      <created>1673085872348</created>
       <option name="number" value="00014" />
       <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1672940385586</updated>
+      <updated>1673085872348</updated>
     </task>
-    <task id="LOCAL-00015" summary="garbage icon">
-      <created>1672942017394</created>
+    <task id="LOCAL-00015" summary="uygun gramaj girilmesi için kontrol eklendi">
+      <created>1673087378011</created>
       <option name="number" value="00015" />
       <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
-      <updated>1672942017394</updated>
+      <updated>1673087378011</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="su girme eklendi">
+      <created>1673097392805</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1673097392805</updated>
+    </task>
+    <task id="LOCAL-00017" summary="su girme eklendi">
+      <created>1673097426467</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1673097426467</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -383,8 +391,10 @@
     <MESSAGE value="home page'e veri bağlantısı yapıldı, progress bar çalışıyor" />
     <MESSAGE value="yemek sayfasında yenen yemeklerin yazmayan isimleri artık yazıyor (id de tutuluyor database'de)" />
     <MESSAGE value="latest" />
-    <MESSAGE value="garbage icon" />
-    <option name="LAST_COMMIT_MESSAGE" value="garbage icon" />
+    <MESSAGE value="gramla besin ekleme eklendi" />
+    <MESSAGE value="uygun gramaj girilmesi için kontrol eklendi" />
+    <MESSAGE value="su girme eklendi" />
+    <option name="LAST_COMMIT_MESSAGE" value="su girme eklendi" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
