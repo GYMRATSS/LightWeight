@@ -46,7 +46,6 @@ class CalorieCount : AppCompatActivity() {
                             p_bar.progress = ((2000- remainW!!)*100)/2000
                             r_text.text = "$remainW ml"
                         }
-                        val water: ImageButton = findViewById (R.id.glassButton)
 
                             if(remainW!! >= 0){
                                 updateProgressBar()
