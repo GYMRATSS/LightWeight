@@ -504,7 +504,7 @@
         android:layout_height="17dp"
         android:layout_marginBottom="4dp"
         android:gravity="right"
-        android:text="besinleri sil"
+        android:text="Besinleri sil."
         android:textSize="11sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
