@@ -11,16 +11,16 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="750aced5-74ea-4611-97af-cdedd1e52d8b" name="Changes" comment="besinleri kaldırma butonu eklendi">
+    <list default="true" id="750aced5-74ea-4611-97af-cdedd1e52d8b" name="Changes" comment="su girme eklendi">
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_4_01_2023_20_38__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_4_01_2023_20_38__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/EnterFood.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/EnterFood.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/CalorieCount.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/lightweight/CalorieCount.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_calorie_count.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_calorie_count.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +62,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="firebase_umut" />
+        <entry key="$PROJECT_DIR$/.." value="v2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -332,7 +332,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673085872348</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="uygun gramaj girilmesi için kontrol eklendi">
+      <created>1673087378011</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1673087378011</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -372,7 +379,9 @@
     <MESSAGE value="yemek sayfasında yenen yemeklerin yazmayan isimleri artık yazıyor (id de tutuluyor database'de)" />
     <MESSAGE value="latest" />
     <MESSAGE value="gramla besin ekleme eklendi" />
-    <option name="LAST_COMMIT_MESSAGE" value="gramla besin ekleme eklendi" />
+    <MESSAGE value="uygun gramaj girilmesi için kontrol eklendi" />
+    <MESSAGE value="su girme eklendi" />
+    <option name="LAST_COMMIT_MESSAGE" value="su girme eklendi" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
