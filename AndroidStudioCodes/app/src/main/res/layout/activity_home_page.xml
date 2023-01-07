@@ -367,8 +367,8 @@
 
         <ListView
             android:id="@+id/workoutListView"
-            android:layout_width="177dp"
-            android:layout_height="207dp"
+            android:layout_width="189dp"
+            android:layout_height="210dp"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
