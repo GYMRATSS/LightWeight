@@ -2,6 +2,7 @@ package com.example.lightweight
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
@@ -50,22 +51,47 @@ class CurrentWorkout : AppCompatActivity() /*, AdaptoWList.ClickListener*/ {
         var tvhazirlan = findViewById<TextView>(R.id.hazirlan)
 
         val nextMoveButton1: Button = findViewById(R.id.nextMoveB)
+        var basla = findViewById<TextView>(R.id.wo)
 
-        val imageView: ImageView = findViewById(R.id.theImageView)
-        var imageId = ""
+        var imageView: ImageView = findViewById(R.id.theImageView)
+        var imageId = "@mipmap/barbell_squat"
+        var imageName : Int = 0
+
+        var userReference2 = databaseReference?.child(currentUser?.uid!!)
+        if (userReference2 != null) {
+            userReference2.addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    basla.text = snapshot.child("workout plans").children.first().key.toString()
+                    imageId = snapshot.child("workout plans").children.first().child("0").child("id").value.toString().lowercase().replace(" ", "")
+                }
+
+                override fun onCancelled(error: DatabaseError) { }
+            })
+            imageName = resources.getIdentifier(imageId,  "drawable", packageName)
+            imageView.setImageResource(imageName)
+
+        }
 
         if (((Size_programlist.clickCount+1) <= Size_programlist.mySizePL) ) {
             nextMoveButton1.setOnClickListener() {
 
+                basla.visibility = View.INVISIBLE
+                if(Size_programlist.clickCount+1 == Size_programlist.mySizePL){
+                    nextMoveButton1.text = "Bitir"
+                }
+                else {
+                    nextMoveButton1.text = "Sonraki Hareket"
+                }
                 if(Size_programlist.clickCount+1 <= Size_programlist.mySizePL) {
                     Size_programlist.clickCount++
                 }
                 else{
-                    Thread.sleep(300)
+                    Thread.sleep(600)
                     val intent = Intent(this, Workout::class.java)
                     startActivity(intent)
                 }
                 //Size_programlist.clickCount++
+
 
                 tv.setText("Su ana kadar yapilan hareket: ${Size_programlist.clickCount}  ")
                 //Size_programlist.clickCount--
@@ -109,11 +135,11 @@ class CurrentWorkout : AppCompatActivity() /*, AdaptoWList.ClickListener*/ {
 
                 })
 
-                var imageName = resources.getIdentifier(imageId,  "drawable", packageName)
+                imageName = resources.getIdentifier(imageId,  "drawable", packageName)
                 imageView.setImageResource(imageName)
 
-
             }
+
             /*if(clickCount+1 > Size_programlist.mySizePL){
                 finish()
             }*/
