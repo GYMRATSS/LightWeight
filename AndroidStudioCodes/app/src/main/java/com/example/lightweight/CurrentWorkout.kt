@@ -60,23 +60,22 @@ class CurrentWorkout : AppCompatActivity() /*, AdaptoWList.ClickListener*/ {
                 if(Size_programlist.clickCount+1 <= Size_programlist.mySizePL) {
                     Size_programlist.clickCount++
                 }
-                else{
+                /*else{
                     Thread.sleep(300)
                     val intent = Intent(this, Workout::class.java)
                     startActivity(intent)
-                }
+                }*/
                 //Size_programlist.clickCount++
 
                 tv.setText("Su ana kadar yapilan hareket: ${Size_programlist.clickCount}  ")
-                //Size_programlist.clickCount--
-                //programlist[clickCount-1].inside?.size!!
+
                 userReference?.addValueEventListener(object : ValueEventListener {
 
                     override fun onDataChange(snapshot: DataSnapshot) {
 
                         //imageId = resources.getIdentifier("plan" + snapshot.child("workout plans").children.first().value.toString() + "_" + (Size_programlist.clickCount + 1), "drawable", packageName)
                         //imageId = resources.getIdentifier("image" + (Size_programlist.clickCount + 1), "drawable", packageName)
-                        if((Size_programlist.clickCount != 0)) {
+                        if((Size_programlist.clickCount != 0) && ((Size_programlist.clickCount) <= Size_programlist.mySizePL)) {
                             tvset.setText("Set: ")
                             tvagirlik.setText("Ağırlık: ")
                             tvtekrar.setText("Tekrar: ")
