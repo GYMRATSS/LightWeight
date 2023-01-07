@@ -36,7 +36,8 @@ class ChangeProgram : AppCompatActivity(), AdaptoWList.ClickListener{
         /*val customPageB: ImageButton = findViewById(R.id.customprogramb)
 
         customPageB.setOnClickListener() {
-            finish()
+            val intent = Intent(this, CustomProgram::class.java)
+            startActivity(intent)
         }*/
 
         /*try changing val name*/

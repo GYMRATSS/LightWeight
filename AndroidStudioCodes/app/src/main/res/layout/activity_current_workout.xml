@@ -26,19 +26,19 @@
 
     <TextView
         android:id="@+id/hazirlan"
-        android:layout_width="303dp"
-        android:layout_height="152dp"
+        android:layout_width="404dp"
+        android:layout_height="217dp"
         android:fontFamily="@font/jura_bold"
-        android:gravity="left|center"
+        android:gravity="center"
         android:text="HAZIRLAN"
         android:textColor="#FFFFFF"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.962"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.715" />
+        app:layout_constraintVertical_bias="0.714" />
 
     <TextView
         android:id="@+id/wo"
