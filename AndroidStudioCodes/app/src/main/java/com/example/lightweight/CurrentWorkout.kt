@@ -49,6 +49,11 @@ class CurrentWorkout : AppCompatActivity() /*, AdaptoWList.ClickListener*/ {
         //var tvhareket = findViewById<TextView>(R.id.workoutNamea)
         var tvhazirlan = findViewById<TextView>(R.id.hazirlan)
 
+        if(Size_programlist.clickCount == Size_programlist.mySizePL){
+
+            tvhazirlan.setText("Tüm hareketler tamamlandı ")
+        }
+
         val nextMoveButton1: Button = findViewById(R.id.nextMoveB)
         if (((Size_programlist.clickCount+1) <= Size_programlist.mySizePL) ) {
         nextMoveButton1.setOnClickListener() {
@@ -102,7 +107,7 @@ class CurrentWorkout : AppCompatActivity() /*, AdaptoWList.ClickListener*/ {
             }*/
         }
 
-        
+
 
 
 
