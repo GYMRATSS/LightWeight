@@ -162,6 +162,12 @@ class CalorieCount : AppCompatActivity() {
 
         }
 
+        val calendarButton = findViewById<ImageButton>(R.id.calendar)
+        calendarButton.setOnClickListener {
+            val intent = Intent (this, DietTracker::class.java)
+            startActivity(intent)
+            finish()
+        }
         /**************************************************/
 
 

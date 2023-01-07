@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.SearchView
 import android.widget.TextView
 import android.widget.Toast
@@ -47,10 +48,6 @@ class CurrentWorkout : AppCompatActivity() /*, AdaptoWList.ClickListener*/ {
         var tvtekrar = findViewById<TextView>(R.id.texttekrar)
         //var tvhareket = findViewById<TextView>(R.id.workoutNamea)
         var tvhazirlan = findViewById<TextView>(R.id.hazirlan)
-
-
-
-
 
         val nextMoveButton1: Button = findViewById(R.id.nextMoveB)
         if (((Size_programlist.clickCount+1) <= Size_programlist.mySizePL) ) {
