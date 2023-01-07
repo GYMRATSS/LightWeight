@@ -13,16 +13,15 @@
         android:layout_width="387dp"
         android:layout_height="46dp"
         android:fontFamily="@font/jura"
-        android:gravity="left|center"
+        android:gravity="center"
         android:text=""
         android:textColor="#E9EEF3"
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.553" />
+        app:layout_constraintVertical_bias="0.484" />
 
     <TextView
         android:id="@+id/hazirlan"
@@ -42,8 +41,8 @@
 
     <TextView
         android:id="@+id/wo"
-        android:layout_width="182dp"
-        android:layout_height="96dp"
+        android:layout_width="147dp"
+        android:layout_height="83dp"
         android:fontFamily="@font/jura"
         android:gravity="left|center"
         android:text="Basla"
@@ -51,122 +50,129 @@
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.075"
+        app:layout_constraintHorizontal_bias="0.069"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.022" />
 
     <TextView
         android:id="@+id/textset"
-        android:layout_width="95dp"
-        android:layout_height="38dp"
+        android:layout_width="105dp"
+        android:layout_height="40dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/jura_bold"
+        android:gravity="left"
         android:text=""
         android:textColor="#E9EEF3"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintHorizontal_bias="0.091"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.671" />
+        app:layout_constraintVertical_bias="0.61" />
 
     <TextView
         android:id="@+id/textagirlik"
         android:layout_width="105dp"
-        android:layout_height="41dp"
+        android:layout_height="40dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/jura_bold"
+        android:gravity="left"
         android:text=""
         android:textColor="#E9EEF3"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintHorizontal_bias="0.094"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.612" />
+        app:layout_constraintVertical_bias="0.55" />
 
     <TextView
         android:id="@+id/texttekrar"
-        android:layout_width="114dp"
-        android:layout_height="39dp"
+        android:layout_width="105dp"
+        android:layout_height="40dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/jura_bold"
+        android:gravity="left"
         android:text=""
         android:textColor="#E9EEF3"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintHorizontal_bias="0.091"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.729" />
+        app:layout_constraintVertical_bias="0.67" />
 
     <TextView
         android:id="@+id/workoutagirlika"
         android:layout_width="180dp"
-        android:layout_height="38dp"
+        android:layout_height="40dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/jura_bold"
+        android:gravity="center"
         android:text=""
         android:textColor="#E9EEF3"
-        android:textSize="18sp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintHorizontal_bias="0.584"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.614" />
+        app:layout_constraintVertical_bias="0.55" />
 
     <TextView
         android:id="@+id/workoutseta"
-        android:layout_width="142dp"
-        android:layout_height="38dp"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/jura_bold"
+        android:gravity="center"
         android:text=""
         android:textColor="#E9EEF3"
-        android:textSize="18sp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.584"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.671" />
+        app:layout_constraintVertical_bias="0.61" />
 
     <TextView
         android:id="@+id/workouttekrara"
-        android:layout_width="181dp"
-        android:layout_height="38dp"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/jura_bold"
+        android:gravity="center"
         android:text=""
         android:textColor="#E9EEF3"
-        android:textSize="18sp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.582"
+        app:layout_constraintHorizontal_bias="0.58"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.727" />
+        app:layout_constraintVertical_bias="0.67" />
 
     <TextView
         android:id="@+id/clickcounttext"
-        android:layout_width="325dp"
-        android:layout_height="34dp"
+        android:layout_width="389dp"
+        android:layout_height="51dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/jura_bold"
+        android:gravity="center"
         android:text=""
         android:textColor="#E9EEF3"
-        android:textSize="18sp"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.209"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.781" />
+        app:layout_constraintVertical_bias="0.76" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/nextMoveB"
@@ -178,12 +184,13 @@
         android:foregroundTint="#3E363E"
         android:gravity="center"
         android:radius="7dp"
-        android:text="Sonraki Hareket"
+        android:text="Başla"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.525"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.877" />
@@ -258,10 +265,9 @@
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.231"
+        app:layout_constraintVertical_bias="0.161"
         app:srcCompat="@mipmap/barbell_squat" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
