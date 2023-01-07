@@ -16,6 +16,7 @@ class AdapterClassWorkout(var programlist: ArrayList<workoutplan>) : RecyclerVie
     override fun onBindViewHolder(holder_program: MyViewHolderWorkout, position: Int) {
         val Modal = programlist[position]
         holder_program.planid_.text = programlist[position].id
+        Size_programlist.mySizePL = programlist.size
         holder_program.descr.text = "Hareket: " +programlist[position].id + "\n" +  "Ağırlık: " + programlist[position].ağırlık +"\n"+
                 "Set: " +programlist[position].set + "\n" + "Tekrar: " +programlist[position].tekrar + "\n"
     }

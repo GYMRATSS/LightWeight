@@ -111,6 +111,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
         </LinearLayout>
     </LinearLayout>
 
@@ -126,26 +127,11 @@
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.087"
+        app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.814"
+        app:layout_constraintVertical_bias="0.809"
         tools:visibility="visible" />
-
-    <TextView
-        android:id="@+id/w_persent"
-        android:layout_width="181dp"
-        android:layout_height="87dp"
-        android:fontFamily="@font/jura_bold"
-        android:text=""
-        android:textColor="@color/white"
-        android:textSize="35sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.868"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.78" />
 
     <LinearLayout
         android:id="@+id/menulayout"
@@ -224,5 +210,16 @@
         app:layout_constraintStart_toEndOf="@+id/qa"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/calendar_gym" />
+
+    <TextView
+        android:id="@+id/w_persent"
+        android:layout_width="62dp"
+        android:layout_height="58dp"
+        android:fontFamily="@font/jura_bold"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="162dp"
+        tools:layout_editor_absoluteY="519dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

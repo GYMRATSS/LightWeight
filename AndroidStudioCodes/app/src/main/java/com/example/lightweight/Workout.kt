@@ -137,15 +137,18 @@ class Workout : AppCompatActivity(), AdaptoWList.ClickListener {
         super.onResume()
 
         val changep:  Button = findViewById(R.id.changeprogrambutton)
-
+        ref = userReference?.child("workout plans")
+        recView = findViewById(R.id.moves)
         changep.setOnClickListener() {
+            /*Size_programlist.mySizePL = 1
+            Size_programlist.clickCount = 0
+            ref?.removeValue()*/
             val intent = Intent(this, ChangeProgram::class.java)
             startActivity(intent)
         }
 
 
-        ref = userReference?.child("workout plans")
-        recView = findViewById(R.id.moves)
+
         var list: ArrayList<workoutplan>? = ArrayList<workoutplan>()
         var i = 0
         if(ref != null){
