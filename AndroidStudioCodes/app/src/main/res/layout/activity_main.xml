@@ -5,41 +5,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    android:background="@drawable/img_1"
+    android:background="@mipmap/patty3"
     android:visibility="visible"
     tools:context=".MainActivity"
     tools:visibility="visible">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="226dp"
-        android:layout_height="93dp"
-        android:layout_marginTop="108dp"
-        android:text="Welcome To LightWeight"
+        android:layout_width="282dp"
+        android:layout_height="127dp"
+        android:fontFamily="@font/jura_bold"
+        android:gravity="center"
+        android:text="LightWeight'e\nHoş Geldiniz"
         android:textColor="@color/Black"
-        android:textSize="60sp"
+        android:textSize="35sp"
         android:textStyle="bold|italic"
-        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintHorizontal_bias="0.775"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.147" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="164dp"
         android:backgroundTint="@color/LightGrey"
         android:ems="10"
         android:hint="e-mail"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
         android:textColor="@color/white"
+        android:textColorHint="#B5B5B5"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.925"
+        app:layout_constraintHorizontal_bias="0.93"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.535" />
 
     <Button
         android:id="@+id/logIn"
@@ -68,10 +72,13 @@
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:textColor="@color/white"
+        android:textColorHint="#B5B5B5"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.93"
+        app:layout_constraintHorizontal_bias="0.935"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/ageBox"
@@ -83,10 +90,10 @@
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.341"
+        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.861" />
+        app:layout_constraintVertical_bias="0.85" />
 
     <Button
         android:id="@+id/signIn"
@@ -100,7 +107,7 @@
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.705"
+        app:layout_constraintHorizontal_bias="0.882"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.857"

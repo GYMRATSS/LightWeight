@@ -17,9 +17,12 @@ class QandA : AppCompatActivity() {
         val actionBar = supportActionBar
         actionBar!!.hide()
 
-        val profileButton = findViewById<ImageButton>(R.id.userpage)
+        val closeButton = findViewById<ImageButton>(R.id.closeQA)
+        closeButton.setOnClickListener {
+            val intent = Intent (this, Profile::class.java)
+            startActivity(intent)
+        }
 
-        profileButton.isClickable = false
         val question5: Button = findViewById (R.id.question5)
 
         question5.setOnClickListener() {
