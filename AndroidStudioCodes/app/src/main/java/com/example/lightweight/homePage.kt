@@ -112,11 +112,6 @@ class homePage : AppCompatActivity() {
 
         })
 
-//----------------------------------------------------------------------------------------------------------
-
-
-//----------------------------------------------------------------------------------------------------------
-
         val homeButton = findViewById<ImageButton>(R.id.homepage)
         val gymButton = findViewById<ImageButton>(R.id.gympage)
         val foodButton = findViewById<ImageButton>(R.id.foodpage)
@@ -190,6 +185,12 @@ override fun onResume() {
                 //val listadp = ArrayAdapter(this@homePage, android.R.layout.simple_list_item_1, workoutListToArray)
                 val listadp = ArrayAdapter(this@homePage, R.layout.row, workoutListToArray)
                 theListView?.adapter = listadp
+
+                var w_bar: ProgressBar = findViewById (R.id.workoutProgressBar)
+                var wPercent: TextView = findViewById (R.id.workout_percent)
+                if(w_bar?.progress!! < 100) w_bar?.progress = ((Size_programlist.clickCount)*100)/Size_programlist.mySizePL
+                val percent =  ((Size_programlist.clickCount)*100)/Size_programlist.mySizePL
+                wPercent?.text = "%$percent"
 
             }
 
