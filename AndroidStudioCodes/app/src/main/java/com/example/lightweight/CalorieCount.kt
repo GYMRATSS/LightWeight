@@ -8,11 +8,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import java.time.LocalDate
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.widget.AlertDialogLayout
 
 class CalorieCount : AppCompatActivity() {
     var ref: DatabaseReference? = null /**/
     var ref2: DatabaseReference? = null /**/
     var recView : RecyclerView? = null
+    private lateinit var builder : AlertDialog.Builder
+
 
     // TUÇEMİ SEVİORUM
 
@@ -46,7 +50,6 @@ class CalorieCount : AppCompatActivity() {
                             p_bar.progress = ((2000- remainW!!)*100)/2000
                             r_text.text = "$remainW ml"
                         }
-
                             if(remainW!! >= 0){
                                 updateProgressBar()
                             }
@@ -96,12 +99,26 @@ class CalorieCount : AppCompatActivity() {
             })
         }
 
+        builder = AlertDialog.Builder(this)
         val reset: ImageButton = findViewById (R.id.garbageButton)
         reset.setOnClickListener() {
-            ref?.removeValue()
-            val intent = Intent(this, CalorieCount::class.java)
-            startActivity(intent)
-            finish()
+            builder.setTitle("Uyarı!")
+                .setMessage("Besin listesini silmek istediğine emin misin?")
+                .setCancelable(true) // dialog box in cancellable
+                // set positive button
+                //take two parameters dialogInterface and an int
+                .setPositiveButton("Evet"){dialogInterface,it ->
+                    ref?.removeValue()
+                    val intent = Intent(this, CalorieCount::class.java)
+                    startActivity(intent)
+                    finish() // close the app when yes clicked
+                }
+                .setNegativeButton("Hayır"){dialogInterface,it ->
+                    // cancel the dialogbox
+                    dialogInterface.cancel()
+                }
+                // show the builder
+                .show()
         }
 
         val newFood:  Button = findViewById(R.id.newFood)
