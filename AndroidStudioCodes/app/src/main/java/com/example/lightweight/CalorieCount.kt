@@ -11,6 +11,7 @@ import java.time.LocalDate
 
 class CalorieCount : AppCompatActivity() {
     var ref: DatabaseReference? = null /**/
+    var ref2: DatabaseReference? = null /**/
     var recView : RecyclerView? = null
 
     // TUÇEMİ SEVİORUM
@@ -30,21 +31,36 @@ class CalorieCount : AppCompatActivity() {
         actionBar!!.hide()
 
         /******** water entry **********/
-        var remainW = 2000
+        ref2 = userReference?.child("besin")?.child("su kayıtları")?.child(LocalDate.now().toString())
 
-        val p_bar: ProgressBar = findViewById (R.id.waterProgressBar)
-        val r_text: TextView = findViewById (R.id.remainWater_m)
-        fun updateProgressBar(){
-            p_bar.progress = ((2000-remainW)*100)/2000
-            r_text.text = "$remainW ml"
-        }
+        if(ref2 != null){
+            ref2!!.addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    if (snapshot.exists()){
+                        /******** water entry **********/
+                        var remainW = snapshot.child("kalan su").value.toString().toIntOrNull()
 
-        val water: ImageButton = findViewById (R.id.glassButton)
-        water.setOnClickListener() {
-            if(remainW > 0){
-                remainW -= 200
-                updateProgressBar()
-            }
+                        val p_bar: ProgressBar = findViewById (R.id.waterProgressBar)
+                        val r_text: TextView = findViewById (R.id.remainWater_m)
+                        fun updateProgressBar(){
+                            p_bar.progress = ((2000- remainW!!)*100)/2000
+                            r_text.text = "$remainW ml"
+                        }
+                        val water: ImageButton = findViewById (R.id.glassButton)
+
+                            if(remainW!! >= 0){
+                                updateProgressBar()
+                            }
+
+                    } else{
+                        ref2?.child("kalan su")?.setValue(2000)
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    Toast.makeText(this@CalorieCount, error.message, Toast.LENGTH_SHORT).show()
+                }
+            })
         }
 
 
@@ -203,13 +219,44 @@ class CalorieCount : AppCompatActivity() {
                 }
             })
         }
+
+        ref2 = userReference?.child("besin")?.child("su kayıtları")?.child(LocalDate.now().toString())
+        if(ref2 != null){
+            ref2!!.addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    if (snapshot.exists()){
+                        /******** water entry **********/
+                        var remainW = snapshot.child("kalan su").value.toString().toIntOrNull()
+
+                        val p_bar: ProgressBar = findViewById (R.id.waterProgressBar)
+                        val r_text: TextView = findViewById (R.id.remainWater_m)
+                        fun updateProgressBar(remain_temp: Int?){
+                            p_bar.progress = ((2000- remain_temp!!)*100)/2000
+                            r_text.text = "$remain_temp ml"
+                        }
+                        val water: ImageButton = findViewById (R.id.glassButton)
+                        water.setOnClickListener() {
+                            if(remainW!! >= 0){
+                                var remain_temp = remainW
+                                if(remain_temp != 0){
+                                    remain_temp = remain_temp - 200
+                                    ref2!!.child("kalan su").setValue(remain_temp)
+                                }
+                                updateProgressBar(remain_temp)
+                            }
+                        }
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    Toast.makeText(this@CalorieCount, error.message, Toast.LENGTH_SHORT).show()
+                }
+            })
+        }
     }
 
 
     fun calculations(takenCal: Int){
-
-
-
 
         //Aşağıdaki satırlar üstte listener'ın içindeydi
         var c_bar: ProgressBar = findViewById (R.id.caloryProgressBar)
