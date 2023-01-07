@@ -42,27 +42,52 @@ class CurrentWorkout : AppCompatActivity() /*, AdaptoWList.ClickListener*/ {
         //var clickCount = 0
         //Size_programlist.mySizePL
         var tv = findViewById<TextView>(R.id.clickcounttext)
-        var hareket = findViewById<TextView>(R.id.workoutNamea)
+        var tvagirlik = findViewById<TextView>(R.id.textagirlik)
+        var tvset = findViewById<TextView>(R.id.textset)
+        var tvtekrar = findViewById<TextView>(R.id.texttekrar)
+        //var tvhareket = findViewById<TextView>(R.id.workoutNamea)
+        var tvhazirlan = findViewById<TextView>(R.id.hazirlan)
+
+
+
+
 
         val nextMoveButton1: Button = findViewById(R.id.nextMoveB)
+        if (((Size_programlist.clickCount+1) <= Size_programlist.mySizePL) ) {
         nextMoveButton1.setOnClickListener() {
-            if ((Size_programlist.clickCount)+1 <= Size_programlist.mySizePL) {
-                tv.setText("Su ana kadar yapilan hareket: ${Size_programlist.clickCount}  ")
 
+
+            //Size_programlist.clickCount++
+            if(Size_programlist.clickCount+1 <= Size_programlist.mySizePL) {
+                Size_programlist.clickCount++
+            }
+                tv.setText("Su ana kadar yapilan hareket: ${Size_programlist.clickCount}  ")
+                //Size_programlist.clickCount--
                 //programlist[clickCount-1].inside?.size!!
                 userReference?.addValueEventListener(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
+
+                        if((Size_programlist.clickCount != 0)) {
+                            tvset.setText("Set: ")
+                            tvagirlik.setText("Ağırlık: ")
+                            tvtekrar.setText("Tekrar: ")
+                            tvhazirlan.setText("")
+
+
                         binding.workoutNamea.text = snapshot.child("workout plans").children.first()
-                            .child((Size_programlist.clickCount - 1).toString()).child("id").value.toString()
+                            .child((Size_programlist.clickCount -1 ).toString()).child("id").value.toString()
                         binding.workoutagirlika.text =
                             snapshot.child("workout plans").children.first()
-                                .child((Size_programlist.clickCount - 1).toString())
+                                .child((Size_programlist.clickCount -1 ).toString())
                                 .child("ağırlık").value.toString()
                         binding.workoutseta.text = snapshot.child("workout plans").children.first()
-                            .child((Size_programlist.clickCount - 1).toString()).child("set").value.toString()
+                            .child((Size_programlist.clickCount -1 ).toString()).child("set").value.toString()
                         binding.workouttekrara.text =
                             snapshot.child("workout plans").children.first()
-                                .child((Size_programlist.clickCount - 1).toString()).child("tekrar").value.toString()
+                                .child((Size_programlist.clickCount -1 ).toString()).child("tekrar").value.toString()
+                        }
+
+                        //
                     }
 
                     override fun onCancelled(error: DatabaseError) {
@@ -73,12 +98,14 @@ class CurrentWorkout : AppCompatActivity() /*, AdaptoWList.ClickListener*/ {
 
 
 
-                Size_programlist.clickCount++
+
             }
             /*if(clickCount+1 > Size_programlist.mySizePL){
                 finish()
             }*/
         }
+
+        
 
 
 

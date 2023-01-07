@@ -25,6 +25,22 @@
         app:layout_constraintVertical_bias="0.553" />
 
     <TextView
+        android:id="@+id/hazirlan"
+        android:layout_width="303dp"
+        android:layout_height="152dp"
+        android:fontFamily="@font/jura_bold"
+        android:gravity="left|center"
+        android:text="HAZIRLAN"
+        android:textColor="#FFFFFF"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.962"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.715" />
+
+    <TextView
         android:id="@+id/wo"
         android:layout_width="182dp"
         android:layout_height="96dp"
@@ -41,12 +57,12 @@
         app:layout_constraintVertical_bias="0.022" />
 
     <TextView
-        android:id="@+id/textayrıntı1"
+        android:id="@+id/textset"
         android:layout_width="95dp"
         android:layout_height="38dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/jura_bold"
-        android:text="Set:"
+        android:text=""
         android:textColor="#E9EEF3"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -57,12 +73,12 @@
         app:layout_constraintVertical_bias="0.671" />
 
     <TextView
-        android:id="@+id/textayrıntı3"
+        android:id="@+id/textagirlik"
         android:layout_width="105dp"
         android:layout_height="41dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/jura_bold"
-        android:text="Ağırlık:"
+        android:text=""
         android:textColor="#E9EEF3"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -73,12 +89,12 @@
         app:layout_constraintVertical_bias="0.612" />
 
     <TextView
-        android:id="@+id/textayrıntı2"
+        android:id="@+id/texttekrar"
         android:layout_width="114dp"
         android:layout_height="39dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/jura_bold"
-        android:text="Tekrar:"
+        android:text=""
         android:textColor="#E9EEF3"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
