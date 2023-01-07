@@ -114,38 +114,6 @@ class homePage : AppCompatActivity() {
 
 //----------------------------------------------------------------------------------------------------------
 
-        ref = userReference?.child("workout plans")
-        theListView = findViewById(R.id.workoutListView)
-        var list = mutableListOf<String>()
-
-        if (ref != null) {
-            ref!!.addValueEventListener(object : ValueEventListener {
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    if (snapshot.exists()) {
-                        for (ds in snapshot.children) //plan1,2,..
-                        {
-                            for (v in ds.children) {    //0,1,2..
-                                val theWorkout = v.getValue(workoutplan::class.java)
-                                if(theWorkout != null){
-                                    list.add(theWorkout.id!!)
-                                    list.add("xd ")
-                                }
-                            }
-                        }
-                    }
-                    val workoutListToArray = list.toTypedArray()
-                    val listadp = ArrayAdapter(this@homePage, android.R.layout.simple_list_item_1, workoutListToArray)
-                    theListView?.adapter = listadp
-                }
-
-                override fun onCancelled(error: DatabaseError) {
-                    Toast.makeText(this@homePage, error.message, Toast.LENGTH_SHORT).show()
-                }
-            })
-
-
-        }
-
 
 //----------------------------------------------------------------------------------------------------------
 
