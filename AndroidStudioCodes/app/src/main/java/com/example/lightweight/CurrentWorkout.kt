@@ -26,7 +26,7 @@ class CurrentWorkout : AppCompatActivity() /*, AdaptoWList.ClickListener*/ {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-       // setContentView(R.layout.activity_current_workout) /*this might be important*/
+        // setContentView(R.layout.activity_current_workout) /*this might be important*/
         val binding = ActivityCurrentWorkoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -57,10 +57,16 @@ class CurrentWorkout : AppCompatActivity() /*, AdaptoWList.ClickListener*/ {
         if (((Size_programlist.clickCount+1) <= Size_programlist.mySizePL) ) {
             nextMoveButton1.setOnClickListener() {
 
-            //Size_programlist.clickCount++
-            if(Size_programlist.clickCount+1 <= Size_programlist.mySizePL) {
-                Size_programlist.clickCount++
-            }
+                if(Size_programlist.clickCount+1 <= Size_programlist.mySizePL) {
+                    Size_programlist.clickCount++
+                }
+                else{
+                    Thread.sleep(300)
+                    val intent = Intent(this, Workout::class.java)
+                    startActivity(intent)
+                }
+                //Size_programlist.clickCount++
+
                 tv.setText("Su ana kadar yapilan hareket: ${Size_programlist.clickCount}  ")
                 //Size_programlist.clickCount--
                 //programlist[clickCount-1].inside?.size!!
@@ -76,20 +82,20 @@ class CurrentWorkout : AppCompatActivity() /*, AdaptoWList.ClickListener*/ {
                             tvtekrar.setText("Tekrar: ")
                             tvhazirlan.setText("")
 
-                        imageId = snapshot.child("workout plans").children.first()
-                                .child((Size_programlist.clickCount -1 ).toString()).child("id").value.toString().lowercase().replace(" ", "")
-                        binding.workoutNamea.text = snapshot.child("workout plans").children.first()
-                            .child((Size_programlist.clickCount -1 ).toString()).child("id").value.toString()
-                        binding.workoutagirlika.text =
-                            snapshot.child("workout plans").children.first()
-                                .child((Size_programlist.clickCount -1 ).toString())
-                                .child("ağırlık").value.toString()
-                        binding.workoutseta.text = snapshot.child("workout plans").children.first()
-                            .child((Size_programlist.clickCount -1 ).toString()).child("set").value.toString()
-                        binding.workouttekrara.text = snapshot.child("workout plans").children.first()
-                                .child((Size_programlist.clickCount -1 ).toString()).child("tekrar").value.toString()
+                            imageId = snapshot.child("workout plans").children.first()
+                                .child((Size_programlist.clickCount ).toString()).child("id").value.toString().lowercase().replace(" ", "")
+                            binding.workoutNamea.text = snapshot.child("workout plans").children.first()
+                                .child((Size_programlist.clickCount - 1).toString()).child("id").value.toString()
+                            binding.workoutagirlika.text =
+                                snapshot.child("workout plans").children.first()
+                                    .child((Size_programlist.clickCount - 1).toString())
+                                    .child("ağırlık").value.toString()
+                            binding.workoutseta.text = snapshot.child("workout plans").children.first()
+                                .child((Size_programlist.clickCount - 1).toString()).child("set").value.toString()
+                            binding.workouttekrara.text = snapshot.child("workout plans").children.first()
+                                .child((Size_programlist.clickCount - 1).toString()).child("tekrar").value.toString()
 
-                        //imageId = binding.workoutNamea.toString().lowercase().replace(" ", "")
+                            //imageId = binding.workoutNamea.toString().lowercase().replace(" ", "")
 
                         }
 
@@ -112,12 +118,6 @@ class CurrentWorkout : AppCompatActivity() /*, AdaptoWList.ClickListener*/ {
                 finish()
             }*/
         }
-
-        
-
-
-
-
 
 
 
@@ -162,7 +162,6 @@ class CurrentWorkout : AppCompatActivity() /*, AdaptoWList.ClickListener*/ {
 
 
     /*override fun ClickedItem(workoutPlanList: workoutPlanList) {
-
     }*/
 
 }
