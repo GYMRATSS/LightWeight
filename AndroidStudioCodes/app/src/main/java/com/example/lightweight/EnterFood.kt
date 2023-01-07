@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.SearchView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
@@ -105,11 +106,20 @@ class EnterFood : AppCompatActivity(), AdapterClass.ClickListener{
     }
 
     override fun ClickedItem(Meal: meal) {
-
-        userReference?.child("besin")?.child("besin kayıtları")?.child(LocalDate.now().toString())?.child(Meal.id.toString())?.setValue(Meal)
-        Thread.sleep(50)
-        //userReference?.child("besin")?.child("besin kayıtları")?.child(LocalDate.now().toString())?.child(Meal.id.toString())?.child("id")?.removeValue()
-        Thread.sleep(50)
+        var gramTaken: TextView = findViewById (R.id.gramAmount) //How much gram taken
+        var ratio = gramTaken.text.toString().toDoubleOrNull()?.div(100.0) //Ratio is calculated
+        //Values are calculated
+        var calorie = String.format("%.0f", Meal.kalori!!.toDoubleOrNull()!! * ratio!!)
+        var carb = String.format("%.0f", Meal.karbonhidrat!!.toDoubleOrNull()!! * ratio!!)
+        var protein = String.format("%.0f", Meal.protein!!.toDoubleOrNull()!! * ratio!!)
+        var fat = String.format("%.0f", Meal.yağ!!.toDoubleOrNull()!! * ratio!!)
+        //Values gathered in new meal class
+        var mealTaken = meal(Meal.id,calorie,carb,protein,fat)
+        //Text pops up
+        Toast.makeText(this@EnterFood, gramTaken.text.toString() + " gram " + Meal.id + " eklendi.", Toast.LENGTH_LONG).show()
+        //Adding to database
+        userReference?.child("besin")?.child("besin kayıtları")?.child(LocalDate.now().toString())?.child(Meal.id.toString())?.setValue(mealTaken)
+        Thread.sleep(100)
 
         finish()
     }
