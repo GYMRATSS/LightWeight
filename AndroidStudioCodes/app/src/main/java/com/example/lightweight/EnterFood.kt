@@ -2,13 +2,16 @@ package com.example.lightweight
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.TextUtils
 import android.widget.ImageButton
 import android.widget.SearchView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lightweight.databinding.ActivityEnterFoodBinding
+import com.example.lightweight.databinding.ActivitySignUpFirstBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import java.time.LocalDate
@@ -25,6 +28,7 @@ class EnterFood : AppCompatActivity(), AdapterClass.ClickListener{
     var databaseReference = database?.reference!!.child("Kullanıcılar") /**/
     var currentUser = auth.currentUser
     var userReference = databaseReference?.child(currentUser?.uid!!)
+    lateinit var binding: ActivityEnterFoodBinding /**/
 
 
 
@@ -105,13 +109,37 @@ class EnterFood : AppCompatActivity(), AdapterClass.ClickListener{
     }
 
     override fun ClickedItem(Meal: meal) {
+        val binding = ActivityEnterFoodBinding.inflate(layoutInflater) /**/
 
-        userReference?.child("besin")?.child("besin kayıtları")?.child(LocalDate.now().toString())?.child(Meal.id.toString())?.setValue(Meal)
-        Thread.sleep(50)
-        //userReference?.child("besin")?.child("besin kayıtları")?.child(LocalDate.now().toString())?.child(Meal.id.toString())?.child("id")?.removeValue()
-        Thread.sleep(50)
+        var gramTaken: TextView = findViewById (R.id.gramAmount) //How much gram taken
+        if(TextUtils.isEmpty(gramTaken.text.toString()) || gramTaken.text.toString().toDoubleOrNull() == null){
+            Toast.makeText(
+                this@EnterFood,
+                "Lütfen uygun bir gramaj giriniz.",
+                Toast.LENGTH_LONG
+            ).show()
+        }else {
+            var ratio = gramTaken.text.toString().toDoubleOrNull()?.div(100.0) //Ratio is calculated
+            //Values are calculated
+            var calorie = String.format("%.0f", Meal.kalori!!.toDoubleOrNull()!! * ratio!!)
+            var carb = String.format("%.0f", Meal.karbonhidrat!!.toDoubleOrNull()!! * ratio!!)
+            var protein = String.format("%.0f", Meal.protein!!.toDoubleOrNull()!! * ratio!!)
+            var fat = String.format("%.0f", Meal.yağ!!.toDoubleOrNull()!! * ratio!!)
+            //Values gathered in new meal class
+            var mealTaken = meal(Meal.id, calorie, carb, protein, fat)
+            //Text pops up
+            Toast.makeText(
+                this@EnterFood,
+                gramTaken.text.toString() + " gram " + Meal.id + " eklendi.",
+                Toast.LENGTH_LONG
+            ).show()
+            //Adding to database
+            userReference?.child("besin")?.child("besin kayıtları")
+                ?.child(LocalDate.now().toString())?.child(Meal.id.toString())?.setValue(mealTaken)
+            Thread.sleep(100)
+            finish()
 
-        finish()
+        }
     }
 
 }

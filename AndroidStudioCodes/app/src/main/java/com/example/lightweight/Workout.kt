@@ -118,6 +118,7 @@ class Workout : AppCompatActivity(), AdaptoWList.ClickListener {
 
         food.setOnClickListener() {
             val intent = Intent(this, CalorieCount::class.java)
+
             startActivity(intent)
         }
 
