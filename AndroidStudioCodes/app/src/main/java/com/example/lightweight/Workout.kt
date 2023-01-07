@@ -13,6 +13,7 @@ object Size_programlist{
 
     var mySizePL = 1
     var clickCount = 0
+    var clickCountFinish = 0
 }
 
 class Workout : AppCompatActivity(), AdaptoWList.ClickListener {
