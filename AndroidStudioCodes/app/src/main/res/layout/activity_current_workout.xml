@@ -252,7 +252,7 @@
 
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/theImageView"
         android:layout_width="417dp"
         android:layout_height="255dp"
 

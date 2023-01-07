@@ -50,9 +50,12 @@ class CurrentWorkout : AppCompatActivity() /*, AdaptoWList.ClickListener*/ {
         var tvhazirlan = findViewById<TextView>(R.id.hazirlan)
 
         val nextMoveButton1: Button = findViewById(R.id.nextMoveB)
-        if (((Size_programlist.clickCount+1) <= Size_programlist.mySizePL) ) {
-        nextMoveButton1.setOnClickListener() {
 
+        val imageView: ImageView = findViewById(R.id.theImageView)
+        var imageId = ""
+
+        if (((Size_programlist.clickCount+1) <= Size_programlist.mySizePL) ) {
+            nextMoveButton1.setOnClickListener() {
 
             //Size_programlist.clickCount++
             if(Size_programlist.clickCount+1 <= Size_programlist.mySizePL) {
@@ -62,15 +65,19 @@ class CurrentWorkout : AppCompatActivity() /*, AdaptoWList.ClickListener*/ {
                 //Size_programlist.clickCount--
                 //programlist[clickCount-1].inside?.size!!
                 userReference?.addValueEventListener(object : ValueEventListener {
+
                     override fun onDataChange(snapshot: DataSnapshot) {
 
+                        //imageId = resources.getIdentifier("plan" + snapshot.child("workout plans").children.first().value.toString() + "_" + (Size_programlist.clickCount + 1), "drawable", packageName)
+                        //imageId = resources.getIdentifier("image" + (Size_programlist.clickCount + 1), "drawable", packageName)
                         if((Size_programlist.clickCount != 0)) {
                             tvset.setText("Set: ")
                             tvagirlik.setText("Ağırlık: ")
                             tvtekrar.setText("Tekrar: ")
                             tvhazirlan.setText("")
 
-
+                        imageId = snapshot.child("workout plans").children.first()
+                                .child((Size_programlist.clickCount -1 ).toString()).child("id").value.toString().lowercase().replace(" ", "")
                         binding.workoutNamea.text = snapshot.child("workout plans").children.first()
                             .child((Size_programlist.clickCount -1 ).toString()).child("id").value.toString()
                         binding.workoutagirlika.text =
@@ -79,13 +86,16 @@ class CurrentWorkout : AppCompatActivity() /*, AdaptoWList.ClickListener*/ {
                                 .child("ağırlık").value.toString()
                         binding.workoutseta.text = snapshot.child("workout plans").children.first()
                             .child((Size_programlist.clickCount -1 ).toString()).child("set").value.toString()
-                        binding.workouttekrara.text =
-                            snapshot.child("workout plans").children.first()
+                        binding.workouttekrara.text = snapshot.child("workout plans").children.first()
                                 .child((Size_programlist.clickCount -1 ).toString()).child("tekrar").value.toString()
+
+                        //imageId = binding.workoutNamea.toString().lowercase().replace(" ", "")
+
                         }
 
                         //
                     }
+
 
                     override fun onCancelled(error: DatabaseError) {
                         TODO("Not yet implemented")
@@ -93,7 +103,8 @@ class CurrentWorkout : AppCompatActivity() /*, AdaptoWList.ClickListener*/ {
 
                 })
 
-
+                var imageName = resources.getIdentifier(imageId,  "drawable", packageName)
+                imageView.setImageResource(imageName)
 
 
             }
