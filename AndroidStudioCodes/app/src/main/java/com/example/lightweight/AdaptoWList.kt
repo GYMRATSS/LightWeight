@@ -19,7 +19,7 @@ class AdaptoWList(var programlist: ArrayList<workoutPlanList>, var clickListener
         var combinedText = ""
         for (i in 0 until Modal.inside!!.size)
         {
-            combinedText += "\nİsim: " + Modal.inside!![i].id.toString() + "\n" +  "Set: " +
+            combinedText += "\n\nİsim: " + Modal.inside!![i].id.toString() + "\n" +  "Set: " +
                     Modal.inside!![i].set.toString() + "\n" +  "Ağırlık: " +
                     Modal.inside!![i].ağırlık.toString() + "\n" +  "Tekrar: " +Modal.inside!![i].tekrar.toString()
         }
