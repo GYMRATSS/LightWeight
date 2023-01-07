@@ -365,18 +365,20 @@
             app:layout_constraintStart_toStartOf="@+id/workoutProgressBar"
             app:layout_constraintTop_toTopOf="@+id/workoutProgressBar" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/workoutList"
-            android:layout_width="202dp"
-            android:layout_height="213dp"
-            android:background="@drawable/rounded"
-            android:visibility="visible"
+        <ListView
+            android:id="@+id/workoutListView"
+            android:layout_width="177dp"
+            android:layout_height="207dp"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/workoutProgressBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.067"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.494" />
 
-        </androidx.recyclerview.widget.RecyclerView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
