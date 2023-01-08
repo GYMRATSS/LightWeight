@@ -50,15 +50,17 @@ class Profile : AppCompatActivity() {
                 val maxDownloadSize = 5L * 1024 * 1024
                 val bytes = imageRef.child("Users/$uid").getBytes(maxDownloadSize).await()
                 var bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
-                val matrix = Matrix()
+                // Rotasyon
+                /*val matrix = Matrix()
                 matrix.postRotate(90F)
-                bmp = Bitmap.createBitmap(bmp, 0, 0, bmp.width, bmp.height, matrix, true)
+                bmp = Bitmap.createBitmap(bmp, 0, 0, bmp.width, bmp.height, matrix, true)*/
                 withContext(Dispatchers.Main) {
                     binding.imageView.setImageBitmap(bmp)
                 }
             } catch(e: Exception) {
                 withContext(Dispatchers.Main) {
-                    Toast.makeText(this@Profile, e.message, Toast.LENGTH_LONG).show()
+                    //Toast.makeText(this@Profile, "Bilgileri güncelle sayfasından profil fotoğrafı yükleyebilirsiniz..", Toast.LENGTH_LONG).show()
+                    binding.imageView.setImageResource(R.drawable.person)
                 }
             }
         }

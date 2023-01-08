@@ -8,33 +8,69 @@
     android:background="@mipmap/wallp"
     tools:context=".updatePic">
 
-    <ImageView
+    <ImageButton
+        android:id="@+id/closeUpdateInfo2"
+        android:layout_width="67dp"
+        android:layout_height="60dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023"
+        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/ivImage"
         android:layout_width="180dp"
         android:layout_height="180dp"
-        android:layout_marginTop="50dp"
-        android:background="#B1B1B1"
+        android:layout_marginTop="104dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnGoBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="#21161D"
+        android:fontFamily="@font/jura"
+        android:foregroundTint="#3E363E"
+        android:text="GERİ DÖN"
+        app:layout_constraintEnd_toEndOf="@+id/ivImage"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toStartOf="@+id/ivImage"
+        app:layout_constraintTop_toBottomOf="@+id/btnUploadImage" />
 
     <Button
         android:id="@+id/btnUploadImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="76dp"
+        android:backgroundTint="#21161D"
+        android:fontFamily="@font/jura"
+        android:foregroundTint="#3E363E"
         android:text="RESİM YÜKLE"
         app:layout_constraintEnd_toEndOf="@+id/ivImage"
+        app:layout_constraintHorizontal_bias="0.472"
         app:layout_constraintStart_toStartOf="@+id/ivImage"
         app:layout_constraintTop_toBottomOf="@+id/ivImage" />
 
     <Button
-        android:id="@+id/btnDownloadImage"
+        android:id="@+id/btnPickImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="GERİ DÖN"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#21161D"
+        android:fontFamily="@font/jura"
+        android:foregroundTint="#3E363E"
+        android:text="RESİM SEÇ"
         app:layout_constraintEnd_toEndOf="@+id/ivImage"
+        app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="@+id/ivImage"
-        app:layout_constraintTop_toBottomOf="@+id/btnUploadImage" />
+        app:layout_constraintTop_toBottomOf="@+id/ivImage" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

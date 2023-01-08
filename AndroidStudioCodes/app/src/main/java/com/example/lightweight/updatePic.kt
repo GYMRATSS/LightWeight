@@ -36,8 +36,9 @@ class updatePic : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityUpdatePicBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        downloadImage()
 
-        binding.ivImage.setOnClickListener {
+        binding.btnPickImage.setOnClickListener {
             Intent(Intent.ACTION_GET_CONTENT).also {
                 it.type = "image/*"
                 startActivityForResult(it, REQUEST_CODE_IMAGE_PICK)
@@ -48,8 +49,15 @@ class updatePic : AppCompatActivity() {
             uploadImageToStorage()
         }
 
-        binding.btnDownloadImage.setOnClickListener {
-            downloadImage()
+        binding.btnGoBack.setOnClickListener {
+            val intent = Intent (this, updateInfo::class.java)
+            startActivity(intent)
+            finish()
+        }
+        binding.closeUpdateInfo2.setOnClickListener {
+            val intent = Intent (this, Profile::class.java)
+            startActivity(intent)
+            finish()
         }
 
         val actionBar = supportActionBar
@@ -63,15 +71,18 @@ class updatePic : AppCompatActivity() {
             val maxDownloadSize = 5L * 1024 * 1024
             val bytes = imageRef.child("Users/$uid").getBytes(maxDownloadSize).await()
             var bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
-            val matrix = Matrix()
+            // Rotasyon
+            /*val matrix = Matrix()
             matrix.postRotate(90F)
-            bmp = Bitmap.createBitmap(bmp, 0, 0, bmp.width, bmp.height, matrix, true)
+            bmp = Bitmap.createBitmap(bmp, 0, 0, bmp.width, bmp.height, matrix, true)*/
             withContext(Dispatchers.Main) {
                 binding.ivImage.setImageBitmap(bmp)
             }
         } catch (e: Exception) {
             withContext(Dispatchers.Main) {
-                Toast.makeText(this@updatePic, e.message, Toast.LENGTH_LONG).show()
+                //Toast.makeText(this@updatePic, e.message, Toast.LENGTH_LONG).show()
+                binding.ivImage.setImageResource(R.drawable.person)
+
             }
         }
     }
@@ -83,13 +94,13 @@ class updatePic : AppCompatActivity() {
             curFile?.let {
                 imageRef.child("Users/$uid").putFile(it).await()
                 withContext(Dispatchers.Main) {
-                    Toast.makeText(this@updatePic, "Successfully uploaded image",
+                    Toast.makeText(this@updatePic, "Fotoğraf başarıyla yüklendi.",
                         Toast.LENGTH_LONG).show()
                 }
             }
         } catch (e: Exception) {
             withContext(Dispatchers.Main) {
-                Toast.makeText(this@updatePic, e.message, Toast.LENGTH_LONG).show()
+                Toast.makeText(this@updatePic, "Fotoğrafınız yüklenirken bir sorun meydana geldi.", Toast.LENGTH_LONG).show()
             }
         }
     }
