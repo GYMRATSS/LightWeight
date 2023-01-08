@@ -76,22 +76,23 @@ tools:context=".Profile">
     <Button
         android:id="@+id/editUser"
         android:layout_width="417dp"
-        android:layout_height="45dp"
-        android:backgroundTint="#2B2129"
+        android:layout_height="54dp"
+        android:backgroundTint="#322931"
         android:fontFamily="@font/jura"
         android:foregroundTint="#3E363E"
         android:text="Hesap bilgilerini değiştir"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.661" />
+        app:layout_constraintVertical_bias="0.686" />
 
     <Button
         android:id="@+id/editProfile"
         android:layout_width="417dp"
-        android:layout_height="45dp"
+        android:layout_height="54dp"
         android:backgroundTint="#21161D"
         android:fontFamily="@font/jura"
         android:foregroundTint="#3E363E"
@@ -99,59 +100,45 @@ tools:context=".Profile">
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.609" />
+        app:layout_constraintVertical_bias="0.617" />
 
     <Button
         android:id="@+id/logOut"
         android:layout_width="421dp"
-        android:layout_height="45dp"
+        android:layout_height="54dp"
         android:backgroundTint="#858791"
         android:fontFamily="@font/jura"
         android:text="Çıkış Yap"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.879" />
+        app:layout_constraintVertical_bias="0.89" />
 
     <Button
         android:id="@+id/qa"
         android:layout_width="417dp"
-        android:layout_height="45dp"
+        android:layout_height="54dp"
         android:backgroundTint="#67666F"
         android:fontFamily="@font/jura"
         android:text="Soru / Cevap"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.825" />
-
-    <Button
-        android:id="@+id/workoutActivities"
-        android:layout_width="417dp"
-        android:layout_height="45dp"
-        android:backgroundTint="#514C55"
-        android:fontFamily="@font/jura"
-        android:text="Egzersiz Geçmişi"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.769" />
+        app:layout_constraintVertical_bias="0.821" />
 
     <Button
         android:id="@+id/dietTracker"
         android:layout_width="417dp"
-        android:layout_height="45dp"
-        android:backgroundTint="#3A323A"
+        android:layout_height="54dp"
+        android:backgroundTint="#4A444D"
         android:fontFamily="@font/jura"
         android:foregroundTint="#3E363E"
         android:text="Besin Takibi"
@@ -161,7 +148,7 @@ tools:context=".Profile">
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.714" />
+        app:layout_constraintVertical_bias="0.753" />
 
     <TextView
         android:id="@+id/goal"

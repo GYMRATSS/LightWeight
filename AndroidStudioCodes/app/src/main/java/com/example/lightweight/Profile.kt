@@ -122,7 +122,6 @@ class Profile : AppCompatActivity() {
 
 
         val dietTrackerButton = findViewById<Button>(R.id.dietTracker)
-        val workoutActivitiesButton = findViewById<Button>(R.id.workoutActivities)
         val qaButton = findViewById<Button>(R.id.qa)
         val logOutButton = findViewById<Button>(R.id.logOut)
         val editAccountButton = findViewById<Button>(R.id.editProfile)
@@ -151,9 +150,6 @@ class Profile : AppCompatActivity() {
             startActivity(intent)
         }
 
-        workoutActivitiesButton.setOnClickListener {
-            // history page must be implemented
-        }
 
         qaButton.setOnClickListener {
 
