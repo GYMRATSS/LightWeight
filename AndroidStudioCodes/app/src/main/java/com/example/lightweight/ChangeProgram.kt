@@ -166,6 +166,8 @@ class ChangeProgram : AppCompatActivity(), AdaptoWList.ClickListener{
         userReference?.child("workout plans")?.child(WorkoutPlanList.workoutid.toString())?.setValue(WorkoutPlanList.inside)
         Thread.sleep(50)
         Thread.sleep(50)
+        Thread.sleep(50)
+        Thread.sleep(50)
         finish()
     }
 }
