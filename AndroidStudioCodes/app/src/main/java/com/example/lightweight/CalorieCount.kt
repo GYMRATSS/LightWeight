@@ -166,7 +166,6 @@ class CalorieCount : AppCompatActivity() {
         calendarButton.setOnClickListener {
             val intent = Intent (this, DietTracker::class.java)
             startActivity(intent)
-            finish()
         }
         /**************************************************/
 

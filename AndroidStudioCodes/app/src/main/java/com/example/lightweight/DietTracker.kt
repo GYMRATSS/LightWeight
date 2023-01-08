@@ -34,8 +34,7 @@ class DietTracker : AppCompatActivity(){
 
         val closeButton = findViewById<ImageButton>(R.id.closeDietTracker)
         closeButton.setOnClickListener {
-            val intent = Intent (this, Profile::class.java)
-            startActivity(intent)
+            finish()
         }
 
         // baslangicta today list icin

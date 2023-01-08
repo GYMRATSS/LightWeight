@@ -8,21 +8,6 @@
     tools:context=".CalorieCount">
 
 
-    <ImageButton
-        android:id="@+id/pre"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="17dp"
-        android:background="@drawable/arrow"
-        android:clickable="true"
-        android:contentDescription="@string/app_name"
-        app:layout_constraintEnd_toStartOf="@+id/calendar"
-        app:layout_constraintHorizontal_bias="0.87"
-        app:layout_constraintStart_toEndOf="@+id/day"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/day"
         android:layout_width="wrap_content"
@@ -39,20 +24,6 @@
         app:layout_constraintVertical_bias="0.002" />
 
     <ImageButton
-        android:id="@+id/next"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/pngegg__1_"
-        android:clickable="true"
-        android:contentDescription="@string/app_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/calendar"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
         android:id="@+id/calendar"
         android:layout_width="64dp"
         android:layout_height="69dp"
@@ -61,7 +32,7 @@
         android:contentDescription="@string/app_name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.789"
+        app:layout_constraintHorizontal_bias="0.976"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.003" />
@@ -188,16 +159,14 @@
         android:id="@+id/garbageButton"
         android:layout_width="25dp"
         android:layout_height="37dp"
-        android:layout_marginTop="226dp"
-        android:layout_marginBottom="7dp"
+        android:layout_marginBottom="24dp"
         android:background="@mipmap/garbage"
         android:clickable="true"
         android:contentDescription="@string/app_name"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.958"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/next" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/waterMessage"
@@ -325,7 +294,7 @@
         android:id="@+id/totalCal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/jura"
         android:text="TOPLAM KALORİ:"
@@ -338,7 +307,7 @@
         android:id="@+id/takenCal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/jura"
         android:text="ALINAN KALORİ:"
@@ -351,16 +320,16 @@
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:fontFamily="@font/jura"
         android:text="KALAN KALORİ:"
         android:textColor="@color/white"
         android:textSize="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/remainCalVal"
+        app:layout_constraintBottom_toBottomOf="@+id/takenCal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.262"
+        app:layout_constraintHorizontal_bias="0.307"
         app:layout_constraintStart_toEndOf="@+id/takenCal"
-        app:layout_constraintTop_toBottomOf="@+id/calendar" />
+        app:layout_constraintTop_toTopOf="@+id/takenCal"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/totalCalVal"
@@ -380,7 +349,7 @@
         android:id="@+id/takenCalVal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
+        android:layout_marginStart="76dp"
         android:fontFamily="@font/jura"
         android:text="1000"
         android:textColor="@color/white"
@@ -394,15 +363,16 @@
         android:id="@+id/remainCalVal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="76dp"
         android:fontFamily="@font/jura"
         android:text="1500"
         android:textColor="@color/white"
         android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.789"
-        app:layout_constraintStart_toEndOf="@+id/takenCalVal"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintBottom_toBottomOf="@+id/takenCalVal"
+        app:layout_constraintEnd_toEndOf="@+id/textView10"
+        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintStart_toStartOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/protein"
