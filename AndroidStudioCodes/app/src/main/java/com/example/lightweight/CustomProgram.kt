@@ -19,12 +19,13 @@ class CustomProgram : AppCompatActivity() , AdapterCustom.ClickListener{
     //var list: ArrayList<workoutPlanList>? = ArrayList<workoutPlanList>()
     var recView: RecyclerView? = null
     private var sView: SearchView? = null
-    var list: ArrayList<workoutplancustom>? = ArrayList<workoutplancustom>()
+    var list: ArrayList<workoutplan>? = ArrayList<workoutplan>()
     var auth = FirebaseAuth.getInstance() /**/
     var database = FirebaseDatabase.getInstance() /**/
     var databaseReference = database?.reference!!.child("Kullanıcılar") /**/
     var currentUser = auth.currentUser
     var userReference = databaseReference?.child(currentUser?.uid!!)
+    var FullList = ArrayList<workoutplan>()
 
     var control = 0
 
@@ -40,13 +41,11 @@ class CustomProgram : AppCompatActivity() , AdapterCustom.ClickListener{
         prevPage.setOnClickListener() {
             finish()
         }
-        var checking = findViewById<TextView>(R.id.check)
-
         val wkayit: Button = findViewById(R.id.enterWorkout)
         wkayit.setOnClickListener() {
-
+            userReference?.child("workout plans")?.setValue("custom workout")
+            userReference?.child("workout plans")?.child("custom workout")?.setValue(FullList)
             finish()
-
         }
         /****************************************************************/
         //refs
@@ -111,7 +110,7 @@ class CustomProgram : AppCompatActivity() , AdapterCustom.ClickListener{
                             for (v in ds.children) {
                                 temp.add(v.value.toString())
                             }
-                            val m = workoutplancustom(ds.key, temp)
+                            val m = workoutplan(ds.key, temp)
                             list?.add(m)
                         }
                         var adapterC: AdapterCustom = AdapterCustom(list!!, this@CustomProgram)
@@ -144,8 +143,8 @@ class CustomProgram : AppCompatActivity() , AdapterCustom.ClickListener{
     }
 
     fun search(str: String?) {
-        val mylist2: ArrayList<workoutplancustom> = ArrayList<workoutplancustom>()
-        for (obj: workoutplancustom in list!!) {
+        val mylist2: ArrayList<workoutplan> = ArrayList<workoutplan>()
+        for (obj: workoutplan in list!!) {
             if (obj.id?.lowercase()!!.contains(str!!.lowercase())) {
                 mylist2.add(obj)
             }
@@ -155,33 +154,13 @@ class CustomProgram : AppCompatActivity() , AdapterCustom.ClickListener{
 
     }
 
-    override fun ClickedItem(workoutplancustom : workoutplancustom) {
+    override fun ClickedItem(workoutplan : workoutplan) {
         var checking = findViewById<TextView>(R.id.check)
-        checking.setText("hey!")
-        control = 1
-        var workoutsave = workoutplancustom(
-            workoutplancustom.id,
-            workoutplancustom.ağırlık,
-            workoutplancustom.set,
-            workoutplancustom.tekrar
-        )
-
-        userReference?.child("workout plans")?.setValue("yeni plan")
-        userReference?.child("workout plans")?.child("yeni plan")
-            ?.setValue(workoutsave)
+        checking.setText(workoutplan.id.toString() + " Eklendi")
+        FullList.add(workoutplan)
         Thread.sleep(50)
         Thread.sleep(50)
-        if(control != 0) {
-            Thread.sleep(50)
-            Thread.sleep(50)
-            control = 0
-            onStart()
-        }
-            /*Thread.sleep(50)
-            Thread.sleep(50)
-            control = 0
-            onStart()*/
+        onStart()
 
-       //finish()
     }
 }
