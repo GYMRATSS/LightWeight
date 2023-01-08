@@ -54,10 +54,28 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.872" />
+
+    <Button
+        android:id="@+id/guncelleButonu2"
+        android:layout_width="179dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="145dp"
+        android:layout_marginEnd="140dp"
+        android:backgroundTint="#423B43"
+        android:fontFamily="@font/jura_bold"
+        android:text="Profil Fotoğrafını Güncelle"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.958" />
 
     <ImageButton
         android:id="@+id/closeUpdateInfo"
