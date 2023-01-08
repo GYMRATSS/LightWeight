@@ -300,10 +300,10 @@ tools:context=".Profile">
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.143"
+        app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.41" />
+        app:layout_constraintVertical_bias="0.387" />
 
     <TextView
         android:id="@+id/bmi"
@@ -490,17 +490,18 @@ tools:context=".Profile">
 
 </LinearLayout>
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageView"
-        android:layout_width="214dp"
-        android:layout_height="197dp"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        app:srcCompat="@mipmap/noel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.069"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.114"
-        app:srcCompat="@mipmap/noel" />
+        app:layout_constraintVertical_bias="0.145"
+    />
 
     <TextView
         android:id="@+id/ageBox"

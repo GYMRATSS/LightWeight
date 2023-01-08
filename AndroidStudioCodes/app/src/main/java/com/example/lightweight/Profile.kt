@@ -1,12 +1,22 @@
 package com.example.lightweight
 
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.Matrix
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
 import com.example.lightweight.databinding.ActivityProfileBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
+import kotlinx.coroutines.withContext
 
 class Profile : AppCompatActivity() {
 
@@ -14,6 +24,8 @@ class Profile : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth /**/
     var databaseReference: DatabaseReference? = null /**/
     var database: FirebaseDatabase? = null /**/
+    val imageRef = Firebase.storage.reference
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +43,28 @@ class Profile : AppCompatActivity() {
         val actionBar = supportActionBar
         actionBar!!.hide()
 
+        fun downloadImage() = CoroutineScope(Dispatchers.IO).launch {
+            try {
+                auth = FirebaseAuth.getInstance()
+                val uid = auth.currentUser?.uid
+                val maxDownloadSize = 5L * 1024 * 1024
+                val bytes = imageRef.child("Users/$uid").getBytes(maxDownloadSize).await()
+                var bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
+                // Rotasyon
+                /*val matrix = Matrix()
+                matrix.postRotate(90F)
+                bmp = Bitmap.createBitmap(bmp, 0, 0, bmp.width, bmp.height, matrix, true)*/
+                withContext(Dispatchers.Main) {
+                    binding.imageView.setImageBitmap(bmp)
+                }
+            } catch(e: Exception) {
+                withContext(Dispatchers.Main) {
+                    //Toast.makeText(this@Profile, "Bilgileri güncelle sayfasından profil fotoğrafı yükleyebilirsiniz..", Toast.LENGTH_LONG).show()
+                    binding.imageView.setImageResource(R.drawable.person)
+                }
+            }
+        }
+        downloadImage()
 
         userReference?.addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
