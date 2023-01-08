@@ -11,13 +11,13 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import java.time.LocalDate
 
-class CustomProgram : AppCompatActivity() , AdaptoWList.ClickListener {
+class CustomProgram : AppCompatActivity() , AdapterCustom.ClickListener {
 
     var ref: DatabaseReference? = null /**/
-    var list: ArrayList<workoutPlanList>? = ArrayList<workoutPlanList>()
+    //var list: ArrayList<workoutPlanList>? = ArrayList<workoutPlanList>()
     var recView : RecyclerView? = null
     private var sView : SearchView? = null
-
+    var list: ArrayList<workoutplancustom>? = ArrayList<workoutplancustom>()
     var auth = FirebaseAuth.getInstance() /**/
     var database = FirebaseDatabase.getInstance() /**/
     var databaseReference = database?.reference!!.child("Kullanıcılar") /**/
@@ -40,6 +40,9 @@ class CustomProgram : AppCompatActivity() , AdaptoWList.ClickListener {
         }
         /****************************************************************/
     //refs
+        ref = FirebaseDatabase.getInstance().reference.child("WorkoutMoves")
+        recView = findViewById(R.id.customWList)
+        sView = findViewById(R.id.workoutSearch)
 
         /******************** Menu ***************************************/
 
@@ -86,9 +89,67 @@ class CustomProgram : AppCompatActivity() , AdaptoWList.ClickListener {
 
     override fun onStart() {
         super.onStart()
+
+        if(ref != null){
+            ref!!.addValueEventListener(object : ValueEventListener{
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    //userReference?.child("workout plans")?.child("plan1")?.child(Workoutplan.workoutid.toString())?.child("workoutid")?.removeValue()
+                    if (snapshot.exists()){
+                        for (ds in snapshot.children)
+                        {
+                            val temp: ArrayList<String> = ArrayList<String>()
+                            for (v in ds.children) {
+                                temp.add(v.value.toString())
+                            }
+                            val m = workoutplancustom(ds.key, temp)
+                            list?.add(m)
+                        }
+                        var adapterC: AdapterCustom = AdapterCustom(list!!,this@CustomProgram)
+                        recView?.adapter = adapterC
+                        /*change program or workout*/
+
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    Toast.makeText(this@CustomProgram, error.message, Toast.LENGTH_SHORT).show()
+                }
+            })
+        }
+
+        if (sView != null){
+            sView?.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+                override fun onQueryTextSubmit(p0: String?): Boolean {
+                    return false
+                }
+
+                override fun onQueryTextChange(p0: String?): Boolean {
+                    search(p0)
+                    return true
+                }
+
+            })
+        }
     }
 
-    override fun ClickedItem(workoutPlanList: workoutPlanList) {
-        TODO("Not yet implemented")
+    fun search(str: String?){
+        val mylist2: ArrayList<workoutplancustom> = ArrayList<workoutplancustom>()
+        for (obj : workoutplancustom in list!!)
+        {
+            if(obj.id?.lowercase()!!.contains(str!!.lowercase())){
+                mylist2.add(obj)
+            }
+        }
+        var adapterC: AdapterCustom = AdapterCustom(mylist2,this@CustomProgram)
+        recView?.adapter = adapterC
+
+    }
+
+    override fun ClickedItem(workoutplancustom: workoutplancustom) {
+        /*userReference?.child("workout plans")?.setValue(WorkoutPlanList.workoutid.toString())
+        userReference?.child("workout plans")?.child(WorkoutPlanList.workoutid.toString())?.setValue(WorkoutPlanList.inside)
+        Thread.sleep(50)
+        Thread.sleep(50)
+        finish()*/
     }
 }

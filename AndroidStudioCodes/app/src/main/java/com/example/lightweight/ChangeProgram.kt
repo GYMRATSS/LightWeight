@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import java.time.LocalDate
+import android.widget.*
 
 /*clicklistener check*/
 class ChangeProgram : AppCompatActivity(), AdaptoWList.ClickListener{
@@ -33,12 +34,12 @@ class ChangeProgram : AppCompatActivity(), AdaptoWList.ClickListener{
         actionBar!!.hide()
 
         /*custom program butonu*/
-        /*val customPageB: ImageButton = findViewById(R.id.customprogramb)
+        val customPageB: Button = findViewById(R.id.customprogramb)
 
         customPageB.setOnClickListener() {
             val intent = Intent(this, CustomProgram::class.java)
             startActivity(intent)
-        }*/
+        }
 
         /*try changing val name*/
         val prevPage: ImageButton = findViewById(R.id.prevPage)
