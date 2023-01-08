@@ -54,7 +54,7 @@ class CurrentWorkout : AppCompatActivity() /*, AdaptoWList.ClickListener*/ {
         var basla = findViewById<TextView>(R.id.wo)
 
         var imageView: ImageView = findViewById(R.id.theImageView)
-        var imageId = "@mipmap/barbell_squat"
+        var imageId = ""
         var imageName : Int = 0
 
         var userReference2 = databaseReference?.child(currentUser?.uid!!)
@@ -146,7 +146,11 @@ class CurrentWorkout : AppCompatActivity() /*, AdaptoWList.ClickListener*/ {
         }
 
 
+        val prevPage: ImageButton = findViewById(R.id.prevPage3)
 
+        prevPage.setOnClickListener() {
+            finish()
+        }
 
 
         val homeButton = findViewById<ImageButton>(R.id.homepage)
