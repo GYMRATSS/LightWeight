@@ -8,19 +8,24 @@ import android.view.View
 import android.widget.TextView
 
 
-class AdapterCustom(var programlist: ArrayList<workoutplancustom>, var clickListener: AdapterCustom.ClickListener) : RecyclerView.Adapter<AdapterCustom.MyViewHolderWorkout>() {
+class AdapterCustom(var programlist: ArrayList<workoutplancustom>, var clickListener: ClickListener) : RecyclerView.Adapter<MyViewHolderWorkout>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterCustom.MyViewHolderWorkout {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolderWorkout {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.holder_customprogram, parent, false)
         return MyViewHolderWorkout(view)
     }
 
-    override fun onBindViewHolder(holder_customprogram: AdapterCustom.MyViewHolderWorkout, position: Int) {
+    override fun onBindViewHolder(holder_customprogram: MyViewHolderWorkout, position: Int) {
         val Modal = programlist[position]
         holder_customprogram.planid_.text = programlist[position].id
         Size_programlist.mySizePL = programlist.size
         holder_customprogram.descr.text = "Ağırlık: " + programlist[position].ağırlık +"\n"+
                 "Set: " +programlist[position].set + "\n" + "Tekrar: " +programlist[position].tekrar + "\n"
+
+        holder_customprogram.itemView.setOnClickListener{
+            clickListener.ClickedItem(Modal)
+        }
+
     }
 
     override fun getItemCount(): Int {

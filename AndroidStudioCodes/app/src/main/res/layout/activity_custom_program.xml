@@ -20,6 +20,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+    <TextView
+        android:id="@+id/check"
+        android:layout_width="113dp"
+        android:layout_height="52dp"
+        android:fontFamily="@font/jura"
+        android:gravity="center"
+        android:text="burda"
+        android:textColor="#E9EEF3"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.985"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.181" />
+
     <SearchView
         android:id="@+id/workoutSearch"
         android:layout_width="348dp"

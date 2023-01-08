@@ -10,13 +10,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import java.time.LocalDate
+import android.widget.*
 
-class CustomProgram : AppCompatActivity() , AdapterCustom.ClickListener {
+class CustomProgram : AppCompatActivity() , AdapterCustom.ClickListener{
 
     var ref: DatabaseReference? = null /**/
+
     //var list: ArrayList<workoutPlanList>? = ArrayList<workoutPlanList>()
-    var recView : RecyclerView? = null
-    private var sView : SearchView? = null
+    var recView: RecyclerView? = null
+    private var sView: SearchView? = null
     var list: ArrayList<workoutplancustom>? = ArrayList<workoutplancustom>()
     var auth = FirebaseAuth.getInstance() /**/
     var database = FirebaseDatabase.getInstance() /**/
@@ -24,7 +26,7 @@ class CustomProgram : AppCompatActivity() , AdapterCustom.ClickListener {
     var currentUser = auth.currentUser
     var userReference = databaseReference?.child(currentUser?.uid!!)
 
-
+    var control = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,8 +40,16 @@ class CustomProgram : AppCompatActivity() , AdapterCustom.ClickListener {
         prevPage.setOnClickListener() {
             finish()
         }
+        var checking = findViewById<TextView>(R.id.check)
+
+        val wkayit: Button = findViewById(R.id.enterWorkout)
+        wkayit.setOnClickListener() {
+
+            finish()
+
+        }
         /****************************************************************/
-    //refs
+        //refs
         ref = FirebaseDatabase.getInstance().reference.child("WorkoutMoves")
         recView = findViewById(R.id.customWList)
         sView = findViewById(R.id.workoutSearch)
@@ -71,7 +81,7 @@ class CustomProgram : AppCompatActivity() , AdapterCustom.ClickListener {
 
         gymButton.setOnClickListener {
 
-            val intent = Intent (this, Workout::class.java)
+            val intent = Intent(this, Workout::class.java)
             startActivity(intent)
 
         }
@@ -82,21 +92,21 @@ class CustomProgram : AppCompatActivity() , AdapterCustom.ClickListener {
         }
 
 
-    /***********************************************************************************/
+        /***********************************************************************************/
 
 
     }
 
     override fun onStart() {
         super.onStart()
+        control = 0
 
-        if(ref != null){
-            ref!!.addValueEventListener(object : ValueEventListener{
+        if (ref != null) {
+            ref!!.addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     //userReference?.child("workout plans")?.child("plan1")?.child(Workoutplan.workoutid.toString())?.child("workoutid")?.removeValue()
-                    if (snapshot.exists()){
-                        for (ds in snapshot.children)
-                        {
+                    if (snapshot.exists()) {
+                        for (ds in snapshot.children) {
                             val temp: ArrayList<String> = ArrayList<String>()
                             for (v in ds.children) {
                                 temp.add(v.value.toString())
@@ -104,7 +114,7 @@ class CustomProgram : AppCompatActivity() , AdapterCustom.ClickListener {
                             val m = workoutplancustom(ds.key, temp)
                             list?.add(m)
                         }
-                        var adapterC: AdapterCustom = AdapterCustom(list!!,this@CustomProgram)
+                        var adapterC: AdapterCustom = AdapterCustom(list!!, this@CustomProgram)
                         recView?.adapter = adapterC
                         /*change program or workout*/
 
@@ -115,9 +125,10 @@ class CustomProgram : AppCompatActivity() , AdapterCustom.ClickListener {
                     Toast.makeText(this@CustomProgram, error.message, Toast.LENGTH_SHORT).show()
                 }
             })
+            //control = 1
         }
 
-        if (sView != null){
+        if (sView != null) {
             sView?.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
                 override fun onQueryTextSubmit(p0: String?): Boolean {
                     return false
@@ -132,24 +143,45 @@ class CustomProgram : AppCompatActivity() , AdapterCustom.ClickListener {
         }
     }
 
-    fun search(str: String?){
+    fun search(str: String?) {
         val mylist2: ArrayList<workoutplancustom> = ArrayList<workoutplancustom>()
-        for (obj : workoutplancustom in list!!)
-        {
-            if(obj.id?.lowercase()!!.contains(str!!.lowercase())){
+        for (obj: workoutplancustom in list!!) {
+            if (obj.id?.lowercase()!!.contains(str!!.lowercase())) {
                 mylist2.add(obj)
             }
         }
-        var adapterC: AdapterCustom = AdapterCustom(mylist2,this@CustomProgram)
+        var adapterC: AdapterCustom = AdapterCustom(mylist2, this@CustomProgram)
         recView?.adapter = adapterC
 
     }
 
-    override fun ClickedItem(workoutplancustom: workoutplancustom) {
-        /*userReference?.child("workout plans")?.setValue(WorkoutPlanList.workoutid.toString())
-        userReference?.child("workout plans")?.child(WorkoutPlanList.workoutid.toString())?.setValue(WorkoutPlanList.inside)
+    override fun ClickedItem(workoutplancustom : workoutplancustom) {
+        var checking = findViewById<TextView>(R.id.check)
+        checking.setText("hey!")
+        control = 1
+        var workoutsave = workoutplancustom(
+            workoutplancustom.id,
+            workoutplancustom.ağırlık,
+            workoutplancustom.set,
+            workoutplancustom.tekrar
+        )
+
+        userReference?.child("workout plans")?.setValue("yeni plan")
+        userReference?.child("workout plans")?.child("yeni plan")
+            ?.setValue(workoutsave)
         Thread.sleep(50)
         Thread.sleep(50)
-        finish()*/
+        if(control != 0) {
+            Thread.sleep(50)
+            Thread.sleep(50)
+            control = 0
+            onStart()
+        }
+            /*Thread.sleep(50)
+            Thread.sleep(50)
+            control = 0
+            onStart()*/
+
+       //finish()
     }
 }
