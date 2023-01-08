@@ -8,7 +8,7 @@ import android.view.View
 import android.widget.TextView
 
 
-class AdapterCustom(var programlist: ArrayList<workoutplancustom>, var clickListener: ClickListener) : RecyclerView.Adapter<MyViewHolderWorkout>() {
+class AdapterCustom(var programlist: ArrayList<workoutplan>, var clickListener: ClickListener) : RecyclerView.Adapter<MyViewHolderWorkout>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolderWorkout {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.holder_customprogram, parent, false)
@@ -46,7 +46,7 @@ class AdapterCustom(var programlist: ArrayList<workoutplancustom>, var clickList
     }
 
     interface ClickListener{
-        fun ClickedItem(workoutplancustom: workoutplancustom)
+        fun ClickedItem(workoutplan: workoutplan)
     }
 
 }

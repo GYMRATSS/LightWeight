@@ -23,19 +23,20 @@
 
     <TextView
         android:id="@+id/check"
-        android:layout_width="113dp"
+        android:layout_width="wrap_content"
         android:layout_height="52dp"
+        android:layout_marginEnd="64dp"
         android:fontFamily="@font/jura"
         android:gravity="center"
-        android:text="burda"
+        android:text="Hareket Seçilmedi"
         android:textColor="#E9EEF3"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.985"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.181" />
+        app:layout_constraintBottom_toBottomOf="@+id/enterWorkout"
+        app:layout_constraintEnd_toStartOf="@+id/enterWorkout"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/workoutSearch"
+        app:layout_constraintTop_toTopOf="@+id/enterWorkout"
+        app:layout_constraintVertical_bias="0.0" />
 
     <SearchView
         android:id="@+id/workoutSearch"
@@ -56,18 +57,18 @@
         android:id="@+id/enterWorkout"
         android:layout_width="101dp"
         android:layout_height="52dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="15dp"
         android:background="@color/DarkRed"
         android:clickable="true"
         android:text="Kaydet"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.425"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.189" />
+        app:layout_constraintBottom_toTopOf="@+id/customWList"
+        app:layout_constraintEnd_toEndOf="@+id/workoutSearch"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/workoutSearch"
+        app:layout_constraintTop_toBottomOf="@+id/workoutSearch"
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/customWList"

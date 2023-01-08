@@ -39,6 +39,7 @@ class ChangeProgram : AppCompatActivity(), AdaptoWList.ClickListener{
         customPageB.setOnClickListener() {
             val intent = Intent(this, CustomProgram::class.java)
             startActivity(intent)
+            finish()
         }
 
         /*try changing val name*/
