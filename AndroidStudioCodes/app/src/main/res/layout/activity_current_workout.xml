@@ -10,39 +10,26 @@
 
     <TextView
         android:id="@+id/workoutNamea"
-        android:layout_width="387dp"
-        android:layout_height="46dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="29dp"
         android:fontFamily="@font/jura"
         android:gravity="center"
         android:text=""
-        android:textColor="#E9EEF3"
+        android:textColor="@color/white"
         android:textSize="35sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/theImageView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.477"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.484" />
-
-    <TextView
-        android:id="@+id/hazirlan"
-        android:layout_width="404dp"
-        android:layout_height="217dp"
-        android:fontFamily="@font/jura_bold"
-        android:gravity="center"
-        android:text="HAZIRLAN"
-        android:textColor="#FFFFFF"
-        android:textSize="48sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.714" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/prevPage3"
-        android:layout_width="40dp"
-        android:layout_height="38dp"
+        android:layout_width="53dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="4dp"
         android:background="@drawable/arrow"
         android:clickable="true"
         android:contentDescription="@string/app_name"
@@ -53,19 +40,18 @@
 
     <TextView
         android:id="@+id/wo"
-        android:layout_width="147dp"
-        android:layout_height="83dp"
-        android:fontFamily="@font/jura"
-        android:gravity="left|center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/jura_bold"
+        android:gravity="center"
         android:text="Basla"
         android:textColor="#BFCAD5"
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.018"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024" />
+        app:layout_constraintVertical_bias="0.07" />
 
     <TextView
         android:id="@+id/textset"
@@ -79,10 +65,26 @@
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.091"
+        app:layout_constraintHorizontal_bias="0.241"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.61" />
+
+    <TextView
+        android:id="@+id/hazirlan"
+        android:layout_width="match_parent"
+        android:layout_height="217dp"
+        android:fontFamily="@font/jura_bold"
+        android:gravity="center"
+        android:text="HAZIRLAN!"
+        android:textColor="#FFFFFF"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.416" />
 
     <TextView
         android:id="@+id/textagirlik"
@@ -96,27 +98,10 @@
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintHorizontal_bias="0.241"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.55" />
-
-    <TextView
-        android:id="@+id/texttekrar"
-        android:layout_width="105dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="24dp"
-        android:fontFamily="@font/jura_bold"
-        android:gravity="left"
-        android:text=""
-        android:textColor="#E9EEF3"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.091"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.67" />
 
     <TextView
         android:id="@+id/workoutagirlika"
@@ -130,7 +115,7 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.584"
+        app:layout_constraintHorizontal_bias="0.774"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.55" />
@@ -147,7 +132,7 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.584"
+        app:layout_constraintHorizontal_bias="0.774"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.61" />
@@ -164,10 +149,40 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintHorizontal_bias="0.774"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.67" />
+
+    <TextView
+        android:id="@+id/texttekrar"
+        android:layout_width="105dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/jura_bold"
+        android:gravity="left"
+        android:text=""
+        android:textColor="#E9EEF3"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.241"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.67" />
+
+    <ImageView
+        android:id="@+id/theImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="255dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.256"
+        app:srcCompat="@mipmap/barbell_squat" />
 
     <TextView
         android:id="@+id/clickcounttext"
@@ -179,6 +194,7 @@
         android:text=""
         android:textColor="#E9EEF3"
         android:textSize="22sp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.545"
@@ -188,8 +204,8 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/nextMoveB"
-        android:layout_width="177dp"
-        android:layout_height="52dp"
+        android:layout_width="182dp"
+        android:layout_height="70dp"
         android:background="@drawable/rounded_button"
         android:ellipsize="none"
         android:fontFamily="@font/jura_bold"
@@ -202,10 +218,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintHorizontal_bias="0.472"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.877" />
+        app:layout_constraintVertical_bias="0.864" />
 
     <LinearLayout
         android:id="@+id/menulayout"
@@ -269,17 +285,5 @@
 
     </LinearLayout>
 
-
-    <ImageView
-        android:id="@+id/theImageView"
-        android:layout_width="417dp"
-        android:layout_height="255dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.161"
-        app:srcCompat="@mipmap/barbell_squat" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
