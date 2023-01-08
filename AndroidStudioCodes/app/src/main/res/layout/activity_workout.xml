@@ -52,9 +52,10 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.186" />
 
+
     <TextView
         android:id="@+id/qa"
-        android:layout_width="176dp"
+        android:layout_width="wrap_content"
         android:layout_height="99dp"
         android:fontFamily="@font/jura"
         android:gravity="center"
@@ -63,11 +64,10 @@
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.021"
+        app:layout_constraintHorizontal_bias="0.443"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.025" />
-
+        app:layout_constraintVertical_bias="0.028" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -193,21 +193,6 @@
 
     </LinearLayout>
 
-
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="65dp"
-        android:layout_height="74dp"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="31dp"
-        app:layout_constraintBottom_toTopOf="@+id/changeprogrambutton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/qa"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/calendar_gym" />
 
     <TextView
         android:id="@+id/w_persent"
