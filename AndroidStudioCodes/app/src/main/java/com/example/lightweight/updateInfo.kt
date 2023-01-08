@@ -39,7 +39,8 @@ class updateInfo : AppCompatActivity() {
                 binding.updateWaist.setText(snapshot.child("Bel").value.toString())
                 binding.updateNeck.setText(snapshot.child("Boyun").value.toString())
                 binding.updateGoalWeight.setText(snapshot.child("Hedef").value.toString())
-                binding.updateHip.setText(snapshot.child("Kalça").value.toString())
+                if(snapshot.child("Kalça").value == null) { binding.updateHip.setHint("(İsteğe Bağlı)")} // prevent "null"
+                else{ binding.updateHip.setText(snapshot.child("Kalça").value.toString()) }
                 //Holders
                 binding.cinsiyetHolder1.setText(snapshot.child("Cinsiyet").value.toString())
                 binding.hareketHolder.setText(snapshot.child("Hareket seviyesi").value.toString())
