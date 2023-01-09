@@ -12,7 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LightWeight"
         tools:targetApi="31">
-
+        <activity
+            android:name=".pic"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".homeAdapter"
             android:exported="false">
