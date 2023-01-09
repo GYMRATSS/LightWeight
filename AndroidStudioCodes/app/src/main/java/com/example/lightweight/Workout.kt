@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -17,9 +18,9 @@ object Size_programlist{
 }
 
 class Workout : AppCompatActivity(), AdaptoWList.ClickListener {
-
+    private lateinit var builder : AlertDialog.Builder
     var ref: DatabaseReference? = null /**/
-
+    var ref2: DatabaseReference? = null /**/
     var recView : RecyclerView? = null
 
    /* private lateinit var auth: FirebaseAuth /**/
@@ -51,7 +52,6 @@ class Workout : AppCompatActivity(), AdaptoWList.ClickListener {
         }
 
         val shp:  ImageButton = findViewById(R.id.shopage)
-
 
 
 
@@ -97,6 +97,28 @@ class Workout : AppCompatActivity(), AdaptoWList.ClickListener {
 
         }
 
+        ref2 = userReference?.child("workout plans")
+        builder = AlertDialog.Builder(this)
+        val reset: ImageButton = findViewById (R.id.garbageButton2)
+        reset.setOnClickListener() {
+            builder.setTitle("Uyarı!")
+                .setMessage("Hareket listesini silmek istediğine emin misin?")
+                .setCancelable(true) // dialog box in cancellable
+                // set positive button
+                //take two parameters dialogInterface and an int
+                .setPositiveButton("Evet"){dialogInterface,it ->
+                    ref2?.removeValue()
+                    val intent = Intent(this, Workout::class.java)
+                    startActivity(intent)
+                    finish() // close the app when yes clicked
+                }
+                .setNegativeButton("Hayır"){dialogInterface,it ->
+                    // cancel the dialogbox
+                    dialogInterface.cancel()
+                }
+                // show the builder
+                .show()
+        }
 
 
 
@@ -182,7 +204,28 @@ class Workout : AppCompatActivity(), AdaptoWList.ClickListener {
             })
 
         }
-
+        ref2 = userReference?.child("workout plans")
+        builder = AlertDialog.Builder(this)
+        val reset: ImageButton = findViewById (R.id.garbageButton2)
+        reset.setOnClickListener() {
+            builder.setTitle("Uyarı!")
+                .setMessage("Hareket listesini silmek istediğine emin misin?")
+                .setCancelable(true) // dialog box in cancellable
+                // set positive button
+                //take two parameters dialogInterface and an int
+                .setPositiveButton("Evet"){dialogInterface,it ->
+                    ref2?.removeValue()
+                    val intent = Intent(this, Workout::class.java)
+                    startActivity(intent)
+                    finish() // close the app when yes clicked
+                }
+                .setNegativeButton("Hayır"){dialogInterface,it ->
+                    // cancel the dialogbox
+                    dialogInterface.cancel()
+                }
+                // show the builder
+                .show()
+        }
 
 
     }
